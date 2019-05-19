@@ -29,12 +29,12 @@ $primary-invert: $pink-invert;
 body > .columns {
   margin-bottom: 0 !important; }
 
-.scrollable {
-  height: 100%;
-  overflow-y: scroll; }
-
-.scrollable > .hero-body > .container {
-  height: 700px !important; }
+@media screen and (min-width: 769px) {
+  .scrollable {
+    height: 100%;
+    overflow-y: scroll; }
+  .scrollable > .hero-body > .container {
+    height: 700px !important; } }
 
 /*! bulma.io v0.7.5 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {

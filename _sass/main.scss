@@ -49,13 +49,15 @@ body > .columns {
   margin-bottom: 0 !important; 
 }
 
-.scrollable {
-  height: 100%;
-  overflow-y: scroll;
-}
+@media screen and (min-width: 769px) {
+  .scrollable {
+    height: 100%;
+    overflow-y: scroll;
+  }
 
-.scrollable > .hero-body > .container {
-  height: 700px !important;
+  .scrollable > .hero-body > .container {
+    height: 700px !important;
+  }
 }
 
 @import "../node_modules/bulma/bulma";
@@ -89,6 +91,7 @@ body > .columns {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 
 @media screen and (max-width: 768px) {
   .fancier {
