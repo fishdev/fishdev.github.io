@@ -30,7 +30,7 @@ $primary-invert: $pink-invert;
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 
 // Colors
-$primary: rgb(32, 63, 182);
+$primary: rgb(190, 5, 117);
 $link: rgb(32, 63, 182);
 $info: #61afef;
 $warning: #d19a66;
@@ -43,6 +43,17 @@ $success: #89ca78;
 .pgh {
   background-image: linear-gradient(45deg, rgba(32, 63, 182, 0.7) 5%, rgba(190, 5, 117, 0.5)), url("./../images/pgh.jpg") !important;
   background-size: cover;
+}
+
+.gradientbg {
+  background: linear-gradient(45deg, rgb(32, 63, 182), rgb(190, 5, 117));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#shortcuts strong {
+  @extend .gradientbg;
 }
 
 body > .columns {
@@ -60,7 +71,19 @@ body > .columns {
   }
 }
 
+.button,a {
+  transition: 0.25s;
+}
+
 @import "../node_modules/bulma/bulma";
+
+.pgh .hero-foot a:hover {
+  color: $white !important;
+}
+
+a:hover {
+  color: $info;
+}
 
 .project .subtitle {
   margin-bottom: 0.75rem !important;
@@ -86,10 +109,7 @@ body > .columns {
   font-size: $size-small;
   line-height: 200%;
   text-align: right;
-  background: linear-gradient(45deg, rgb(32, 63, 182), rgb(190, 5, 117));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @extend .gradientbg;
 }
 
 
