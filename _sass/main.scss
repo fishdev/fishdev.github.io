@@ -27,7 +27,7 @@ $primary-invert: $pink-invert;
 */
 
 // Nunito & San Francisco
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700|PT+Sans");
 
 // Colors
 $primary: rgb(190, 5, 117);
@@ -35,6 +35,8 @@ $link: rgb(32, 63, 182);
 $info: #61afef;
 $warning: #d19a66;
 $success: #89ca78;
+
+$family-sans-serif: "PT Sans";
 
 .fancy {
   font-family: "Nunito";
