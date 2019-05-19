@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+/*
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// 2. Set your own initial variables
+// Update the blue shade, used for links
+$blue: #06bcef;
+// Add pink and its invert
+$pink: #ff8080;
+$pink-invert: #fff;
+// Update the sans-serif font family
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $pink;
+$primary-invert: $pink-invert;
+
+// 4. Import the rest of Bulma
+*/
+
+// Nunito & San Francisco
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
+// Colors
+$primary: rgb(32, 63, 182);
+$link: rgb(32, 63, 182);
+$info: #61afef;
+$warning: #d19a66;
+$success: #89ca78;
+
+.fancy {
+  font-family: "Nunito";
+}
+
+.pgh {
+  background-image: linear-gradient(45deg, rgba(32, 63, 182, 0.7) 5%, rgba(190, 5, 117, 0.5)), url("./../images/pgh.jpg") !important;
+  background-size: cover;
+}
+
+body > .columns {
+  margin-bottom: 0 !important; 
+}
+
+.scrollable {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.scrollable > .hero-body > .container {
+  height: 700px !important;
+}
+
+@import "../node_modules/bulma/bulma";
+
+.project .subtitle {
+  margin-bottom: 0.75rem !important;
+  @extend .has-text-grey;
+}
+
+.content {
+  margin-bottom: 0.75rem !important;
+}
+
+.project {
+  margin-bottom: 1.5rem;
+}
+
+.extrasub {
+  margin-top: -0.5rem;
+}
+
+.fancier {
+  @extend .fancy;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: $size-small;
+  line-height: 200%;
+  text-align: right;
+  background: linear-gradient(45deg, rgb(32, 63, 182), rgb(190, 5, 117));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .fancier {
+    text-align: center;
+  }
+}
