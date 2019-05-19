@@ -78,7 +78,11 @@ body > .columns {
 }
 
 #profile {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.pgh .button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 @import "../node_modules/bulma/bulma";
