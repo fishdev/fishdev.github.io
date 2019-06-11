@@ -58,6 +58,10 @@ $family-sans-serif: "PT Sans";
   @extend .gradientbg;
 }
 
+body {
+  overflow-y: hidden;
+}
+
 body > .columns {
   margin-bottom: 0 !important; 
 }
@@ -69,7 +73,7 @@ body > .columns {
   }
 
   .scrollable > .hero-body > .container {
-    height: 700px !important;
+    height: 80vh !important;
   }
 }
 

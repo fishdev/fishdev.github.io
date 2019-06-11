@@ -32,6 +32,9 @@ $primary-invert: $pink-invert;
   background-clip: text;
   -webkit-text-fill-color: transparent; }
 
+body {
+  overflow-y: hidden; }
+
 body > .columns {
   margin-bottom: 0 !important; }
 
@@ -40,7 +43,7 @@ body > .columns {
     height: 100%;
     overflow-y: scroll; }
   .scrollable > .hero-body > .container {
-    height: 700px !important; } }
+    height: 80vh !important; } }
 
 .button, a {
   transition: all 0.25s ease-in-out; }
