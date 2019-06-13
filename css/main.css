@@ -7043,8 +7043,8 @@ body > .columns {
 
 @media screen and (max-width: 769px) {
   #main {
-    min-height: 75vh !important; } }
+    min-height: 70vh !important; } }
 
 @media screen and (max-width: 769px) {
   #resume-body {
-    padding: 2rem 1rem; } }
+    padding: 1rem 1rem 1.5rem 1rem; } }

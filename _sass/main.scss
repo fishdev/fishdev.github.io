@@ -151,13 +151,13 @@ body > .columns {
 
 @media screen and (max-width: $tablet) {
   #main {
-    min-height: 75vh !important;
+    min-height: 70vh !important;
   }
 }
 
 // Tighter container on mobile
 @media screen and (max-width: $tablet) {
   #resume-body {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem 1.5rem 1rem;
   }
 }
