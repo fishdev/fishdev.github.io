@@ -7044,3 +7044,7 @@ body > .columns {
 @media screen and (max-width: 769px) {
   #main {
     min-height: 75vh !important; } }
+
+@media screen and (max-width: 769px) {
+  #resume-body {
+    padding: 2rem 1rem; } }

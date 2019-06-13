@@ -154,3 +154,10 @@ body > .columns {
     min-height: 75vh !important;
   }
 }
+
+// Tighter container on mobile
+@media screen and (max-width: $tablet) {
+  #resume-body {
+    padding: 2rem 1rem;
+  }
+}
