@@ -19,6 +19,12 @@ $primary-invert: $pink-invert;
 // 4. Import the rest of Bulma
 */
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700|PT+Sans");
+.gradientbg, #shortcuts strong, .fancier {
+  background: linear-gradient(45deg, #203fb6, #be0575);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
 .fancy, .fancier {
   font-family: "Nunito"; }
 
@@ -26,32 +32,13 @@ $primary-invert: $pink-invert;
   background-image: linear-gradient(45deg, rgba(32, 63, 182, 0.7) 5%, rgba(190, 5, 117, 0.5)), url("./../images/pgh.jpg") !important;
   background-size: cover; }
 
-.gradientbg, #shortcuts strong, .fancier {
-  background: linear-gradient(45deg, #203fb6, #be0575);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; }
-
-body {
-  overflow-y: hidden; }
-
-body > .columns {
-  margin-bottom: 0 !important; }
-
-@media screen and (min-width: 769px) {
-  .scrollable {
-    height: 100%;
-    overflow-y: scroll; }
-  .scrollable > .hero-body > .container {
-    height: 80vh !important; } }
-
 .button, a {
   transition: all 0.25s ease-in-out; }
 
-#profile {
+.pgh .button:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); }
 
-.pgh .button:hover {
+#profile {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); }
 
 /*! bulma.io v0.7.5 | MIT License | github.com/jgthms/bulma */
@@ -6950,15 +6937,15 @@ label.panel-block {
     .hero.is-large .hero-body {
       padding-bottom: 18rem;
       padding-top: 18rem; } }
-  .hero.is-halfheight .hero-body, .hero.is-fullheight .hero-body, .hero.is-fullheight-with-navbar .hero-body {
+  .hero.is-halfheight .hero-body, .hero.is-fullheight .hero-body, .hero#main .hero-body, .hero.is-fullheight-with-navbar .hero-body {
     align-items: center;
     display: flex; }
-    .hero.is-halfheight .hero-body > .container, .hero.is-fullheight .hero-body > .container, .hero.is-fullheight-with-navbar .hero-body > .container {
+    .hero.is-halfheight .hero-body > .container, .hero.is-fullheight .hero-body > .container, .hero#main .hero-body > .container, .hero.is-fullheight-with-navbar .hero-body > .container {
       flex-grow: 1;
       flex-shrink: 1; }
   .hero.is-halfheight {
     min-height: 50vh; }
-  .hero.is-fullheight {
+  .hero.is-fullheight, .hero#main {
     min-height: 100vh; }
 
 .hero-video {
@@ -7037,6 +7024,23 @@ a:hover {
   line-height: 200%;
   text-align: right; }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .fancier {
     text-align: center; } }
+
+body {
+  overflow-y: hidden; }
+
+body > .columns {
+  margin-bottom: 0 !important; }
+
+@media screen and (min-width: 769px) {
+  .scrollable {
+    height: 100%;
+    overflow-y: scroll; }
+  .scrollable > .hero-body > .container {
+    height: 80vh !important; } }
+
+@media screen and (max-width: 769px) {
+  #main {
+    min-height: 75vh !important; } }

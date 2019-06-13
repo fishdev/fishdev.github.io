@@ -26,7 +26,7 @@ $primary-invert: $pink-invert;
 // 4. Import the rest of Bulma
 */
 
-// Nunito & San Francisco
+// Nunito and PT Sans
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700|PT+Sans");
 
 // Colors
@@ -36,17 +36,10 @@ $info: #61afef;
 $warning: #d19a66;
 $success: #89ca78;
 
+// Default font
 $family-sans-serif: "PT Sans";
 
-.fancy {
-  font-family: "Nunito";
-}
-
-.pgh {
-  background-image: linear-gradient(45deg, rgba(32, 63, 182, 0.7) 5%, rgba(190, 5, 117, 0.5)), url("./../images/pgh.jpg") !important;
-  background-size: cover;
-}
-
+// Gradient text
 .gradientbg {
   background: linear-gradient(45deg, rgb(32, 63, 182), rgb(190, 5, 117));
   -webkit-background-clip: text;
@@ -54,51 +47,48 @@ $family-sans-serif: "PT Sans";
   -webkit-text-fill-color: transparent;
 }
 
+// Section headers and such
 #shortcuts strong {
   @extend .gradientbg;
 }
 
-body {
-  overflow-y: hidden;
+.fancy {
+  font-family: "Nunito";
 }
 
-body > .columns {
-  margin-bottom: 0 !important; 
+// Left column background
+.pgh {
+  background-image: linear-gradient(45deg, rgba(32, 63, 182, 0.7) 5%, rgba(190, 5, 117, 0.5)), url("./../images/pgh.jpg") !important;
+  background-size: cover;
 }
 
-@media screen and (min-width: 769px) {
-  .scrollable {
-    height: 100%;
-    overflow-y: scroll;
-  }
-
-  .scrollable > .hero-body > .container {
-    height: 80vh !important;
-  }
-}
-
+// Button and link animations
 .button,a {
   transition: all 0.25s ease-in-out;
-}
-
-#profile {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .pgh .button:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
+// Shadow for profile picture
+#profile {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
 @import "../node_modules/bulma/bulma";
 
+// Visit Pittsburgh link hover color
 .pgh .hero-foot a:hover {
   color: $white !important;
 }
 
+// Light blue link hover color
 a:hover {
   color: $info;
 }
 
+// Spacing around descriptions and such
 .project .subtitle {
   margin-bottom: 0.75rem !important;
   @extend .has-text-grey;
@@ -116,6 +106,7 @@ a:hover {
   margin-top: -0.5rem;
 }
 
+// Combine fancy with gradient text
 .fancier {
   @extend .fancy;
   text-transform: uppercase;
@@ -126,9 +117,40 @@ a:hover {
   @extend .gradientbg;
 }
 
-
-@media screen and (max-width: 768px) {
+// Section headers centered on mobile
+@media screen and (max-width: $tablet) {
   .fancier {
     text-align: center;
+  }
+}
+
+// Scrolling
+body {
+  overflow-y: hidden;
+}
+
+body > .columns {
+  margin-bottom: 0 !important; 
+}
+
+@media screen and (min-width: $tablet) {
+  .scrollable {
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  .scrollable > .hero-body > .container {
+    height: 80vh !important;
+  }
+}
+
+// Responsive left column height
+#main {
+  @extend .is-fullheight;
+}
+
+@media screen and (max-width: $tablet) {
+  #main {
+    min-height: 75vh !important;
   }
 }
