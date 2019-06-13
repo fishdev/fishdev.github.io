@@ -7017,6 +7017,12 @@ a:hover {
 .extrasub {
   margin-top: -0.5rem; }
 
+.multihead {
+  margin-bottom: 0.25rem !important; }
+
+.multiheadsub {
+  margin-bottom: 0.75rem !important; }
+
 .fancier {
   text-transform: uppercase;
   font-weight: bold;

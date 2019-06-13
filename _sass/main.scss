@@ -106,6 +106,14 @@ a:hover {
   margin-top: -0.5rem;
 }
 
+.multihead {
+  margin-bottom: 0.25rem !important;
+}
+
+.multiheadsub {
+  margin-bottom: 0.75rem !important;
+}
+
 // Combine fancy with gradient text
 .fancier {
   @extend .fancy;
