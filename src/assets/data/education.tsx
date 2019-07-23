@@ -1,6 +1,8 @@
 import React from 'react';
 
-export const university = (
+import { Course } from '../../interfaces';
+
+export const university: React.ReactNode = (
   <p>
     Studying computer science at{' '}
     <a href="https://cs.cmu.edu">
@@ -10,7 +12,7 @@ export const university = (
   </p>
 );
 
-export const coursework = [
+export const coursework: Course[] = [
   {
     number: '15-210',
     name: 'Parallel and Sequential Data Structures and Algorithms',
@@ -38,7 +40,7 @@ export const coursework = [
   },
 ];
 
-export const gradeschool = (
+export const gradeschool: React.ReactNode = (
   <p>
     I attended <a href="https://discoverpps.org/allderdice">Taylor Allderdice High School</a>.
     Graduated in May 2018 with a GPA of 4.0.

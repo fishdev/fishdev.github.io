@@ -1,7 +1,4 @@
-@import 'node_modules/bulmaswatch/flatly/bulmaswatch';
-
-// Nunito and PT Sans
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|PT+Sans');
+@import 'node_modules/bulmaswatch/flatly/_variables';
 
 // Colors
 $primary: rgb(190, 5, 117);
@@ -10,8 +7,9 @@ $info: #61afef;
 $warning: #d19a66;
 $success: #89ca78;
 
-// Default font
-$family-sans-serif: 'PT Sans';
+@import 'bulma';
+@import '~bulma-tooltip';
+@import 'node_modules/bulmaswatch/flatly/_overrides';
 
 // Gradient text
 .gradientbg {
@@ -20,6 +18,9 @@ $family-sans-serif: 'PT Sans';
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+// Nunito
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 // Section headers and such
 #shortcuts strong {
@@ -45,8 +46,6 @@ $family-sans-serif: 'PT Sans';
 #profile {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
-
-@import '../node_modules/bulma/bulma';
 
 // Visit Pittsburgh link hover color
 .pgh .hero-foot a:hover {

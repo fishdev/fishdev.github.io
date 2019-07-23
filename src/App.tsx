@@ -3,12 +3,10 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 
-function App() {
+export const App: React.FunctionComponent = () => {
   return (
     <Router>
       <Route path="/" exact component={Home} />
     </Router>
   );
-}
-
-export default App;
+};

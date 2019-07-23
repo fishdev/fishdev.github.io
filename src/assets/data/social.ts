@@ -1,4 +1,6 @@
-export default [
+import { ColorButton } from '../../interfaces';
+
+export const social: ColorButton[] = [
   {
     color: 'white',
     url: 'https://github.com/fishdev',
@@ -16,5 +18,6 @@ export default [
     url: 'mailto:ashwins@andrew.cmu.edu',
     icon: 'fas fa-envelope',
     name: 'Email',
+    title: 'No spam, please!',
   },
 ];
