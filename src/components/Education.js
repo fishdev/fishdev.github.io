@@ -12,7 +12,7 @@ class Education extends React.Component {
           {coursework.map(course => (
             <li>
               {course.number}: {course.name}
-              {course.current ? '*' : ''}
+              {course.current && '*'}
             </li>
           ))}
         </ul>
