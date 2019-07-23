@@ -29,7 +29,7 @@ class Profile extends React.Component {
             </div>
           </div>
         </nav>
-        <a href="resume.pdf" class="has-text-white">
+        <a href={process.env.PUBLIC_URL + '/resume.pdf'} class="has-text-white">
           <span>Download my resume</span>
           <span class="icon">
             <i class="fas fa-file-download" />
