@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const SPOTIFY_CLIENT_CREDENTIALS =
-  'BQAI7b0t3fr_2xPWVD11kI_gzEvokNwqKGYjxkzLduqPsQfvTDKueMZw0v5J2nw15rfZ6ZWYZFp-knsITqXDsYJVZ5ttINqJ2LKINoFe9yTGBKpWRAnnWV555g7MMAbZxZlDkbeol4R3wac0aV1fNGFVk7iS3XjSsPUzeD352_Rt9g';
+  'BQClDg8jmlg-e6vIAseO7WLTOlRZBhjLkKI5EOBRX61ozYXS7Kr3776lv0AkaLHHtrE5bZUvsw7964YM8fQ';
 const ASHWIN_USERNAME = 'g5ojwey9iyo08skvmjnx3dih3';
 
 const ax = axios.create({

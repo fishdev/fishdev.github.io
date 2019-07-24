@@ -19,6 +19,7 @@ export const coursework: Course[] = [
     semester: 'Fall 2019',
     current: true,
     url: 'https://www.coursicle.com/cmu/courses/CS/15210/',
+    description: 'hello',
   },
   {
     number: '17-214',

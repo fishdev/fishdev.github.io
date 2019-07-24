@@ -38,7 +38,7 @@ export class CourseItem extends React.PureComponent<Props, State> {
           <span>
             <br />
             {descriptionShown && (
-              <div className="notification">
+              <div className="notification is-marginless">
                 <div className="content">{description}</div>
               </div>
             )}

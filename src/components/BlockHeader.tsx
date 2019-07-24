@@ -11,6 +11,10 @@ export class BlockHeader extends React.PureComponent<Block> {
 
   render() {
     const { name, extra, start, end, event, github, url, buttons } = this.props;
+    const extraButtons = [];
+    if (github) extraButtons.push({ url: github!, icon: 'fab fa-github', name: 'GitHub' });
+    if (url) extraButtons.push({ url: url!, icon: 'fas fa-arrow-right', name: 'Website' });
+    const allButtons = buttons!.concat(extraButtons);
     return (
       <div>
         <div className="columns is-mobile is-marginless">
@@ -30,9 +34,11 @@ export class BlockHeader extends React.PureComponent<Block> {
           </div>
           <div className="column is-narrow is-paddingless">
             <div className="columns is-mobile is-variable is-2">
-              {buttons && buttons.map(button => <IconButton key={button.name} {...button} />)}
-              {github && <IconButton name="GitHub" icon="fab fa-github" url={github} />}
-              {url && <IconButton name="Website" icon="fas fa-arrow-right" url={url} />}
+              {allButtons.map(button => (
+                <div className="column">
+                  <IconButton key={button.name} {...button} />
+                </div>
+              ))}
             </div>
           </div>
         </div>

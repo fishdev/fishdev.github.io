@@ -53,17 +53,15 @@ export const Resume: React.FC = () => (
     </section>
     <section className="section">
       <ResponsiveContainer size="large">
-        <div id="resume-body">
-          <Education />
-          {blocks.map(section => (
-            <Section key={section.name} name={section.name}>
-              {section.data.map(block => (
-                <HorizontalBlock key={block.id} {...block} />
-              ))}
-            </Section>
-          ))}
-          <Skills />
-        </div>
+        <Education />
+        {blocks.map(section => (
+          <Section key={section.name} name={section.name}>
+            {section.data.map(block => (
+              <HorizontalBlock key={block.id} {...block} />
+            ))}
+          </Section>
+        ))}
+        <Skills />
       </ResponsiveContainer>
     </section>
   </div>
