@@ -162,3 +162,8 @@ body > .columns {
 #resume-body .subtitle {
   text-transform: none;
 }
+
+// Square image scaling
+.scale-square {
+  object-fit: cover;
+}

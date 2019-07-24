@@ -1,4 +1,6 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 import { Education } from '../components/Education';
 import { Profile } from '../components/Profile';
@@ -7,64 +9,11 @@ import { Section } from '../components/Section';
 import { HorizontalBlock } from '../components/HorizontalBlock';
 import { Skills } from '../components/Skills';
 
-const Home: React.FunctionComponent = () => (
+export const Home: React.FC = () => (
   <div>
-    <div className="modal" id="shortcuts">
-      <div className="modal-background" />
-      <div className="modal-content">
-        <div className="box">
-          <p>Handy keyboard shortcuts you can use to navigate my website:</p>
-          <div className="columns">
-            <div className="column">
-              <div className="content">
-                <ul>
-                  <li>
-                    <strong>G</strong>itHub
-                  </li>
-                  <li>
-                    <strong>L</strong>inkedIn
-                  </li>
-                  <li>
-                    E<strong>m</strong>ail
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="column">
-              <div className="content">
-                <ul>
-                  <li>
-                    <strong>R</strong>esume
-                  </li>
-                  <li>
-                    <strong>E</strong>ducation
-                  </li>
-                  <li>
-                    <strong>P</strong>rojects
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="column">
-              <div className="content">
-                <ul>
-                  <li>
-                    E<strong>x</strong>perience
-                  </li>
-                  <li>
-                    <strong>A</strong>ctivities
-                  </li>
-                  <li>
-                    <strong>S</strong>kills
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button className="modal-close is-large" aria-label="close" />
-    </div>
+    <Helmet>
+      <title>Ashwin Srinivasan</title>
+    </Helmet>
     <div className="columns is-gapless">
       <div className="column is-6 fancy has-text-centered">
         <div id="main" className="hero is-black is-bold pgh">
@@ -87,13 +36,21 @@ const Home: React.FunctionComponent = () => (
                   </p>
                 </div>
                 <div className="column is-narrow">
-                  <p
+                  <Link
+                    to="/spotify"
+                    className="has-text-grey-light tooltip is-tooltip-top"
+                    data-tooltip="My Spotify playlists">
+                    <span className="icon">
+                      <i className="fas fa-music" />
+                    </span>
+                  </Link>
+                  <span
                     className="has-text-grey-light tooltip is-tooltip-top"
                     data-tooltip="Public domain image via Wikimedia Commons">
                     <span className="icon">
-                      <i className="fas fa-info-circle" />
+                      <i className="fas fa-info" />
                     </span>
-                  </p>
+                  </span>
                 </div>
               </div>
             </div>
@@ -121,5 +78,3 @@ const Home: React.FunctionComponent = () => (
     </div>
   </div>
 );
-
-export default Home;

@@ -3,10 +3,21 @@ import classNames from 'classnames';
 
 import { ColorButton } from '../interfaces';
 
-export const SocialButton: React.FC<ColorButton> = ({ color, url, icon, name, title }) => (
+interface Props {
+  size?: string;
+}
+
+export const SocialButton: React.FC<ColorButton & Props> = ({
+  color,
+  url,
+  icon,
+  name,
+  title,
+  size,
+}) => (
   <p className="control">
     <a
-      className={classNames('button is-rounded is-outlined', 'is-' + color, {
+      className={classNames('button is-rounded is-outlined', 'is-' + color, size, {
         'tooltip is-tooltip-bottom': title,
       })}
       href={url}

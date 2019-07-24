@@ -1,20 +1,14 @@
 import React from 'react';
 
 import { social } from '../assets/data/social';
+import { Portrait } from './Portrait';
 import { SocialButton } from './SocialButton';
 
 export const Profile: React.FunctionComponent = () => (
   <div>
     <nav className="level">
       <div className="level-item has-text-centered">
-        <figure className="image is-128x128">
-          <img
-            className="is-rounded"
-            src={process.env.PUBLIC_URL + '/ashwin.jpg'}
-            id="profile"
-            alt="Me"
-          />
-        </figure>
+        <Portrait />
       </div>
     </nav>
     <h3 className="title">Ashwin Srinivasan</h3>

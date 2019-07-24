@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import { Block } from '../interfaces';
 import { IconButton } from './IconButton';
@@ -12,7 +11,6 @@ export class BlockHeader extends React.PureComponent<Block> {
 
   render() {
     const { name, extra, start, end, event, github, url, buttons } = this.props;
-    console.log(this.props);
     return (
       <div>
         <div className="columns is-mobile is-marginless">
@@ -42,5 +40,3 @@ export class BlockHeader extends React.PureComponent<Block> {
     );
   }
 }
-
-export default BlockHeader;
