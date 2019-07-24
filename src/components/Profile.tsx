@@ -2,31 +2,38 @@ import React from 'react';
 
 import { social } from '../assets/data/social';
 import { Portrait } from './Portrait';
+import { LevelGroup } from './LevelGroup';
 import { SocialButton } from './SocialButton';
 
-export const Profile: React.FunctionComponent = () => (
-  <div>
-    <nav className="level">
-      <div className="level-item has-text-centered">
-        <Portrait />
-      </div>
-    </nav>
-    <h3 className="title">Ashwin Srinivasan</h3>
-    <h5 className="subtitle">Carnegie Mellon University</h5>
-    <nav className="level">
-      <div className="level-item has-text-centered">
-        <div className="field is-grouped">
+interface Props {
+  showPortrait: boolean;
+}
+
+export class Profile extends React.PureComponent<Props> {
+  static defaultProps: Props = {
+    showPortrait: true,
+  };
+
+  render() {
+    const { showPortrait, children } = this.props;
+    return (
+      <div>
+        {showPortrait && (
+          <nav className="level">
+            <div className="level-item has-text-centered">
+              <Portrait />
+            </div>
+          </nav>
+        )}
+        <h3 className="title">Ashwin Srinivasan</h3>
+        <h5 className="subtitle">Carnegie Mellon University</h5>
+        <LevelGroup>
           {social.map(item => (
             <SocialButton key={item.name} {...item} />
           ))}
-        </div>
+        </LevelGroup>
+        {children}
       </div>
-    </nav>
-    <a href={process.env.PUBLIC_URL + '/resume.pdf'} className="has-text-white">
-      <span>Download my resume</span>
-      <span className="icon">
-        <i className="fas fa-file-download" />
-      </span>
-    </a>
-  </div>
-);
+    );
+  }
+}

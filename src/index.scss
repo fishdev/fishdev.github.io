@@ -32,8 +32,7 @@ $success: #89ca78;
   font-family: 'Nunito';
 }
 
-.fancy .title,
-.fancy .subtitle {
+.fancy .title {
   font-weight: bold;
 }
 
@@ -93,6 +92,11 @@ a.tag:hover {
   padding-bottom: 0.5rem;
 }
 
+.block:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
 .extrasub {
   margin-bottom: 0.25rem !important;
 }
@@ -115,37 +119,6 @@ a.tag:hover {
   }
 }
 
-// Scrolling
-body {
-  overflow-y: hidden;
-}
-
-body > .columns {
-  margin-bottom: 0 !important;
-}
-
-@media screen and (min-width: $tablet) {
-  .scrollable {
-    height: 100%;
-    overflow-y: scroll;
-  }
-
-  .scrollable > .hero-body > .container {
-    height: 80vh !important;
-  }
-}
-
-// Responsive left column height
-#main {
-  @extend .is-fullheight;
-}
-
-@media screen and (max-width: $tablet) {
-  #main {
-    min-height: 70vh !important;
-  }
-}
-
 // Responsive resume container size
 @media screen and (max-width: $tablet) {
   #resume-body {
@@ -156,6 +129,12 @@ body > .columns {
 // Expand/collapse course list
 .course-list li:last-child {
   list-style-type: none;
+}
+
+// No margin after course work details
+.course-list .notification {
+  padding: 0.5rem;
+  margin-bottom: 0;
 }
 
 // Don't capitalize resume subtitles

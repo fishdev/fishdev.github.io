@@ -3,14 +3,25 @@ import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { Portrait } from '../components/Portrait';
+import { LevelGroup } from './LevelGroup';
 import { SocialButton } from '../components/SocialButton';
 import { social } from '../assets/data';
+
+interface Props {
+  showName: boolean;
+  showButtons: boolean;
+}
 
 interface State {
   isActive: boolean;
 }
 
-export class Navbar extends React.PureComponent<{}, State> {
+export class Navbar extends React.PureComponent<Props, State> {
+  static defaultProps: Props = {
+    showName: true,
+    showButtons: true,
+  };
+
   state: Readonly<State> = {
     isActive: false,
   };
@@ -18,6 +29,7 @@ export class Navbar extends React.PureComponent<{}, State> {
   toggleActive = () => this.setState(({ isActive }) => ({ isActive: !isActive }));
 
   render() {
+    const { showName, showButtons } = this.props;
     const { isActive } = this.state;
     return (
       <nav className="navbar">
@@ -28,9 +40,11 @@ export class Navbar extends React.PureComponent<{}, State> {
                 <div className="column is-narrow">
                   <Portrait size="24x24" />
                 </div>
-                <div className="column">
-                  <strong>Ashwin Srinivasan</strong>
-                </div>
+                {showName && (
+                  <div className="column">
+                    <b>Ashwin Srinivasan</b>
+                  </div>
+                )}
               </div>
             </span>
             <a
@@ -46,16 +60,21 @@ export class Navbar extends React.PureComponent<{}, State> {
               <NavLink to="/" exact activeClassName="is-active" className="navbar-item">
                 Home
               </NavLink>
+              <NavLink to="/resume" exact activeClassName="is-active" className="navbar-item">
+                Resume
+              </NavLink>
               <NavLink to="/spotify" activeClassName="is-active" className="navbar-item">
                 Spotify
               </NavLink>
-              <div className="navbar-item">
-                <div className="field is-grouped">
-                  {social.map(item => (
-                    <SocialButton key={item.name} size="is-small" {...item} />
-                  ))}
+              {showButtons && (
+                <div className="navbar-item">
+                  <LevelGroup>
+                    {social.map(item => (
+                      <SocialButton key={item.name} size="is-small" {...item} />
+                    ))}
+                  </LevelGroup>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
