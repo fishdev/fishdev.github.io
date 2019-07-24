@@ -10,7 +10,7 @@ export const activities: Block[] = [
     buttons: [
       {
         url: 'https://buildyourfuture.withgoogle.com/events/tech-challenge/',
-        icon: 'fas fa-gamead',
+        icon: 'fas fa-gamepad',
         name: 'Competition information',
       },
     ],

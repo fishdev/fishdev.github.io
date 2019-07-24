@@ -1,5 +1,6 @@
 import { projects } from './projects';
 import { experience } from './experience';
+import { activities } from './activities';
 
 export const blocks = [
   {
@@ -9,5 +10,9 @@ export const blocks = [
   {
     name: 'Experience',
     data: experience,
+  },
+  {
+    name: 'Activities',
+    data: activities,
   },
 ];

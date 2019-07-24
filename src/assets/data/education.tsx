@@ -19,24 +19,29 @@ export const coursework: Course[] = [
     current: true,
   },
   {
+    number: '17-214',
+    name: 'Principles of Software Construction',
+    current: true,
+  },
+  {
     number: '15-251',
     name: 'Great Ideas in Theoretical Computer Science',
-    current: false,
   },
   {
     number: '15-150',
     name: 'Functional Programming',
-    current: false,
   },
   {
     number: '15-151',
     name: 'Math Foundations of Computer Science',
-    current: false,
   },
   {
     number: '15-122',
     name: 'Principles of Imperative Computation',
-    current: false,
+  },
+  {
+    number: '21-241',
+    name: 'Matrices and Linear Transformations',
   },
 ];
 

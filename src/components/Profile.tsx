@@ -23,7 +23,7 @@ export const Profile: React.FunctionComponent = () => (
       <div className="level-item has-text-centered">
         <div className="field is-grouped">
           {social.map(item => (
-            <SocialButton {...item} />
+            <SocialButton key={item.name} {...item} />
           ))}
         </div>
       </div>

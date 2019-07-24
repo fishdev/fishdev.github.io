@@ -9,6 +9,7 @@ $success: #89ca78;
 
 @import 'bulma';
 @import '~bulma-tooltip';
+@import 'node_modules/bulma-badge/dist/css/bulma-badge';
 @import 'node_modules/bulmaswatch/flatly/_overrides';
 
 // Gradient text
@@ -29,6 +30,11 @@ $success: #89ca78;
 
 .fancy {
   font-family: 'Nunito';
+}
+
+.fancy .title,
+.fancy .subtitle {
+  font-weight: bold;
 }
 
 // Left column background
@@ -57,30 +63,38 @@ a:hover {
   color: $info;
 }
 
-// Spacing around descriptions and such
-.project .subtitle {
-  margin-bottom: 0.75rem !important;
+a.tag:hover {
+  text-decoration: none;
+}
+
+// Spacing around descriptions and sections
+#education {
+  padding-bottom: 0.5rem;
+}
+
+#skills {
+  padding-bottom: 1.5rem;
+}
+
+.block .title {
+  margin-bottom: 0.5rem;
+}
+
+.block .subtitle {
+  margin-top: 0.5rem !important;
   @extend .has-text-grey;
 }
 
-.content {
-  margin-bottom: 0.75rem !important;
+.block .block-corner a {
+  margin-left: 0.75rem;
 }
 
-.project {
-  margin-bottom: 1.5rem;
+.block {
+  padding-bottom: 0.5rem;
 }
 
 .extrasub {
-  margin-top: -0.5rem;
-}
-
-.multihead {
   margin-bottom: 0.25rem !important;
-}
-
-.multiheadsub {
-  margin-bottom: 0.75rem !important;
 }
 
 // Combine fancy with gradient text
@@ -132,9 +146,19 @@ body > .columns {
   }
 }
 
-// Tighter container on mobile
+// Responsive resume container size
 @media screen and (max-width: $tablet) {
   #resume-body {
     padding: 1rem 1rem 1.5rem 1rem;
   }
+}
+
+// Expand/collapse course list
+.course-list li:last-child {
+  list-style-type: none;
+}
+
+// Don't capitalize resume subtitles
+#resume-body .subtitle {
+  text-transform: none;
 }

@@ -45,6 +45,7 @@ export const projects: Block[] = [
       name: 'HackCMU',
       url: 'https://hackcmu.org',
     },
+    github: 'https://github.com/fishdev/Flow',
     description: (
       <p>
         Created Node.js + Redis backend to limit and predict water usage with machine learning
@@ -75,6 +76,7 @@ export const projects: Block[] = [
     name: 'AwesomeBot',
     start: 'October 2015',
     end: 'January 2017',
+    github: 'https://github.com/fishdev/AwesomeBot',
     description: (
       <p>
         Built multi-purpose Node.js bot for managing and entertaining over 10,000 online
