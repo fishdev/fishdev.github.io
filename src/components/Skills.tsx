@@ -5,7 +5,7 @@ import { Section } from './Section';
 import { SkillGroup } from './SkillGroup';
 
 export const Skills: React.FC = () => (
-  <Section name="Skills">
+  <Section name="skills">
     <h4>Languages</h4>
     <SkillGroup skills={languages} />
     <h4>Technologies</h4>

@@ -5,7 +5,7 @@ import { Section } from './Section';
 import { CourseList } from './CourseList';
 
 export const Education: React.FC = () => (
-  <Section name="Education">
+  <Section name="education">
     {university}
     <CourseList />
     {gradeschool}
