@@ -9,8 +9,8 @@ export const App: React.FunctionComponent = () => {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/resume" exact component={Resume} />
-        <Route path="/resume/:id" component={Details} />
         <Route path="/spotify" exact component={Spotify} />
+        <Route path="/:id" component={Details} />
       </Switch>
     </Router>
   );
