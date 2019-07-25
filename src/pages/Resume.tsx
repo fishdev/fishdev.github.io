@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { Link as ScrollLink } from 'react-scroll';
 
 import { Navbar } from '../components/Navbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
@@ -36,15 +37,15 @@ export const Resume: React.FC = () => (
           <div className="container">
             <ul>
               <li>
-                <a>Education</a>
+                <ScrollLink to="education" smooth={true}>Education</ScrollLink>
               </li>
               {blocks.map(section => (
                 <li key={section.name}>
-                  <a>{section.name}</a>
+                  <ScrollLink to={section.name.toLowerCase()} smooth={true}>{section.name}</ScrollLink>
                 </li>
               ))}
               <li>
-                <a>Skills</a>
+                <ScrollLink to="skills" smooth={true}>Skills</ScrollLink>
               </li>
             </ul>
           </div>
