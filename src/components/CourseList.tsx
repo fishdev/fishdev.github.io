@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { coursework } from '../assets/data';
-import { CourseItem } from './CourseItem';
+import { CourseBullet } from './CourseBullet';
 
 interface State {
   expanded: boolean;
@@ -19,7 +19,7 @@ export class CourseList extends React.PureComponent<{}, State> {
     return (
       <ul className="course-list">
         {coursework.slice(0, expanded ? coursework.length : 5).map(course => (
-          <CourseItem key={course.number} {...course} showDetails={expanded} />
+          <CourseBullet key={course.number} {...course} showDetails={expanded} />
         ))}
         <li>
           <button onClick={this.toggleExpanded} className="button is-small">

@@ -10,7 +10,7 @@ interface State {
   descriptionShown: boolean;
 }
 
-export class CourseItem extends React.PureComponent<Props, State> {
+export class CourseBullet extends React.PureComponent<Props, State> {
   state: Readonly<State> = {
     descriptionShown: false,
   };
