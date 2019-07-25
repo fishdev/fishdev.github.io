@@ -12,12 +12,26 @@ $success: #89ca78;
 @import 'node_modules/bulma-badge/dist/css/bulma-badge';
 @import 'node_modules/bulmaswatch/flatly/_overrides';
 
+// Gradient
+.gradient {
+  background: linear-gradient(45deg, $link, $primary);
+}
+
 // Gradient text
 .gradientbg {
-  background: linear-gradient(45deg, rgb(32, 63, 182), rgb(190, 5, 117));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  @extend .gradient;
+}
+
+// Gradient block {
+.colorbar {
+  height: 5px;
+  width: 258px;
+  margin: auto;
+  margin-top: 3px;
+  @extend .gradient;
 }
 
 // Nunito

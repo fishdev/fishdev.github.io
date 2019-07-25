@@ -34,8 +34,15 @@ export class Spotify extends React.PureComponent<{}, State> {
           </div>
           <div className="hero-body">
             <ResponsiveContainer size="medium">
-              {!isLoading &&
-                playlists.map(playlist => <Playlist key={playlist.id} {...playlist} />)}
+              {!isLoading && (
+                <div className="has-text-centered">
+                  <h4 className="title fancy">My Playlists</h4>
+                  <h5 className="subtitle fancy has-text-grey-light">For your enjoyment</h5>
+                  {playlists.map(playlist => (
+                    <Playlist key={playlist.id} {...playlist} />
+                  ))}
+                </div>
+              )}
               {isLoading && 'Loading...'}
             </ResponsiveContainer>
           </div>

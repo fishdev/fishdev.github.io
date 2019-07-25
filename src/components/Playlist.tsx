@@ -23,11 +23,11 @@ export const Playlist: React.FC<SpotifyApi.PlaylistObjectSimplified> = ({
       </div>
       <div className="media-right">
         <a
-          className="button is-success is-rounded tooltip"
+          className="button is-success is-rounded is-outlined tooltip"
           href={external_urls.spotify}
           data-tooltip="View on Spotify">
           <span className="icon is-small">
-            <i className="fas fa-external-link-alt" />
+            <i className="fab fa-spotify" />
           </span>
         </a>
       </div>

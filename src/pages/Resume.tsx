@@ -21,7 +21,7 @@ export const Resume: React.FC = () => (
       </div>
       <div className="hero-body fancy">
         <ResponsiveContainer centered={true} size="medium">
-          <Profile showPortrait={false}>
+          <Profile showPortrait={false} showColorbar={true}>
             <a href={process.env.PUBLIC_URL + '/resume.pdf'} className="has-text-white">
               <span>Download resume as PDF</span>
               <span className="icon">
