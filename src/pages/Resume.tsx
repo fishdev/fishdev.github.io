@@ -37,15 +37,21 @@ export const Resume: React.FC = () => (
           <div className="container">
             <ul>
               <li>
-                <ScrollLink to="education" smooth={true}>Education</ScrollLink>
+                <ScrollLink to="education" smooth={true}>
+                  Education
+                </ScrollLink>
               </li>
               {blocks.map(section => (
                 <li key={section.name}>
-                  <ScrollLink to={section.name.toLowerCase()} smooth={true}>{section.name}</ScrollLink>
+                  <ScrollLink to={section.name} smooth={true}>
+                    {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
+                  </ScrollLink>
                 </li>
               ))}
               <li>
-                <ScrollLink to="skills" smooth={true}>Skills</ScrollLink>
+                <ScrollLink to="skills" smooth={true}>
+                  Skills
+                </ScrollLink>
               </li>
             </ul>
           </div>

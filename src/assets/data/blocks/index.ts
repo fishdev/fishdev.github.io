@@ -1,18 +1,19 @@
 import { projects } from './projects';
 import { experience } from './experience';
 import { activities } from './activities';
+import { Block, EntityType } from '../../../interfaces';
 
-export const blocks = [
+export const blocks: Array<{ name: EntityType; data: Block[] }> = [
   {
-    name: 'Projects',
+    name: 'projects',
     data: projects,
   },
   {
-    name: 'Experience',
+    name: 'experience',
     data: experience,
   },
   {
-    name: 'Activities',
+    name: 'activities',
     data: activities,
   },
 ];
