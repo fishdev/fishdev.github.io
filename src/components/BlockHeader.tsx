@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Block } from '../interfaces';
 import { IconButton } from './IconButton';
@@ -10,7 +11,7 @@ export class BlockHeader extends React.PureComponent<Block> {
   };
 
   render() {
-    const { name, extra, start, end, event, github, url, buttons } = this.props;
+    const { id, name, extra, start, end, event, github, url, buttons } = this.props;
     const extraButtons = [];
     if (github) extraButtons.push({ url: github!, icon: 'fab fa-github', name: 'GitHub' });
     if (url) extraButtons.push({ url: url!, icon: 'fas fa-arrow-right', name: 'Website' });
@@ -19,7 +20,9 @@ export class BlockHeader extends React.PureComponent<Block> {
       <div>
         <div className="columns is-mobile is-marginless">
           <div className="column is-paddingless">
-            <h5 className="title is-5">{name}</h5>
+            <h5 className="title is-5">
+              <Link to={'/' + id}>{name}</Link>
+            </h5>
             {extra && <h6 className="subtitle is-6 extrasub">{extra}</h6>}
             <h6 className="subtitle is-6">
               {start}

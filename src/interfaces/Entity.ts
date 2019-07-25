@@ -7,5 +7,4 @@ export type EntityType = 'coursework' | 'projects' | 'experience' | 'activities'
 export interface Entity {
   type: EntityType;
   data: Course | Block | Skill;
-  clickable: boolean;
 }

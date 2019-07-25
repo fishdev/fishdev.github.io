@@ -93,6 +93,14 @@ a.tag:hover {
   margin-bottom: 0.5rem;
 }
 
+.block .title a {
+  color: inherit;
+}
+
+.block .title a:hover {
+  color: $link;
+}
+
 .block .subtitle {
   margin-top: 0.5rem !important;
   @extend .has-text-grey;
@@ -108,11 +116,6 @@ a.tag:hover {
 
 .box:not(:last-child) {
   margin-bottom: 1.25rem;
-}
-
-.block:hover {
-  cursor: pointer;
-  color: inherit !important;
 }
 
 .block-container {

@@ -4,7 +4,6 @@ import { Entity, EntityType, Block, Course, Skill } from '../interfaces';
 export const toEntity = (type: EntityType) => (data: Course | Block | Skill): Entity => ({
   type,
   data,
-  clickable: type !== 'coursework' && type !== 'skills',
 });
 
 export const entities: Entity[] = blocks
