@@ -6,7 +6,7 @@ cache:
     - node_modules
 script:
   - npm install
-  - npm run build
+  - CI=false npm run build
 deploy:
   provider: pages
   skip_cleanup: true

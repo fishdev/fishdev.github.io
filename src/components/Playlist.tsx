@@ -12,7 +12,7 @@ export const Playlist: React.FC<SpotifyApi.PlaylistObjectSimplified> = ({
       {images[0] && (
         <figure className="media-left">
           <p className="image is-square is-64x64">
-            <img className="scale-square" src={images[0].url} />
+            <img className="scale-square" src={images[0].url} alt="Playlist cover" />
           </p>
         </figure>
       )}

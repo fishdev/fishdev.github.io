@@ -22,9 +22,9 @@ export class CourseList extends React.PureComponent<{}, State> {
           <CourseItem key={course.number} {...course} showDetails={expanded} />
         ))}
         <li>
-          <a onClick={this.toggleExpanded} className="button is-small">
+          <button onClick={this.toggleExpanded} className="button is-small">
             Show {expanded ? 'less' : 'more'}
-          </a>
+          </button>
         </li>
       </ul>
     );
