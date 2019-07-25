@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import { Profile } from '../components/Profile';
 import { LevelGroup } from '../components/LevelGroup';
+import { more } from '../assets/data';
+import { DropdownList } from '../components/DropdownList';
 
 export const Home: React.FC = () => (
   <div>
@@ -21,11 +23,13 @@ export const Home: React.FC = () => (
                   <i className="fas fa-arrow-right" />
                 </span>
               </Link>
-              <Link to="/spotify" className="button is-black">
-                <span className="icon">
-                  <i className="fab fa-spotify" />
-                </span>
-              </Link>
+              <DropdownList items={more}>
+                <button className="button is-black" aria-haspopup="true">
+                  <span className="icon">
+                    <i className="fas fa-ellipsis-h" />
+                  </span>
+                </button>
+              </DropdownList>
             </LevelGroup>
           </Profile>
         </div>
