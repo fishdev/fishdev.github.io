@@ -167,5 +167,6 @@ iframe {
 
 // Search results container
 .search-results {
-  min-height: 50vh;
+  height: 50vh;
+  overflow-y: scroll;
 }
