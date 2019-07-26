@@ -24,11 +24,11 @@ export class CourseBullet extends React.PureComponent<Props, State> {
     this.setState(({ descriptionShown }) => ({ descriptionShown: !descriptionShown }));
 
   render() {
-    const { number, name, current, semester, url, description, showDetails } = this.props;
+    const { id, name, current, semester, url, description, showDetails } = this.props;
     const { descriptionShown } = this.state;
     return (
       <li>
-        {number}: {name}
+        {id}: {name}
         {!showDetails && current && (
           <span className="tooltip" data-tooltip="Currently taking this course">
             <strong className="has-text-primary">*</strong>

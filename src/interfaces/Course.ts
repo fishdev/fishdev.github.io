@@ -1,5 +1,5 @@
 export interface Course {
-  number: string | number;
+  id: string | number;
   name: string;
   semester: string;
   current?: boolean;

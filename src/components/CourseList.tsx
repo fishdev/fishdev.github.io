@@ -19,7 +19,7 @@ export class CourseList extends React.PureComponent<{}, State> {
     return (
       <ul className="course-list">
         {coursework.slice(0, expanded ? coursework.length : 5).map(course => (
-          <CourseBullet key={course.number} {...course} showDetails={expanded} />
+          <CourseBullet key={course.id} {...course} showDetails={expanded} />
         ))}
         <li>
           <button onClick={this.toggleExpanded} className="button is-small">
