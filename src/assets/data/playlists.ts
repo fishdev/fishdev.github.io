@@ -25,8 +25,6 @@ export const playlists: Playlist[] = [
     id: '32s41MoT3UXiA8AG1QbjTA',
     description: 'Inject the electricity into my veins, please.',
   },
-  {
-    id: '7fIRZBjnZbXDWs8RdbqA7k',
-    description: 'Purple palaces, golden gateways, silver seashores.',
-  },
 ];
+
+export const spotifyId = 'g5ojwey9iyo08skvmjnx3dih3';

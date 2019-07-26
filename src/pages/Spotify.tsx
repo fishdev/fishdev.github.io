@@ -10,8 +10,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import { Navbar } from '../components/Navbar';
-import { ResponsiveContainer } from '../components/ResponsiveContainer';
-import { playlists } from '../assets/data';
+import { playlists, spotifyId } from '../assets/data';
 import { PlaylistItem } from '../components/PlaylistItem';
 
 interface State {
@@ -34,11 +33,19 @@ export const Spotify: React.FC = () => (
           <h5 className="subtitle fancy has-text-grey-light">For your enjoyment</h5>
           <div className="columns is-multiline is-centered">
             {playlists.map(playlist => (
-              <div className="column is-6-tablet is-4-desktop is-3-widescreen">
+              <div className="column is-6-tablet is-3-widescreen">
                 <PlaylistItem key={playlist.id} {...playlist} />
               </div>
             ))}
           </div>
+          <a
+            className="button is-medium is-success is-outlined"
+            href={'https://open.spotify.com/user/' + spotifyId}>
+            <span className="icon">
+              <i className="fab fa-spotify" />
+            </span>
+            <span>My Spotify profile</span>
+          </a>
         </div>
       </div>
     </section>
