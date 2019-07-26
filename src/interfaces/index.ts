@@ -5,3 +5,4 @@ export * from './Course';
 export * from './Block';
 export * from './Skill';
 export * from './Entity';
+export * from './Playlist';

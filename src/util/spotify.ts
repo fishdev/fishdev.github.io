@@ -1,7 +1,12 @@
+/**
+ * Thanks to Spotify's requirement that all requests to its API be signed, I
+ * can't actually use this code for anything. Sad. I'll leave it here anyway.
+ */
+
 import axios from 'axios';
 
 const SPOTIFY_CLIENT_CREDENTIALS =
-  'BQC7VwEGf5P3TAk7RsM401B5HrYG66xpmfeyLXrHiOlmBYqdZOCFF4R4zPCa0Y_FNRLpK6e937-OYGe4Wx8';
+  'BQCIjZcQpa3OxwLSH4rTASXFMzqaUcMM4bBUJiOuLXUGc79bjLM3UTHoaAmAYbTXTCgL-FeXcJXkee25QDM';
 const ASHWIN_USERNAME = 'g5ojwey9iyo08skvmjnx3dih3';
 
 const ax = axios.create({

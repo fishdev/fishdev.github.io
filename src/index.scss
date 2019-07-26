@@ -159,7 +159,7 @@ a.tag:hover {
   text-transform: none;
 }
 
-// Square image scaling
-.scale-square {
-  object-fit: cover;
+// Don't limit iframe height
+iframe {
+  height: 380px;
 }
