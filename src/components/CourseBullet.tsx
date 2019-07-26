@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Course } from '../interfaces';
+import { CourseSemester } from './CourseSemester';
 
 interface Props extends Course {
   showDetails?: boolean;
@@ -60,15 +61,7 @@ export class CourseBullet extends React.PureComponent<Props, State> {
                 </div>
               )}
               <div className="column is-narrow">
-                <small className={current ? 'has-text-primary' : 'has-text-grey'}>
-                  {current ? (
-                    'Currently taking this course'
-                  ) : (
-                    <span>
-                      Taken in <b>{semester}</b> semester
-                    </span>
-                  )}
-                </small>
+                <CourseSemester {...this.props} />
               </div>
             </div>
           </span>

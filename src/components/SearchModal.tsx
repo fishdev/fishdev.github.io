@@ -1,0 +1,88 @@
+import React from 'react';
+import { HotKeys } from 'react-hotkeys';
+
+import { filterEntities } from '../util/entities';
+import { Entity, Block, Course, Skill } from '../interfaces';
+import { BlockBox } from './BlockBox';
+import { courseToBlock, skillToBlock } from '../util/to-block';
+
+interface Props {
+  hide: () => void;
+}
+
+interface State {
+  search: string;
+}
+
+export class SearchModal extends React.PureComponent<Props> {
+  private searchInput: HTMLInputElement | null = null;
+
+  state: Readonly<State> = {
+    search: '',
+  };
+
+  componentDidMount() {
+    this.searchInput!.focus();
+  }
+
+  handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+    this.setState({ search: event.target.value });
+
+  searchResults = (): React.ReactNode => {
+    const results = filterEntities(this.state.search).map((entity: Entity) => {
+      switch (entity.type) {
+        case 'coursework':
+          return <BlockBox {...courseToBlock(entity.data as Course)} />;
+        case 'projects':
+        case 'experience':
+        case 'activities':
+          return <BlockBox {...entity.data as Block} />;
+        case 'skills':
+          return <BlockBox {...skillToBlock(entity.data as Skill)} />;
+      }
+    });
+    return results.length > 0 ? (
+      results
+    ) : (
+      <div className="has-text-centered">
+        <span className="tag is-medium is-danger">
+          <span>Sorry, no results</span>
+          <span className="icon">
+            <i className="far fa-frown" />
+          </span>
+        </span>
+      </div>
+    );
+  };
+
+  render() {
+    const { hide } = this.props;
+    const { search } = this.state;
+    return (
+      <HotKeys handlers={{ HIDE_SEARCH: hide }}>
+        <div className="modal is-active">
+          <div className="modal-background" />
+          <div className="modal-content">
+            <div className="field">
+              <div className="control has-icons-left">
+                <input
+                  ref={input => (this.searchInput = input)}
+                  className="input is-large"
+                  type="text"
+                  value={search}
+                  onChange={this.handleSearchChange}
+                  placeholder="Type to search..."
+                />
+                <span className="icon is-small is-left">
+                  <i className="fas fa-search" />
+                </span>
+              </div>
+            </div>
+            <div className="search-results">{search.length >= 2 && this.searchResults()}</div>
+          </div>
+          <button className="modal-close is-large" onClick={hide} />
+        </div>
+      </HotKeys>
+    );
+  }
+}

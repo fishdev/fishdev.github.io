@@ -106,6 +106,11 @@ a.tag:hover {
   @extend .has-text-grey;
 }
 
+.block .subtitle:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+.block .subtitle:last-child,
 .block .content:not(:last-child) {
   margin-bottom: 1rem;
 }
@@ -120,10 +125,6 @@ a.tag:hover {
 
 .block-container {
   padding-bottom: 1rem;
-}
-
-.extrasub {
-  margin-bottom: 0.25rem !important;
 }
 
 // Combine fancy with gradient text
@@ -162,4 +163,9 @@ a.tag:hover {
 // Don't limit iframe height
 iframe {
   height: 380px;
+}
+
+// Search results container
+.search-results {
+  min-height: 50vh;
 }

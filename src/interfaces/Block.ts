@@ -5,7 +5,7 @@ export interface Block {
   name: string;
   tagline?: string;
   extra?: React.ReactNode;
-  start: string;
+  start?: string;
   end?: string;
   event?: {
     name: string;
@@ -14,7 +14,7 @@ export interface Block {
   github?: string;
   url?: string;
   buttons?: Button[];
-  description: React.ReactNode;
+  description?: React.ReactNode;
   awards?: React.ReactNode[];
   hasMore?: boolean;
   info?: React.ReactNode;
