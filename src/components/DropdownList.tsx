@@ -20,7 +20,7 @@ export class DropdownList extends React.PureComponent<Props, State> {
   };
 
   static defaultProps: Partial<Props> = {
-    hoverable: true,
+    hoverable: false,
     alignment: 'is-right',
   };
 
