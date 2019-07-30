@@ -5,6 +5,7 @@ import { Entity, Block } from '../interfaces';
 import { Range } from './Range';
 import { GitButton } from './GitButton';
 import { SocialButton } from './SocialButton';
+import { ShareButton } from './ShareButton';
 
 export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
   const { range, event, github, url, buttons } = data as Block;
@@ -31,12 +32,10 @@ export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
           </div>
         )}
         <div className="column is-narrow">
-          <span className="tag is-medium is-dark">
-            {type.charAt(0).toUpperCase() + type.slice(1)}
-          </span>
+          <span className="tag is-medium">{type.charAt(0).toUpperCase() + type.slice(1)}</span>
         </div>
       </div>
-      <div className="columns is-vcentered details-bar">
+      <div className="columns is-vcentered details-bar is-variable is-2">
         {github && (
           <div className="column is-narrow">
             <GitButton url={github} />
@@ -60,6 +59,9 @@ export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
               <SocialButton {...button} rounded={false} color="primary" />
             </div>
           ))}
+        <div className="column is-narrow">
+          <ShareButton />
+        </div>
       </div>
     </div>
   );
