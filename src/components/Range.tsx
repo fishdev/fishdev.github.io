@@ -1,25 +1,15 @@
 import React from 'react';
-import moment, { Moment } from 'moment';
+import classNames from 'classnames';
 
-import { MonthRange, Month } from '../interfaces';
+import { MonthRange } from '../interfaces';
+import { computeRange } from '../util';
 
-const MONTH_FORMAT = 'MMMM YYYY';
-
-export const Range: React.FC<MonthRange> = ({ start, end }) => {
+export const Range: React.FC<MonthRange> = range => {
+  const { start, end, duration } = computeRange(range);
   return (
-    <span>
-      {moment()
-        .month(start.month)
-        .year(start.year)
-        .format(MONTH_FORMAT)}
-      {end &&
-        ' — ' +
-          (end === 'Present'
-            ? end
-            : moment()
-                .month((end as Month).month)
-                .year((end as Month).year)
-                .format(MONTH_FORMAT))}
+    <span className={classNames({ tooltip: duration })} data-tooltip={duration}>
+      {start}
+      {end && ' — ' + end}
     </span>
   );
 };

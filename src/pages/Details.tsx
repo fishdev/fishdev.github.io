@@ -34,26 +34,22 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
         </section>
         <section className="section">
           <ResponsiveContainer size="large">
-            <nav className="level">
-              <div className="level-left">
-                <div className="level-item">
-                  <Link to="/resume" className="button is-small">
-                    <span className="icon">
-                      <i className="fas fa-arrow-left" />
-                    </span>
-                    &nbsp;
-                    <span>back to resume</span>
-                  </Link>
-                </div>
+            <div className="columns is-vcentered">
+              <div className="column">
+                <Link to="/resume" className="button is-small">
+                  <span className="icon">
+                    <i className="fas fa-arrow-left" />
+                  </span>
+                  &nbsp;
+                  <span>back to resume</span>
+                </Link>
               </div>
               {range && (
-                <div className="level-right">
-                  <div className="level-item">
-                    <Range {...range} />
-                  </div>
+                <div className="column is-narrow">
+                  <Range {...range} />
                 </div>
               )}
-            </nav>
+            </div>
           </ResponsiveContainer>
         </section>
       </div>
