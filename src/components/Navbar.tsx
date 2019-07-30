@@ -2,9 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
-import { Portrait } from '../components/Portrait';
+import { Portrait } from './Portrait';
 import { LevelGroup } from './LevelGroup';
-import { SocialButton } from '../components/SocialButton';
+import { SocialButton } from './SocialButton';
 import { social } from '../assets/data';
 
 interface Props {
