@@ -1,12 +1,12 @@
 import { Button } from './Button';
+import { MonthRange } from './MonthRange';
 
 export interface Block {
   id: string;
   name: string;
   tagline?: string;
   extra?: React.ReactNode;
-  start?: string;
-  end?: string;
+  range?: MonthRange;
   event?: {
     name: string;
     url: string;

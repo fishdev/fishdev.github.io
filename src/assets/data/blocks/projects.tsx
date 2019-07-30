@@ -7,7 +7,12 @@ export const projects: Block[] = [
     id: 'assure',
     name: 'Assure',
     tagline: 'Connecting needs',
-    start: 'February 2019',
+    range: {
+      start: {
+        month: 2,
+        year: 2019,
+      },
+    },
     event: {
       name: 'TartanHacks',
       url: 'https://tartanhacks.com',
@@ -25,8 +30,13 @@ export const projects: Block[] = [
     id: 'cmulab',
     name: 'CMULab',
     tagline: 'Secure check-in and scoring',
-    start: 'January 2019',
-    end: 'Present',
+    range: {
+      start: {
+        month: 1,
+        year: 2019,
+      },
+      end: 'Present',
+    },
     github: 'https://github.com/QuantumStack/CMULab',
     url: 'https://cmulab.quantumstack.xyz',
     description: (
@@ -40,7 +50,12 @@ export const projects: Block[] = [
     id: 'flow',
     name: 'Flow',
     tagline: 'Real-time water consumption tracker',
-    start: 'September 2018',
+    range: {
+      start: {
+        month: 9,
+        year: 2018,
+      },
+    },
     event: {
       name: 'HackCMU',
       url: 'https://hackcmu.org',
@@ -57,8 +72,16 @@ export const projects: Block[] = [
   {
     id: 'pgss',
     name: 'Machine Learning Analysis of Judicial Records',
-    start: 'July',
-    end: 'August 2017',
+    range: {
+      start: {
+        month: 7,
+        year: 2017,
+      },
+      end: {
+        month: 8,
+        year: 2017,
+      },
+    },
     event: {
       name: "PA Governor's School",
       url: 'http://sciences.pa-gov-schools.org',
@@ -74,8 +97,16 @@ export const projects: Block[] = [
   {
     id: 'awesomebot',
     name: 'AwesomeBot',
-    start: 'October 2015',
-    end: 'January 2017',
+    range: {
+      start: {
+        month: 10,
+        year: 2015,
+      },
+      end: {
+        month: 1,
+        year: 2017,
+      },
+    },
     github: 'https://github.com/fishdev/AwesomeBot',
     description: (
       <p>
@@ -87,8 +118,16 @@ export const projects: Block[] = [
   {
     id: 'imgcap',
     name: 'ImgCap: Automated image captioning',
-    start: 'September 2015',
-    end: 'March 2016',
+    range: {
+      start: {
+        month: 9,
+        year: 2015,
+      },
+      end: {
+        month: 3,
+        year: 2016,
+      },
+    },
     description: (
       <p>
         A computer vision system to generate image captions on-the-fly to aid blind users. Written

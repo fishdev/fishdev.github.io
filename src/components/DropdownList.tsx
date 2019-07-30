@@ -40,7 +40,7 @@ export class DropdownList extends React.PureComponent<Props, State> {
         <div className="dropdown-menu" role="menu">
           <div className="dropdown-content">
             {items.map(dropdown => (
-              <DropdownItem {...dropdown} />
+              <DropdownItem key={dropdown.name} {...dropdown} />
             ))}
           </div>
         </div>
