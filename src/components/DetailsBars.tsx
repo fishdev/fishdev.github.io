@@ -2,40 +2,53 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Entity, Block } from '../interfaces';
-import { Range } from './Range';
+import { RangeEventBar } from './RangeEventBar';
+import { EntityTypeTag } from './EntityTypeTag';
 import { GitButton } from './GitButton';
 import { SocialButton } from './SocialButton';
 import { ShareButton } from './ShareButton';
+import { DropdownList } from './DropdownList';
+import { makeButtonsList } from '../util';
 
 export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
   const { range, event, github, url, buttons } = data as Block;
   return (
     <div>
-      <div className="columns is-vcentered details-bar">
+      <div className="columns is-mobile is-vcentered details-bar">
         <div className="column">
           <Link to="/resume" className="button is-small">
             <span className="icon">
               <i className="fas fa-arrow-left" />
             </span>
             &nbsp;
-            <span>back to resume</span>
+            <span>
+              Back<span className="is-hidden-mobile"> to resume</span>
+            </span>
           </Link>
         </div>
-        {range && (
-          <div className="column is-narrow">
-            <Range {...range} />
-          </div>
-        )}
-        {event && (
-          <div className="column is-narrow">
-            <a href={event.url}>{event.name}</a>
-          </div>
-        )}
+        <div className="column is-narrow is-hidden-mobile">
+          <RangeEventBar range={range} event={event} />
+        </div>
         <div className="column is-narrow">
-          <span className="tag is-medium">{type.charAt(0).toUpperCase() + type.slice(1)}</span>
+          <EntityTypeTag type={type} />
+        </div>
+        <div className="column is-narrow is-hidden-tablet">
+          <DropdownList
+            items={makeButtonsList(buttons, github, url)}
+            staticItems={
+              <div className="dropdown-item">
+                <RangeEventBar range={range} event={event} />
+              </div>
+            }>
+            <button className="button is-link is-small">
+              <span className="icon">
+                <i className="fas fa-info" />
+              </span>
+            </button>
+          </DropdownList>
         </div>
       </div>
-      <div className="columns is-vcentered details-bar is-variable is-2">
+      <div className="columns is-vcentered details-bar is-variable is-2 is-hidden-mobile">
         {github && (
           <div className="column is-narrow">
             <GitButton url={github} />

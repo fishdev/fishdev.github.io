@@ -3,6 +3,7 @@ import { ReposGetResponse } from '@octokit/rest';
 import classNames from 'classnames';
 
 import { getRepo, extractRepoData } from '../util';
+import { SocialButton } from './SocialButton';
 
 interface Props {
   url: string;
@@ -38,11 +39,13 @@ export class GitButton extends React.PureComponent<Props, State> {
     return (
       <div className="columns is-vcentered is-variable is-2">
         <div className="column is-narrow">
-          <a href={'https://github.com/' + url} className="button is-black is-outlined">
-            <span className="icon is-small">
-              <i className="fab fa-github" />
-            </span>
-          </a>
+          <SocialButton
+            url={'https://github.com/' + url}
+            color="black"
+            name="GitHub"
+            rounded={false}
+            icon="fab fa-github"
+          />
         </div>
         {items.map(item => (
           <div

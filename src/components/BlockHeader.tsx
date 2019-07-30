@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Block, Button } from '../interfaces';
+import { Block } from '../interfaces';
+import { makeButtonsList } from '../util';
 import { IconButton } from './IconButton';
 import { Range } from './Range';
 import { LevelGroup } from './LevelGroup';
@@ -13,15 +14,7 @@ export class BlockHeader extends React.PureComponent<Block> {
 
   render() {
     const { id, name, tagline, extra, range, event, github, url, buttons } = this.props;
-    const extraButtons: Button[] = [];
-    if (github)
-      extraButtons.push({
-        url: 'https://github.com/' + github,
-        icon: 'fab fa-github',
-        name: 'GitHub',
-      });
-    if (url) extraButtons.push({ url, icon: 'fas fa-arrow-right', name: 'Website' });
-    const allButtons = buttons!.concat(extraButtons);
+    const allButtons = makeButtonsList(buttons, github, url);
     return (
       <div>
         <div className="columns is-mobile is-variable is-1">

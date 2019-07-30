@@ -21,7 +21,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
     const { name, tagline, extra } = entity.data as Block;
     return (
       <div>
-        <section className="hero is-dark">
+        <section className="hero is-black">
           <div className="hero-head">
             <Navbar />
           </div>

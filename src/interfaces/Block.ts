@@ -1,5 +1,6 @@
 import { Button } from './Button';
 import { MonthRange } from './MonthRange';
+import { BlockEvent } from './BlockEvent';
 
 /**
  * A flexible type for projects, activities, etc.
@@ -12,10 +13,7 @@ export interface Block {
   tagline?: string;
   extra?: React.ReactNode;
   range?: MonthRange;
-  event?: {
-    name: string;
-    url: string;
-  };
+  event?: BlockEvent;
   github?: string;
   url?: string;
   buttons?: Button[];
