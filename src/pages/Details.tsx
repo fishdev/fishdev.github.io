@@ -1,5 +1,5 @@
 import React from 'react';
-import { RouteComponentProps, withRouter, Link } from 'react-router-dom';
+import { RouteComponentProps, withRouter, Link, Redirect } from 'react-router-dom';
 
 import { getEntity } from '../util/entities';
 import { Navbar } from '../components/Navbar';
@@ -14,15 +14,15 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
   render() {
     const { match } = this.props;
     const block = getEntity(match.params.id);
-    return (
+    return block ? (
       <div>
         <section className="hero is-light">
           <div className="hero-head">
             <Navbar showButtons={false} />
           </div>
           <div className="hero-body ">
-            <ResponsiveContainer centered={true} size="medium">
-              <h3 className="title">under construction</h3>
+            <ResponsiveContainer centered={true} size="large">
+              <h3 className="title">{block.data.name}: </h3>
               <Link to="/resume" className="button">
                 <span className="icon">
                   <i className="fas fa-arrow-left" />
@@ -34,6 +34,6 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
           </div>
         </section>
       </div>
-    );
+    ) : <Redirect to="/resume" />;
   }
 }
