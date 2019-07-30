@@ -9,13 +9,17 @@ import { LevelGroup } from './LevelGroup';
 export class BlockHeader extends React.PureComponent<Block> {
   static defaultProps: Partial<Block> = {
     buttons: [],
-    hasMore: false,
   };
 
   render() {
     const { id, name, tagline, extra, range, event, github, url, buttons } = this.props;
     const extraButtons: Button[] = [];
-    if (github) extraButtons.push({ url: github, icon: 'fab fa-github', name: 'GitHub' });
+    if (github)
+      extraButtons.push({
+        url: 'https://github.com/' + github,
+        icon: 'fab fa-github',
+        name: 'GitHub',
+      });
     if (url) extraButtons.push({ url, icon: 'fas fa-arrow-right', name: 'Website' });
     const allButtons = buttons!.concat(extraButtons);
     return (

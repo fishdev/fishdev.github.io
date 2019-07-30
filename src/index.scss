@@ -80,6 +80,15 @@ a.tag:hover {
   text-decoration: none;
 }
 
+// Ignore link colors for block titles
+.block .title {
+  margin-bottom: 0.5rem;
+}
+
+.block .title a {
+  color: inherit;
+}
+
 // Spacing around descriptions and sections
 #education {
   padding-bottom: 0.75rem;
@@ -87,14 +96,6 @@ a.tag:hover {
 
 #skills {
   padding-bottom: 1.5rem;
-}
-
-.block .title {
-  margin-bottom: 0.5rem;
-}
-
-.block .title a {
-  color: inherit;
 }
 
 .block .title a:hover {
@@ -125,6 +126,10 @@ a.tag:hover {
 
 .block-container {
   padding-bottom: 1rem;
+}
+
+.details-bar:not(:last-child) {
+  margin-bottom: 0;
 }
 
 // Combine fancy with gradient text

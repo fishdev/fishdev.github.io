@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@octokit/rest": "^16.28.7",
     "@types/axios": "^0.14.0",
     "@types/classnames": "^2.2.9",
     "@types/jest": "24.0.15",

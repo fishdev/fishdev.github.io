@@ -23,9 +23,11 @@ export const computeRange = ({ start, end }: MonthRange): PrettyRange => {
   const startDate = moment()
     .month(start.month)
     .year(start.year);
+
   const pretty: PrettyRange = {
     start: startDate.format(LONG_FORMAT),
   };
+
   if (end) {
     if (end === 'Present') {
       pretty.end = end;
@@ -41,5 +43,6 @@ export const computeRange = ({ start, end }: MonthRange): PrettyRange => {
       pretty.duration = computeDuration(startDate, endDate);
     }
   }
+
   return pretty;
 };
