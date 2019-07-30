@@ -173,6 +173,7 @@ iframe {
 // Search results container
 .search-container {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .search-box {
