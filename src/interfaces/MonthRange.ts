@@ -1,6 +1,6 @@
 import { Month } from './Month';
 
 export interface MonthRange {
-  start?: Month;
+  start: Month;
   end?: Month | 'Present';
 }
