@@ -18,7 +18,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
     const entity = getEntity(match.params.id);
     if (!entity || !['projects', 'experience', 'activities'].includes(entity.type))
       return <Redirect to="/resume" />;
-    const { name, tagline, extra } = entity.data as Block;
+    const { name, tagline, extra, description, info } = entity.data as Block;
     return (
       <div>
         <section className="hero is-black">
@@ -36,6 +36,10 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
         <section className="section">
           <ResponsiveContainer size="large">
             <DetailsBars {...entity} />
+            <div className="content">
+              {info}
+              {!info && description}
+            </div>
           </ResponsiveContainer>
         </section>
       </div>
