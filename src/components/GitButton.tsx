@@ -23,7 +23,7 @@ export class GitButton extends React.PureComponent<Props, State> {
   async componentDidMount() {
     try {
       const response = await getRepo(this.props.url);
-      if (response.status === 200) this.setState({ data: response.data });
+      if (response.status === 200) this.setState({ isLoading: false, data: response.data });
     } catch (err) {
       this.setState({ isLoading: false, hasError: true });
     }
