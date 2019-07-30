@@ -18,12 +18,12 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
     const entity = getEntity(match.params.id);
     if (!entity || !['projects', 'experience', 'activities'].includes(entity.type))
       return <Redirect to="/resume" />;
-    const { name, tagline, extra, range, event, url, github, buttons } = entity.data as Block;
+    const { name, tagline, extra } = entity.data as Block;
     return (
       <div>
-        <section className="hero is-light">
+        <section className="hero is-dark">
           <div className="hero-head">
-            <Navbar showButtons={false} />
+            <Navbar />
           </div>
           <div className="hero-body">
             <ResponsiveContainer centered={true} size="medium">
