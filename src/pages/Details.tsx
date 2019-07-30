@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteComponentProps, withRouter, Link, Redirect } from 'react-router-dom';
 
-import { getEntity } from '../util/entities';
+import { getEntity } from '../util';
 import { Block } from '../interfaces';
 import { Navbar } from '../components/Navbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';

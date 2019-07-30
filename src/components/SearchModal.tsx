@@ -1,10 +1,9 @@
 import React from 'react';
 import { HotKeys } from 'react-hotkeys';
 
-import { filterEntities } from '../util/entities';
+import { filterEntities, courseToBlock, skillToBlock } from '../util';
 import { Entity, Block, Course, Skill } from '../interfaces';
 import { BlockBox } from './BlockBox';
-import { courseToBlock, skillToBlock } from '../util/to-block';
 
 interface Props {
   hide: () => void;
