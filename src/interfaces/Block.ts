@@ -19,6 +19,7 @@ export interface Block {
   url?: string;
   buttons?: Button[];
   description?: React.ReactNode;
+  moreButtons?: Button[];
   awards?: React.ReactNode[];
   info?: React.ReactNode;
   images?: BlockImage[];

@@ -11,7 +11,9 @@ import { DropdownList } from './DropdownList';
 import { makeButtonsList } from '../util';
 
 export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
-  const { range, event, github, url, buttons } = data as Block;
+  const { range, event, github, url, buttons, moreButtons } = data as Block;
+  let allButtons = buttons;
+  if (moreButtons) allButtons = buttons!.concat(moreButtons);
   return (
     <div>
       <div className="columns is-mobile is-vcentered details-bar">
@@ -34,7 +36,7 @@ export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
         </div>
         <div className="column is-narrow is-hidden-tablet">
           <DropdownList
-            items={makeButtonsList(buttons, github, url)}
+            items={makeButtonsList(allButtons, github, url)}
             staticItems={[
               <div key="drop-range-event" className="dropdown-item">
                 <RangeEventBar range={range} event={event} />
@@ -67,8 +69,8 @@ export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
             />
           </div>
         )}
-        {buttons &&
-          buttons.map(button => (
+        {allButtons &&
+          allButtons.map(button => (
             <div key={button.name} className="column is-narrow">
               <SocialButton {...button} rounded={false} color="primary" />
             </div>
