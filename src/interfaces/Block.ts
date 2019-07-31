@@ -1,6 +1,7 @@
 import { Button } from './Button';
 import { MonthRange } from './MonthRange';
 import { BlockEvent } from './BlockEvent';
+import { BlockImage } from './BlockImage';
 
 /**
  * A flexible type for projects, activities, etc.
@@ -20,4 +21,5 @@ export interface Block {
   description?: React.ReactNode;
   awards?: React.ReactNode[];
   info?: React.ReactNode;
+  images?: BlockImage[];
 }

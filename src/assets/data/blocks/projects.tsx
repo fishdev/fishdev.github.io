@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Block } from '../../../interfaces';
+import pgh from '../../pgh.jpg';
 
 export const projects: Block[] = [
   {
@@ -17,7 +18,6 @@ export const projects: Block[] = [
       name: 'TartanHacks',
       url: 'https://tartanhacks.com',
     },
-    github: 'fishdev/Assure',
     url: 'https://devpost.com/software/assure-hep75l',
     description: (
       <p>

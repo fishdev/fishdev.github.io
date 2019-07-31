@@ -1,5 +1,7 @@
 import React from 'react';
-import { RouteComponentProps, withRouter, Link, Redirect } from 'react-router-dom';
+import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
+import ImageGallery from 'react-image-gallery';
+import 'react-image-gallery/styles/css/image-gallery.css';
 
 import { getEntity } from '../util';
 import { Block } from '../interfaces';
@@ -18,7 +20,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
     const entity = getEntity(match.params.id);
     if (!entity || !['projects', 'experience', 'activities'].includes(entity.type))
       return <Redirect to="/resume" />;
-    const { name, tagline, extra, description, info } = entity.data as Block;
+    const { name, tagline, extra, description, info, images } = entity.data as Block;
     return (
       <div>
         <section className="hero is-black is-small">
@@ -38,6 +40,15 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
             <DetailsBars {...entity} />
             <br className="is-hidden-mobile" />
             <div className="content">{info || description}</div>
+            {images && (
+              <ImageGallery
+                items={images}
+                infinite={false}
+                thumbnailPosition="top"
+                showPlayButton={false}
+                disableArrowKeys={true}
+              />
+            )}
           </ResponsiveContainer>
         </section>
       </div>
