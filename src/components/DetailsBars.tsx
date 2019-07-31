@@ -68,7 +68,7 @@ export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
         )}
         {buttons &&
           buttons.map(button => (
-            <div className="column is-narrow">
+            <div key={button.name} className="column is-narrow">
               <SocialButton {...button} rounded={false} color="primary" />
             </div>
           ))}

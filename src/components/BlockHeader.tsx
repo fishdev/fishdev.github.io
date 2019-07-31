@@ -41,7 +41,7 @@ export class BlockHeader extends React.PureComponent<Block> {
           <div className="column is-narrow">
             <LevelGroup>
               {allButtons.map(button => (
-                <IconButton {...button} />
+                <IconButton key={button.name} {...button} />
               ))}
             </LevelGroup>
           </div>
