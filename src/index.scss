@@ -179,3 +179,8 @@ iframe {
 .search-box {
   margin-top: 20vh;
 }
+
+// Navbars aren't rounded
+.navbar {
+  border-radius: 0;
+}
