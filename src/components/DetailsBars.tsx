@@ -35,11 +35,12 @@ export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
         <div className="column is-narrow is-hidden-tablet">
           <DropdownList
             items={makeButtonsList(buttons, github, url)}
-            staticItems={
-              <div className="dropdown-item">
+            staticItems={[
+              <div key="drop-range-event" className="dropdown-item">
                 <RangeEventBar range={range} event={event} />
-              </div>
-            }>
+              </div>,
+              <ShareButton key="drop-share" type="dropdown" />,
+            ]}>
             <button className="button is-link is-small">
               <span className="icon">
                 <i className="fas fa-info" />

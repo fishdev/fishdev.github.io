@@ -5,7 +5,7 @@ import { Dropdown } from '../interfaces';
 import { DropdownItem } from './DropdownItem';
 
 interface Props {
-  staticItems?: React.ReactNode;
+  staticItems?: React.ReactNode[];
   items?: Dropdown[];
   hoverable?: boolean;
   alignment?: 'is-left' | 'is-right';
