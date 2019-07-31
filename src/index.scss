@@ -143,10 +143,16 @@ a.tag:hover {
   @extend .gradientbg;
 }
 
-// Section headers centered on mobile
+// Mobile-specific stuff
 @media screen and (max-width: $tablet) {
+  // Center section headers
   .fancier {
     text-align: center;
+  }
+
+  // Reduce section top padding
+  .section {
+    padding-top: 1.5rem;
   }
 }
 

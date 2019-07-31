@@ -23,10 +23,13 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
     const { name, tagline, extra, description, info, images } = entity.data as Block;
     return (
       <div>
-        <section className="hero is-black is-small">
+        <section className="hero is-black">
           <div className="hero-head">
             <Navbar />
           </div>
+        </section>
+
+        <section className="hero is-light">
           <div className="hero-body">
             <ResponsiveContainer centered={true} size="medium">
               <h3 className="title">{name}</h3>
