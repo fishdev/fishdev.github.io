@@ -67,19 +67,19 @@ export class Resume extends React.PureComponent<{}, State> {
                   <div className="container">
                     <ul>
                       <li>
-                        <ScrollLink to="education" smooth={true}>
+                        <ScrollLink to="education" smooth={true} offset={-10}>
                           Education
                         </ScrollLink>
                       </li>
                       {blocks.map(section => (
                         <li key={section.name}>
-                          <ScrollLink to={section.name} smooth={true}>
+                          <ScrollLink to={section.name} smooth={true} offset={-10}>
                             {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
                           </ScrollLink>
                         </li>
                       ))}
                       <li>
-                        <ScrollLink to="skills" smooth={true}>
+                        <ScrollLink to="skills" smooth={true} offset={-10}>
                           Skills
                         </ScrollLink>
                       </li>

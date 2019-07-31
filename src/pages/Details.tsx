@@ -29,7 +29,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
           </div>
         </section>
 
-        <section className="hero is-light">
+        <section className="hero is-link gradient">
           <div className="hero-body">
             <ResponsiveContainer centered={true} size="medium">
               <h3 className="title">{name}</h3>

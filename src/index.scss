@@ -50,9 +50,9 @@ $success: #89ca78;
   font-weight: bold;
 }
 
-// Left column background
+// Fancy backgrounds
 .pgh {
-  background-image: linear-gradient(45deg, rgba(32, 63, 182, 0.7) 5%, rgba(190, 5, 117, 0.5)),
+  background-image: linear-gradient(45deg, rgba(32, 63, 182, 0.7), rgba(190, 5, 117, 0.5)),
     url('./assets/pgh.jpg') !important;
   background-size: cover;
 }
@@ -124,32 +124,16 @@ a.tag:hover {
   margin-bottom: 1.25rem;
 }
 
-.block-container {
-  padding-bottom: 1rem;
+.block-container > section.section {
+  padding: 1.5rem 0.5rem 2.75rem 0.5rem;
 }
 
 .details-bar:not(:last-child) {
   margin-bottom: 0;
 }
 
-// Combine fancy with gradient text
-.fancier {
-  @extend .fancy;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: $size-small;
-  line-height: 200%;
-  text-align: right;
-  @extend .gradientbg;
-}
-
 // Mobile-specific stuff
 @media screen and (max-width: $tablet) {
-  // Center section headers
-  .fancier {
-    text-align: center;
-  }
-
   // Reduce section top padding
   .section {
     padding-top: 1.5rem;
@@ -189,4 +173,9 @@ iframe {
 // Navbars aren't rounded
 .navbar {
   border-radius: 0;
+}
+
+// Do round section headers
+.rounded {
+  border-radius: 8px;
 }

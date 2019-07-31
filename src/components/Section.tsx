@@ -6,10 +6,14 @@ interface Props {
 }
 
 export const Section: React.FC<Props> = ({ name, children }) => (
-  <ScrollElement className="block-container columns" name={name}>
-    <div className="column is-2 fancier">{name.charAt(0).toUpperCase() + name.slice(1)}</div>
-    <div className="column">
-      <div className="content">{children}</div>
+  <ScrollElement className="block-container" name={name}>
+    <div className="hero is-small is-link gradient rounded">
+      <div className="hero-body has-text-centered">
+        <h4 className="title is-4 fancy">{name.charAt(0).toUpperCase() + name.slice(1)}</h4>
+      </div>
     </div>
+    <section className="section">
+      <div className="content">{children}</div>
+    </section>
   </ScrollElement>
 );
