@@ -21,7 +21,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
     const { name, tagline, extra, description, info } = entity.data as Block;
     return (
       <div>
-        <section className="hero is-black">
+        <section className="hero is-black is-small">
           <div className="hero-head">
             <Navbar />
           </div>
@@ -36,10 +36,8 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
         <section className="section">
           <ResponsiveContainer size="large">
             <DetailsBars {...entity} />
-            <div className="content">
-              {info}
-              {!info && description}
-            </div>
+            <br className="is-hidden-mobile" />
+            <div className="content">{info || description}</div>
           </ResponsiveContainer>
         </section>
       </div>
