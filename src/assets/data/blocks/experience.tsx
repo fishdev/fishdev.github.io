@@ -7,8 +7,13 @@ export const experience: Block[] = [
     id: 'broadcom',
     name: 'Software Engineering Intern',
     extra: 'Broadcom Corporation',
-    start: 'May 2019',
-    end: 'Present',
+    range: {
+      start: {
+        month: 5,
+        year: 2019,
+      },
+      end: 'Present',
+    },
     description: (
       <p>
         Contributing to Angular frontend and scalable server testing harness for{' '}
@@ -27,8 +32,16 @@ export const experience: Block[] = [
         <a href="http://cups.cs.cmu.edu">CUPS Lab</a>, Carnegie Mellon University
       </span>
     ),
-    start: 'June 2014',
-    end: 'June 2015',
+    range: {
+      start: {
+        month: 6,
+        year: 2014,
+      },
+      end: {
+        month: 6,
+        year: 2015,
+      },
+    },
     description: (
       <p>
         Designed and developed{' '}

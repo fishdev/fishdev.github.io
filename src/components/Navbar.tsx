@@ -10,6 +10,7 @@ import { social } from '../assets/data';
 interface Props {
   showName: boolean;
   showButtons: boolean;
+  color?: string;
 }
 
 interface State {
@@ -29,10 +30,10 @@ export class Navbar extends React.PureComponent<Props, State> {
   toggleActive = () => this.setState(({ isActive }) => ({ isActive: !isActive }));
 
   render() {
-    const { showName, showButtons } = this.props;
+    const { showName, showButtons, color } = this.props;
     const { isActive } = this.state;
     return (
-      <nav className="navbar">
+      <nav className={classNames('navbar', { ['is-' + color]: color })}>
         <div className="container">
           <div className="navbar-brand">
             <span className="navbar-item fancy">

@@ -1,9 +1,13 @@
 import React from 'react';
-import { RouteComponentProps, withRouter, Link } from 'react-router-dom';
+import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
+import ImageGallery from 'react-image-gallery';
+import 'react-image-gallery/styles/css/image-gallery.css';
 
-import { getEntity } from '../util/entities';
+import { getEntity } from '../util';
+import { Block } from '../interfaces';
 import { Navbar } from '../components/Navbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
+import { DetailsBars } from '../components/DetailsBars';
 
 interface UrlProps {
   id: string;
@@ -13,25 +17,39 @@ interface UrlProps {
 export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> {
   render() {
     const { match } = this.props;
-    const block = getEntity(match.params.id);
+    const entity = getEntity(match.params.id);
+    if (!entity || !['projects', 'experience', 'activities'].includes(entity.type))
+      return <Redirect to="/resume" />;
+    const { name, tagline, extra, description, info, images } = entity.data as Block;
     return (
       <div>
-        <section className="hero is-light">
+        <section className="hero is-black is-small">
           <div className="hero-head">
-            <Navbar showButtons={false} />
+            <Navbar />
           </div>
-          <div className="hero-body ">
+          <div className="hero-body">
             <ResponsiveContainer centered={true} size="medium">
-              <h3 className="title">under construction</h3>
-              <Link to="/resume" className="button">
-                <span className="icon">
-                  <i className="fas fa-arrow-left" />
-                </span>
-                &nbsp;
-                <span>back to resume</span>
-              </Link>
+              <h3 className="title">{name}</h3>
+              {tagline && <h5 className="subtitle">{tagline}</h5>}
+              {extra && <h5 className="subtitle">{extra}</h5>}
             </ResponsiveContainer>
           </div>
+        </section>
+        <section className="section">
+          <ResponsiveContainer size="large">
+            <DetailsBars {...entity} />
+            <br className="is-hidden-mobile" />
+            <div className="content">{info || description}</div>
+            {images && (
+              <ImageGallery
+                items={images}
+                infinite={false}
+                thumbnailPosition="top"
+                showPlayButton={false}
+                disableArrowKeys={true}
+              />
+            )}
+          </ResponsiveContainer>
         </section>
       </div>
     );

@@ -6,7 +6,12 @@ export const activities: Block[] = [
   {
     id: 'tca',
     name: 'Google Tech Challenge',
-    start: 'April 2019',
+    range: {
+      start: {
+        month: 4,
+        year: 2019,
+      },
+    },
     buttons: [
       {
         url: 'https://buildyourfuture.withgoogle.com/events/tech-challenge/',
@@ -26,8 +31,13 @@ export const activities: Block[] = [
     id: 'endtherain',
     name: 'Plaid Umbrella Project',
     extra: 'Technical & Software Lead',
-    start: 'September 2018',
-    end: 'Present',
+    range: {
+      start: {
+        month: 9,
+        year: 2018,
+      },
+      end: 'Present',
+    },
     buttons: [
       {
         url: 'https://endtherain.com',
@@ -46,8 +56,13 @@ export const activities: Block[] = [
     id: 'tartan',
     name: 'The Tartan',
     extra: 'Science & Technology Editor',
-    start: 'September 2018',
-    end: 'Present',
+    range: {
+      start: {
+        month: 9,
+        year: 2018,
+      },
+      end: 'Present',
+    },
     buttons: [
       {
         url: 'https://thetartan.org',
@@ -60,8 +75,13 @@ export const activities: Block[] = [
   {
     id: 'scotty',
     name: 'ScottyLabs',
-    start: 'September 2018',
-    end: 'Present',
+    range: {
+      start: {
+        month: 9,
+        year: 2018,
+      },
+      end: 'Present',
+    },
     buttons: [
       {
         url: 'https://scottylabs.org/wdw',

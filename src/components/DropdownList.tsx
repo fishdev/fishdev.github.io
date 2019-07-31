@@ -5,7 +5,8 @@ import { Dropdown } from '../interfaces';
 import { DropdownItem } from './DropdownItem';
 
 interface Props {
-  items: Dropdown[];
+  staticItems?: React.ReactNode[];
+  items?: Dropdown[];
   hoverable?: boolean;
   alignment?: 'is-left' | 'is-right';
 }
@@ -27,7 +28,7 @@ export class DropdownList extends React.PureComponent<Props, State> {
   toggleActive = () => this.setState(({ isActive }) => ({ isActive: !isActive }));
 
   render() {
-    const { hoverable, alignment, items, children } = this.props;
+    const { hoverable, alignment, staticItems, items, children } = this.props;
     const { isActive } = this.state;
     return (
       <div
@@ -39,9 +40,9 @@ export class DropdownList extends React.PureComponent<Props, State> {
         </div>
         <div className="dropdown-menu" role="menu">
           <div className="dropdown-content">
-            {items.map(dropdown => (
-              <DropdownItem {...dropdown} />
-            ))}
+            {staticItems}
+            {staticItems && <hr className="dropdown-divider" />}
+            {items && items.map(dropdown => <DropdownItem key={dropdown.name} {...dropdown} />)}
           </div>
         </div>
       </div>

@@ -5,18 +5,35 @@ import { ColorButton } from '../interfaces';
 
 interface Props extends ColorButton {
   size?: 'is-small' | 'is-large';
+  outlined?: boolean;
+  rounded?: boolean;
 }
 
-export const SocialButton: React.FC<Props> = ({ color, url, icon, name, title, size }) => (
-  <a
-    className={classNames('button is-rounded is-outlined', 'is-' + color, size, {
-      'tooltip is-tooltip-bottom': title,
-    })}
-    href={url}
-    data-tooltip={title}>
-    <span className="icon is-small">
-      <i className={icon} />
-    </span>
-    <span>{name}</span>
-  </a>
-);
+export class SocialButton extends React.PureComponent<Props> {
+  static defaultProps: Partial<Props> = {
+    rounded: true,
+    outlined: true,
+  };
+
+  render() {
+    const { color, url, icon, name, title, size, outlined, rounded } = this.props;
+    return (
+      <a
+        className={classNames(
+          'button',
+          { 'is-outlined': outlined },
+          { 'is-rounded': rounded },
+          'is-' + color,
+          size,
+          { 'tooltip is-tooltip-bottom': title }
+        )}
+        href={url}
+        data-tooltip={title}>
+        <span className="icon is-small">
+          <i className={icon} />
+        </span>
+        <span>{name}</span>
+      </a>
+    );
+  }
+}
