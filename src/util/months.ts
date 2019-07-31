@@ -21,7 +21,7 @@ interface PrettyRange {
 
 export const computeRange = ({ start, end }: MonthRange): PrettyRange => {
   const startDate = moment()
-    .month(start.month)
+    .month(start.month - 1)
     .year(start.year);
 
   const pretty: PrettyRange = {
@@ -34,7 +34,7 @@ export const computeRange = ({ start, end }: MonthRange): PrettyRange => {
       pretty.duration = computeDuration(startDate, moment());
     } else {
       const endDate = moment()
-        .month(end.month)
+        .month(end.month - 1)
         .year(end.year);
       if (startDate.year() === endDate.year()) {
         pretty.start = startDate.format(SHORT_FORMAT);
