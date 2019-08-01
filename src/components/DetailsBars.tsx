@@ -4,16 +4,31 @@ import { Link } from 'react-router-dom';
 import { Entity, Block } from '../interfaces';
 import { RangeEventBar } from './RangeEventBar';
 import { EntityTypeTag } from './EntityTypeTag';
+import { DropdownList } from './DropdownList';
+import { Range } from './Range';
+import { ShareButton } from './ShareButton';
 import { GitButton } from './GitButton';
 import { Button } from './Button';
-import { ShareButton } from './ShareButton';
-import { DropdownList } from './DropdownList';
 import { makeButtonsList } from '../util';
 
 export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
   const { range, event, github, url, buttons = [], moreButtons } = data as Block;
   let allButtons = buttons;
   if (moreButtons) allButtons = buttons.concat(moreButtons);
+  const dropdownItems = [<ShareButton key="drop-share" type="dropdown" />];
+  if (event) {
+    dropdownItems.unshift(
+      <a key="drop-event" href={event.url} className="dropdown-item">
+        {event.name}
+      </a>
+    );
+  }
+  if (range)
+    dropdownItems.unshift(
+      <div key="drop-range" className="dropdown-item">
+        <Range {...range!} />
+      </div>
+    );
   return (
     <div>
       <div className="columns is-mobile is-vcentered details-bar">
@@ -37,12 +52,7 @@ export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
         <div className="column is-narrow is-hidden-tablet">
           <DropdownList
             items={makeButtonsList(allButtons, github, url)}
-            staticItems={[
-              <div key="drop-range-event" className="dropdown-item">
-                <RangeEventBar range={range} event={event} />
-              </div>,
-              <ShareButton key="drop-share" type="dropdown" />,
-            ]}>
+            staticItems={dropdownItems}>
             <button className="button is-link is-small">
               <span className="icon">
                 <i className="fas fa-info" />
