@@ -94,7 +94,7 @@ export class Resume extends React.PureComponent<{}, State> {
                 {blocks.map(section => (
                   <Section key={section.name} name={section.name}>
                     {section.data.map(block => (
-                      <BlockBox key={block.id} {...block} />
+                      <BlockBox key={block.id} {...block} hasMore={true} />
                     ))}
                   </Section>
                 ))}

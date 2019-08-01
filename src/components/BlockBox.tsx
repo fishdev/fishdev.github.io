@@ -3,9 +3,14 @@ import React from 'react';
 import { Block } from '../interfaces';
 import { BlockHeader } from './BlockHeader';
 
-export class BlockBox extends React.PureComponent<Block> {
-  static defaultProps: Partial<Block> = {
+interface Props extends Block {
+  hasMore?: boolean;
+}
+
+export class BlockBox extends React.PureComponent<Props> {
+  static defaultProps: Partial<Props> = {
     awards: [],
+    hasMore: false,
   };
 
   render() {

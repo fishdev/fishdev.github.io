@@ -35,7 +35,7 @@ export class SearchModal extends React.PureComponent<Props> {
         case 'projects':
         case 'experience':
         case 'activities':
-          return <BlockBox {...entity.data as Block} />;
+          return <BlockBox {...entity.data as Block} hasMore={true} />;
         case 'skills':
           return <BlockBox {...skillToBlock(entity.data as Skill)} />;
       }
