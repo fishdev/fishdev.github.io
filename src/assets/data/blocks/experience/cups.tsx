@@ -51,6 +51,11 @@ export const cups: Block = {
   ],
   moreButtons: [
     {
+      icon: 'fas fa-file-alt',
+      name: 'Research Paper',
+      url: process.env.PUBLIC_URL + '/privacytracker.pdf',
+    },
+    {
       icon: 'fas fa-eye',
       name: 'PrivacyTracker',
       url: 'https://github.com/fishdev/PrivacyTracker',
