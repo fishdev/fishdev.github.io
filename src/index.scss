@@ -3,14 +3,17 @@
 // Colors
 $primary: rgb(190, 5, 117);
 $link: rgb(32, 63, 182);
+$ig-blue: $link;
 $info: #61afef;
 $warning: #d19a66;
 $success: #89ca78;
 
+// All the other imports
 @import 'bulma';
 @import '~bulma-tooltip';
 @import 'node_modules/bulma-badge/dist/css/bulma-badge';
 @import 'node_modules/bulmaswatch/flatly/_overrides';
+@import 'node_modules/react-image-gallery/styles/scss/image-gallery.scss';
 
 // Gradient
 .gradient {

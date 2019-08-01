@@ -2,7 +2,6 @@ import React from 'react';
 import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import ImageGallery from 'react-image-gallery';
-import 'react-image-gallery/styles/css/image-gallery.css';
 
 import { getEntity } from '../util';
 import { Block } from '../interfaces';
@@ -55,6 +54,8 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
                 infinite={false}
                 thumbnailPosition="top"
                 showPlayButton={false}
+                showNav={false}
+                showFullscreenButton={false}
                 disableArrowKeys={true}
               />
             )}
