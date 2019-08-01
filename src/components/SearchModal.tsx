@@ -24,7 +24,7 @@ export class SearchModal extends React.PureComponent<Props> {
   };
 
   componentDidMount() {
-    this.searchInput!.focus();
+    setTimeout(() => this.searchInput!.focus(), 50);
   }
 
   handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) =>
