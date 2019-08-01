@@ -1,51 +1,12 @@
 import React from 'react';
 
-import { Block } from '../../../interfaces';
-import pgh from '../../pgh.jpg';
+import { Block } from '../../../../interfaces';
+import { assure } from './assure';
+import { cmulab } from './cmulab';
 
 export const projects: Block[] = [
-  {
-    id: 'assure',
-    name: 'Assure',
-    tagline: 'Connecting needs',
-    range: {
-      start: {
-        month: 2,
-        year: 2019,
-      },
-    },
-    event: {
-      name: 'TartanHacks',
-      url: 'https://tartanhacks.com',
-    },
-    url: 'https://devpost.com/software/assure-hep75l',
-    description: (
-      <p>
-        Implemented Node.js + MongoDB + React service to make local donations more accessible and
-        secure.
-      </p>
-    ),
-  },
-  {
-    id: 'cmulab',
-    name: 'CMULab',
-    tagline: 'Secure check-in and scoring',
-    range: {
-      start: {
-        month: 1,
-        year: 2019,
-      },
-      end: 'Present',
-    },
-    github: 'QuantumStack/CMULab',
-    url: 'https://cmulab.quantumstack.xyz',
-    description: (
-      <p>
-        Developing Node.js + MongoDB web service for teachers to score class activities. Adopted by{' '}
-        <a href="https://www.cs.cmu.edu/~15122/">15-122</a> at CMU.
-      </p>
-    ),
-  },
+  assure,
+  cmulab,
   {
     id: 'flow',
     name: 'Flow',
