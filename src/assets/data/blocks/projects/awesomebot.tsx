@@ -16,6 +16,7 @@ export const awesomebot: Block = {
     },
   },
   github: 'BitQuote/AwesomeBot',
+  url: 'https://bitquote.github.io/AwesomeBot/',
   description: (
     <p>
       Built multi-purpose Node.js bot for managing and entertaining over 10,000 online communities.
