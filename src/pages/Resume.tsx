@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { HotKeys } from 'react-hotkeys';
 import { Link as ScrollLink } from 'react-scroll';
 
+import { Block } from '../interfaces';
 import { SearchModal } from '../components/SearchModal';
 import { Navbar } from '../components/Navbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
@@ -16,18 +17,26 @@ import { LevelGroup } from '../components/LevelGroup';
 
 interface State {
   searchActive: boolean;
+  importantOnly: boolean;
 }
 
 export class Resume extends React.PureComponent<{}, State> {
   state: Readonly<State> = {
     searchActive: false,
+    importantOnly: false,
   };
 
   showSearch = () => this.setState({ searchActive: true });
   hideSearch = () => this.setState({ searchActive: false });
 
+  toggleImportant = () =>
+    this.setState(({ importantOnly }) => ({ importantOnly: !importantOnly }), this.hideSearch);
+
+  filterBlocks = (blocks: Block[]): Block[] =>
+    this.state.importantOnly ? blocks.filter(block => !block.unimportant) : blocks;
+
   render() {
-    const { searchActive } = this.state;
+    const { searchActive, importantOnly } = this.state;
     return (
       <div>
         <Helmet>
@@ -35,7 +44,13 @@ export class Resume extends React.PureComponent<{}, State> {
         </Helmet>
         <HotKeys keyMap={{ SHOW_SEARCH: '/', HIDE_SEARCH: 'esc' }}>
           <HotKeys handlers={{ SHOW_SEARCH: this.showSearch }}>
-            {searchActive && <SearchModal hide={this.hideSearch} />}
+            {searchActive && (
+              <SearchModal
+                important={importantOnly}
+                toggleImportant={this.toggleImportant}
+                hide={this.hideSearch}
+              />
+            )}
             <section className="hero is-black">
               <div className="hero-head">
                 <Navbar showName={false} showButtons={false} />
@@ -93,7 +108,7 @@ export class Resume extends React.PureComponent<{}, State> {
                 <Education />
                 {blocks.map(section => (
                   <Section key={section.name} name={section.name}>
-                    {section.data.map(block => (
+                    {this.filterBlocks(section.data).map(block => (
                       <BlockBox key={block.id} {...block} hasMore={true} />
                     ))}
                   </Section>

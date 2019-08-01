@@ -1,11 +1,14 @@
 import React from 'react';
 import { HotKeys } from 'react-hotkeys';
+import classNames from 'classnames';
 
 import { filterEntities, courseToBlock, skillToBlock } from '../util';
 import { Entity, Block, Course, Skill } from '../interfaces';
 import { BlockBox } from './BlockBox';
 
 interface Props {
+  important: boolean;
+  toggleImportant: () => void;
   hide: () => void;
 }
 
@@ -44,7 +47,7 @@ export class SearchModal extends React.PureComponent<Props> {
   };
 
   render() {
-    const { hide } = this.props;
+    const { important, toggleImportant, hide } = this.props;
     const { search } = this.state;
     const results = this.searchResults();
     return (
@@ -71,7 +74,21 @@ export class SearchModal extends React.PureComponent<Props> {
                 </div>
               </div>
               <div className="column is-narrow">
-                <button className="delete is-large" onClick={hide} />
+                <button
+                  className="button is-rounded is-outlined is-light tooltip"
+                  data-tooltip={important ? 'Show all' : 'Show only important'}
+                  onClick={toggleImportant}>
+                  <span className="icon">
+                    <i className={classNames('fas', important ? 'fa-list' : 'fa-star')} />
+                  </span>
+                </button>
+              </div>
+              <div className="column is-narrow is-hidden-mobile">
+                <button className="button is-rounded is-outlined is-light" onClick={hide}>
+                  <span className="icon">
+                    <i className="fas fa-times" />
+                  </span>
+                </button>
               </div>
             </div>
             {search.length >= 2 &&
@@ -87,7 +104,9 @@ export class SearchModal extends React.PureComponent<Props> {
                   </span>
                 </div>
               ))}
+            <br />
           </div>
+          <button className="modal-close is-large is-hidden-tablet" onClick={hide} />
         </div>
       </HotKeys>
     );

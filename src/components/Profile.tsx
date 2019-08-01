@@ -3,7 +3,7 @@ import React from 'react';
 import { social } from '../assets/data/social';
 import { Portrait } from './Portrait';
 import { LevelGroup } from './LevelGroup';
-import { SocialButton } from './SocialButton';
+import { Button } from './Button';
 
 interface Props {
   showPortrait: boolean;
@@ -40,7 +40,7 @@ export class Profile extends React.PureComponent<Props> {
 
         <LevelGroup>
           {social.map(item => (
-            <SocialButton key={item.name} {...item} />
+            <Button key={item.name} {...item} />
           ))}
         </LevelGroup>
         {children}

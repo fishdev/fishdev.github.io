@@ -25,15 +25,7 @@ export const courseToBlock = ({
       {description && <p>{description}</p>}
     </div>
   ),
-  buttons: url
-    ? [
-        {
-          url,
-          icon: 'fas fa-info-circle',
-          name: 'Coursicle information',
-        },
-      ]
-    : [],
+  url,
 });
 
 export const skillToBlock = ({ id, name, icon, years, url, description }: Skill): Block => ({

@@ -5,7 +5,7 @@ import { Entity, Block } from '../interfaces';
 import { RangeEventBar } from './RangeEventBar';
 import { EntityTypeTag } from './EntityTypeTag';
 import { GitButton } from './GitButton';
-import { SocialButton } from './SocialButton';
+import { Button } from './Button';
 import { ShareButton } from './ShareButton';
 import { DropdownList } from './DropdownList';
 import { makeButtonsList } from '../util';
@@ -60,19 +60,13 @@ export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
         <div className="column" />
         {url && (
           <div className="column is-narrow">
-            <SocialButton
-              url={url}
-              color="link"
-              name="Website"
-              rounded={false}
-              icon="fas fa-globe"
-            />
+            <Button url={url} color="link" name="Website" rounded={false} icon="fas fa-globe" />
           </div>
         )}
         {allButtons &&
           allButtons.map(button => (
             <div key={button.name} className="column is-narrow">
-              <SocialButton {...button} rounded={false} color="primary" />
+              <Button {...button} rounded={false} color="primary" />
             </div>
           ))}
         <div className="column is-narrow">

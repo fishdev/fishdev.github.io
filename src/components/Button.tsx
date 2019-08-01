@@ -9,7 +9,7 @@ interface Props extends ColorButton {
   rounded?: boolean;
 }
 
-export class SocialButton extends React.PureComponent<Props> {
+export class Button extends React.PureComponent<Props> {
   static defaultProps: Partial<Props> = {
     rounded: true,
     outlined: true,
@@ -32,7 +32,7 @@ export class SocialButton extends React.PureComponent<Props> {
         <span className="icon is-small">
           <i className={icon} />
         </span>
-        <span>{name}</span>
+        {name && <span>{name}</span>}
       </a>
     );
   }

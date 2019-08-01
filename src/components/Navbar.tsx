@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { Portrait } from './Portrait';
 import { LevelGroup } from './LevelGroup';
-import { SocialButton } from './SocialButton';
+import { Button } from './Button';
 import { social } from '../assets/data';
 
 interface Props {
@@ -71,7 +71,7 @@ export class Navbar extends React.PureComponent<Props, State> {
                 <div className="navbar-item">
                   <LevelGroup>
                     {social.map(item => (
-                      <SocialButton key={item.name} size="is-small" {...item} />
+                      <Button key={item.name} size="is-small" {...item} />
                     ))}
                   </LevelGroup>
                 </div>
