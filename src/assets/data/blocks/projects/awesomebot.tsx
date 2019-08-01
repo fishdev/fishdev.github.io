@@ -24,9 +24,10 @@ export const awesomebot: Block = {
   info: (
     <div>
       <p>
-        Online chat rooms such as Discord are often poorly moderated, resulting in spam, abuse, and
-        hateful content. AwesomeBot was a free service for Discord chat room administrators to
-        mitigate these issues, as well as provide useful tools for organization and entertainment:
+        Online chat rooms such as <a href="https://discordapp.com/">Discord</a> are often poorly
+        moderated, resulting in spam, abuse, and hateful content. AwesomeBot was a free service for
+        Discord chat room administrators to mitigate these issues, as well as provide useful tools
+        for organization and entertainment:
       </p>
       <ul>
         <li>
