@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { HotKeys } from 'react-hotkeys';
+import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { Link as ScrollLink } from 'react-scroll';
 
 import { Block } from '../interfaces';
@@ -42,82 +42,82 @@ export class Resume extends React.PureComponent<{}, State> {
         <Helmet>
           <title>Resume | Ashwin Srinivasan</title>
         </Helmet>
-        <HotKeys keyMap={{ SHOW_SEARCH: '/', HIDE_SEARCH: 'esc' }}>
-          <HotKeys handlers={{ SHOW_SEARCH: this.showSearch }}>
-            {searchActive && (
-              <SearchModal
-                important={importantOnly}
-                toggleImportant={this.toggleImportant}
-                hide={this.hideSearch}
-              />
-            )}
-            <section className="hero is-black">
-              <div className="hero-head">
-                <Navbar showName={false} showButtons={false} />
+        <GlobalHotKeys
+          keyMap={{ SHOW_SEARCH: '/', HIDE_SEARCH: 'esc' }}
+          handlers={{ SHOW_SEARCH: this.showSearch, HIDE_SEARCH: this.hideSearch }}
+        />
+        {searchActive && (
+          <SearchModal
+            important={importantOnly}
+            toggleImportant={this.toggleImportant}
+            hide={this.hideSearch}
+          />
+        )}
+        <section className="hero is-black">
+          <div className="hero-head">
+            <Navbar showName={false} showButtons={false} />
+          </div>
+          <div className="hero-body fancy">
+            <ResponsiveContainer centered={true} size="medium">
+              <Profile showPortrait={false} showColorbar={true}>
+                <LevelGroup>
+                  <a className="has-text-white" onClick={this.showSearch}>
+                    <span className="icon">
+                      <i className="fas fa-search" />
+                    </span>
+                    &nbsp;
+                    <span>Search</span>
+                  </a>
+                  <a href={process.env.PUBLIC_URL + '/resume.pdf'} className="has-text-white">
+                    <span className="icon">
+                      <i className="fas fa-file-download" />
+                    </span>
+                    &nbsp;
+                    <span>Download PDF</span>
+                  </a>
+                </LevelGroup>
+              </Profile>
+            </ResponsiveContainer>
+          </div>
+          <div className="hero-foot fancy">
+            <nav className="tabs is-small is-centered">
+              <div className="container">
+                <ul>
+                  <li>
+                    <ScrollLink to="education" smooth={true} offset={-10}>
+                      Education
+                    </ScrollLink>
+                  </li>
+                  {blocks.map(section => (
+                    <li key={section.name}>
+                      <ScrollLink to={section.name} smooth={true} offset={-10}>
+                        {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
+                      </ScrollLink>
+                    </li>
+                  ))}
+                  <li>
+                    <ScrollLink to="skills" smooth={true} offset={-10}>
+                      Skills
+                    </ScrollLink>
+                  </li>
+                </ul>
               </div>
-              <div className="hero-body fancy">
-                <ResponsiveContainer centered={true} size="medium">
-                  <Profile showPortrait={false} showColorbar={true}>
-                    <LevelGroup>
-                      <a className="has-text-white" onClick={this.showSearch}>
-                        <span className="icon">
-                          <i className="fas fa-search" />
-                        </span>
-                        &nbsp;
-                        <span>Search</span>
-                      </a>
-                      <a href={process.env.PUBLIC_URL + '/resume.pdf'} className="has-text-white">
-                        <span className="icon">
-                          <i className="fas fa-file-download" />
-                        </span>
-                        &nbsp;
-                        <span>Download PDF</span>
-                      </a>
-                    </LevelGroup>
-                  </Profile>
-                </ResponsiveContainer>
-              </div>
-              <div className="hero-foot fancy">
-                <nav className="tabs is-small is-centered">
-                  <div className="container">
-                    <ul>
-                      <li>
-                        <ScrollLink to="education" smooth={true} offset={-10}>
-                          Education
-                        </ScrollLink>
-                      </li>
-                      {blocks.map(section => (
-                        <li key={section.name}>
-                          <ScrollLink to={section.name} smooth={true} offset={-10}>
-                            {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
-                          </ScrollLink>
-                        </li>
-                      ))}
-                      <li>
-                        <ScrollLink to="skills" smooth={true} offset={-10}>
-                          Skills
-                        </ScrollLink>
-                      </li>
-                    </ul>
-                  </div>
-                </nav>
-              </div>
-            </section>
-            <section className="section">
-              <ResponsiveContainer size="large">
-                <Education />
-                {blocks.map(section => (
-                  <Section key={section.name} name={section.name}>
-                    {this.filterBlocks(section.data).map(block => (
-                      <BlockBox key={block.id} {...block} hasMore={true} />
-                    ))}
-                  </Section>
+            </nav>
+          </div>
+        </section>
+        <section className="section">
+          <ResponsiveContainer size="large">
+            <Education />
+            {blocks.map(section => (
+              <Section key={section.name} name={section.name}>
+                {this.filterBlocks(section.data).map(block => (
+                  <BlockBox key={block.id} {...block} hasMore={true} />
                 ))}
-                <Skills />
-              </ResponsiveContainer>
-            </section>
-          </HotKeys>
-        </HotKeys>
+              </Section>
+            ))}
+            <Skills />
+          </ResponsiveContainer>
+        </section>
       </div>
     );
   }
