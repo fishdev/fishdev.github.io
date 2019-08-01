@@ -1,5 +1,6 @@
 import React from 'react';
 import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 
@@ -23,12 +24,17 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
     const { name, tagline, extra, description, info, images } = entity.data as Block;
     return (
       <div>
+        <Helmet>
+          <title>
+            {entity.type.charAt(0).toUpperCase() + entity.type.slice(1)} - {name} | Ashwin
+            Srinivasan
+          </title>
+        </Helmet>
         <section className="hero is-black">
           <div className="hero-head">
             <Navbar />
           </div>
         </section>
-
         <section className="hero is-link gradient">
           <div className="hero-body">
             <ResponsiveContainer centered={true} size="medium">
