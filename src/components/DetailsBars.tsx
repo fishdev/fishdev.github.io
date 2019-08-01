@@ -12,9 +12,9 @@ import { Button } from './Button';
 import { makeButtonsList } from '../util';
 
 export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
-  const { range, event, github, url, buttons = [], moreButtons } = data as Block;
-  let allButtons = buttons;
-  if (moreButtons) allButtons = buttons.concat(moreButtons);
+  const { range, event, github, url, buttons, moreButtons } = data as Block;
+  let allButtons = buttons || moreButtons;
+  if (buttons && moreButtons) allButtons = buttons.concat(moreButtons);
   const dropdownItems = [<ShareButton key="drop-share" type="dropdown" />];
   if (event) {
     dropdownItems.unshift(
