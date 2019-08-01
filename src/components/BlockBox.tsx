@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Block } from '../interfaces';
 import { BlockHeader } from './BlockHeader';
+import { AwardItem } from './AwardItem';
 
 interface Props extends Block {
   hasMore?: boolean;
@@ -20,12 +21,7 @@ export class BlockBox extends React.PureComponent<Props> {
         <BlockHeader {...this.props} />
         {description && <div className="content">{description}</div>}
         {awards!.map((award, i) => (
-          <p className="award" key={i}>
-            <span className="icon has-text-warning">
-              <i className="fas fa-award" />
-            </span>
-            <span>{award}</span>
-          </p>
+          <AwardItem key={i}>{award}</AwardItem>
         ))}
       </div>
     );
