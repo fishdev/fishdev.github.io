@@ -12,16 +12,34 @@ export const experience: Block[] = [
         month: 5,
         year: 2019,
       },
-      end: 'Present',
+      end: {
+        month: 8,
+        year: 2019,
+      },
     },
     description: (
       <p>
-        Contributing to Angular frontend and scalable server testing harness for{' '}
-        <a href="https://www.ca.com/us/products/ca-netmaster-network-management-tcpip.html">
-          NetMaster
-        </a>
-        .
+        Contributed to Angular frontend, Kotlin + Spring backend, and Node.js scalable testing
+        harness for the Mainframe Team Center as part of an agile team.
       </p>
+    ),
+  },
+  {
+    id: 'leap',
+    name: 'Teaching Assistant',
+    extra: <a href="https://www.cs.cmu.edu/~leap/">Leap@CMU</a>,
+    range: {
+      start: {
+        month: 6,
+        year: 2015,
+      },
+      end: {
+        month: 8,
+        year: 2016,
+      },
+    },
+    description: (
+      <p>Taught local high school students computer science in 7-week summer program.</p>
     ),
   },
   {
