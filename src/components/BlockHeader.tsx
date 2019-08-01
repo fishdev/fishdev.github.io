@@ -15,7 +15,7 @@ export class BlockHeader extends React.PureComponent<Props> {
   };
 
   render() {
-    const { id, name, tagline, extra, range, event, hasMore } = this.props;
+    const { id, name, tagline, extra, range, event, hasMore, url } = this.props;
     const title = (
       <span>
         {name}
@@ -46,6 +46,13 @@ export class BlockHeader extends React.PureComponent<Props> {
                 <i className="fas fa-lg fa-arrow-right" />
               </span>
             </Link>
+          )}
+          {!hasMore && url && (
+            <a href={url} className="column is-narrow">
+              <span className="icon is-small">
+                <i className="fas fa-lg fa-info-circle" />
+              </span>
+            </a>
           )}
         </div>
       </div>
