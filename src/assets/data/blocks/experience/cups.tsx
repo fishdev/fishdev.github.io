@@ -46,8 +46,15 @@ export const cups: Block = {
     </div>
   ),
   awards: [
-    '1st place at PA Junior Academy of Science',
-    '3rd place in math/CS at Pittsburgh Regional Science Fair',
+    <span>
+      1st place at <a href="http://www.pjas.net">PA Junior Academy of Science</a>
+    </span>,
+    <span>
+      3rd place in math/CS at{' '}
+      <a href="http://www.carnegiesciencecenter.org/stemcenter/stemcenter-science-fair/">
+        Pittsburgh Regional Science Fair
+      </a>
+    </span>,
   ],
   moreButtons: [
     {

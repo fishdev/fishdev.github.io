@@ -22,6 +22,22 @@ export const imgcap: Block = {
       Java + <a href="https://opencv.org">OpenCV</a> library.
     </p>
   ),
+  info: (
+    <div>
+      <p>
+        Digital images cannot be properly viewed by vision-impaired users or those with very slow
+        Internet connections. Only about 25 percent of images on the web are adequately transcribed
+        into text.
+      </p>
+      <p>
+        ImgCap combines edge detection and object recognition from{' '}
+        <a href="https://opencv.org">OpenCV</a> and{' '}
+        <a href="https://aylien.com/text-api/image-tagging/">Aylien's Image Tagging API</a> to
+        caption images on-the-fly. Its output can be fed into text-to-speech software to drastically
+        improve the user experience for the blind and people in developing nations.
+      </p>
+    </div>
+  ),
   awards: [
     <span>
       1st place at <a href="http://www.pjas.net">PA Junior Academy of Science</a>
@@ -32,5 +48,12 @@ export const imgcap: Block = {
         Pittsburgh Regional Science Fair
       </a>
     </span>,
+  ],
+  moreButtons: [
+    {
+      icon: 'fas fa-file-alt',
+      name: 'Research Paper',
+      url: process.env.PUBLIC_URL + '/imgcap.pdf',
+    },
   ],
 };
