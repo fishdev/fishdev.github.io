@@ -16,7 +16,6 @@ export const awesomebot: Block = {
     },
   },
   github: 'BitQuote/AwesomeBot',
-  url: 'https://bitquote.github.io/AwesomeBot/',
   description: (
     <p>
       Built multi-purpose Node.js bot for managing and entertaining over 10,000 online communities.
@@ -46,12 +45,20 @@ export const awesomebot: Block = {
         <li>Configurable management of chat rooms into channels and user roles.</li>
       </ul>
       <p>
-        At its peak, AwesomeBot was used by over <strong>10,000 communities</strong> with{' '}
-        <strong>1 million users</strong>. I developed the project single-handedly with Node.js,
-        Express, MongoDB, and the <a href="https://abal.moe/Eris/">Eris</a> library.
+        AwesomeBot was one of the first of its kind for the Discord platform. I developed the
+        project using Node.js, Express, MongoDB, and the <a href="https://abal.moe/Eris/">Eris</a>{' '}
+        library.
       </p>
     </div>
   ),
+  moreAwards: [
+    <span>
+      <b>10,000</b> online communities
+    </span>,
+    <span>
+      <b>1 million</b> users
+    </span>,
+  ],
   images: [
     {
       original:
