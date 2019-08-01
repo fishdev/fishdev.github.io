@@ -18,7 +18,7 @@ interface UrlProps {
 export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> {
   render() {
     const { match } = this.props;
-    const entity = getEntity(match.params.id);
+    const entity = getEntity(match.params.id.toLowerCase());
     if (!entity || !['projects', 'experience', 'activities'].includes(entity.type))
       return <Redirect to="/resume" />;
     const { name, tagline, extra, description, info, awards, images } = entity.data as Block;
