@@ -36,7 +36,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
         </section>
         <section className="hero is-link gradient">
           <div className="hero-body">
-            <ResponsiveContainer centered={true} size="medium">
+            <ResponsiveContainer centered={true} size="large">
               <h3 className="title">{name}</h3>
               {tagline && <h5 className="subtitle">{tagline}</h5>}
               {extra && <h5 className="subtitle">{extra}</h5>}
