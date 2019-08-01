@@ -106,7 +106,7 @@ export class Resume extends React.PureComponent<{}, State> {
             </nav>
           </div>
         </section>
-        <section className="section">
+        <section className="section resume-body">
           <ResponsiveContainer size="large">
             <Education />
             {blocks.map(section => (

@@ -128,7 +128,7 @@ a.tag:hover {
 }
 
 .block-container > section.section {
-  padding: 1.5rem 0.5rem 2.75rem 0.5rem;
+  padding: 1.5rem 0.75rem 2.75rem 0.75rem;
 }
 
 .details-bar:not(:last-child) {
@@ -140,6 +140,15 @@ a.tag:hover {
   // Reduce section top padding
   .section {
     padding-top: 1.5rem;
+  }
+
+  // Fullwidth, boxy headers
+  .section.resume-body {
+    padding: 0.75rem;
+  }
+
+  .section.resume-body .rounded {
+    border-radius: 0;
   }
 }
 
