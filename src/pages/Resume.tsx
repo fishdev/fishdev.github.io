@@ -14,6 +14,7 @@ import { BlockBox } from '../components/BlockBox';
 import { Skills } from '../components/Skills';
 import { Profile } from '../components/Profile';
 import { LevelGroup } from '../components/LevelGroup';
+import { Footer } from '../components/Footer';
 
 interface State {
   searchActive: boolean;
@@ -118,6 +119,7 @@ export class Resume extends React.PureComponent<{}, State> {
             <Skills />
           </ResponsiveContainer>
         </section>
+        <Footer />
       </div>
     );
   }

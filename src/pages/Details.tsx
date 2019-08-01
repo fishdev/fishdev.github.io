@@ -9,6 +9,7 @@ import { Navbar } from '../components/Navbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { DetailsBars } from '../components/DetailsBars';
 import { AwardBox } from '../components/AwardBox';
+import { Footer } from '../components/Footer';
 
 interface UrlProps {
   id: string;
@@ -71,6 +72,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
             )}
           </ResponsiveContainer>
         </section>
+        <Footer />
       </div>
     );
   }

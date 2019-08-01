@@ -6,6 +6,7 @@ import { Profile } from '../components/Profile';
 import { LevelGroup } from '../components/LevelGroup';
 import { more } from '../assets/data';
 import { DropdownList } from '../components/DropdownList';
+import { FooterContent } from '../components/FooterContent';
 
 export const Home: React.FC = () => (
   <div>
@@ -35,19 +36,7 @@ export const Home: React.FC = () => (
         </div>
       </div>
       <div className="hero-foot">
-        <div className="container">
-          <p>
-            <small className="has-text-grey-light">
-              &copy; Copyright 2019 | Made in{' '}
-              <a
-                className="has-text-grey-light tooltip"
-                href="https://www.visitpittsburgh.com"
-                data-tooltip="Public domain image via Wikimedia Commons">
-                <strong>Pittsburgh, PA</strong>
-              </a>
-            </small>
-          </p>
-        </div>
+        <FooterContent showImageCredit />
       </div>
     </div>
   </div>

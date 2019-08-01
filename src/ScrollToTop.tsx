@@ -8,9 +8,7 @@ class ScrollToTopWithoutRouter extends React.PureComponent<RouteComponentProps> 
     }
   }
 
-  render() {
-    return this.props.children;
-  }
+  render = () => this.props.children;
 }
 
 export const ScrollToTop = withRouter(ScrollToTopWithoutRouter);

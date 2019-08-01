@@ -12,6 +12,7 @@ import Helmet from 'react-helmet';
 import { Navbar } from '../components/Navbar';
 import { playlists, spotifyId } from '../assets/data';
 import { PlaylistItem } from '../components/PlaylistItem';
+import { FooterContent } from '../components/FooterContent';
 
 interface State {
   isLoading: boolean;
@@ -47,6 +48,9 @@ export const Spotify: React.FC = () => (
             <span>My Spotify profile</span>
           </a>
         </div>
+      </div>
+      <div className="hero-foot">
+        <FooterContent />
       </div>
     </section>
   </div>
