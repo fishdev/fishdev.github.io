@@ -2,13 +2,11 @@ import React from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 class ScrollToTopWithoutRouter extends React.PureComponent<RouteComponentProps> {
-  componentDidUpdate(prevProps: any) {
-    if (this.props.location.pathname !== prevProps.location.pathname) {
-      window.scrollTo(0, 0);
-    }
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
 
-  render = () => this.props.children;
+  render = () => this.props.children || null;
 }
 
 export const ScrollToTop = withRouter(ScrollToTopWithoutRouter);

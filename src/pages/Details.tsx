@@ -5,6 +5,7 @@ import ImageGallery from 'react-image-gallery';
 
 import { getEntity } from '../util';
 import { Block } from '../interfaces';
+import { ScrollToTop } from '../components/ScrollToTop';
 import { Navbar } from '../components/Navbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { DetailsBars } from '../components/DetailsBars';
@@ -25,6 +26,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
     const { name, tagline, extra, description, info, awards, images } = entity.data as Block;
     return (
       <div>
+        <ScrollToTop />
         <Helmet>
           <title>
             {entity.type.charAt(0).toUpperCase() + entity.type.slice(1)} - {name} | Ashwin
