@@ -46,11 +46,6 @@ export const flow: Block = {
         <li>Designed user interface to present ML insights</li>
         <li>Performed integration tests on the system</li>
       </ul>
-      <p>
-        The project recieved{' '}
-        <strong className="has-text-warning">2nd place for the Riot Games sponsor prize</strong> at
-        HackCMU 2018.
-      </p>
     </div>
   ),
   awards: ['2nd place for Riot Games sponsor prize'],
