@@ -5,6 +5,7 @@ import { Block } from '../../../../interfaces';
 import { assure } from './assure';
 import { cmulab } from './cmulab';
 import { flow } from './flow';
+import { awesomebot } from './awesomebot';
 
 export const projects: Block[] = [
   assure,
@@ -35,27 +36,7 @@ export const projects: Block[] = [
       </p>
     ),
   },
-  {
-    id: 'awesomebot',
-    name: 'AwesomeBot',
-    range: {
-      start: {
-        month: 10,
-        year: 2015,
-      },
-      end: {
-        month: 1,
-        year: 2017,
-      },
-    },
-    github: 'fishdev/AwesomeBot',
-    description: (
-      <p>
-        Built multi-purpose Node.js bot for managing and entertaining over 10,000 online
-        communities.
-      </p>
-    ),
-  },
+  awesomebot,
   {
     id: 'imgcap',
     name: 'ImgCap: Automated image captioning',
