@@ -11,9 +11,9 @@ import { DropdownList } from './DropdownList';
 import { makeButtonsList } from '../util';
 
 export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
-  const { range, event, github, url, buttons, moreButtons } = data as Block;
+  const { range, event, github, url, buttons = [], moreButtons } = data as Block;
   let allButtons = buttons;
-  if (moreButtons) allButtons = buttons!.concat(moreButtons);
+  if (moreButtons) allButtons = buttons.concat(moreButtons);
   return (
     <div>
       <div className="columns is-mobile is-vcentered details-bar">
