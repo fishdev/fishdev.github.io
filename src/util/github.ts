@@ -33,7 +33,8 @@ export const extractRepoData = (repo: Octokit.ReposGetResponse): RepoInfo[] => {
   if (repo.license)
     items.push({
       icon: 'gavel',
-      data: repo.license.name,
+      title: repo.license.name,
+      data: repo.license.spdx_id,
     });
   if (repo.open_issues_count > 0)
     items.push({
