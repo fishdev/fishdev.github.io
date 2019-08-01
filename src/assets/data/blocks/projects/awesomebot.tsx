@@ -53,10 +53,10 @@ export const awesomebot: Block = {
   ),
   moreAwards: [
     <span>
-      <b>10,000</b> online communities
+      <b>10,000+</b> online communities
     </span>,
     <span>
-      <b>1 million</b> users
+      Nearly <b>1 million</b> users
     </span>,
   ],
   images: [

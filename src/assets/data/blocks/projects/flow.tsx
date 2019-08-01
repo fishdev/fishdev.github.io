@@ -40,7 +40,7 @@ export const flow: Block = {
         mobile-optimized web control panel shows usage alerts and predictions using a
         regression-based machine learning algorithm.
       </p>
-      <p>As part of a four-person team, I contributed as follows:</p>
+      <p>As part of a 4-person team, I contributed as follows:</p>
       <ul>
         <li>Built entire software stack, coordinating with hardware development</li>
         <li>Designed user interface to present ML insights</li>

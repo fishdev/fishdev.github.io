@@ -32,8 +32,8 @@ export const assure: Block = {
         they like and securely communicate with the donor to arrange a pickup.
       </p>
       <p>
-        Over nearly 24 hours, my four-person team developed the application using Node.js, Express,
-        and MongoDB for the backend and React for responsive frontend. I contributed as follows:
+        Over nearly 24 hours, my 4-person team developed the application using Node.js, Express, and
+        MongoDB for the backend and React for responsive frontend. I contributed as follows:
       </p>
       <ul>
         <li>Designed database models</li>
