@@ -1,35 +1,15 @@
 import React from 'react';
 
 import { Block } from '../../../../interfaces';
+
 import { assure } from './assure';
 import { cmulab } from './cmulab';
+import { flow } from './flow';
 
 export const projects: Block[] = [
   assure,
   cmulab,
-  {
-    id: 'flow',
-    name: 'Flow',
-    tagline: 'Real-time water consumption tracker',
-    range: {
-      start: {
-        month: 9,
-        year: 2018,
-      },
-    },
-    event: {
-      name: 'HackCMU',
-      url: 'https://hackcmu.org',
-    },
-    github: 'fishdev/Flow',
-    description: (
-      <p>
-        Created Node.js + Redis backend to limit and predict water usage with machine learning
-        algorithm.
-      </p>
-    ),
-    awards: ['2nd place for Riot Games sponsor prize'],
-  },
+  flow,
   {
     id: 'pgss',
     name: 'Machine Learning Analysis of Judicial Records',
