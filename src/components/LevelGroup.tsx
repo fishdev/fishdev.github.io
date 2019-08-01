@@ -5,7 +5,7 @@ export const LevelGroup: React.FC = ({ children }) => (
     <div className="level-item">
       <div className="field is-grouped">
         {React.Children.map(children, child => (
-          <p className="control">{child}</p>
+          <div className="control">{child}</div>
         ))}
       </div>
     </div>
