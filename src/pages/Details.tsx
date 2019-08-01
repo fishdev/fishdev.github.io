@@ -23,7 +23,16 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
     const entity = getEntity(match.params.id.toLowerCase());
     if (!entity || !['projects', 'experience', 'activities'].includes(entity.type))
       return <Redirect to="/resume" />;
-    const { name, tagline, extra, description, info, awards, images } = entity.data as Block;
+    const {
+      name,
+      tagline,
+      extra,
+      description,
+      info,
+      awards,
+      moreAwards,
+      images,
+    } = entity.data as Block;
     return (
       <div>
         <ScrollToTop />
@@ -52,13 +61,22 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
             <DetailsBars {...entity} />
             <br className="is-hidden-mobile" />
             <div className="content">{info || description}</div>
-            {awards && (
+            {(awards || moreAwards) && (
               <div className="columns is-multiline is-variable is-2">
-                {awards.map((award, i) => (
-                  <div className="column is-half">
-                    <AwardBox key={i}>{award}</AwardBox>
-                  </div>
-                ))}
+                {awards &&
+                  awards.map((award, i) => (
+                    <div className="column is-half">
+                      <AwardBox key={i}>{award}</AwardBox>
+                    </div>
+                  ))}
+                {moreAwards &&
+                  moreAwards.map((award, i) => (
+                    <div className="column is-half">
+                      <AwardBox color="primary" icon="fas fa-crown" key={i}>
+                        {award}
+                      </AwardBox>
+                    </div>
+                  ))}
               </div>
             )}
             {images && (

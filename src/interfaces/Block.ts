@@ -21,6 +21,7 @@ export interface Block {
   description?: React.ReactNode;
   moreButtons?: Button[];
   awards?: React.ReactNode[];
+  moreAwards?: React.ReactNode[];
   info?: React.ReactNode;
   images?: BlockImage[];
   unimportant?: boolean;
