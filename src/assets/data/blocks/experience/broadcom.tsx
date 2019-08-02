@@ -45,7 +45,7 @@ export const broadcom: Block = {
           multiple regions.
         </li>
         <li>
-          Built <a href="https://jenkins.io/">Jenkins</a> continuous integration/deployment pipeline
+          Built <a href="https://jenkins.io/">Jenkins</a> continuous integration/delivery pipeline
           for the above projects to ensure code quality and alert engineers of ongoing changes.
         </li>
       </ul>
