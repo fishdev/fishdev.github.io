@@ -43,4 +43,11 @@ export const end_the_rain: Block = {
       <p>I also help make decisions about the organization and recruit new members.</p>
     </div>
   ),
+  images: [
+    {
+      original: process.env.PUBLIC_URL + '/end-the-rain.png',
+      thumbnail: process.env.PUBLIC_URL + '/end-the-rain.png',
+      description: 'Planned umbrella dispenser locations',
+    },
+  ],
 };
