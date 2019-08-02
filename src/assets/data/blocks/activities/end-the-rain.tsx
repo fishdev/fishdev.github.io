@@ -40,6 +40,7 @@ export const end_the_rain: Block = {
         and mechanical engineering teams to perform integration tests on the umbrella dispenser
         prototypes.
       </p>
+      <p>I also help make decisions about the organization and recruit new members.</p>
     </div>
   ),
 };

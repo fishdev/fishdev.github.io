@@ -36,6 +36,7 @@ export const tartan: Block = {
           <a href="https://www.adobe.com/products/indesign.html">Adobe InDesign</a>.
         </li>
         <li>Writing 1-2 articles about a STEM-related news event.</li>
+        <li>Outreach to recruit new writers and copy editors.</li>
       </ul>
     </div>
   ),
