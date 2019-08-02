@@ -83,7 +83,6 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
               <ImageGallery
                 items={images}
                 infinite={false}
-                thumbnailPosition="top"
                 showPlayButton={false}
                 showNav={false}
                 showFullscreenButton={false}
