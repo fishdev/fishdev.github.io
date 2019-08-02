@@ -50,6 +50,7 @@ export class DropdownList extends React.PureComponent<Props, State> {
           {React.Children.map(children, child =>
             React.cloneElement(child as React.ReactElement, {
               onClick: this.toggleActive,
+              isActive,
             })
           )}
         </div>
