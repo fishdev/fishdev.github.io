@@ -56,4 +56,14 @@ export const imgcap: Block = {
       url: process.env.PUBLIC_URL + '/imgcap.pdf',
     },
   ],
+  images: [
+    {
+      original: process.env.PUBLIC_URL + '/imgcap-1.png',
+      thumbnail: process.env.PUBLIC_URL + '/imgcap-1.png',
+    },
+    {
+      original: process.env.PUBLIC_URL + '/imgcap-2.png',
+      thumbnail: process.env.PUBLIC_URL + '/imgcap-2.png',
+    },
+  ],
 };
