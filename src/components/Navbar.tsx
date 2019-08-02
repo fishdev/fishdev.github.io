@@ -8,6 +8,7 @@ import { Button } from './Button';
 import { social } from '../assets/data';
 
 interface Props {
+  showMenu: boolean;
   showName: boolean;
   showButtons: boolean;
   color?: string;
@@ -19,6 +20,7 @@ interface State {
 
 export class Navbar extends React.PureComponent<Props, State> {
   static defaultProps: Props = {
+    showMenu: true,
     showName: true,
     showButtons: true,
   };
@@ -30,12 +32,12 @@ export class Navbar extends React.PureComponent<Props, State> {
   toggleActive = () => this.setState(({ isActive }) => ({ isActive: !isActive }));
 
   render() {
-    const { showName, showButtons, color } = this.props;
+    const { showMenu, showName, showButtons, color } = this.props;
     const { isActive } = this.state;
     return (
       <nav className={classNames('navbar', { ['is-' + color]: color })}>
         <div className="container">
-          <div className="navbar-brand">
+          <div className={classNames('navbar-brand', { 'navbar-item-centered': !showMenu })}>
             <span className="navbar-item fancy">
               <div className="columns is-variable is-2 is-mobile">
                 <div className="column is-narrow">
@@ -48,36 +50,40 @@ export class Navbar extends React.PureComponent<Props, State> {
                 )}
               </div>
             </span>
-            <a
-              className={classNames('navbar-burger', { 'is-active': isActive })}
-              onClick={this.toggleActive}>
-              <span />
-              <span />
-              <span />
-            </a>
+            {showMenu && (
+              <a
+                className={classNames('navbar-burger', { 'is-active': isActive })}
+                onClick={this.toggleActive}>
+                <span />
+                <span />
+                <span />
+              </a>
+            )}
           </div>
-          <div className={classNames('navbar-menu', { 'is-active': isActive })}>
-            <div className="navbar-end">
-              <NavLink to="/" exact activeClassName="is-active" className="navbar-item">
-                Home
-              </NavLink>
-              <NavLink to="/resume" exact activeClassName="is-active" className="navbar-item">
-                Resume
-              </NavLink>
-              <NavLink to="/spotify" activeClassName="is-active" className="navbar-item">
-                Spotify
-              </NavLink>
-              {showButtons && (
-                <div className="navbar-item">
-                  <LevelGroup>
-                    {social.map(item => (
-                      <Button key={item.name} size="is-small" {...item} />
-                    ))}
-                  </LevelGroup>
-                </div>
-              )}
+          {showMenu && (
+            <div className={classNames('navbar-menu', { 'is-active': isActive })}>
+              <div className="navbar-end">
+                <NavLink to="/" exact activeClassName="is-active" className="navbar-item">
+                  Home
+                </NavLink>
+                <NavLink to="/resume" exact activeClassName="is-active" className="navbar-item">
+                  Resume
+                </NavLink>
+                <NavLink to="/spotify" activeClassName="is-active" className="navbar-item">
+                  Spotify
+                </NavLink>
+                {showButtons && (
+                  <div className="navbar-item">
+                    <LevelGroup>
+                      {social.map(item => (
+                        <Button key={item.name} size="is-small" {...item} />
+                      ))}
+                    </LevelGroup>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </nav>
     );

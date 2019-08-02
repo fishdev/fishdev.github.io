@@ -22,7 +22,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
     const { match } = this.props;
     const entity = getEntity(match.params.id.toLowerCase());
     if (!entity || !['projects', 'experience', 'activities'].includes(entity.type))
-      return <Redirect to="/resume" />;
+      return <Redirect to="/404" />;
     const {
       name,
       tagline,

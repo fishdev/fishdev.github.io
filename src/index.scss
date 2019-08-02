@@ -183,7 +183,7 @@ iframe {
   padding: 0rem 0.5rem;
 }
 
-.search-box {
+.search-modal .search-box {
   margin-top: 20vh;
 }
 
@@ -192,7 +192,18 @@ iframe {
   border-radius: 0;
 }
 
+// Center navbar elements
+.navbar-item-centered {
+  flex-grow: 1;
+  justify-content: center;
+}
+
 // Do round section headers
 .rounded {
   border-radius: 8px;
+}
+
+// Heroes don't decide white navbar color
+.hero .navbar.is-white {
+  background-color: white !important;
 }
