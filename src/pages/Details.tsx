@@ -72,7 +72,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
                 {moreAwards &&
                   moreAwards.map((award, i) => (
                     <div className="column is-half">
-                      <AwardBox color="primary" icon="fas fa-crown" key={i}>
+                      <AwardBox color="success" icon="fas fa-crown" key={i}>
                         {award}
                       </AwardBox>
                     </div>
