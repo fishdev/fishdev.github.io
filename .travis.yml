@@ -15,3 +15,8 @@ deploy:
   local_dir: build
   on:
     branch: dev
+notifications:
+  email:
+    recipients:
+      - $ASHWIN_EMAIL
+    on_success: never
