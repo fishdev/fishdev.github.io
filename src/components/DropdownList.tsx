@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import onClickOutside from 'react-onclickoutside';
 
 import { Dropdown } from '../interfaces';
 import { DropdownItem } from './DropdownItem';
@@ -16,9 +17,8 @@ interface State {
   isActive: boolean;
 }
 
+@(onClickOutside as any)
 export class DropdownList extends React.PureComponent<Props, State> {
-  node: React.RefObject<HTMLDivElement> = React.createRef();
-
   state: Readonly<State> = {
     isActive: false,
   };
@@ -29,26 +29,8 @@ export class DropdownList extends React.PureComponent<Props, State> {
     dropup: false,
   };
 
-  componentWillMount() {
-    document.addEventListener('mousedown', this.handleClick, false);
-  }
-
-  componentWillUnmount() {
-    document.addEventListener('mousedown', this.handleClick, false);
-  }
-
-  handleClick = (event: MouseEvent) => {
-    if (
-      event.target instanceof HTMLElement &&
-      this.node.current &&
-      this.node.current.contains(event.target)
-    )
-      return;
-    this.hide();
-  };
-
-  show = () => this.setState({ isActive: true });
-  hide = () => this.setState({ isActive: false });
+  toggleActive = () => this.setState(({ isActive }) => ({ isActive: !isActive }));
+  handleClickOutside = () => this.setState({ isActive: false });
 
   render() {
     const { hoverable, dropup, alignment, staticItems, items, children } = this.props;
@@ -67,7 +49,7 @@ export class DropdownList extends React.PureComponent<Props, State> {
         <div className="dropdown-trigger">
           {React.Children.map(children, child =>
             React.cloneElement(child as React.ReactElement, {
-              onClick: this.show,
+              onClick: this.toggleActive,
             })
           )}
         </div>
