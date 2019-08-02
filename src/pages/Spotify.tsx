@@ -34,7 +34,7 @@ export const Spotify: React.FC = () => (
           <h5 className="subtitle fancy has-text-grey-light">For your enjoyment</h5>
           <div className="columns is-multiline is-centered">
             {playlists.map(playlist => (
-              <div className="column is-6-tablet is-3-widescreen">
+              <div key={playlist.id} className="column is-6-tablet is-3-widescreen">
                 <PlaylistItem key={playlist.id} {...playlist} />
               </div>
             ))}

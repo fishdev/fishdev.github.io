@@ -47,5 +47,5 @@ export const skillToBlock = ({ id, name, icon, years, url, description }: Skill)
     </span>
   ),
   url,
-  description: 'Coming soon: view projects using this skill',
+  description,
 });

@@ -15,20 +15,6 @@ export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
   const { range, event, github, url, buttons, moreButtons } = data as Block;
   let allButtons = buttons || moreButtons;
   if (buttons && moreButtons) allButtons = buttons.concat(moreButtons);
-  const dropdownItems = [<ShareButton key="drop-share" type="dropdown" />];
-  if (event) {
-    dropdownItems.unshift(
-      <a key="drop-event" href={event.url} className="dropdown-item">
-        {event.name}
-      </a>
-    );
-  }
-  if (range)
-    dropdownItems.unshift(
-      <div key="drop-range" className="dropdown-item">
-        <Range {...range!} />
-      </div>
-    );
   return (
     <div>
       <div className="columns is-mobile is-vcentered details-bar">
@@ -52,7 +38,21 @@ export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
         <div className="column is-narrow is-hidden-tablet">
           <DropdownList
             items={makeButtonsList(allButtons, github, url)}
-            staticItems={dropdownItems}>
+            staticItems={
+              <React.Fragment>
+                {event && (
+                  <a href={event.url} className="dropdown-item">
+                    {event.name}
+                  </a>
+                )}
+                {range && (
+                  <div className="dropdown-item">
+                    <Range {...range!} />
+                  </div>
+                )}
+                <ShareButton type="dropdown" />
+              </React.Fragment>
+            }>
             <button className="button is-link is-small">
               <span className="icon">
                 <i className="fas fa-info" />

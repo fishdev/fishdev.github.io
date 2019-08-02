@@ -5,7 +5,7 @@ import { Dropdown } from '../interfaces';
 import { DropdownItem } from './DropdownItem';
 
 interface Props {
-  staticItems?: React.ReactNode[];
+  staticItems?: React.ReactElement;
   items?: Dropdown[];
   hoverable?: boolean;
   alignment?: 'is-left' | 'is-right';
@@ -36,7 +36,11 @@ export class DropdownList extends React.PureComponent<Props, State> {
           'is-active': isActive,
         })}>
         <div className="dropdown-trigger">
-          <div onClick={this.toggleActive}>{children}</div>
+          {React.Children.map(children, child =>
+            React.cloneElement(child as React.ReactElement, {
+              onClick: this.toggleActive,
+            })
+          )}
         </div>
         <div className="dropdown-menu" role="menu">
           <div className="dropdown-content">
