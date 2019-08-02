@@ -62,7 +62,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
             <br className="is-hidden-mobile" />
             <div className="content">{info || description}</div>
             {(awards || moreAwards) && (
-              <div className="columns is-multiline is-variable is-2">
+              <div className="columns is-multiline is-centered is-variable is-2">
                 {awards &&
                   awards.map((award, i) => (
                     <div className="column is-half">
