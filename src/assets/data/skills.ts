@@ -6,6 +6,7 @@ export const languages: Skill[] = [
     name: 'Javascript',
     icon: 'fab fa-js',
     years: 7,
+    description: 'dslkfhsdjk fdsjklfkjfdfkd jkdslkjfsdkfjkf sbdsdlkfdhklf sdjkl ufkl',
   },
   {
     id: 'html',

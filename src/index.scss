@@ -135,6 +135,10 @@ a.tag:hover {
   margin-bottom: 0;
 }
 
+.skill-group:not(:last-child) {
+  margin-bottom: 0.75rem !important;
+}
+
 // Mobile-specific stuff
 @media screen and (max-width: $tablet) {
   // Reduce section top padding

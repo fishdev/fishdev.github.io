@@ -28,7 +28,10 @@ export const courseToBlock = ({
   url,
 });
 
-export const skillToBlock = ({ id, name, icon, years, url, description }: Skill): Block => ({
+export const skillToBlock = (
+  { id, name, icon, years, url, description }: Skill,
+  longer = true
+): Block => ({
   id,
   name,
   extra: (
@@ -42,7 +45,8 @@ export const skillToBlock = ({ id, name, icon, years, url, description }: Skill)
         </span>
       )}
       <span>
-        <strong>{years}</strong> {pluralize('year', years)} experience
+        <strong>{years}</strong> {pluralize('year', years)}
+        {longer && ' experience'}
       </span>
     </span>
   ),

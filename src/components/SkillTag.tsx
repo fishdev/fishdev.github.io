@@ -3,10 +3,19 @@ import pluralize from 'pluralize';
 
 import { Skill } from '../interfaces';
 import { DropdownList } from './DropdownList';
+import { BlockBox } from './BlockBox';
+import { skillToBlock } from '../util';
 
-export const SkillTag: React.FC<Skill> = ({ name, icon, url, years }) => {
+export const SkillTag: React.FC<Skill> = props => {
+  const { name, icon, url, years } = props;
   return (
-    <DropdownList>
+    <DropdownList
+      dropup
+      staticItems={
+        <div className="dropdown-item">
+          <BlockBox {...skillToBlock(props, false)} isBox={false} />
+        </div>
+      }>
       <a className="tag is-medium tooltip" data-tooltip={pluralize('year', years, true)}>
         <div className="columns is-variable is-1 is-mobile">
           {icon && (
