@@ -24,5 +24,18 @@ export const google_tech_challenge: Block = {
       programming and logic puzzles, and word association.
     </p>
   ),
+  info: (
+    <div>
+      <p>
+        Competed against dozens of students from in teams from other universities at Google
+        Pittsburgh. The event included:
+      </p>
+      <ul>
+        <li>Timed coding challenge</li>
+        <li>Programming and logic puzzles</li>
+        <li>Word association</li>
+      </ul>
+    </div>
+  ),
   awards: ['1st place team overall'],
 };
