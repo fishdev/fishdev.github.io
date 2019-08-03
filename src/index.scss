@@ -88,10 +88,6 @@ a.tag:hover {
   margin-bottom: 0.5rem;
 }
 
-.block .title a {
-  color: inherit;
-}
-
 // Spacing around descriptions and sections
 #education {
   padding-bottom: 0.75rem;
@@ -227,4 +223,9 @@ iframe {
 
 .resume-body .box:hover {
   border-color: $grey-light;
+}
+
+// Block links
+.block-link:hover {
+  cursor: pointer;
 }

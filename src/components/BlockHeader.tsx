@@ -26,7 +26,7 @@ export class BlockHeader extends React.PureComponent<Props> {
       <div>
         <div className="columns is-mobile is-variable is-1">
           <div className="column">
-            <h5 className="title is-5">{hasMore ? <Link to={'/' + id}>{title}</Link> : title}</h5>
+            <h5 className="title is-5">{title}</h5>
             {extra && <h6 className="subtitle is-6">{extra}</h6>}
             {range && (
               <h6 className="subtitle is-6">
@@ -41,11 +41,13 @@ export class BlockHeader extends React.PureComponent<Props> {
             )}
           </div>
           {hasMore && (
-            <Link to={'/' + id} className="column is-narrow">
-              <span className="icon is-small">
-                <i className="fas fa-lg fa-arrow-right" />
-              </span>
-            </Link>
+            <div className="column is-narrow">
+              <a>
+                <span className="icon is-small">
+                  <i className="fas fa-lg fa-arrow-right" />
+                </span>
+              </a>
+            </div>
           )}
           {!hasMore && url && (
             <a href={url} className="column is-narrow">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { Block } from '../interfaces';
@@ -18,15 +19,21 @@ export class BlockBox extends React.PureComponent<Props> {
   };
 
   render() {
-    const { description, awards, isBox } = this.props;
+    const { id, description, awards, hasMore, isBox } = this.props;
     return (
-      <div className={classNames({ box: isBox }, 'block')}>
-        <BlockHeader {...this.props} />
-        {description && <div className="content">{description}</div>}
-        {awards!.map((award, i) => (
-          <AwardItem key={i}>{award}</AwardItem>
-        ))}
-      </div>
+      <Route
+        render={({ history }) => (
+          <div
+            className={classNames({ box: isBox }, 'block', { 'block-link': hasMore })}
+            onClick={() => history.push('/' + id)}>
+            <BlockHeader {...this.props} />
+            {description && <div className="content">{description}</div>}
+            {awards!.map((award, i) => (
+              <AwardItem key={i}>{award}</AwardItem>
+            ))}
+          </div>
+        )}
+      />
     );
   }
 }
