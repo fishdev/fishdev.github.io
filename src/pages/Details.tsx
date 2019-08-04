@@ -65,14 +65,14 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
               <div className="columns is-multiline is-centered is-variable is-2">
                 {awards &&
                   awards.map((award, i) => (
-                    <div className="column is-half">
-                      <AwardBox key={i}>{award}</AwardBox>
+                    <div key={i} className="column is-half">
+                      <AwardBox>{award}</AwardBox>
                     </div>
                   ))}
                 {moreAwards &&
                   moreAwards.map((award, i) => (
-                    <div className="column is-half">
-                      <AwardBox color="success" icon="fas fa-crown" key={i}>
+                    <div key={i} className="column is-half">
+                      <AwardBox color="success" icon="fas fa-crown">
                         {award}
                       </AwardBox>
                     </div>
