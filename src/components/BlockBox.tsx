@@ -25,7 +25,7 @@ export class BlockBox extends React.PureComponent<Props> {
         render={({ history }) => (
           <div
             className={classNames({ box: isBox }, 'block', { 'block-link': hasMore })}
-            onClick={() => history.push('/' + id)}>
+            onClick={() => hasMore && history.push('/' + id)}>
             <BlockHeader {...this.props} />
             {description && <div className="content">{description}</div>}
             {awards!.map((award, i) => (
