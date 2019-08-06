@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Course } from '../../interfaces';
+import { Course, Academic } from '../../interfaces';
 
 export const university: React.ReactNode = (
   <p>
@@ -62,6 +62,13 @@ export const coursework: Course[] = [
     name: 'Matrices and Linear Transformations',
     semester: 'Fall 2018',
     url: 'https://www.coursicle.com/cmu/courses/MSC/21241/',
+  },
+];
+
+export const teaching: Academic[] = [
+  {
+    id: '15-122',
+    semester: 'Fall 2019',
   },
 ];
 
