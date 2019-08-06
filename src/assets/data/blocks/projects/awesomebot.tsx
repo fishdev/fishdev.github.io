@@ -18,8 +18,8 @@ export const awesomebot: Block = {
   github: 'BitQuote/AwesomeBot',
   description: (
     <p>
-      Single-handedly built multi-purpose Node.js bot for managing and entertaining over 10,000
-      online communities.
+      Single-handedly built multi-purpose Node.js bot for moderating over 10,000 online communities
+      to mitigate bullying and hate speech.
     </p>
   ),
   info: (
