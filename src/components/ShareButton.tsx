@@ -1,8 +1,9 @@
 import React from 'react';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import classNames from 'classnames';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
-interface Props {
+interface Props extends RouteComponentProps {
   type?: 'button' | 'dropdown';
   rounded?: boolean;
   url?: string;
@@ -12,11 +13,11 @@ interface State {
   copied: boolean;
 }
 
+@(withRouter as any)
 export class ShareButton extends React.PureComponent<Props, State> {
-  static defaultProps: Props = {
+  static defaultProps: Partial<Props> = {
     type: 'button',
     rounded: false,
-    url: window.location.href,
   };
 
   state: Readonly<State> = {
@@ -27,10 +28,12 @@ export class ShareButton extends React.PureComponent<Props, State> {
     this.setState({ copied: true }, () => setTimeout(() => this.setState({ copied: false }), 5000));
 
   render() {
-    const { type, rounded, url } = this.props;
+    const { type, rounded, url, location } = this.props;
     const { copied } = this.state;
     return (
-      <CopyToClipboard text={url!} onCopy={this.wasCopied}>
+      <CopyToClipboard
+        text={url || 'https://fishdev.xyz' + location.pathname}
+        onCopy={this.wasCopied}>
         {type === 'button' ? (
           <button
             className={classNames(
