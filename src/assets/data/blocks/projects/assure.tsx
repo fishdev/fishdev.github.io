@@ -63,4 +63,5 @@ export const assure: Block = {
       description: 'Secure chat view',
     },
   ],
+  unimportant: true,
 };
