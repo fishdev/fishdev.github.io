@@ -1,7 +1,7 @@
-export interface Course {
-  id: string | number;
+import { Academic } from './Academic';
+
+export interface Course extends Academic {
   name: string;
-  semester: string;
   current?: boolean;
   url?: string;
   description?: React.ReactNode;
