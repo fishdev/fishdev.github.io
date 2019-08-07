@@ -38,4 +38,5 @@ export const google_tech_challenge: Block = {
     </div>
   ),
   awards: ['1st place team overall'],
+  unimportant: true,
 };

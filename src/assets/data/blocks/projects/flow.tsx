@@ -49,4 +49,5 @@ export const flow: Block = {
     </div>
   ),
   awards: ['2nd place for Riot Games sponsor prize'],
+  unimportant: true,
 };

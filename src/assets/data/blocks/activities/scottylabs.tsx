@@ -48,4 +48,5 @@ export const scottylabs: Block = {
       </p>
     </div>
   ),
+  unimportant: true,
 };
