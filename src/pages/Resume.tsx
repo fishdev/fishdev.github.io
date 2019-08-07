@@ -45,7 +45,11 @@ export class Resume extends React.PureComponent<{}, State> {
         </Helmet>
         <GlobalHotKeys
           keyMap={{ SHOW_SEARCH: '/', HIDE_SEARCH: 'esc', TOGGLE_IMPORTANT: 'i' }}
-          handlers={{ SHOW_SEARCH: this.showSearch, HIDE_SEARCH: this.hideSearch, TOGGLE_IMPORTANT: this.toggleImportant }}
+          handlers={{
+            SHOW_SEARCH: this.showSearch,
+            HIDE_SEARCH: this.hideSearch,
+            TOGGLE_IMPORTANT: this.toggleImportant,
+          }}
         />
         {searchActive && (
           <SearchModal
