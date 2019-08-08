@@ -22,7 +22,7 @@ export const SearchModal: React.FC<Props> = ({ important, toggleImportant, hide 
             <i className={classNames('fas', important ? 'fa-list' : 'fa-star')} />
           </span>
         </button>
-        <button className="button is-rounded is-outlined is-light" onClick={hide}>
+        <button className="button is-rounded is-outlined is-light is-hidden-mobile" onClick={hide}>
           <span className="icon">
             <i className="fas fa-times" />
           </span>
