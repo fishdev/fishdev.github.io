@@ -3,9 +3,7 @@ import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { Portrait } from './Portrait';
-import { LevelGroup } from './LevelGroup';
-import { Button } from './Button';
-import { social } from '../assets/data';
+import { SocialButtons } from './SocialButtons';
 
 interface Props {
   showMenu: boolean;
@@ -77,11 +75,7 @@ export class Navbar extends React.PureComponent<Props, State> {
                 </NavLink>
                 {showButtons && (
                   <div className="navbar-item">
-                    <LevelGroup>
-                      {social.map(item => (
-                        <Button key={item.name} size="is-small" {...item} />
-                      ))}
-                    </LevelGroup>
+                    <SocialButtons size="is-small" />
                   </div>
                 )}
               </div>
