@@ -22,10 +22,10 @@ $success: #89ca78;
 
 // Gradient text
 .gradientbg {
+  background: linear-gradient(45deg, lighten($link, 25%), lighten($primary, 25%));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  @extend .gradient;
 }
 
 // Gradient block {
@@ -228,4 +228,20 @@ iframe {
 // Block links
 .block-link:hover {
   cursor: pointer;
+}
+
+// Image hero
+.image-hero-container {
+  background: black;
+}
+
+.image-hero {
+  width: 100% !important;
+  object-fit: cover;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 5%,
+    rgba(0, 0, 0, 1) 15% 85%,
+    rgba(0, 0, 0, 0) 95%
+  );
 }
