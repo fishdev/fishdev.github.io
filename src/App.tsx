@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import ReactGA from 'react-ga';
+import 'animate.css/animate.min.css';
 
 import { social } from './assets/data';
 import { Home, About, Resume, Details, Spotify, NotFound } from './pages';

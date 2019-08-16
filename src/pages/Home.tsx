@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import ScrollAnimation from 'react-animate-on-scroll';
 import { Link } from 'react-router-dom';
 
 import { Profile } from '../components/Profile';
@@ -16,23 +17,25 @@ export const Home: React.FC = () => (
     <div id="main" className="hero is-black is-fullheight pgh has-text-centered fancy">
       <div className="hero-body">
         <div className="container">
-          <Profile>
-            <LevelGroup>
-              <Link to="/resume" className="button is-link">
-                <span>View my resume</span>
-                <span className="icon">
-                  <i className="fas fa-arrow-right" />
-                </span>
-              </Link>
-              <DropdownList items={more}>
-                <button className="button is-black" aria-haspopup="true">
+          <ScrollAnimation animateIn="fadeIn">
+            <Profile>
+              <LevelGroup>
+                <Link to="/resume" className="button is-link">
+                  <span>View my resume</span>
                   <span className="icon">
-                    <i className="fas fa-ellipsis-h" />
+                    <i className="fas fa-arrow-right" />
                   </span>
-                </button>
-              </DropdownList>
-            </LevelGroup>
-          </Profile>
+                </Link>
+                <DropdownList items={more}>
+                  <button className="button is-black" aria-haspopup="true">
+                    <span className="icon">
+                      <i className="fas fa-ellipsis-h" />
+                    </span>
+                  </button>
+                </DropdownList>
+              </LevelGroup>
+            </Profile>
+          </ScrollAnimation>
         </div>
       </div>
       <div className="hero-foot">

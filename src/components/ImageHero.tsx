@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 interface Props {
   url: string;
@@ -6,7 +7,9 @@ interface Props {
 }
 
 export const ImageHero: React.FC<Props> = ({ url }) => (
-  <figure className="image image-hero-container">
-    <img className="image-hero" src={url} />
-  </figure>
+  <ScrollAnimation animateIn="fadeInUp" animateOnce>
+    <figure className="image">
+      <img className="image-hero" src={url} />
+    </figure>
+  </ScrollAnimation>
 );
