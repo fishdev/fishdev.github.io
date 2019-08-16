@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const SentenceHero: React.FC<Props> = ({ icon, children }) => (
-  <section className="hero is-black is-medium">
+  <section className="hero is-black sentence-hero">
     <div className="hero-body fancy has-text-centered">
       <ResponsiveContainer centered size="large">
         <span className="icon">
