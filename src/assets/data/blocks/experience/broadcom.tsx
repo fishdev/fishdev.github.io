@@ -62,5 +62,4 @@ export const broadcom: Block = {
       url: 'https://www.ca.com/us/products/ca-netmaster-network-management-tcpip.html',
     },
   ],
-  moreAwards: ['#1 contributor to NetMaster codebase over the summer'],
 };
