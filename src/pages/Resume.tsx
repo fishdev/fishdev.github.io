@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
-import { Link as ScrollLink } from 'react-scroll';
+import { GlobalHotKeys } from 'react-hotkeys';
 
 import { Block } from '../interfaces';
 import { SearchModal } from '../components/SearchModal';
@@ -14,6 +13,7 @@ import { BlockBox } from '../components/BlockBox';
 import { Skills } from '../components/Skills';
 import { Profile } from '../components/Profile';
 import { LevelGroup } from '../components/LevelGroup';
+import { ResumeTabs } from '../components/ResumeTabs';
 import { Footer } from '../components/Footer';
 
 interface State {
@@ -85,29 +85,7 @@ export class Resume extends React.PureComponent<{}, State> {
             </ResponsiveContainer>
           </div>
           <div className="hero-foot fancy">
-            <nav className="tabs is-small is-centered">
-              <div className="container">
-                <ul>
-                  <li>
-                    <ScrollLink to="education" smooth={true} offset={-10}>
-                      Education
-                    </ScrollLink>
-                  </li>
-                  {blocks.map(section => (
-                    <li key={section.name}>
-                      <ScrollLink to={section.name} smooth={true} offset={-10}>
-                        {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
-                      </ScrollLink>
-                    </li>
-                  ))}
-                  <li>
-                    <ScrollLink to="skills" smooth={true} offset={-10}>
-                      Skills
-                    </ScrollLink>
-                  </li>
-                </ul>
-              </div>
-            </nav>
+            <ResumeTabs />
           </div>
         </section>
         <section className="section resume-body">
