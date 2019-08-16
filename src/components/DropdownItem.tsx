@@ -13,17 +13,22 @@ export class DropdownItem extends React.PureComponent<Dropdown> {
     const DropdownElement = internal ? Link : 'a';
     return (
       <DropdownElement href={url} to={url} className="dropdown-item">
-        <span className="icon">
-          <i className={icon} />
-        </span>
-        &nbsp;
-        <span>{name}</span>
-        {description && (
-          <span className="has-text-right">
-            <br />
-            <small>{description}</small>
-          </span>
-        )}
+        <div className="columns is-mobile is-variable is-1 is-vcentered">
+          <div className="column is-narrow">
+            <span className="icon">
+              <i className={icon} />
+            </span>
+          </div>
+          <div className="column is-narrow">
+            <span>{name}</span>
+            {description && (
+              <span className="has-text-right">
+                <br />
+                <small>{description}</small>
+              </span>
+            )}
+          </div>
+        </div>
       </DropdownElement>
     );
   }
