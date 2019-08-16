@@ -8,16 +8,18 @@ import { Button } from './Button';
 interface Props {
   showPortrait: boolean;
   showColorbar: boolean;
+  showButtons: boolean;
 }
 
 export class Profile extends React.PureComponent<Props> {
   static defaultProps: Props = {
     showPortrait: true,
     showColorbar: false,
+    showButtons: true,
   };
 
   render() {
-    const { showPortrait, showColorbar, children } = this.props;
+    const { showPortrait, showColorbar, showButtons, children } = this.props;
     return (
       <div>
         {showPortrait && (
@@ -38,11 +40,13 @@ export class Profile extends React.PureComponent<Props> {
         </h3>
         <h5 className="subtitle">Carnegie Mellon University</h5>
 
-        <LevelGroup>
-          {social.map(item => (
-            <Button key={item.name} {...item} />
-          ))}
-        </LevelGroup>
+        {showButtons && (
+          <LevelGroup>
+            {social.map(item => (
+              <Button key={item.name} {...item} />
+            ))}
+          </LevelGroup>
+        )}
         {children}
       </div>
     );

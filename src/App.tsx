@@ -4,7 +4,7 @@ import createHistory from 'history/createBrowserHistory';
 import ReactGA from 'react-ga';
 
 import { social } from './assets/data';
-import { Home, Resume, Details, Spotify, NotFound } from './pages';
+import { Home, About, Resume, Details, Spotify, NotFound } from './pages';
 
 const history = createHistory();
 history.listen(location => {
@@ -30,6 +30,7 @@ export class App extends React.PureComponent {
       <Router>
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={About} />
           <Route path="/resume" exact component={Resume} />
           <Route path="/spotify" exact component={Spotify} />
           <Route path="/404" component={NotFound} />
