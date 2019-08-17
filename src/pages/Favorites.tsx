@@ -19,10 +19,10 @@ export const Favorites: React.FC = () => (
       <div className="hero-body">
         <ResponsiveContainer centered size="medium">
           <span className="fancy">
-            <h3 className="title">My favorite stuff</h3>
+            <h3 className="title gradientbg">My favorite stuff</h3>
             <h5 className="subtitle has-text-grey-light">
               <span>Things I really </span>
-              <span className="icon gradientbg">
+              <span className="icon">
                 <i className="fas fa-heart" />
               </span>
             </h5>
