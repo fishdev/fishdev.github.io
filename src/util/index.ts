@@ -4,3 +4,4 @@ export * from './months';
 export * from './github';
 export * from './buttons';
 export * from './teaching';
+export * from './scrolling';

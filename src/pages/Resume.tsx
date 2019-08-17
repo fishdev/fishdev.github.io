@@ -4,6 +4,7 @@ import { scroller } from 'react-scroll';
 import Helmet from 'react-helmet';
 import { GlobalHotKeys } from 'react-hotkeys';
 
+import { scrollProps } from '../util';
 import { Block } from '../interfaces';
 import { SearchModal } from '../components/SearchModal';
 import { Navbar } from '../components/Navbar';
@@ -43,7 +44,7 @@ export class Resume extends React.PureComponent<RouteComponentProps<{ section: s
     const { section } = this.props.match.params;
 
     if (section) {
-      scroller.scrollTo(section.toLowerCase(), { smooth: true });
+      scroller.scrollTo(section.toLowerCase(), scrollProps);
     }
   }
 
