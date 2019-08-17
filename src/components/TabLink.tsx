@@ -11,7 +11,7 @@ export class TabLink extends React.PureComponent<Props> {
   render() {
     const { location, to } = this.props;
     return (
-      <li className={classNames({ 'is-active': location.pathname === to })}>
+      <li className={classNames({ 'is-active has-text-black': location.pathname === to })}>
         <Link {...this.props} />
       </li>
     );

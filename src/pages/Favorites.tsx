@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import ScrollAnimation from 'react-animate-on-scroll';
 
+import { ScrollToTop } from '../components/ScrollToTop';
 import { Navbar } from '../components/Navbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { TabLink } from '../components/TabLink';
@@ -11,6 +12,7 @@ import { Footer } from '../components/Footer';
 
 export const Favorites: React.FC = () => (
   <div>
+    <ScrollToTop />
     <Helmet>
       <title>Favorites | Ashwin Srinivasan</title>
     </Helmet>
