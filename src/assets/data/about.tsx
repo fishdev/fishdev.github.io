@@ -7,7 +7,7 @@ import cmu from '../cmu.jpeg';
 import skyline from '../skyline.jpeg';
 import path from '../path.jpeg';
 
-export const about: Array<Sentence | Image> = [
+export const about: Array<Sentence | Image | {}> = [
   {
     original: cmu,
     description: 'CMU at night. Credit: me',
@@ -37,6 +37,16 @@ export const about: Array<Sentence | Image> = [
     original: path,
     description: 'Coopers Rock State Forest. Credit: me',
   },
+  {
+    icon: 'fas fa-spa',
+    content: (
+      <span>
+        <strong className="gradientbg">Juggling</strong> and{' '}
+        <strong className="gradientbg">biking</strong> in my free time.
+      </span>
+    ),
+  },
+  {},
   {
     icon: 'fas fa-headphones-alt',
     content: (
