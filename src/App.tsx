@@ -38,6 +38,7 @@ export class App extends React.PureComponent {
         />
       );
     });
+
     return (
       <Router>
         <Switch>

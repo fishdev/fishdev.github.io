@@ -3,6 +3,7 @@ import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import ImageGallery from 'react-image-gallery';
 
+import { blocks } from '../assets/data';
 import { getEntity } from '../util';
 import { Block } from '../interfaces';
 import { ScrollToTop } from '../components/ScrollToTop';
@@ -19,10 +20,15 @@ interface UrlProps {
 @(withRouter as any)
 export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> {
   render() {
-    const { match } = this.props;
-    const entity = getEntity(match.params.id.toLowerCase());
-    if (!entity || !['projects', 'experience', 'activities'].includes(entity.type))
-      return <Redirect to="/404" />;
+    const { id } = this.props.match.params;
+
+    const blockNames: string[] = blocks.map(block => block.name);
+    if (blockNames.concat(['education', 'skills']).includes(id))
+      return <Redirect to={'/resume/' + id} />;
+
+    const entity = getEntity(id.toLowerCase());
+    if (!entity || !blockNames.includes(entity.type)) return <Redirect to="/404" />;
+
     const {
       name,
       tagline,
