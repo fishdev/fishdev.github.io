@@ -232,6 +232,10 @@ iframe.playlist-item {
 }
 
 // Image hero
+.image-hero-container {
+  position: relative;
+}
+
 .image-hero {
   width: 100% !important;
   object-fit: cover;
@@ -241,6 +245,13 @@ iframe.playlist-item {
     rgba(0, 0, 0, 1) 15% 85%,
     rgba(0, 0, 0, 0) 95%
   );
+}
+
+.image-hero-text {
+  position: absolute;
+  bottom: 5%;
+  right: 1rem;
+  width: 150px;
 }
 
 // Sentence hero

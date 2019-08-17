@@ -29,16 +29,16 @@ export const About: React.FC = () => (
         </ResponsiveContainer>
       </div>
     </section>
-    <ImageHero url={cmu} />
+    <ImageHero url={cmu} credit="CMU at night. Credit: me" />
     <SentenceHero icon="fas fa-code">
       I'm a <strong className="gradientbg">full-stack developer</strong> with interests in operating
       systems and computer vision.
     </SentenceHero>
-    <ImageHero url={skyline} />
+    <ImageHero url={skyline} credit="Skyline from Three Rivers Heritage trail. Credit: me" />
     <SentenceHero icon="fas fa-map-marker-alt">
       Born and raised in <strong className="gradientbg">Pittsburgh, Pennsylvania</strong>.
     </SentenceHero>
-    <ImageHero url={path} />
+    <ImageHero url={path} credit="Coopers Rock State Forest. Credit: me" />
     <SentenceHero icon="fas fa-spa">
       <strong className="gradientbg">Juggling</strong> and{' '}
       <strong className="gradientbg">biking</strong> in my free time.
