@@ -150,6 +150,11 @@ a.tag:hover {
   .section.resume-body .rounded {
     border-radius: 0;
   }
+
+  // Padding for profile hero
+  .profile-hero > .hero-body {
+    padding-bottom: 6.5rem;
+  }
 }
 
 // Expand/collapse course list
