@@ -75,7 +75,7 @@ export class Navbar extends React.PureComponent<Props, State> {
                 </NavLink>
                 {showButtons && (
                   <div className="navbar-item">
-                    <SocialButtons size="is-small" />
+                    <SocialButtons size="small" />
                   </div>
                 )}
               </div>

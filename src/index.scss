@@ -168,7 +168,7 @@ a.tag:hover {
 }
 
 // Don't limit iframe height
-iframe {
+iframe.playlist-item {
   height: 380px;
 }
 
@@ -196,7 +196,7 @@ iframe {
 
 // Do round section headers
 .rounded {
-  border-radius: 8px;
+  border-radius: $radius-large;
   @extend .has-shadow;
 }
 
@@ -218,6 +218,7 @@ iframe {
 .resume-body .box {
   background-color: white;
   border: 2px solid $grey-lighter;
+  border-radius: $radius-large;
   transition: all 200ms ease;
 }
 

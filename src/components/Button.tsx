@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { ColorButton } from '../interfaces';
 
 interface Props extends ColorButton {
-  size?: 'is-small' | 'is-large';
+  size?: 'small' | 'medium' | 'large';
   outlined?: boolean;
   rounded?: boolean;
 }
@@ -24,7 +24,7 @@ export class Button extends React.PureComponent<Props> {
           { 'is-outlined': outlined },
           { 'is-rounded': rounded },
           'is-' + color,
-          size,
+          { ['is-' + size]: size },
           { 'tooltip is-tooltip-bottom': title }
         )}
         href={url}

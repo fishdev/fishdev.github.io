@@ -10,11 +10,10 @@ import React from 'react';
 
 import { playlists, spotifyId } from '../assets/data';
 import { PlaylistItem } from '../components/PlaylistItem';
+import { Button } from './Button';
 
-export const Spotify: React.FC = () => (
+export const Playlists: React.FC = () => (
   <div>
-    <h4 className="title fancy">My Playlists</h4>
-    <h5 className="subtitle fancy has-text-grey-light">For your enjoyment</h5>
     <div className="columns is-multiline is-centered">
       {playlists.map(playlist => (
         <div key={playlist.id} className="column is-6-tablet is-3-widescreen">
@@ -22,13 +21,16 @@ export const Spotify: React.FC = () => (
         </div>
       ))}
     </div>
-    <a
-      className="button is-medium is-success is-outlined"
-      href={'https://open.spotify.com/user/' + spotifyId}>
-      <span className="icon">
-        <i className="fab fa-spotify" />
-      </span>
-      <span>My Spotify profile</span>
-    </a>
+    <div className="has-text-centered">
+      <Button
+        size="medium"
+        color="success"
+        rounded={false}
+        outlined={false}
+        icon="fab fa-spotify"
+        name="My Spotify profile"
+        url={'https://open.spotify.com/user/' + spotifyId}
+      />
+    </div>
   </div>
 );

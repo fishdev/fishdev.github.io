@@ -3,7 +3,7 @@ import { ColorButton } from '../../interfaces';
 export const social: ColorButton[] = [
   {
     color: 'white',
-    url: 'https://github.com/fishdev',
+    url: 'https://github.com/fishdev/',
     icon: 'fab fa-github',
     name: 'GitHub',
   },

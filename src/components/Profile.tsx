@@ -20,7 +20,7 @@ export class Profile extends React.PureComponent<Props> {
   render() {
     const { showPortrait, showColorbar, showButtons, children } = this.props;
     return (
-      <ScrollAnimation animateIn="pulse">
+      <ScrollAnimation animateIn="fadeIn">
         <div>
           {showPortrait && (
             <nav className="level">
