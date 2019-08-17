@@ -8,12 +8,14 @@
 
 import React from 'react';
 
+import { MetaTags } from './MetaTags';
 import { playlists, spotifyId } from '../assets/data';
 import { PlaylistItem } from '../components/PlaylistItem';
 import { Button } from './Button';
 
 export const Playlists: React.FC = () => (
   <div>
+    <MetaTags name="Favorites - Playlists" description="My personal Spotify playlists" />
     <div className="columns is-multiline is-centered">
       {playlists.map(playlist => (
         <div key={playlist.id} className="column is-6-tablet is-3-widescreen">

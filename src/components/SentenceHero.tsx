@@ -2,21 +2,16 @@ import React from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 import classNames from 'classnames';
 
+import { Sentence } from '../interfaces';
 import { ResponsiveContainer } from './ResponsiveContainer';
 
-interface Props {
-  icon: string;
-  size?: number;
-  extra?: React.ReactNode;
-}
-
-export class SentenceHero extends React.PureComponent<Props> {
-  static defaultProps: Partial<Props> = {
+export class SentenceHero extends React.PureComponent<Sentence> {
+  static defaultProps: Partial<Sentence> = {
     size: 3,
   };
 
   render() {
-    const { icon, size, extra, children } = this.props;
+    const { icon, size, extra, content } = this.props;
     return (
       <section className="hero is-black sentence-hero">
         <div className="hero-body fancy has-text-centered">
@@ -27,7 +22,7 @@ export class SentenceHero extends React.PureComponent<Props> {
               </span>
               <br />
               <br />
-              <p className={'is-size-' + size}>{children}</p>
+              <p className={'is-size-' + size}>{content}</p>
               {extra && (
                 <React.Fragment>
                   <br />

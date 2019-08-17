@@ -1,6 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import { FULL_NAME, LOCATION_URL, LOCATION } from '../assets/data';
+
 interface Props {
   showName: boolean;
   showImageCredit: boolean;
@@ -22,16 +24,16 @@ export class FooterContent extends React.PureComponent<Props> {
             &copy; Copyright {year}{' '}
             {showName && (
               <span>
-                Ashwin Srinivasan <br className="is-hidden-tablet" />
+                {FULL_NAME} <br className="is-hidden-tablet" />
               </span>
             )}
             <span className={classNames({ 'is-hidden-mobile': showName })}>| </span>
             Made in{' '}
             <a
               className={classNames('has-text-grey-light', { tooltip: showImageCredit })}
-              href="https://www.visitpittsburgh.com"
+              href={LOCATION_URL}
               data-tooltip="Public domain image via Wikimedia Commons">
-              <strong>Pittsburgh, PA</strong>
+              <strong>{LOCATION}</strong>
             </a>
           </small>
         </p>

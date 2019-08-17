@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -13,9 +12,6 @@ import { Footer } from '../components/Footer';
 export const Favorites: React.FC = () => (
   <div>
     <ScrollToTop />
-    <Helmet>
-      <title>Favorites | Ashwin Srinivasan</title>
-    </Helmet>
     <section className="hero is-black">
       <div className="hero-head">
         <Navbar />
@@ -25,8 +21,7 @@ export const Favorites: React.FC = () => (
           <span className="fancy">
             <h3 className="title">My favorite stuff</h3>
             <h5 className="subtitle has-text-grey-light">
-              <span>For your enjoyment</span>
-              &nbsp;
+              <span>Things I really </span>
               <span className="icon gradientbg">
                 <i className="fas fa-heart" />
               </span>

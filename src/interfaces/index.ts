@@ -11,3 +11,5 @@ export * from './Podcast';
 export * from './Month';
 export * from './MonthRange';
 export * from './BlockEvent';
+export * from './Sentence';
+export * from './Image';

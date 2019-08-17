@@ -1,19 +1,17 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 
+import { MetaTags } from '../components/MetaTags';
+import { ROLE, ORGANIZATION, more } from '../assets/data';
 import { Profile } from '../components/Profile';
 import { LevelGroup } from '../components/LevelGroup';
-import { more } from '../assets/data';
 import { DropdownList } from '../components/DropdownList';
 import { FooterContent } from '../components/FooterContent';
 
 export const Home: React.FC = () => (
   <div>
-    <Helmet>
-      <title>Ashwin Srinivasan</title>
-    </Helmet>
-    <div id="main" className="hero is-black is-fullheight pgh has-text-centered fancy">
+    <MetaTags description={ROLE + ' at ' + ORGANIZATION} />
+    <div id="main" className="hero is-black is-fullheight city has-text-centered fancy">
       <div className="hero-body">
         <div className="container">
           <Profile>

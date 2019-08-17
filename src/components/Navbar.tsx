@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { Portrait } from './Portrait';
+import { FULL_NAME } from '../assets/data';
 import { SocialButtons } from './SocialButtons';
 
 interface Props {
@@ -43,7 +44,7 @@ export class Navbar extends React.PureComponent<Props, State> {
                 </div>
                 {showName && (
                   <div className="column">
-                    <b>Ashwin Srinivasan</b>
+                    <b>{FULL_NAME}</b>
                   </div>
                 )}
               </div>

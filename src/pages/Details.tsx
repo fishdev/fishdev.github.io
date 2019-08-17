@@ -1,12 +1,12 @@
 import React from 'react';
 import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
-import Helmet from 'react-helmet';
 import ImageGallery from 'react-image-gallery';
 
-import { blocks } from '../assets/data';
 import { getEntity } from '../util';
+import { blocks } from '../assets/data';
 import { Block } from '../interfaces';
 import { ScrollToTop } from '../components/ScrollToTop';
+import { MetaTags } from '../components/MetaTags';
 import { Navbar } from '../components/Navbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { DetailsBars } from '../components/DetailsBars';
@@ -42,12 +42,10 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
     return (
       <div>
         <ScrollToTop />
-        <Helmet>
-          <title>
-            {entity.type.charAt(0).toUpperCase() + entity.type.slice(1)} - {name} | Ashwin
-            Srinivasan
-          </title>
-        </Helmet>
+        <MetaTags
+          name={entity.type.charAt(0).toUpperCase() + entity.type.slice(1) + ' - ' + name}
+          description={tagline || `Learn about this and other ${entity.type}`}
+        />
         <section className="hero is-black">
           <div className="hero-head">
             <Navbar />

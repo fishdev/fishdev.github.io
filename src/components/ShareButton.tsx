@@ -3,6 +3,8 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import classNames from 'classnames';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
+import { HOSTING_URL } from '../assets/data';
+
 interface Props extends RouteComponentProps {
   type?: 'button' | 'dropdown';
   rounded?: boolean;
@@ -31,9 +33,7 @@ export class ShareButton extends React.PureComponent<Props, State> {
     const { type, rounded, url, location } = this.props;
     const { copied } = this.state;
     return (
-      <CopyToClipboard
-        text={url || 'https://fishdev.xyz' + location.pathname}
-        onCopy={this.wasCopied}>
+      <CopyToClipboard text={url || HOSTING_URL + location.pathname} onCopy={this.wasCopied}>
         {type === 'button' ? (
           <button
             className={classNames(

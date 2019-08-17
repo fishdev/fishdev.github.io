@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { MetaTags } from '../components/MetaTags';
 import { Navbar } from '../components/Navbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { Search } from '../components/Search';
@@ -8,6 +9,7 @@ import { Footer } from '../components/Footer';
 
 export const NotFound: React.FC = () => (
   <div>
+    <MetaTags name="Not Found" description="This page doesn't exist" />
     <section className="hero is-fullheight">
       <div className="hero-head">
         <Navbar color="white" showMenu={false} />

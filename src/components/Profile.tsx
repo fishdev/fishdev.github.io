@@ -2,6 +2,7 @@ import React from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import { Portrait } from './Portrait';
+import { FULL_NAME, UNIVERSITY } from '../assets/data';
 import { SocialButtons } from './SocialButtons';
 
 interface Props {
@@ -30,7 +31,7 @@ export class Profile extends React.PureComponent<Props> {
             </nav>
           )}
           <h3 className="title">
-            Ashwin Srinivasan
+            {FULL_NAME}
             {showColorbar && (
               <span>
                 <br />
@@ -38,7 +39,7 @@ export class Profile extends React.PureComponent<Props> {
               </span>
             )}
           </h3>
-          <h5 className="subtitle">Carnegie Mellon University</h5>
+          <h5 className="subtitle">{UNIVERSITY}</h5>
 
           {showButtons && <SocialButtons />}
           {children}

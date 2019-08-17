@@ -1,11 +1,11 @@
 import React from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { scroller } from 'react-scroll';
-import Helmet from 'react-helmet';
 import { GlobalHotKeys } from 'react-hotkeys';
 
 import { scrollProps } from '../util';
 import { Block } from '../interfaces';
+import { MetaTags } from '../components/MetaTags';
 import { SearchModal } from '../components/SearchModal';
 import { Navbar } from '../components/Navbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
@@ -52,9 +52,7 @@ export class Resume extends React.PureComponent<RouteComponentProps<{ section: s
     const { searchActive, importantOnly } = this.state;
     return (
       <div>
-        <Helmet>
-          <title>Resume | Ashwin Srinivasan</title>
-        </Helmet>
+        <MetaTags name="Resume" description="My projects, experience, and skills" />
         <GlobalHotKeys
           keyMap={{ SHOW_SEARCH: '/', HIDE_SEARCH: 'esc', TOGGLE_IMPORTANT: 'i' }}
           handlers={{
