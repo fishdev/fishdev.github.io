@@ -8,6 +8,8 @@ import { ImageHero } from '../components/ImageHero';
 import cmu from '../assets/cmu.jpeg';
 import { SentenceHero } from '../components/SentenceHero';
 import skyline from '../assets/skyline.jpeg';
+import path from '../assets/path.jpeg';
+import { ParticlesHero } from '../components/ParticlesHero';
 import { Footer } from '../components/Footer';
 
 export const About: React.FC = () => (
@@ -35,6 +37,12 @@ export const About: React.FC = () => (
     <SentenceHero icon="fas fa-map-marker-alt">
       Born and raised in <strong className="gradientbg">Pittsburgh, Pennsylvania</strong>.
     </SentenceHero>
+    <ImageHero url={path} />
+    <SentenceHero icon="fas fa-spa">
+      <strong className="gradientbg">Juggling</strong> and{' '}
+      <strong className="gradientbg">biking</strong> in my free time.
+    </SentenceHero>
+    <ParticlesHero />
     <Footer />
   </div>
 );
