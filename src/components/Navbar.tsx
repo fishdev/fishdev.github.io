@@ -3,9 +3,7 @@ import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { Portrait } from './Portrait';
-import { LevelGroup } from './LevelGroup';
-import { Button } from './Button';
-import { social } from '../assets/data';
+import { SocialButtons } from './SocialButtons';
 
 interface Props {
   showMenu: boolean;
@@ -66,19 +64,18 @@ export class Navbar extends React.PureComponent<Props, State> {
                 <NavLink to="/" exact activeClassName="is-active" className="navbar-item">
                   Home
                 </NavLink>
+                <NavLink to="/about" exact activeClassName="is-active" className="navbar-item">
+                  About
+                </NavLink>
                 <NavLink to="/resume" exact activeClassName="is-active" className="navbar-item">
                   Resume
                 </NavLink>
-                <NavLink to="/spotify" activeClassName="is-active" className="navbar-item">
-                  Spotify
+                <NavLink to="/favorites" activeClassName="is-active" className="navbar-item">
+                  Favorites
                 </NavLink>
                 {showButtons && (
                   <div className="navbar-item">
-                    <LevelGroup>
-                      {social.map(item => (
-                        <Button key={item.name} size="is-small" {...item} />
-                      ))}
-                    </LevelGroup>
+                    <SocialButtons size="small" />
                   </div>
                 )}
               </div>

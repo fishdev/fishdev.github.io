@@ -2,7 +2,13 @@ import { Dropdown } from '../../interfaces';
 
 export const more: Dropdown[] = [
   {
-    url: '/spotify',
+    url: '/about',
+    icon: 'fas fa-user',
+    name: 'About me',
+    internal: true,
+  },
+  {
+    url: '/favorites',
     icon: 'fab fa-spotify',
     name: 'Spotify playlists',
     internal: true,
