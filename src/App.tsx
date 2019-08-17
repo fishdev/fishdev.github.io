@@ -21,12 +21,11 @@ export class App extends React.PureComponent {
   render() {
     const links = social.map(item => {
       const name = '/' + item.name!.toLowerCase();
-      const redirect = ({
-        match: { params },
-      }: RouteComponentProps<{ suffix: string }>): React.ReactNode => {
+      const redirect = ({ match }: RouteComponentProps<{ suffix: string }>): React.ReactNode => {
         let { url } = item;
-        if (params.suffix) {
-          url += params.suffix;
+        const { suffix } = match.params;
+        if (suffix) {
+          url += suffix;
         }
         window.location.href = url;
         return;
@@ -44,7 +43,8 @@ export class App extends React.PureComponent {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />
-          <Route path="/resume" exact component={Resume} />
+          <Route path="/resume/" exact component={Resume} />
+          <Route path="/resume/:section" exact component={Resume} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/404" component={NotFound} />
           {links}

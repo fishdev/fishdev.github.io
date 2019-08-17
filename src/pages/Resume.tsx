@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { scroller } from 'react-scroll';
 import Helmet from 'react-helmet';
 import { GlobalHotKeys } from 'react-hotkeys';
 
@@ -21,7 +23,8 @@ interface State {
   importantOnly: boolean;
 }
 
-export class Resume extends React.PureComponent<{}, State> {
+@(withRouter as any)
+export class Resume extends React.PureComponent<RouteComponentProps<{ section: string }>, State> {
   state: Readonly<State> = {
     searchActive: false,
     importantOnly: false,
@@ -35,6 +38,14 @@ export class Resume extends React.PureComponent<{}, State> {
 
   filterBlocks = (blocks: Block[]): Block[] =>
     this.state.importantOnly ? blocks.filter(block => !block.unimportant) : blocks;
+
+  componentDidMount() {
+    const { section } = this.props.match.params;
+
+    if (section) {
+      scroller.scrollTo(section.toLowerCase(), { smooth: true });
+    }
+  }
 
   render() {
     const { searchActive, importantOnly } = this.state;
