@@ -15,10 +15,8 @@ export const Section: React.FC<Props> = ({ name, children }) => (
         </div>
       </div>
     </ScrollAnimation>
-    <ScrollAnimation animateIn="fadeInUp" animateOnce>
-      <section className="section">
-        <div className="content">{children}</div>
-      </section>
-    </ScrollAnimation>
+    <section className="section">
+      <div className="content">{children}</div>
+    </section>
   </ScrollElement>
 );
