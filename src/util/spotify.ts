@@ -16,7 +16,7 @@ const ax = axios.create({
   },
 });
 
-export const getPlaylists = async (): Promise<SpotifyApi.PlaylistObjectSimplified[]> => {
+export const getPlaylists = async (): Promise<any> => {
   const response = await ax.get(`users/${ASHWIN_USERNAME}/playlists`);
   return response.data.items;
 };

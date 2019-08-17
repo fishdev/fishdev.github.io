@@ -70,8 +70,8 @@ export class Navbar extends React.PureComponent<Props, State> {
                 <NavLink to="/resume" exact activeClassName="is-active" className="navbar-item">
                   Resume
                 </NavLink>
-                <NavLink to="/spotify" activeClassName="is-active" className="navbar-item">
-                  Spotify
+                <NavLink to="/favorites" activeClassName="is-active" className="navbar-item">
+                  Favorites
                 </NavLink>
                 {showButtons && (
                   <div className="navbar-item">

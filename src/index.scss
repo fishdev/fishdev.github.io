@@ -289,3 +289,8 @@ iframe {
     background-color: rgba(255, 20, 147, 0.5);
   }
 }
+
+// Fix links in tabs
+.tabs > a {
+  @extend li;
+}

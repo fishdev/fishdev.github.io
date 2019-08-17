@@ -6,21 +6,38 @@ import { ResponsiveContainer } from './ResponsiveContainer';
 
 interface Props {
   icon: string;
+  size?: number;
+  extra?: React.ReactNode;
 }
 
-export const SentenceHero: React.FC<Props> = ({ icon, children }) => (
-  <section className="hero is-black sentence-hero">
-    <div className="hero-body fancy has-text-centered">
-      <ScrollAnimation animateIn="bounceIn">
-        <ResponsiveContainer centered size="large">
-          <span className="icon">
-            <i className={classNames(icon, 'fa-2x')} />
-          </span>
-          <br />
-          <br />
-          <p className="is-size-3">{children}</p>
-        </ResponsiveContainer>
-      </ScrollAnimation>
-    </div>
-  </section>
-);
+export class SentenceHero extends React.PureComponent<Props> {
+  static defaultProps: Partial<Props> = {
+    size: 3,
+  };
+
+  render() {
+    const { icon, size, extra, children } = this.props;
+    return (
+      <section className="hero is-black sentence-hero">
+        <div className="hero-body fancy has-text-centered">
+          <ScrollAnimation animateIn="bounceIn">
+            <ResponsiveContainer centered size="large">
+              <span className="icon">
+                <i className={classNames(icon, 'fa-2x')} />
+              </span>
+              <br />
+              <br />
+              <p className={'is-size-' + size}>{children}</p>
+              {extra && (
+                <React.Fragment>
+                  <br />
+                  <p className="has-text-grey-lighter is-size-5">{extra}</p>
+                </React.Fragment>
+              )}
+            </ResponsiveContainer>
+          </ScrollAnimation>
+        </div>
+      </section>
+    );
+  }
+}

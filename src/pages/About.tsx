@@ -11,6 +11,7 @@ import skyline from '../assets/skyline.jpeg';
 import path from '../assets/path.jpeg';
 import { ParticlesHero } from '../components/ParticlesHero';
 import { Footer } from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 export const About: React.FC = () => (
   <div className="has-background-black">
@@ -43,6 +44,16 @@ export const About: React.FC = () => (
       <strong className="gradientbg">biking</strong> in my free time.
     </SentenceHero>
     <ParticlesHero />
+    <SentenceHero
+      icon="fas fa-headphones-alt"
+      extra={
+        <Link className="button is-small is-outlined is-light" to="/favorites">
+          View my favorites
+        </Link>
+      }>
+      Always listening to <strong className="gradientbg">music</strong> and{' '}
+      <strong className="gradientbg">podcasts</strong>.
+    </SentenceHero>
     <Footer />
   </div>
 );
