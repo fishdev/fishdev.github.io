@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { coursework, teaching } from '../assets/data';
+import { coursework } from '../assets/data';
 import { CourseBullet } from './CourseBullet';
 import { teachingAsCourses } from '../util';
 

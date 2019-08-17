@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import { Block } from '../interfaces';
 import { Range } from './Range';
@@ -15,7 +14,7 @@ export class BlockHeader extends React.PureComponent<Props> {
   };
 
   render() {
-    const { id, name, tagline, extra, range, event, hasMore, url } = this.props;
+    const { name, tagline, extra, range, event, hasMore, url } = this.props;
     const title = (
       <span>
         {name}

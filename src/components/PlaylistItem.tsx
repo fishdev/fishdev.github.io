@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Playlist } from '../interfaces';
-import { ResponsiveContainer } from './ResponsiveContainer';
 
 export const PlaylistItem: React.FC<Playlist> = ({ description, id }) => (
   <React.Fragment>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { podcasts, playlists } from '../assets/data';
+import { podcasts } from '../assets/data';
 
 export const Podcasts: React.FC = () => (
   <div>

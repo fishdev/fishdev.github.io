@@ -25,7 +25,7 @@ export class CourseBullet extends React.PureComponent<Props, State> {
     this.setState(({ descriptionShown }) => ({ descriptionShown: !descriptionShown }));
 
   render() {
-    const { id, name, current, semester, url, description, showDetails } = this.props;
+    const { id, name, current, url, description, showDetails } = this.props;
     const { descriptionShown } = this.state;
     return (
       <li>
