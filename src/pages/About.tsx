@@ -19,7 +19,7 @@ export const About: React.FC = () => (
           <Sticky>
             {({ style, isSticky }) => (
               <div className={classNames({ 'sticky-header': isSticky })} style={style}>
-                <Navbar showName={false} />
+                <Navbar showName={isSticky} />
               </div>
             )}
           </Sticky>
