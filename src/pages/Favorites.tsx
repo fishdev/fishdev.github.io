@@ -18,15 +18,17 @@ export const Favorites: React.FC = () => (
       </div>
       <div className="hero-body">
         <ResponsiveContainer centered size="medium">
-          <span className="fancy">
-            <h3 className="title gradientbg">My favorite stuff</h3>
-            <h5 className="subtitle has-text-grey-light">
-              <span>Things I really </span>
-              <span className="icon">
-                <i className="fas fa-heart" />
-              </span>
-            </h5>
-          </span>
+          <ScrollAnimation animateIn="fadeIn">
+            <span className="fancy">
+              <h3 className="title gradientbg">My favorite stuff</h3>
+              <h5 className="subtitle has-text-grey-light">
+                <span>Things I really </span>
+                <span className="icon">
+                  <i className="fas fa-heart" />
+                </span>
+              </h5>
+            </span>
+          </ScrollAnimation>
         </ResponsiveContainer>
       </div>
       <div className="hero-foot">
