@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { scrollProps } from '../util';
 import { Block } from '../interfaces';
 import { MetaTags } from '../components/MetaTags';
+import { ImportantToggle } from '../components/ImportantToggle';
 import { SearchModal } from '../components/SearchModal';
 import { Navbar } from '../components/Navbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
@@ -63,7 +64,15 @@ export class Resume extends React.PureComponent<RouteComponentProps<{ section: s
             TOGGLE_IMPORTANT: this.toggleImportant,
           }}
         />
-        {searchActive && <SearchModal hide={this.hideSearch} />}
+        {searchActive && (
+          <SearchModal hide={this.hideSearch}>
+            <ImportantToggle
+              type="button"
+              important={importantOnly}
+              toggle={this.toggleImportant}
+            />
+          </SearchModal>
+        )}
         <section className="hero is-black">
           <div className="hero-head">
             <Navbar showName={false} showButtons={false} />
@@ -100,17 +109,11 @@ export class Resume extends React.PureComponent<RouteComponentProps<{ section: s
                 })}
                 style={style}>
                 <ResumeTabs>
-                  <a
-                    className={classNames(
-                      'tooltip is-tooltip-bottom',
-                      importantOnly ? 'has-text-white' : 'has-text-grey-light'
-                    )}
-                    data-tooltip={importantOnly ? 'Show all' : 'Show only important'}
-                    onClick={this.toggleImportant}>
-                    <span className="icon">
-                      <i className={classNames('fas', importantOnly ? 'fa-list' : 'fa-star')} />
-                    </span>
-                  </a>
+                  <ImportantToggle
+                    type="a"
+                    important={importantOnly}
+                    toggle={this.toggleImportant}
+                  />
                 </ResumeTabs>
               </div>
             )}

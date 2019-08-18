@@ -6,7 +6,7 @@ import { scrollProps } from '../util';
 
 export const ResumeTabs: React.FC = ({ children }) => (
   <div className="container">
-    <div className="columns is-centered is-vcentered">
+    <div className="columns is-mobile is-centered is-vcentered">
       <div className="column is-narrow">
         <nav className="tabs is-small is-centered">
           <ul>
