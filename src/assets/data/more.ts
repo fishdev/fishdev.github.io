@@ -8,7 +8,7 @@ export const more: Dropdown[] = [
     internal: true,
   },
   {
-    url: '/favorites',
+    url: '/favorites/playlists',
     icon: 'fab fa-spotify',
     name: 'Spotify playlists',
     internal: true,

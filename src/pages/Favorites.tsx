@@ -36,7 +36,7 @@ export const Favorites: React.FC = () => (
           <div className="container">
             <ul>
               {favorites.map((section, i) => (
-                <TabLink key={section.name} to={'/favorites' + (i > 0 ? '/' + section.name : '')}>
+                <TabLink key={section.name} to={'/favorites/' + section.name}>
                   {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
                 </TabLink>
               ))}
@@ -52,12 +52,12 @@ export const Favorites: React.FC = () => (
             {favorites.map((section, i) => (
               <Route
                 key={section.name}
-                path={'/favorites' + (i > 0 ? '/' + section.name : '')}
+                path={'/favorites/' + section.name}
                 exact
                 component={section.component}
               />
             ))}
-            <Route render={() => <Redirect to="/404" />} />}
+            <Route path="/favorites" exact render={() => <Redirect to="/favorites/playlists" />} />}
           </Switch>
         </ScrollAnimation>
       </div>
