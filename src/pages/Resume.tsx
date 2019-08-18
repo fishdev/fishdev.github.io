@@ -63,13 +63,7 @@ export class Resume extends React.PureComponent<RouteComponentProps<{ section: s
             TOGGLE_IMPORTANT: this.toggleImportant,
           }}
         />
-        {searchActive && (
-          <SearchModal
-            important={importantOnly}
-            toggleImportant={this.toggleImportant}
-            hide={this.hideSearch}
-          />
-        )}
+        {searchActive && <SearchModal hide={this.hideSearch} />}
         <section className="hero is-black">
           <div className="hero-head">
             <Navbar showName={false} showButtons={false} />
@@ -101,11 +95,23 @@ export class Resume extends React.PureComponent<RouteComponentProps<{ section: s
           <Sticky>
             {({ style, isSticky }) => (
               <div
-                className={classNames('hero is-small is-black', {
-                  'sticky-header sticky-header-padding': isSticky,
+                className={classNames('hero is-small is-black sticky-header-padding', {
+                  'sticky-header': isSticky,
                 })}
                 style={style}>
-                <ResumeTabs />
+                <ResumeTabs>
+                  <a
+                    className={classNames(
+                      'tooltip is-tooltip-bottom',
+                      importantOnly ? 'has-text-white' : 'has-text-grey-light'
+                    )}
+                    data-tooltip={importantOnly ? 'Show all' : 'Show only important'}
+                    onClick={this.toggleImportant}>
+                    <span className="icon">
+                      <i className={classNames('fas', importantOnly ? 'fa-list' : 'fa-star')} />
+                    </span>
+                  </a>
+                </ResumeTabs>
               </div>
             )}
           </Sticky>
