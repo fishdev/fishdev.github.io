@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 import { GlobalHotKeys } from 'react-hotkeys';
+import classNames from 'classnames';
 
 import { scrollProps } from '../util';
 import { Block } from '../interfaces';
@@ -18,6 +19,7 @@ import { Profile } from '../components/Profile';
 import { LevelGroup } from '../components/LevelGroup';
 import { ResumeTabs } from '../components/ResumeTabs';
 import { Footer } from '../components/Footer';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 interface State {
   searchActive: boolean;
@@ -94,23 +96,31 @@ export class Resume extends React.PureComponent<RouteComponentProps<{ section: s
               </Profile>
             </ResponsiveContainer>
           </div>
-          <div className="hero-foot fancy">
-            <ResumeTabs />
-          </div>
         </section>
-        <section className="section resume-body">
-          <ResponsiveContainer size="large">
-            <Education />
-            {blocks.map(section => (
-              <Section key={section.name} name={section.name}>
-                {this.filterBlocks(section.data).map(block => (
-                  <BlockBox key={block.id} {...block} hasMore={true} />
-                ))}
-              </Section>
-            ))}
-            <Skills />
-          </ResponsiveContainer>
-        </section>
+        <StickyContainer>
+          <Sticky>
+            {({ style, isSticky }) => (
+              <div
+                className={classNames('hero is-small is-black', { 'sticky-header': isSticky })}
+                style={style}>
+                <ResumeTabs />
+              </div>
+            )}
+          </Sticky>
+          <section className="section resume-body">
+            <ResponsiveContainer size="large">
+              <Education />
+              {blocks.map(section => (
+                <Section key={section.name} name={section.name}>
+                  {this.filterBlocks(section.data).map(block => (
+                    <BlockBox key={block.id} {...block} hasMore={true} />
+                  ))}
+                </Section>
+              ))}
+              <Skills />
+            </ResponsiveContainer>
+          </section>
+        </StickyContainer>
         <Footer />
       </div>
     );

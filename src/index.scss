@@ -316,3 +316,10 @@ iframe.playlist-item {
 .podcast-cover {
   width: 100%;
 }
+
+// Sticky resume tabs header
+.sticky-header {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  z-index: 10000;
+  padding: 0.5rem 0;
+}
