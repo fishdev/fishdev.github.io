@@ -8,7 +8,7 @@ Bootstrapped with [Create React App](https://github.com/facebook/create-react-ap
 
 ## Adapting
 
-If you really like the structure of my website, feel free to use it as a basis for your own personal website. All the content is located in the [assets directory](./src/assets/data/). Start by changing the constants for your name and organization. You can also add blocks (projects, experiences, and skills) to the resume section.
+If you really like the structure of my website, feel free to use it as a basis for your own personal website. All the content is located in the [assets directory](https://github.com/fishdev/fishdev.github.io/tree/dev/src/assets/data). Start by changing the constants for your name and organization. You can also add blocks (projects, experiences, and skills) to the resume section.
 
 ## Contributing
 
