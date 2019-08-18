@@ -22,7 +22,7 @@ export const podcasts: Podcast[] = [
     name: 'Radiolab',
     image:
       'https://media.npr.org/images/podcasts/primary/icon_452538884-e2b3a7cfb90f8695d1773e05a81788dbe544e535-s700-c85.png',
-    url: 'https://www.npr.org/podcasts/452538884/radiolab',
+    url: 'https://www.wnycstudios.org/podcasts/radiolab',
   },
   {
     name: '99% Invisible',
@@ -34,11 +34,12 @@ export const podcasts: Podcast[] = [
     name: 'This American Life',
     image:
       'https://media.npr.org/images/podcasts/primary/icon_381444650-04c1bad8586e69edf04b78ea319846614c4a6a6b-s400-c85.png',
-    url: 'https://www.npr.org/podcasts/381444650/this-american-life',
+    url: 'https://www.thisamericanlife.org/',
   },
   {
     name: 'Freakonomics Radio',
-    image: 'https://www.npr.org/podcasts/452538045/freakonomics-radio',
+    image:
+      'https://media.npr.org/images/podcasts/primary/icon_452538045-5656d744c5c448e6777875767f7f03a8572221f2-s400-c85.jpeg',
     url: 'http://freakonomics.com/archive/',
   },
   {

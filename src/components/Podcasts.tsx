@@ -13,7 +13,7 @@ export const Podcasts: React.FC = () => (
           className="column is-3-tablet is-6-mobile tooltip"
           href={podcast.url}
           data-tooltip={podcast.name}>
-          <img className="rounded" src={podcast.image} />
+          <img className="podcast-cover rounded" src={podcast.image} />
         </a>
       ))}
     </div>

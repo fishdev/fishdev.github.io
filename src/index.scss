@@ -311,3 +311,8 @@ iframe.playlist-item {
 .tabs > a {
   @extend li;
 }
+
+// Podcast covers
+.podcast-cover {
+  width: 100%;
+}
