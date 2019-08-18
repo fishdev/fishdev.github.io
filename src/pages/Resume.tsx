@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 import { GlobalHotKeys } from 'react-hotkeys';
+import { StickyContainer, Sticky } from 'react-sticky';
 import classNames from 'classnames';
 
 import { scrollProps } from '../util';
@@ -19,7 +20,6 @@ import { Profile } from '../components/Profile';
 import { LevelGroup } from '../components/LevelGroup';
 import { ResumeTabs } from '../components/ResumeTabs';
 import { Footer } from '../components/Footer';
-import { StickyContainer, Sticky } from 'react-sticky';
 
 interface State {
   searchActive: boolean;
@@ -101,7 +101,9 @@ export class Resume extends React.PureComponent<RouteComponentProps<{ section: s
           <Sticky>
             {({ style, isSticky }) => (
               <div
-                className={classNames('hero is-small is-black', { 'sticky-header': isSticky })}
+                className={classNames('hero is-small is-black', {
+                  'sticky-header sticky-header-padding': isSticky,
+                })}
                 style={style}>
                 <ResumeTabs />
               </div>
