@@ -13,3 +13,4 @@ export * from './MonthRange';
 export * from './BlockEvent';
 export * from './Sentence';
 export * from './Image';
+export * from './Banner';

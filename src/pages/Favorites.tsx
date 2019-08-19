@@ -48,26 +48,19 @@ export const Favorites: React.FC = () => (
         </div>
       </section>
       <section className="section">
-        <div className="container">
-          <ScrollAnimation animateIn="bounceIn">
-            <Switch>
-              {favorites.map((section, i) => (
-                <Route
-                  key={section.name}
-                  path={'/favorites/' + section.name}
-                  exact
-                  component={section.component}
-                />
-              ))}
+        <ScrollAnimation animateIn="bounceIn">
+          <Switch>
+            {favorites.map((section, i) => (
               <Route
-                path="/favorites"
+                key={section.name}
+                path={'/favorites/' + section.name}
                 exact
-                render={() => <Redirect to="/favorites/playlists" />}
+                component={section.component}
               />
-              }
-            </Switch>
-          </ScrollAnimation>
-        </div>
+            ))}
+            <Route path="/favorites" exact render={() => <Redirect to="/favorites/playlists" />} />}
+          </Switch>
+        </ScrollAnimation>
       </section>
     </StickyContainer>
     <Footer />

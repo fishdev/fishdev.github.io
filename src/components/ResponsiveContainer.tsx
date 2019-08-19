@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 interface Props {
   centered?: boolean;
-  size: 'medium' | 'large';
+  size: 'medium' | 'large' | 'huge';
 }
 
 export class ResponsiveContainer extends React.PureComponent<Props> {
@@ -20,6 +20,7 @@ export class ResponsiveContainer extends React.PureComponent<Props> {
             className={classNames('column is-paddingless', {
               'is-6-tablet is-5-desktop is-4-widescreen is-3-fullhd': size === 'medium',
               'is-8-desktop is-6-fullhd': size === 'large',
+              'is-10-desktop': size === 'huge',
             })}>
             {children}
           </div>

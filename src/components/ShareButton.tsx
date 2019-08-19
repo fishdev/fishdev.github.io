@@ -51,6 +51,7 @@ export class ShareButton extends React.PureComponent<Props, State> {
             <span className="icon">
               <i className={'fas fa-' + (copied ? 'check' : 'share')} />
             </span>
+            &nbsp; &nbsp;
             {copied ? 'Link copied!' : 'Share this'}
           </a>
         )}

@@ -312,9 +312,13 @@ iframe.playlist-item {
   @extend li;
 }
 
-// Podcast covers
-.podcast-cover {
+// Relative image sizing
+.image-fullwidth {
   width: 100%;
+}
+
+.image-fullheight {
+  height: 100%;
 }
 
 // Sticky header
