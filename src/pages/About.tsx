@@ -1,8 +1,7 @@
 import React from 'react';
-import { StickyContainer, Sticky } from 'react-sticky';
-import classNames from 'classnames';
+import { StickyContainer } from 'react-sticky';
 
-import { Navbar } from '../components/Navbar';
+import { StickyNavbar } from '../components/StickyNavbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { Profile } from '../components/Profile';
 import { AboutItem } from '../components/AboutItem';
@@ -16,13 +15,11 @@ export const About: React.FC = () => (
     <StickyContainer>
       <section className="hero is-black is-medium profile-hero">
         <div className="hero-head">
-          <Sticky>
-            {({ style, isSticky, distanceFromTop }) => (
-              <div className={classNames({ 'sticky-header': isSticky })} style={style}>
-                <Navbar showName={isSticky && distanceFromTop < -300} />
-              </div>
-            )}
-          </Sticky>
+          <StickyNavbar
+            computeProps={({ isSticky, distanceFromTop }) => ({
+              showName: isSticky && distanceFromTop < -300,
+            })}
+          />
         </div>
         <div className="hero-body fancy">
           <ResponsiveContainer centered size="medium">

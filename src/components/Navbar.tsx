@@ -7,9 +7,9 @@ import { FULL_NAME } from '../assets/data';
 import { SocialButtons } from './SocialButtons';
 
 interface Props {
-  showMenu: boolean;
-  showName: boolean;
-  showButtons: boolean;
+  showMenu?: boolean;
+  showName?: boolean;
+  showButtons?: boolean;
   color?: string;
 }
 

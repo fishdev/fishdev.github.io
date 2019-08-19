@@ -1,6 +1,6 @@
 import React from 'react';
 import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
-import classNames from 'classnames';
+import { StickyContainer } from 'react-sticky';
 import ImageGallery from 'react-image-gallery';
 
 import { getEntity } from '../util';
@@ -8,8 +8,7 @@ import { blocks } from '../assets/data';
 import { Block } from '../interfaces';
 import { ScrollToTop } from '../components/ScrollToTop';
 import { MetaTags } from '../components/MetaTags';
-import { StickyContainer, Sticky } from 'react-sticky';
-import { Navbar } from '../components/Navbar';
+import { StickyNavbar } from '../components/StickyNavbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { DetailsBars } from '../components/DetailsBars';
 import { AwardBox } from '../components/AwardBox';
@@ -51,13 +50,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
         <StickyContainer>
           <section className="hero is-black">
             <div className="hero-head">
-              <Sticky>
-                {({ style, isSticky }) => (
-                  <div className={classNames({ 'sticky-header': isSticky })} style={style}>
-                    <Navbar />
-                  </div>
-                )}
-              </Sticky>
+              <StickyNavbar />
             </div>
           </section>
           <section className="hero is-link gradient">
