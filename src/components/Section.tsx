@@ -8,7 +8,7 @@ interface Props {
 
 export const Section: React.FC<Props> = ({ name, children }) => (
   <ScrollElement className="block-container" name={name}>
-    <ScrollAnimation animateIn="zoomIn" animateOnce offset={0}>
+    <ScrollAnimation animateIn="fadeInDown" animateOnce offset={0}>
       <div className="hero is-small is-link gradient rounded">
         <div className="hero-body has-text-centered">
           <h4 className="title is-4 fancy">{name.charAt(0).toUpperCase() + name.slice(1)}</h4>
