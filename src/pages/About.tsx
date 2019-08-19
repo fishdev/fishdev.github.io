@@ -17,9 +17,9 @@ export const About: React.FC = () => (
       <section className="hero is-black is-medium profile-hero">
         <div className="hero-head">
           <Sticky>
-            {({ style, isSticky }) => (
+            {({ style, isSticky, distanceFromTop }) => (
               <div className={classNames({ 'sticky-header': isSticky })} style={style}>
-                <Navbar showName={isSticky} />
+                <Navbar showName={isSticky && distanceFromTop < -300} />
               </div>
             )}
           </Sticky>
