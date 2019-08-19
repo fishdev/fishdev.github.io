@@ -12,8 +12,8 @@ import { FooterContent } from '../components/FooterContent';
 export const Home: React.FC = () => (
   <div>
     <MetaTags description={ROLE + ' at ' + ORGANIZATION} />
-    <Div100vh id="main" className="hero is-black is-fullheight city has-text-centered fancy">
-      <div className="hero-body">
+    <Div100vh id="main" className="hero is-black city has-text-centered fancy">
+      <div className="hero-body hero-body-centered">
         <div className="container">
           <Profile>
             <LevelGroup>
