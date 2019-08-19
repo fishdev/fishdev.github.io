@@ -16,5 +16,6 @@
     "jsx": "preserve",
     "experimentalDecorators": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "files": ["untyped-modules.d.ts"]
 }

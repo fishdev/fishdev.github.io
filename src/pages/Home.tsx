@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Div100vh from 'react-div-100vh';
 
 import { MetaTags } from '../components/MetaTags';
 import { ROLE, ORGANIZATION, more } from '../assets/data';
@@ -11,7 +12,7 @@ import { FooterContent } from '../components/FooterContent';
 export const Home: React.FC = () => (
   <div>
     <MetaTags description={ROLE + ' at ' + ORGANIZATION} />
-    <div id="main" className="hero is-black is-fullheight city has-text-centered fancy">
+    <Div100vh id="main" className="hero is-black is-fullheight city has-text-centered fancy">
       <div className="hero-body">
         <div className="container">
           <Profile>
@@ -36,6 +37,6 @@ export const Home: React.FC = () => (
       <div className="hero-foot">
         <FooterContent showImageCredit />
       </div>
-    </div>
+    </Div100vh>
   </div>
 );
