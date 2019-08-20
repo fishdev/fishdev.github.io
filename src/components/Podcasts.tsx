@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'react-image';
+import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
 
 import { MetaTags } from './MetaTags';
 import { ResponsiveContainer } from './ResponsiveContainer';
@@ -17,7 +17,11 @@ export const Podcasts: React.FC = () => (
             className="column is-3-tablet is-6-mobile tooltip"
             href={podcast.url}
             data-tooltip={podcast.name}>
-            <Img className="image-fullwidth rounded" src={podcast.image} loader={<LoadingBox />} />
+            <Img
+              className="image-fullwidth rounded"
+              src={podcast.image}
+              placeholder={<LoadingBox />}
+            />
           </a>
         ))}
       </div>

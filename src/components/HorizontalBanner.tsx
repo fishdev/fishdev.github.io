@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import Img from 'react-image';
+import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
 
 import { Banner } from '../interfaces';
 import { LoadingBox } from './LoadingBox';
@@ -29,7 +29,7 @@ export class HorizontalBanner extends React.PureComponent<Banner> {
               className="image-fullheight rounded"
               src={image.original}
               alt={image.description}
-              loader={<LoadingBox />}
+              placeholder={<LoadingBox />}
             />
           </figure>
         </div>
