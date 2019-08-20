@@ -8,13 +8,11 @@ interface Props {
 
 export const Section: React.FC<Props> = ({ name, children }) => (
   <ScrollElement className="block-container" name={name}>
-    <ScrollAnimation animateIn="fadeInDown" animateOnce offset={0}>
-      <div className="hero is-small is-link gradient rounded">
-        <div className="hero-body has-text-centered">
-          <h4 className="title is-4 fancy">{name.charAt(0).toUpperCase() + name.slice(1)}</h4>
-        </div>
+    <div className="hero is-small is-link gradient rounded">
+      <div className="hero-body has-text-centered">
+        <h4 className="title is-4 fancy">{name.charAt(0).toUpperCase() + name.slice(1)}</h4>
       </div>
-    </ScrollAnimation>
+    </div>
     <section className="section">
       <div className="content">{children}</div>
     </section>

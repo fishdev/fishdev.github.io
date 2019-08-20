@@ -19,7 +19,7 @@ export class HorizontalBanner extends React.PureComponent<Banner> {
     );
 
     const imageColumn = (
-      <div className="column is-4">
+      <div className="column is-4 is-4-mobile">
         <figure className="image">
           <img className="image-fullheight rounded" src={image.original} alt={image.description} />
         </figure>

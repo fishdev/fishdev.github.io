@@ -9,9 +9,8 @@ export const codes: Banner[] = [
     content: (
       <React.Fragment>
         <p>
-          I love the versatiltiy and multi-paradigm nature of JavaScript but it's dynamic type
-          system makes it mind-numbingly difficult to work with in large data-intensive
-          applications.
+          I love the versatility and multi-paradigm nature of JavaScript but its dynamic type system
+          makes large, data-intensive applications mind-numbingly difficult to work with .
         </p>
         <p>
           With <a href="https://www.typescriptlang.org/">TypeScript</a>, I can take advantage of the
@@ -36,8 +35,8 @@ export const codes: Banner[] = [
         </p>
         <p>
           <a href="https://golang.org/">Go</a> solves that with built-in threads and memory
-          management. It also has a really nice standard library and can build projects into a
-          cross-platform binary.
+          management. It also has a really nice standard library and can build projects into
+          cross-platform binaries.
         </p>
       </React.Fragment>
     ),
