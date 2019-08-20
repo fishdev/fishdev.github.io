@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { Banner } from '../interfaces';
 
@@ -10,7 +11,7 @@ export class HorizontalBanner extends React.PureComponent<Banner> {
   render() {
     const { title, subtitle, content, image, flipped } = this.props;
 
-    const detailColumn = (
+    const DetailColumn: React.FC = () => (
       <div className="column">
         <h4 className="title is-4">{title}</h4>
         {subtitle && <h5 className="subtitle">{subtitle}</h5>}
@@ -18,27 +19,24 @@ export class HorizontalBanner extends React.PureComponent<Banner> {
       </div>
     );
 
-    const imageColumn = image && (
-      <div className="column is-4 is-4-mobile">
-        <figure className="image">
-          <img className="image-fullheight rounded" src={image.original} alt={image.description} />
-        </figure>
-      </div>
-    );
+    const ImageColumn: React.FC<{ visibility?: string }> = ({ visibility }) =>
+      image ? (
+        <div className={classNames('column is-4 is-4-mobile', visibility)}>
+          <figure className="image">
+            <img
+              className="image-fullheight rounded"
+              src={image.original}
+              alt={image.description}
+            />
+          </figure>
+        </div>
+      ) : null;
 
     return (
       <div className="columns is-vcentered is-variable is-6">
-        {flipped ? (
-          <React.Fragment>
-            {detailColumn}
-            {imageColumn}
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            {imageColumn}
-            {detailColumn}
-          </React.Fragment>
-        )}
+        <ImageColumn visibility={flipped ? 'is-hidden-tablet' : undefined} />
+        <DetailColumn />
+        {flipped && <ImageColumn visibility="is-hidden-mobile" />}
       </div>
     );
   }
