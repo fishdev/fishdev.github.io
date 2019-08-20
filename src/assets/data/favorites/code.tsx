@@ -10,7 +10,7 @@ export const codes: Banner[] = [
       <React.Fragment>
         <p>
           I love the versatility and multi-paradigm nature of JavaScript but its dynamic type system
-          makes large, data-intensive applications mind-numbingly difficult to work with .
+          makes large, data-intensive applications mind-numbingly difficult to work with.
         </p>
         <p>
           With <a href="https://www.typescriptlang.org/">TypeScript</a>, I can take advantage of the
