@@ -1,7 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
+import Img from 'react-image';
 
 import { Banner } from '../interfaces';
+import { LoadingBox } from './LoadingBox';
 
 export class HorizontalBanner extends React.PureComponent<Banner> {
   static defaultProps: Partial<Banner> = {
@@ -23,10 +25,11 @@ export class HorizontalBanner extends React.PureComponent<Banner> {
       image ? (
         <div className={classNames('column is-4 is-4-mobile', visibility)}>
           <figure className="image">
-            <img
+            <Img
               className="image-fullheight rounded"
               src={image.original}
               alt={image.description}
+              loader={<LoadingBox />}
             />
           </figure>
         </div>

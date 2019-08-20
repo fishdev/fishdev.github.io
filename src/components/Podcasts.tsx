@@ -1,8 +1,10 @@
 import React from 'react';
+import Img from 'react-image';
 
 import { MetaTags } from './MetaTags';
 import { ResponsiveContainer } from './ResponsiveContainer';
 import { podcasts } from '../assets/data';
+import { LoadingBox } from './LoadingBox';
 
 export const Podcasts: React.FC = () => (
   <div>
@@ -15,7 +17,7 @@ export const Podcasts: React.FC = () => (
             className="column is-3-tablet is-6-mobile tooltip"
             href={podcast.url}
             data-tooltip={podcast.name}>
-            <img className="image-fullwidth rounded" src={podcast.image} />
+            <Img className="image-fullwidth rounded" src={podcast.image} loader={<LoadingBox />} />
           </a>
         ))}
       </div>
