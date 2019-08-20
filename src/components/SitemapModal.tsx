@@ -20,10 +20,16 @@ export const SitemapModal: React.FC<Props> = ({ hide }) => {
           <PageItem type="home" path="/" onClick={hide} />
           <PageItem type="about" path="/about" onClick={hide} />
           {resume.map(name => (
-            <PageItem type="resume" name={name} path={'/' + name} onClick={hide} />
+            <PageItem key={name} type="resume" name={name} path={'/' + name} onClick={hide} />
           ))}
           {favorites.map(({ name }) => (
-            <PageItem type="favorites" name={name} path={'/favorites/' + name} onClick={hide} />
+            <PageItem
+              key={name}
+              type="favorites"
+              name={name}
+              path={'/favorites/' + name}
+              onClick={hide}
+            />
           ))}
         </div>
       </div>
