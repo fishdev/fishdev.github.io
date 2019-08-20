@@ -15,7 +15,7 @@ export const Code: React.FC = () => (
       {codes.map((banner, i) => (
         <React.Fragment>
           <HorizontalBanner {...banner} />
-          <br />
+          <br className="is-hidden-mobile" />
           {i < codes.length - 1 && <br />}
         </React.Fragment>
       ))}

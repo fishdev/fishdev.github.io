@@ -4,6 +4,6 @@ export interface Banner {
   title: string;
   subtitle?: string;
   content: React.ReactNode;
-  image: Image;
+  image?: Image;
   flipped?: boolean;
 }

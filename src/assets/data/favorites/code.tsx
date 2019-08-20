@@ -46,4 +46,52 @@ export const codes: Banner[] = [
     },
     flipped: true,
   },
+  {
+    title: 'Redux',
+    subtitle: 'Beautiful client-side architecture',
+    content: (
+      <React.Fragment>
+        <p>
+          Inspired by <a href="https://facebook.github.io/flux/">Flux</a> from Facebook,{' '}
+          <a href="https://redux.js.org/">Redux</a> is an application paradigm that makes it easy to
+          deal with complex data models that update in real-time.
+        </p>
+        <p>
+          I love writing apps with Redux because of how clean it feels. There are great libraries
+          like <a href="https://github.com/reduxjs/reselect">reselect</a> and{' '}
+          <a href="https://github.com/redux-utilities/redux-actions">redux-actions</a> to improve
+          performance and reduce boilerplate.
+        </p>
+      </React.Fragment>
+    ),
+    image: {
+      original: 'https://www.valentinog.com/blog/wp-content/uploads/2017/12/redux-logo.png',
+      description: 'Redux.js',
+    },
+  },
+  {
+    title: 'Terminal things',
+    content: (
+      <React.Fragment>
+        <p>
+          I use <a href="https://ohmyz.sh/">(oh my) zsh</a> with a pretty minimal config. Here are
+          some handy command-line utilities I like:
+          <ul>
+            <li>
+              <a href="https://github.com/clvv/fasd">fasd</a> – guesses paths to files and
+              directories
+            </li>
+            <li>
+              <a href="https://hub.github.com/">hub</a> – a GitHub wrapper for git
+            </li>
+            <li>
+              <a href="https://github.com/peco/peco">peco</a> – interactive alternative to grep
+              (written in Go!)
+            </li>
+          </ul>
+        </p>
+        <ul />
+      </React.Fragment>
+    ),
+  },
 ];
