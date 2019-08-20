@@ -70,13 +70,17 @@ export const codes: Banner[] = [
     },
   },
   {
-    title: 'Terminal things',
+    title: 'Terminal and editor',
     content: (
       <React.Fragment>
         <p>
-          I use <a href="https://ohmyz.sh/">(oh my) zsh</a> with a pretty minimal config. Here are
-          some handy command-line utilities I like:
+          I use <a href="https://ohmyz.sh/">(oh my) zsh</a> with a pretty minimal config on{' '}
+          <a href="https://iterm2.com/">iTerm</a>. Here are some handy command-line utilities I
+          like:
           <ul>
+            <li>
+              <a href="https://httpie.org/">HTTPie</a> – basically Postman in your terminal
+            </li>
             <li>
               <a href="https://github.com/clvv/fasd">fasd</a> – guesses paths to files and
               directories
@@ -90,7 +94,37 @@ export const codes: Banner[] = [
             </li>
           </ul>
         </p>
-        <ul />
+        <p>
+          Like many, <a href="https://code.visualstudio.com/">Visual Studio Code</a> is my editor of
+          choice. Along with the usual language packs, there are a couple other extensions that
+          improve my workflow:
+        </p>
+        <ul>
+          <li>
+            <a href="https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils">
+              File Utils
+            </a>{' '}
+            – command palette items for file operations (honestly, this should be included)
+          </li>
+          <li>
+            <a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">
+              TODO Tree
+            </a>{' '}
+            – comprehensive to-do comment manager, much like IntelliJ
+          </li>
+          <li>
+            <a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks">
+              Bookmarks
+            </a>{' '}
+            – a powerful way to jump around files instead of relying on cursor history
+          </li>
+          <li>
+            <a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop">
+              LaTeX Workship
+            </a>{' '}
+            – turns VS Code into a full-fledged LaTeX editor with built-in PDF previews
+          </li>
+        </ul>
       </React.Fragment>
     ),
   },
