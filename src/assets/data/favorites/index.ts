@@ -4,7 +4,7 @@ import { Code } from '../../../components/Code';
 
 export const favorites = [
   {
-    name: 'playlists',
+    name: 'music',
     component: Playlists,
   },
   {

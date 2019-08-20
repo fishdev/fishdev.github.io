@@ -58,7 +58,12 @@ export const Favorites: React.FC = () => (
                 component={section.component}
               />
             ))}
-            <Route path="/favorites" exact render={() => <Redirect to="/favorites/playlists" />} />}
+            <Route
+              path="/favorites"
+              exact
+              render={() => <Redirect to={'/favorites/' + favorites[0].name} />}
+            />
+            }
           </Switch>
         </ScrollAnimation>
       </section>
