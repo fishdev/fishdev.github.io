@@ -5,7 +5,7 @@ import ReactGA from 'react-ga';
 import 'animate.css/animate.min.css';
 import { GlobalHotKeys } from 'react-hotkeys';
 
-import { social } from './assets/data';
+import { WEBSITE_SOURCE, social } from './assets/data';
 import { SitemapModal } from './components/SitemapModal';
 import { Home, About, Resume, Details, Favorites, NotFound } from './pages';
 
@@ -29,6 +29,10 @@ export class App extends React.PureComponent<{}, State> {
 
   componentDidMount() {
     ReactGA.pageview(window.location.pathname);
+
+    console.log(
+      "Hi there! If you're curious about my website, check out the source at " + WEBSITE_SOURCE
+    );
   }
 
   render() {

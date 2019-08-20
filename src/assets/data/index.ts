@@ -19,3 +19,4 @@ export const LOCATION_URL = 'https://www.visitpittsburgh.com';
 export const HOSTING_URL = 'https://fishdev.xyz';
 export const META_IMAGE_URL =
   'https://github.com/fishdev/fishdev.github.io/blob/master/as.png?raw=true';
+export const WEBSITE_SOURCE = 'https://github.com/fishdev/fishdev.github.io';
