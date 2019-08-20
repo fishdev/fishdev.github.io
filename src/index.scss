@@ -155,6 +155,11 @@ a.tag:hover {
   .profile-hero > .hero-body {
     padding-bottom: 6.5rem;
   }
+
+  // Sitemap column boxes
+  .sitemap > .column {
+    padding-bottom: 0;
+  }
 }
 
 // Expand/collapse course list
@@ -177,11 +182,15 @@ iframe.playlist-item {
   height: 380px;
 }
 
+// Modal content
+.modal-content {
+  padding: 0rem 0.5rem;
+  overflow-x: hidden;
+}
+
 // Search results container
 .search-container {
   min-height: 100vh;
-  overflow-x: hidden;
-  padding: 0rem 0.5rem;
 }
 
 .search-modal .search-box {

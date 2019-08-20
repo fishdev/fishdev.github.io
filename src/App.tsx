@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Route, Switch, RouteComponentProps } from 'rea
 import { createBrowserHistory } from 'history';
 import ReactGA from 'react-ga';
 import 'animate.css/animate.min.css';
+import { GlobalHotKeys } from 'react-hotkeys';
 
 import { social } from './assets/data';
+import { SitemapModal } from './components/SitemapModal';
 import { Home, About, Resume, Details, Favorites, NotFound } from './pages';
 
 const history = createBrowserHistory();
@@ -13,7 +15,18 @@ history.listen(location => {
   ReactGA.pageview(location.pathname);
 });
 
-export class App extends React.PureComponent {
+interface State {
+  sitemapActive: boolean;
+}
+
+export class App extends React.PureComponent<{}, State> {
+  state: Readonly<State> = {
+    sitemapActive: false,
+  };
+
+  showSitemap = () => this.setState({ sitemapActive: true });
+  hideSitemap = () => this.setState({ sitemapActive: false });
+
   componentDidMount() {
     ReactGA.pageview(window.location.pathname);
   }
@@ -39,19 +52,30 @@ export class App extends React.PureComponent {
       );
     });
 
+    const { sitemapActive } = this.state;
+
     return (
-      <Router>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" exact component={About} />
-          <Route path="/resume/" exact component={Resume} />
-          <Route path="/resume/:section" exact component={Resume} />
-          <Route path="/favorites" component={Favorites} />
-          <Route path="/404" component={NotFound} />
-          {links}
-          <Route path="/:id" component={Details} />
-        </Switch>
-      </Router>
+      <div>
+        <GlobalHotKeys
+          keyMap={{ SHOW_SITEMAP: '\\' }}
+          handlers={{
+            SHOW_SITEMAP: this.showSitemap,
+          }}
+        />
+        <Router>
+          {sitemapActive && <SitemapModal hide={this.hideSitemap} />}
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/resume/" exact component={Resume} />
+            <Route path="/resume/:section" exact component={Resume} />
+            <Route path="/favorites" component={Favorites} />
+            <Route path="/404" component={NotFound} />
+            {links}
+            <Route path="/:id" component={Details} />
+          </Switch>
+        </Router>
+      </div>
     );
   }
 }
