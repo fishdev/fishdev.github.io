@@ -10,7 +10,7 @@ import path from '../path.jpeg';
 export const about: Array<Sentence | Image | {}> = [
   {
     original: cmu,
-    description: 'CMU at night. Credit: me',
+    description: 'CMU at night',
   },
   {
     icon: 'fas fa-code',
@@ -23,7 +23,7 @@ export const about: Array<Sentence | Image | {}> = [
   },
   {
     original: skyline,
-    description: 'Skyline from Three Rivers Heritage trail. Credit: me',
+    description: 'Skyline from Three Rivers Heritage trail',
   },
   {
     icon: 'fas fa-map-marker-alt',
@@ -35,7 +35,7 @@ export const about: Array<Sentence | Image | {}> = [
   },
   {
     original: path,
-    description: 'Coopers Rock State Forest. Credit: me',
+    description: 'Coopers Rock State Forest',
   },
   {
     icon: 'fas fa-spa',
