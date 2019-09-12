@@ -120,7 +120,7 @@ export const codes: Banner[] = [
           </li>
           <li>
             <a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop">
-              LaTeX Workship
+              LaTeX Workshop
             </a>{' '}
             – turns VS Code into a full-fledged LaTeX editor with built-in PDF previews
           </li>
