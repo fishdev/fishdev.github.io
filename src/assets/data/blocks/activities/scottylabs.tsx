@@ -10,7 +10,10 @@ export const scottylabs: Block = {
       month: 9,
       year: 2018,
     },
-    end: 'Present',
+    end: {
+      month: 9,
+      year: 2019,
+    },
   },
   buttons: [
     {
