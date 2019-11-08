@@ -70,16 +70,16 @@ export const cups: Block = {
   ],
   images: [
     {
-      original: 'https://fishdev.xyz/PrivacyTracker/img/portfolio/personal-overview.png',
-      thumbnail: 'https://fishdev.xyz/PrivacyTracker/img/portfolio/personal-overview.png',
+      original: 'https://ashwins.me/PrivacyTracker/img/portfolio/personal-overview.png',
+      thumbnail: 'https://ashwins.me/PrivacyTracker/img/portfolio/personal-overview.png',
     },
     {
-      original: 'https://fishdev.xyz/PrivacyTracker/img/portfolio/easy-interface.png',
-      thumbnail: 'https://fishdev.xyz/PrivacyTracker/img/portfolio/easy-interface.png',
+      original: 'https://ashwins.me/PrivacyTracker/img/portfolio/easy-interface.png',
+      thumbnail: 'https://ashwins.me/PrivacyTracker/img/portfolio/easy-interface.png',
     },
     {
-      original: 'https://fishdev.xyz/PrivacyTracker/img/portfolio/options-pane.png',
-      thumbnail: 'https://fishdev.xyz/PrivacyTracker/img/portfolio/options-pane.png',
+      original: 'https://ashwins.me/PrivacyTracker/img/portfolio/options-pane.png',
+      thumbnail: 'https://ashwins.me/PrivacyTracker/img/portfolio/options-pane.png',
     },
   ],
 };
