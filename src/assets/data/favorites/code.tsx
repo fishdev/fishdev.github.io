@@ -65,7 +65,7 @@ export const codes: Banner[] = [
       </React.Fragment>
     ),
     image: {
-      original: 'https://www.valentinog.com/blog/wp-content/uploads/2017/12/redux-logo.png',
+      original: 'https://miro.medium.com/max/2880/1*n49UEh_U3iEqPHpp8eSSUw.png',
       description: 'Redux.js',
     },
   },
