@@ -6,6 +6,7 @@ import { Image } from '../../interfaces/Image';
 import cmu from '../cmu.jpeg';
 import skyline from '../skyline.jpeg';
 import path from '../path.jpeg';
+import night from '../night.jpeg';
 
 export const about: Array<Sentence | Image | {}> = [
   {
@@ -43,6 +44,18 @@ export const about: Array<Sentence | Image | {}> = [
       <span>
         <strong className="gradientbg">Juggling</strong> and{' '}
         <strong className="gradientbg">biking</strong> in my free time.
+      </span>
+    ),
+  },
+  {
+    original: night,
+    description: 'Schenley Plaza',
+  },
+  {
+    icon: 'fas fa-camera',
+    content: (
+      <span>
+        With a mild interest in <strong className="gradientbg">photography</strong>.
       </span>
     ),
   },
