@@ -8,23 +8,35 @@ export const university: React.ReactNode = (
     <a href="https://cs.cmu.edu">
       <strong>Carnegie Mellon University</strong>
     </a>
-    . My cumulative QPA is 3.5 with expected graduation in May 2022. Relevant coursework:
+    . My cumulative QPA is 3.59 with expected graduation in May 2022. Relevant coursework:
   </p>
 );
 
 export const coursework: Course[] = [
   {
+    id: '15-213',
+    name: 'Introduction to Computer Systems',
+    semester: 'Spring 2020',
+    current: true,
+    url: 'https://www.coursicle.com/cmu/courses/CS/15213/',
+  },
+  {
+    id: '10-315',
+    name: 'Introduction to Machine Learning',
+    semester: 'Spring 2020',
+    current: true,
+    url: 'https://www.coursicle.com/cmu/courses/MLG/10315/',
+  },
+  {
     id: '15-210',
     name: 'Parallel and Sequential Data Structures and Algorithms',
     semester: 'Fall 2019',
-    current: true,
     url: 'https://www.coursicle.com/cmu/courses/CS/15210/',
   },
   {
     id: '17-214',
     name: 'Principles of Software Construction',
     semester: 'Fall 2019',
-    current: true,
     url: 'https://www.coursicle.com/cmu/courses/SE/17214/',
   },
   {

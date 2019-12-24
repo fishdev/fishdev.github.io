@@ -11,7 +11,10 @@ export const end_the_rain: Block = {
       month: 9,
       year: 2018,
     },
-    end: 'Present',
+    end: {
+      month: 9,
+      year: 2019,
+    },
   },
   buttons: [
     {
@@ -22,7 +25,7 @@ export const end_the_rain: Block = {
   ],
   description: (
     <p>
-      Technical and software lead. Coordinating with electrical and mechanical teams to build
+      Technical and software lead. Coordinated with electrical and mechanical teams to build
       umbrella dispenser network, as well as Node.js + MongoDB backend system.
     </p>
   ),
@@ -35,12 +38,12 @@ export const end_the_rain: Block = {
       </p>
       <p>
         As the technical and software lead, I created and maintain the organization's website. In
-        addition, I am developing a Node.js + MongoDB backend system for the umbrella dispenser
-        network, as well as a mobile application to improve accessibility. I coordinate electrial
-        and mechanical engineering teams to perform integration tests on the umbrella dispenser
+        addition, I developed a Node.js + MongoDB backend system for the umbrella dispenser network,
+        as well as a mobile application to improve accessibility. I coordinated electrial and
+        mechanical engineering teams to perform integration tests on the umbrella dispenser
         prototypes.
       </p>
-      <p>I also help make decisions about the organization and recruit new members.</p>
+      <p>I also helped make decisions about the organization and recruit new members.</p>
     </div>
   ),
   images: [
