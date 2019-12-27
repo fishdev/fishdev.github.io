@@ -121,13 +121,21 @@ export class Resume extends React.PureComponent<RouteComponentProps<{ section: s
           <section className="section resume-body">
             <ResponsiveContainer size="large">
               <Education />
+            </ResponsiveContainer>
+            <ResponsiveContainer size="huge">
               {blocks.map(section => (
                 <Section key={section.name} name={section.name}>
-                  {this.filterBlocks(section.data).map(block => (
-                    <BlockBox key={block.id} {...block} hasMore={true} />
-                  ))}
+                  <div className="columns is-multiline">
+                    {this.filterBlocks(section.data).map(block => (
+                      <div className="column is-half">
+                        <BlockBox key={block.id} {...block} hasMore={true} />
+                      </div>
+                    ))}
+                  </div>
                 </Section>
               ))}
+            </ResponsiveContainer>
+            <ResponsiveContainer size="large">
               <Skills />
             </ResponsiveContainer>
           </section>
