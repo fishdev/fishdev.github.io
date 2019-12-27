@@ -6,7 +6,7 @@ import { Image } from '../../interfaces/Image';
 import cmu from '../cmu.jpeg';
 import skyline from '../skyline.jpeg';
 import path from '../path.jpeg';
-import night from '../night.jpeg';
+import river from '../river.jpeg';
 
 export const about: Array<Sentence | Image | {}> = [
   {
@@ -48,8 +48,8 @@ export const about: Array<Sentence | Image | {}> = [
     ),
   },
   {
-    original: night,
-    description: 'Schenley Plaza',
+    original: river,
+    description: 'PNC Park',
   },
   {
     icon: 'fas fa-camera',
