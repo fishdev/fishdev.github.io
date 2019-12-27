@@ -9,6 +9,7 @@ export const courseToBlock = ({
   name,
   semester,
   current,
+  ta,
   description,
   url,
 }: Course): Block => ({
@@ -22,6 +23,11 @@ export const courseToBlock = ({
         &nbsp;
         <span> at Carnegie Mellon University</span>
       </p>
+      {ta && (
+        <p>
+          Served as a <strong>teaching assistant</strong>: {ta.join(', ')}
+        </p>
+      )}
       {description && <p>{description}</p>}
     </div>
   ),

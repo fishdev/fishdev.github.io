@@ -2,7 +2,7 @@ import React from 'react';
 
 import { coursework } from '../assets/data';
 import { CourseBullet } from './CourseBullet';
-import { teachingAsCourses } from '../util';
+import { teachingAsAcademics } from '../util';
 
 interface State {
   expanded: boolean;
@@ -33,9 +33,9 @@ export class CourseList extends React.PureComponent<{}, State> {
           Of these, I have been a <strong>teaching assistant</strong> for:
         </p>
         <ul>
-          {teachingAsCourses.map(course => (
-            <li key={course.id}>
-              {course.id}: {course.name} ({course.semester})
+          {teachingAsAcademics.map(academic => (
+            <li key={academic.id}>
+              {academic.id}: {academic.name} ({academic.semester})
             </li>
           ))}
         </ul>

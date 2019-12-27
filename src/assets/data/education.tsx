@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Course, Academic } from '../../interfaces';
+import { Course } from '../../interfaces';
 
 export const university: React.ReactNode = (
   <p>
@@ -49,6 +49,7 @@ export const coursework: Course[] = [
     id: '15-150',
     name: 'Functional Programming',
     semester: 'Spring 2019',
+    ta: ['Spring 2020'],
     url: 'https://www.coursicle.com/cmu/courses/CS/15150/',
   },
   {
@@ -67,6 +68,7 @@ export const coursework: Course[] = [
     id: '15-122',
     name: 'Principles of Imperative Computation',
     semester: 'Fall 2018',
+    ta: ['Fall 2019'],
     url: 'https://www.coursicle.com/cmu/courses/CS/15122/',
   },
   {
@@ -74,13 +76,6 @@ export const coursework: Course[] = [
     name: 'Matrices and Linear Transformations',
     semester: 'Fall 2018',
     url: 'https://www.coursicle.com/cmu/courses/MSC/21241/',
-  },
-];
-
-export const teaching: Academic[] = [
-  {
-    id: '15-122',
-    semester: 'Fall 2019',
   },
 ];
 

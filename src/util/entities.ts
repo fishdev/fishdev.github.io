@@ -21,12 +21,16 @@ export const getEntity = (id: string): Entity | undefined =>
   entities.find((entity: Entity) => id === entity.data.id);
 
 export const filterEntities = (query: string) => {
-  query = query.toLowerCase();
+  query = query.toLowerCase().trim();
   return entities.filter((entity: Entity) => {
     if (entity.data.id.toString().includes(query)) return true;
     if (entity.data.name.toLowerCase().includes(query)) return true;
 
     switch (entity.type) {
+      case 'coursework':
+        if ((entity.data as Course).ta && query === 'ta') return true;
+        if ((entity.data as Course).ta && query.includes('teaching')) return true;
+        break;
       case 'projects':
       case 'experience':
       case 'activities':

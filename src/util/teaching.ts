@@ -1,16 +1,13 @@
-import { coursework, teaching } from '../assets/data';
-import { Course, Academic } from '../interfaces';
+import { coursework } from '../assets/data';
+import { Academic } from '../interfaces';
 
-export const teachingAsCourses: Course[] = teaching.map((academic: Academic) => {
-  const { id, semester } = academic;
-  const course = coursework.find(course => course.id === id);
-  if (!course)
-    return {
-      ...academic,
-      name: id.toString(),
-    };
-  return {
-    ...course,
-    semester,
-  };
-});
+export const teachingAsAcademics: Academic[] = coursework
+  .filter(course => course.ta)
+  .map(course =>
+    course.ta!.map(semester => ({
+      id: course.id,
+      name: course.name,
+      semester,
+    }))
+  )
+  .flat();
