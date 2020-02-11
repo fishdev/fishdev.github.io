@@ -65,12 +65,6 @@ export class Navbar extends React.PureComponent<Props, State> {
                 <NavLink to="/" exact activeClassName="is-active" className="navbar-item">
                   Home
                 </NavLink>
-                <NavLink to="/about" exact activeClassName="is-active" className="navbar-item">
-                  About
-                </NavLink>
-                <NavLink to="/resume" exact activeClassName="is-active" className="navbar-item">
-                  Resume
-                </NavLink>
                 <NavLink to="/favorites" activeClassName="is-active" className="navbar-item">
                   Favorites
                 </NavLink>

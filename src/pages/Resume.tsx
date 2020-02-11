@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { withRouter, RouteComponentProps, Link } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 import { GlobalHotKeys } from 'react-hotkeys';
 
@@ -9,6 +9,9 @@ import { ImportantToggle } from '../components/ImportantToggle';
 import { SearchModal } from '../components/SearchModal';
 import { Education } from '../components/Education';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
+import { blocks } from '../assets/data';
+import { BlockHeader } from '../components/BlockHeader';
+import { Section } from '../components/Section';
 
 interface State {
   searchActive: boolean;
@@ -66,10 +69,13 @@ export class Resume extends React.PureComponent<
         <div className="hero is-black is-medium">
           <div className="hero-body">
             <ResponsiveContainer size="large">
-              <div className="columns">
-                <div className="column is-4">Test</div>
-                <div className="column is-8">Hello</div>
-              </div>
+              {blocks.map(({ name, data }) => (
+                <Section key={name} name={name}>
+                  {data.map(block => (
+                    <BlockHeader {...block} />
+                  ))}
+                </Section>
+              ))}
             </ResponsiveContainer>
           </div>
         </div>

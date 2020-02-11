@@ -9,7 +9,7 @@ import { Footer } from '../components/Footer';
 import { Resume } from './Resume';
 
 export const Home: React.FC = () => (
-  <div>
+  <div className="blackened">
     <MetaTags description={ROLE + ' at ' + ORGANIZATION} />
     <div id="main" className="hero is-black is-medium city fade-bottom has-text-centered fancy">
       <div className="hero-body hero-body-centered">

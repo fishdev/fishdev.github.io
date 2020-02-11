@@ -15,7 +15,7 @@ $success: #89ca78;
 @import 'node_modules/bulmaswatch/flatly/_overrides';
 @import 'node_modules/react-image-gallery/styles/scss/image-gallery.scss';
 
-html {
+.blackened {
   @extend .has-background-black;
 }
 
@@ -58,7 +58,8 @@ html {
 }
 
 // Black background links
-.hero.is-black p a {
+.hero.is-black p a,
+.underlink {
   background-image: linear-gradient(to bottom, $grey-dark 50%, transparent 50%);
   background-position: 0 1.02em;
   background-repeat: repeat-x;
@@ -66,6 +67,7 @@ html {
 }
 
 .hero.is-black p a:hover,
+.underlink:hover,
 .hoverable:hover {
   color: lighten($link, 25%) !important;
 }
@@ -152,10 +154,6 @@ a.tag:hover {
   margin-bottom: 1.25rem;
 }
 
-.block-container > section.section {
-  padding: 1.5rem 0.75rem 2.75rem 0.75rem;
-}
-
 .details-bar:not(:last-child) {
   margin-bottom: 0;
 }
@@ -164,22 +162,20 @@ a.tag:hover {
   margin-bottom: 0.75rem !important;
 }
 
+.block-section:not(:last-child) {
+  padding-bottom: 3rem;
+}
+
+.section-label {
+  padding-top: 20px;
+}
+
+.block-header:not(:last-child) {
+  padding-bottom: 1.5rem;
+}
+
 // Mobile-specific stuff
 @media screen and (max-width: $tablet) {
-  // Reduce section top padding
-  .section {
-    padding-top: 1.5rem;
-  }
-
-  // Fullwidth, boxy headers
-  .section.resume-body {
-    padding: 0.75rem;
-  }
-
-  .section.resume-body .rounded {
-    border-radius: 0;
-  }
-
   // Padding for profile hero
   .profile-hero > .hero-body {
     padding-bottom: 6.5rem;
