@@ -168,10 +168,12 @@ a.tag:hover {
 
 .section-label {
   padding-top: 20px;
+  width: 120px;
+  text-align: right;
 }
 
 .block-header:not(:last-child) {
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.6rem;
 }
 
 // Mobile-specific stuff

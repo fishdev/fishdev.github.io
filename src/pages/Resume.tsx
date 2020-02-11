@@ -68,7 +68,7 @@ export class Resume extends React.PureComponent<
         <Education showSearch={this.showSearch} />
         <div className="hero is-black is-medium">
           <div className="hero-body">
-            <ResponsiveContainer size="large">
+            <ResponsiveContainer size="medium">
               {blocks.map(({ name, data }) => (
                 <Section key={name} name={name}>
                   {data.map(block => (

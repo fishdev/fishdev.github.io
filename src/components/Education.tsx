@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { university } from '../assets/data';
+import { ResponsiveContainer } from './ResponsiveContainer';
 
 interface Props {
   showSearch(): void;
@@ -9,8 +10,8 @@ interface Props {
 export const Education: React.FC<Props> = ({ showSearch }) => (
   <section className="hero is-black">
     <div className="hero-body fancy">
-      <div className="container">
-        <div className="columns is-variable is-5 is-mobile is-multiline">
+      <ResponsiveContainer size="huge">
+        <div className="columns is-vcentered is-variable is-5 is-mobile is-multiline">
           <div className="column is-12-mobile">
             <p className="is-size-4">{university}</p>
           </div>
@@ -42,7 +43,7 @@ export const Education: React.FC<Props> = ({ showSearch }) => (
             </a>
           </div>
         </div>
-      </div>
+      </ResponsiveContainer>
     </div>
   </section>
 );
