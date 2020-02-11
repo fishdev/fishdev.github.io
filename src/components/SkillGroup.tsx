@@ -4,9 +4,9 @@ import { Skill } from '../interfaces';
 import { SkillContainer } from './SkillContainer';
 
 export const SkillGroup: React.FC<{ skills: Skill[] }> = ({ skills }) => (
-  <div className="field is-grouped is-grouped-multiline skill-group">
+  <div className="columns is-multiline is-mobile skill-group">
     {skills.map(skill => (
-      <div key={skill.name} className="control">
+      <div key={skill.name} className="column is-narrow">
         <SkillContainer {...skill} />
       </div>
     ))}

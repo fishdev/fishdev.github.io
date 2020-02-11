@@ -23,6 +23,9 @@ export const Home: React.FC = () => (
     </div>
     <About />
     <Resume />
+    <br />
+    <br />
+    <br />
     <Footer />
   </div>
 );
