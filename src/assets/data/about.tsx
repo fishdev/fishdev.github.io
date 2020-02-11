@@ -30,7 +30,7 @@ export const about: Array<Sentence | Image | {}> = [
     icon: 'fas fa-map-marker-alt',
     content: (
       <span>
-        Born and raised in <strong className="gradientbg">Pittsburgh, Pennsylvania</strong>.
+        Born and raised in <strong className="gradientbg">Pittsburgh, PA</strong>.
       </span>
     ),
   },
@@ -42,8 +42,7 @@ export const about: Array<Sentence | Image | {}> = [
     icon: 'fas fa-spa',
     content: (
       <span>
-        <strong className="gradientbg">Juggling</strong> and{' '}
-        <strong className="gradientbg">biking</strong> in my free time.
+        Juggling and <strong className="gradientbg">biking</strong> in my free time.
       </span>
     ),
   },
@@ -55,7 +54,7 @@ export const about: Array<Sentence | Image | {}> = [
     icon: 'fas fa-camera',
     content: (
       <span>
-        With a mild interest in <strong className="gradientbg">photography</strong>.
+        I have a mild interest in <strong className="gradientbg">photography</strong>.
       </span>
     ),
   },
@@ -64,8 +63,7 @@ export const about: Array<Sentence | Image | {}> = [
     icon: 'fas fa-headphones-alt',
     content: (
       <span>
-        Always listening to <strong className="gradientbg">music</strong> and{' '}
-        <strong className="gradientbg">podcasts</strong>.
+        Always listening to music and <strong className="gradientbg">podcasts</strong>.
       </span>
     ),
     extra: (

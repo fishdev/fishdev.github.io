@@ -14,16 +14,14 @@ export class ResponsiveContainer extends React.PureComponent<Props> {
   render() {
     const { centered, size, children } = this.props;
     return (
-      <div className={classNames('container', { 'has-text-centered': centered })}>
-        <div className="columns is-centered">
-          <div
-            className={classNames('column is-paddingless', {
-              'is-6-tablet is-5-desktop is-4-widescreen is-3-fullhd': size === 'medium',
-              'is-8-desktop is-6-fullhd': size === 'large',
-              'is-10-desktop': size === 'huge',
-            })}>
-            {children}
-          </div>
+      <div className={classNames('columns is-centered', { 'has-text-centered': centered })}>
+        <div
+          className={classNames('column is-paddingless', {
+            'is-6-tablet is-5-desktop is-4-widescreen is-3-fullhd': size === 'medium',
+            'is-8-desktop is-6-fullhd': size === 'large',
+            'is-10-desktop': size === 'huge',
+          })}>
+          {children}
         </div>
       </div>
     );
