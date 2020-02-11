@@ -2,6 +2,7 @@ import React from 'react';
 
 import { university } from '../assets/data';
 import { ResponsiveContainer } from './ResponsiveContainer';
+import { Link } from 'react-router-dom';
 
 interface Props {
   showSearch(): void;
@@ -16,13 +17,13 @@ export const Education: React.FC<Props> = ({ showSearch }) => (
             <p className="is-size-4">{university}</p>
           </div>
           <div className="column is-4-mobile is-narrow has-text-centered">
-            <a className="hoverable">
+            <Link to="/404" className="hoverable">
               <span className="icon is-large ">
                 <i className="fas fa-graduation-cap fa-2x" />
               </span>
               <br />
               <span>Courses</span>
-            </a>
+            </Link>
           </div>
           <div className="column is-4-mobile is-narrow has-text-centered">
             <a className="hoverable" onClick={showSearch}>
