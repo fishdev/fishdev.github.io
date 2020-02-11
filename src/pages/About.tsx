@@ -1,5 +1,6 @@
 import React from 'react';
 import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
+import { Link } from 'react-router-dom';
 
 import { about } from '../assets/data';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
@@ -20,7 +21,7 @@ export const About: React.FC = () => (
           )}
         </p>
         <br />
-        <div className="columns">
+        <div className="columns is-mobile is-multiline">
           {about.map(
             (item, i) =>
               isImage(item) && (
@@ -37,6 +38,14 @@ export const About: React.FC = () => (
                 </a>
               )
           )}
+        </div>
+        <div className="has-text-centered">
+          <Link className="button is-outlined is-white " to="/favorites">
+            <span>Check out my favorites</span>
+            <span className="icon">
+              <i className="fas fa-arrow-right" />
+            </span>
+          </Link>
         </div>
       </ResponsiveContainer>
     </div>

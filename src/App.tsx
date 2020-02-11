@@ -70,10 +70,10 @@ export class App extends React.PureComponent<{}, State> {
           {sitemapActive && <SitemapModal hide={this.hideSitemap} />}
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/about" exact component={About} />
+            {/* <Route path="/about" exact component={About} />
             <Route path="/resume/" exact component={Resume} />
             <Route path="/resume/:section" exact component={Resume} />
-            <Route path="/favorites" component={Favorites} />
+            <Route path="/favorites" component={Favorites} /> */}
             <Route path="/404" component={NotFound} />
             {links}
             <Route path="/:id" component={Details} />

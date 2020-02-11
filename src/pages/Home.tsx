@@ -6,6 +6,7 @@ import { Profile } from '../components/Profile';
 import { About } from './About';
 import { SocialButtons } from '../components/SocialButtons';
 import { Footer } from '../components/Footer';
+import { Resume } from './Resume';
 
 export const Home: React.FC = () => (
   <div>
@@ -21,11 +22,7 @@ export const Home: React.FC = () => (
       </div>
     </div>
     <About />
-    <div className="hero is-black is-medium fancy">
-      <div className="hero-body">
-        <div className="container has-text-centered">Resume</div>
-      </div>
-    </div>
+    <Resume />
     <Footer />
   </div>
 );

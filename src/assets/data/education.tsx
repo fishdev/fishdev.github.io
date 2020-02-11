@@ -3,13 +3,14 @@ import React from 'react';
 import { Course } from '../../interfaces';
 
 export const university: React.ReactNode = (
-  <p>
+  <span>
     Studying computer science at{' '}
     <a href="https://cs.cmu.edu">
-      <strong>Carnegie Mellon University</strong>
-    </a>
-    . My cumulative QPA is 3.59 with expected graduation in May 2022. Relevant coursework:
-  </p>
+      <strong>Carnegie Mellon</strong>
+    </a>{' '}
+    with a minor in human-computer interaction. My cumulative QPA is{' '}
+    <strong className="gradientbg">3.59</strong>. Expected graduation in May 2022.
+  </span>
 );
 
 export const coursework: Course[] = [
@@ -80,8 +81,8 @@ export const coursework: Course[] = [
 ];
 
 export const gradeschool: React.ReactNode = (
-  <p>
+  <span>
     I attended <a href="https://discoverpps.org/allderdice">Taylor Allderdice High School</a>.
     Graduated in May 2018 with a GPA of 4.0.
-  </p>
+  </span>
 );
