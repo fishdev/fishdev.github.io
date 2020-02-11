@@ -18,7 +18,7 @@ export const SkillTag: React.FC<Props> = ({ isActive, onClick, icon, name }) => 
           </span>
         </div>
       )}
-      <div className="column">{name}</div>
+      <div className="column fancy">{name}</div>
     </div>
   </a>
 );
