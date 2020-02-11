@@ -12,6 +12,10 @@ import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { blocks } from '../assets/data';
 import { BlockHeader } from '../components/BlockHeader';
 import { Section } from '../components/Section';
+import { SkillContainer } from '../components/SkillContainer';
+import { SkillGroup } from '../components/SkillGroup';
+import { languages, technologies } from '../assets/data';
+import { Skills } from '../components/Skills';
 
 interface State {
   searchActive: boolean;
@@ -72,13 +76,16 @@ export class Resume extends React.PureComponent<
               {blocks.map(({ name, data }) => (
                 <Section key={name} name={name}>
                   {data.map(block => (
-                    <BlockHeader {...block} />
+                    <div className="block-header">
+                      <BlockHeader hasMore {...block} />
+                    </div>
                   ))}
                 </Section>
               ))}
             </ResponsiveContainer>
           </div>
         </div>
+        <Skills />
       </div>
     );
   }

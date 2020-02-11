@@ -15,12 +15,10 @@ export class BlockHeader extends React.PureComponent<Props> {
   };
 
   render() {
-    const { id, name, extra, range } = this.props;
+    const { id, name, extra, range, hasMore } = this.props;
     return (
-      <div className="block-header">
-        <p className="is-size-3">
-          <Link to={'/' + id}>{name}</Link>
-        </p>
+      <div>
+        <p className="is-size-3">{hasMore ? <Link to={'/' + id}>{name}</Link> : name}</p>
         {extra && (
           <span className="is-size-5 has-text-grey">
             {extra}
