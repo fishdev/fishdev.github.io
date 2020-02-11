@@ -1,44 +1,44 @@
 import React from 'react';
-import { StickyContainer } from 'react-sticky';
+import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
 
-import { StickyNavbar } from '../components/StickyNavbar';
-import { ResponsiveContainer } from '../components/ResponsiveContainer';
-import { Profile } from '../components/Profile';
-import { AboutItem } from '../components/AboutItem';
 import { about } from '../assets/data';
-import { Footer } from '../components/Footer';
-import { MetaTags } from '../components/MetaTags';
+import { ResponsiveContainer } from '../components/ResponsiveContainer';
+import { Sentence, Image } from '../interfaces';
+import { LoadingBox } from '../components/LoadingBox';
+
+const isSentence = (obj: any): obj is Sentence => (obj as Sentence).icon !== undefined;
+
+const isImage = (obj: any): obj is Image => (obj as Image).original !== undefined;
 
 export const About: React.FC = () => (
-  <div className="has-background-black">
-    <MetaTags name="About" description="Read about who I am" />
-    <StickyContainer>
-      <section className="hero is-black is-medium profile-hero">
-        <div className="hero-head">
-          <StickyNavbar
-            computeProps={({ isSticky, distanceFromTop }) => ({
-              showName: isSticky && distanceFromTop < -300,
-            })}
-          />
+  <section className="hero is-black is-medium">
+    <div className="hero-body fancy">
+      <ResponsiveContainer size="large">
+        <p className="is-size-4">
+          {about.map(
+            (item, i) => isSentence(item) && <span key={i}>{item.content}&nbsp;&nbsp;</span>
+          )}
+        </p>
+        <br />
+        <div className="columns">
+          {about.map(
+            (item, i) =>
+              isImage(item) && (
+                <a
+                  key={i}
+                  className="column is-3-tablet is-6-mobile tooltip"
+                  href={item.original}
+                  data-tooltip={item.description}>
+                  <Img
+                    className="image-fullwidth rounded"
+                    src={item.original}
+                    placeholder={<LoadingBox />}
+                  />
+                </a>
+              )
+          )}
         </div>
-        <div className="hero-body fancy">
-          <ResponsiveContainer centered size="medium">
-            <Profile showColorbar={true} showButtons={false} />
-          </ResponsiveContainer>
-        </div>
-        <div className="hero-foot has-text-centered">
-          <small className="has-text-grey-darker">
-            <b>Scroll </b>
-            <span className="icon is-small">
-              <i className="fas fa-arrow-down" />
-            </span>
-          </small>
-        </div>
-      </section>
-      {about.map((item, i) => (
-        <AboutItem key={i} {...item} />
-      ))}
-    </StickyContainer>
-    <Footer />
-  </div>
+      </ResponsiveContainer>
+    </div>
+  </section>
 );

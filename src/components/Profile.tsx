@@ -15,13 +15,13 @@ export class Profile extends React.PureComponent<Props> {
   static defaultProps: Props = {
     showPortrait: true,
     showColorbar: false,
-    showButtons: true,
+    showButtons: false,
   };
 
   render() {
     const { showPortrait, showColorbar, showButtons, children } = this.props;
     return (
-      <ScrollAnimation animateIn="fadeIn">
+      <ScrollAnimation animateIn="fadeIn" animateOnce>
         <div>
           {showPortrait && (
             <nav className="level">
@@ -40,7 +40,6 @@ export class Profile extends React.PureComponent<Props> {
             )}
           </h3>
           <h5 className="subtitle">{UNIVERSITY}</h5>
-
           {showButtons && <SocialButtons />}
           {children}
         </div>

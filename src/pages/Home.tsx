@@ -1,42 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Div100vh from 'react-div-100vh';
 
 import { MetaTags } from '../components/MetaTags';
 import { ROLE, ORGANIZATION, more } from '../assets/data';
 import { Profile } from '../components/Profile';
-import { LevelGroup } from '../components/LevelGroup';
-import { DropdownList } from '../components/DropdownList';
-import { FooterContent } from '../components/FooterContent';
+import { About } from './About';
+import { SocialButtons } from '../components/SocialButtons';
+import { Footer } from '../components/Footer';
 
 export const Home: React.FC = () => (
   <div>
     <MetaTags description={ROLE + ' at ' + ORGANIZATION} />
-    <Div100vh id="main" className="hero is-black city has-text-centered fancy">
+    <div id="main" className="hero is-black is-medium city fade-bottom has-text-centered fancy">
       <div className="hero-body hero-body-centered">
         <div className="container">
-          <Profile>
-            <LevelGroup>
-              <Link to="/resume" className="button is-link">
-                <span>View my resume</span>
-                <span className="icon">
-                  <i className="fas fa-arrow-right" />
-                </span>
-              </Link>
-              <DropdownList items={more}>
-                <button className="button is-black" aria-haspopup="true">
-                  <span className="icon">
-                    <i className="fas fa-ellipsis-h" />
-                  </span>
-                </button>
-              </DropdownList>
-            </LevelGroup>
-          </Profile>
+          <Profile></Profile>
         </div>
       </div>
       <div className="hero-foot">
-        <FooterContent showImageCredit />
+        <SocialButtons size="large" />
       </div>
-    </Div100vh>
+    </div>
+    <About />
+    <div className="hero is-black is-medium fancy">
+      <div className="hero-body">
+        <div className="container has-text-centered">Resume</div>
+      </div>
+    </div>
+    <Footer />
   </div>
 );

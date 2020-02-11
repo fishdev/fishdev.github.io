@@ -2,12 +2,15 @@ import React from 'react';
 
 import { LevelGroup } from './LevelGroup';
 import { social } from '../assets/data';
-import { Button } from './Button';
 
-export const SocialButtons: React.FC<Partial<React.ComponentProps<typeof Button>>> = ({ size }) => (
+export const SocialButtons: React.FC<any> = () => (
   <LevelGroup>
     {social.map(item => (
-      <Button key={item.name} {...item} size={size} />
+      <a href={item.url} className={'has-text-' + item.color}>
+        <span className="icon is-large fa-2x">
+          <i className={item.icon} />
+        </span>
+      </a>
     ))}
   </LevelGroup>
 );

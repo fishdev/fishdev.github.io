@@ -18,6 +18,5 @@ export const social: ColorButton[] = [
     url: 'mailto:ashwins@andrew.cmu.edu',
     icon: 'fas fa-envelope',
     name: 'Email',
-    title: 'No spam, please!',
   },
 ];

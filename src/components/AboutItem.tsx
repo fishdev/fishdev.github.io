@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { Sentence, Image } from '../interfaces';
 import { SentenceHero } from './SentenceHero';
@@ -11,11 +12,16 @@ const isImage = (obj: any): obj is Image => (obj as Image).original !== undefine
 
 export const AboutItem: React.FC<any> = props => {
   switch (true) {
-    case isSentence(props):
-      return <SentenceHero {...props as Sentence} />;
-    case isImage(props):
-      return <ImageHero {...props as Image} />;
+    case isSentence(props): {
+      const { content } = props as Sentence;
+      return <span>{content}&nbsp;&nbsp;</span>;
+    }
+    // return <SentenceHero {...(props as Sentence)} />;
+    // case isImage(props):
+    //   return <ImageHero {...props as Image} />;
+    // default:
+    // return <ParticlesHero />;
     default:
-      return <ParticlesHero />;
+      return <span />;
   }
 };
