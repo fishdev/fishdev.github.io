@@ -27,7 +27,7 @@ export const About: React.FC = () => (
             (item, i) =>
               isImage(item) && (
                 <div key={i} className="column is-3-table is-6-mobile">
-                  <ImageBox {...item} tooltipCaption />
+                  <ImageBox {...item} caption="tooltip" />
                 </div>
               )
           )}

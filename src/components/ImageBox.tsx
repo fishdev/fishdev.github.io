@@ -6,7 +6,7 @@ import { Image } from '../interfaces/Image';
 import { LoadingBox } from './LoadingBox';
 
 interface Props extends Image {
-  tooltipCaption?: boolean;
+  caption?: 'tooltip' | 'visible' | 'hidden';
 }
 
 interface State {
@@ -19,13 +19,13 @@ export class ImageBox extends React.PureComponent<Props, State> {
   };
 
   static defaultProps: Partial<Props> = {
-    tooltipCaption: false,
+    caption: 'hidden',
   };
 
   toggleModal = () => this.setState(({ modalActive }) => ({ modalActive: !modalActive }));
 
   render() {
-    const { original, thumbnail, description, tooltipCaption } = this.props;
+    const { original, thumbnail, description, caption } = this.props;
     const { modalActive } = this.state;
     return (
       <React.Fragment>
@@ -33,7 +33,7 @@ export class ImageBox extends React.PureComponent<Props, State> {
           <div
             onClick={this.toggleModal}
             className={classNames('zoomable', {
-              tooltip: tooltipCaption && description,
+              tooltip: caption === 'tooltip' && description,
             })}
             data-tooltip={description}>
             <Img
@@ -43,7 +43,7 @@ export class ImageBox extends React.PureComponent<Props, State> {
               placeholder={<LoadingBox />}
             />
           </div>
-          {description && !tooltipCaption && (
+          {description && caption === 'visible' && (
             <p className="has-text-grey has-text-centered">{description}</p>
           )}
         </div>
@@ -55,6 +55,7 @@ export class ImageBox extends React.PureComponent<Props, State> {
               src={original}
               placeholder={<LoadingBox />}
             />
+            {description && <p className="has-text-grey has-text-centered">{description}</p>}
           </div>
           <button className="modal-close is-large" onClick={this.toggleModal} />
         </div>
