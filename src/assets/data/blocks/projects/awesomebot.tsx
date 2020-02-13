@@ -5,6 +5,7 @@ import { Block } from '../../../../interfaces';
 export const awesomebot: Block = {
   id: 'awesomebot',
   name: 'AwesomeBot',
+  tagline: 'The best Discord bot!',
   range: {
     start: {
       month: 10,
