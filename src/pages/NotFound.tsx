@@ -10,18 +10,18 @@ import { Footer } from '../components/Footer';
 export const NotFound: React.FC = () => (
   <div>
     <MetaTags name="Not Found" description="This page doesn't exist" />
-    <section className="hero is-fullheight">
+    <section className="hero is-black is-fullheight">
       <div className="hero-head">
-        <Navbar color="white" showMenu={false} />
+        <Navbar color="black" showMenu={false} />
       </div>
       <div className="hero-body">
-        <ResponsiveContainer size="large">
+        <ResponsiveContainer size="medium">
           <div className="has-text-centered">
             <h3 className="title">Sorry, not found.</h3>
             <h5 className="subtitle">
               <div className="columns is-centered is-vcentered is-mobile">
                 <div className="column is-narrow">
-                  <Link className="button is-primary is-inverted is-medium" to="/">
+                  <Link className="button is-primary is-medium" to="/">
                     homepage
                   </Link>
                 </div>
