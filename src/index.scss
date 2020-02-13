@@ -221,8 +221,13 @@ iframe.playlist-item {
   height: 380px;
 }
 
-// Modal content
-.modal-content {
+// Cursor on image preview hover
+.zoomable:hover {
+  cursor: zoom-in;
+}
+
+// Search modal content
+.search-modal {
   padding: 0rem 0.5rem;
   overflow-x: hidden;
 }

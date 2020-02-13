@@ -1,8 +1,6 @@
 import React from 'react';
-import classNames from 'classnames';
 import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
 import { StickyContainer } from 'react-sticky';
-import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
 
 import { getEntity } from '../util';
 import { blocks } from '../assets/data';
@@ -14,7 +12,7 @@ import { DetailsBars } from '../components/DetailsBars';
 import { AwardBox } from '../components/AwardBox';
 import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
-import { LoadingBox } from '../components/LoadingBox';
+import { ImageBox } from '../components/ImageBox';
 
 interface UrlProps {
   id: string;
@@ -85,22 +83,9 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
                     )}
                     <div className="columns is-mobile" style={{ overflowY: 'scroll' }}>
                       {images &&
-                        images.map(image => (
-                          <div className="column is-narrow has-text-centered">
-                            <a
-                              key={image.original}
-                              className="column is-narrow"
-                              href={image.original}>
-                              <Img
-                                style={{ maxHeight: 400, width: 'auto' }}
-                                className="image-fullwidth rounded"
-                                src={image.original}
-                                placeholder={<LoadingBox />}
-                              />
-                            </a>
-                            {image.description && (
-                              <p className="has-text-grey has-text-centered">{image.description}</p>
-                            )}
+                        images.map((image, i) => (
+                          <div key={i} className="column is-narrow has-text-centered">
+                            <ImageBox {...image} />
                           </div>
                         ))}
                     </div>

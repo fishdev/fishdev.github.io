@@ -6,6 +6,7 @@ import { about } from '../assets/data';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { Sentence, Image } from '../interfaces';
 import { LoadingBox } from '../components/LoadingBox';
+import { ImageBox } from '../components/ImageBox';
 
 const isSentence = (obj: any): obj is Sentence => (obj as Sentence).icon !== undefined;
 
@@ -25,17 +26,9 @@ export const About: React.FC = () => (
           {about.map(
             (item, i) =>
               isImage(item) && (
-                <a
-                  key={i}
-                  className="column is-3-tablet is-6-mobile tooltip"
-                  href={item.original}
-                  data-tooltip={item.description}>
-                  <Img
-                    className="image-fullwidth rounded"
-                    src={item.original}
-                    placeholder={<LoadingBox />}
-                  />
-                </a>
+                <div key={i} className="column is-3-table is-6-mobile">
+                  <ImageBox {...item} tooltipCaption />
+                </div>
               )
           )}
         </div>
