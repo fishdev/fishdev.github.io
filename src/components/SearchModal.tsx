@@ -12,7 +12,7 @@ export const SearchModal: React.FC<Props> = ({ hide, children }) => (
     <div className="search-container search-modal modal-content">
       <Search>
         {children}
-        <button className="button is-rounded is-outlined is-light is-hidden-mobile" onClick={hide}>
+        <button className="delete is-large is-hidden-mobile" onClick={hide}>
           <span className="icon">
             <i className="fas fa-times" />
           </span>
