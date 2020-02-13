@@ -24,7 +24,7 @@ export const scottylabs: Block = {
     {
       url: 'https://scottylabs.org/wdw/react/sunday/slides.pdf',
       icon: 'fas fa-square',
-      name: 'Web Dev Weekend Presentation',
+      name: 'WDW Presentation',
     },
   ],
   description: (
