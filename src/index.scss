@@ -191,6 +191,11 @@ a.tag:hover {
   margin-bottom: 0.5rem;
 }
 
+// Sticky section labels
+.section-label-sticky {
+  padding-top: 15px;
+}
+
 // Mobile-specific stuff
 @media screen and (max-width: $tablet) {
   // Padding for profile hero
@@ -201,6 +206,14 @@ a.tag:hover {
   // Sitemap column boxes
   .sitemap > .column {
     padding-bottom: 0;
+  }
+
+  // Full width section labels
+  .section-label-sticky {
+    padding-bottom: 15px;
+    background-color: $black;
+    width: 100% !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   }
 }
 
