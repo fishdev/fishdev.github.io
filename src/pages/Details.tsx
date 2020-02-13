@@ -1,18 +1,20 @@
 import React from 'react';
+import classNames from 'classnames';
 import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
 import { StickyContainer } from 'react-sticky';
-import ImageGallery from 'react-image-gallery';
+import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
 
 import { getEntity } from '../util';
 import { blocks } from '../assets/data';
 import { Block } from '../interfaces';
 import { ScrollToTop } from '../components/ScrollToTop';
 import { MetaTags } from '../components/MetaTags';
-import { StickyNavbar } from '../components/StickyNavbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { DetailsBars } from '../components/DetailsBars';
 import { AwardBox } from '../components/AwardBox';
 import { Footer } from '../components/Footer';
+import { Navbar } from '../components/Navbar';
+import { LoadingBox } from '../components/LoadingBox';
 
 interface UrlProps {
   id: string;
@@ -48,55 +50,65 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
           description={tagline || `Learn about this and other ${entity.type}`}
         />
         <StickyContainer>
-          <section className="hero is-black">
+          <div className="hero is-black">
             <div className="hero-head">
-              <StickyNavbar />
+              <Navbar color="black" showMenu={false} />
             </div>
-          </section>
-          <section className="hero is-link gradient">
             <div className="hero-body">
-              <ResponsiveContainer centered={true} size="large">
-                <h3 className="title">{name}</h3>
-                {tagline && <h5 className="subtitle">{tagline}</h5>}
-                {extra && <h5 className="subtitle">{extra}</h5>}
+              <ResponsiveContainer size="huge">
+                <div className="columns">
+                  <div className="column is-3 is-4-desktop fancy">
+                    <h3 className="title is-3 gradientbg">{name}</h3>
+                    {tagline && <h4 className="subtitle is-4 gradientbg">{tagline}</h4>}
+                    {extra && <h4 className="subtitle is-4 gradientbg">{extra}</h4>}
+                    <DetailsBars {...entity} />
+                  </div>
+                  <div className="column">
+                    <div className="content">{info || description}</div>
+                    {(awards || moreAwards) && (
+                      <div className="columns is-multiline is-centered is-variable is-2">
+                        {awards &&
+                          awards.map((award, i) => (
+                            <div key={i} className="column is-half">
+                              <AwardBox>{award}</AwardBox>
+                            </div>
+                          ))}
+                        {moreAwards &&
+                          moreAwards.map((award, i) => (
+                            <div key={i} className="column is-half">
+                              <AwardBox color="success" icon="fas fa-crown">
+                                {award}
+                              </AwardBox>
+                            </div>
+                          ))}
+                      </div>
+                    )}
+                    <div className="columns is-mobile" style={{ overflowY: 'scroll' }}>
+                      {images &&
+                        images.map(image => (
+                          <div className="column is-narrow has-text-centered">
+                            <a
+                              key={image.original}
+                              className="column is-narrow"
+                              href={image.original}>
+                              <Img
+                                style={{ maxHeight: 400, width: 'auto' }}
+                                className="image-fullwidth rounded"
+                                src={image.original}
+                                placeholder={<LoadingBox />}
+                              />
+                            </a>
+                            {image.description && (
+                              <p className="has-text-grey has-text-centered">{image.description}</p>
+                            )}
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                </div>
               </ResponsiveContainer>
             </div>
-          </section>
-          <section className="section">
-            <ResponsiveContainer size="large">
-              <DetailsBars {...entity} />
-              <br className="is-hidden-mobile" />
-              <div className="content">{info || description}</div>
-              {(awards || moreAwards) && (
-                <div className="columns is-multiline is-centered is-variable is-2">
-                  {awards &&
-                    awards.map((award, i) => (
-                      <div key={i} className="column is-half">
-                        <AwardBox>{award}</AwardBox>
-                      </div>
-                    ))}
-                  {moreAwards &&
-                    moreAwards.map((award, i) => (
-                      <div key={i} className="column is-half">
-                        <AwardBox color="success" icon="fas fa-crown">
-                          {award}
-                        </AwardBox>
-                      </div>
-                    ))}
-                </div>
-              )}
-              {images && (
-                <ImageGallery
-                  items={images}
-                  infinite={false}
-                  showPlayButton={false}
-                  showNav={false}
-                  showFullscreenButton={false}
-                  disableArrowKeys={true}
-                />
-              )}
-            </ResponsiveContainer>
-          </section>
+          </div>
         </StickyContainer>
         <Footer />
       </div>

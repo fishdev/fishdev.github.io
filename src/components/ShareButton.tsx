@@ -37,22 +37,22 @@ export class ShareButton extends React.PureComponent<Props, State> {
         {type === 'button' ? (
           <button
             className={classNames(
-              'button tooltip',
+              'button is-outlined is-small',
               { 'is-rounded': rounded },
-              { 'has-text-success': copied }
-            )}
-            data-tooltip={copied ? 'Link copied!' : 'Share this'}>
+              copied ? 'is-success' : 'is-white'
+            )}>
             <span className="icon">
-              <i className={'fas fa-' + (copied ? 'check' : 'share')} />
+              <i className={'fas fa-' + (copied ? 'clipboard-check' : 'link')} />
             </span>
+            <span>{copied ? 'Copied!' : 'Copy Link'}</span>
           </button>
         ) : (
           <a className="dropdown-item">
             <span className="icon">
-              <i className={'fas fa-' + (copied ? 'check' : 'share')} />
+              <i className={'fas fa-' + (copied ? 'clipboard-check' : 'link')} />
             </span>
             &nbsp; &nbsp;
-            {copied ? 'Link copied!' : 'Share this'}
+            {copied ? 'Copied!' : 'Copy Link'}
           </a>
         )}
       </CopyToClipboard>

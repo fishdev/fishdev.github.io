@@ -15,6 +15,7 @@ $success: #89ca78;
 @import 'node_modules/bulmaswatch/flatly/_overrides';
 @import 'node_modules/react-image-gallery/styles/scss/image-gallery.scss';
 
+html,
 .blackened {
   @extend .has-background-black;
 }
@@ -177,6 +178,14 @@ a.tag:hover {
 
 .block-header:not(:last-child) {
   padding-bottom: 1.6rem;
+}
+
+.details-bars {
+  margin-bottom: 2rem;
+}
+
+.details-bars > *:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
 
 // Mobile-specific stuff

@@ -39,18 +39,19 @@ export class GitButton extends React.PureComponent<Props, State> {
     return (
       <div className="columns is-vcentered is-variable is-2">
         <div className="column is-narrow">
-          <Button
-            url={'https://github.com/' + url}
-            color="black"
-            name="GitHub"
-            rounded={false}
-            icon="fab fa-github"
-          />
+          <p>
+            <a href={'https://github.com/' + url}>
+              <span className="icon">
+                <i className="fab fa-github" />
+              </span>
+              <span>GitHub</span>
+            </a>
+          </p>
         </div>
         {items.map(item => (
           <div
             key={item.icon}
-            className={classNames('column is-narrow has-text-black', { tooltip: item.title })}
+            className={classNames('column is-narrow', { tooltip: item.title })}
             data-tooltip={item.title}>
             <span className="icon">
               <i className={'fas fa-' + item.icon} />

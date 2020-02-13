@@ -9,16 +9,13 @@ interface Props {
 }
 
 export const RangeEventBar: React.FC<Props> = ({ range, event }) => (
-  <div className="columns is-mobile is-variable is-2">
-    {range && (
-      <div className="column is-narrow">
-        <Range showDuration {...range} />
-      </div>
-    )}
+  <p>
+    {range && <Range showDuration {...range} />}
     {event && (
-      <div className="column is-narrow">
+      <React.Fragment>
+        &nbsp;&nbsp;&nbsp;
         <a href={event.url}>{event.name}</a>
-      </div>
+      </React.Fragment>
     )}
-  </div>
+  </p>
 );
