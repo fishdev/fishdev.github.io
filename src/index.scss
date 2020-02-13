@@ -60,7 +60,9 @@ html,
 
 // Black background links
 .hero.is-black p a,
+.block.box p a,
 .underlink {
+  color: inherit;
   background-image: linear-gradient(to bottom, transparentize($grey, 0.5) 50%, transparent 50%);
   background-position: 0 1.02em;
   background-repeat: repeat-x;
@@ -68,6 +70,7 @@ html,
 }
 
 .hero.is-black p a:hover,
+.block.box p a:hover,
 .underlink:hover,
 .hoverable:hover {
   color: lighten($link, 25%) !important;
