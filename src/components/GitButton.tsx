@@ -44,6 +44,7 @@ export class GitButton extends React.PureComponent<Props, State> {
               <span className="icon">
                 <i className="fab fa-github" />
               </span>
+              &nbsp;
               <span>GitHub</span>
             </a>
           </p>
