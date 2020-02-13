@@ -2,7 +2,6 @@ import React from 'react';
 import { GlobalHotKeys } from 'react-hotkeys';
 
 import { Block } from '../interfaces';
-import { ImportantToggle } from '../components/ImportantToggle';
 import { SearchModal } from '../components/SearchModal';
 import { Education } from '../components/Education';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
@@ -32,7 +31,7 @@ export class Resume extends React.PureComponent<{}, State> {
     this.state.importantOnly ? blocks.filter(block => !block.unimportant) : blocks;
 
   render() {
-    const { searchActive, importantOnly } = this.state;
+    const { searchActive } = this.state;
     return (
       <div>
         <GlobalHotKeys
@@ -43,15 +42,7 @@ export class Resume extends React.PureComponent<{}, State> {
             TOGGLE_IMPORTANT: this.toggleImportant,
           }}
         />
-        {searchActive && (
-          <SearchModal hide={this.hideSearch}>
-            <ImportantToggle
-              type="button"
-              important={importantOnly}
-              toggle={this.toggleImportant}
-            />
-          </SearchModal>
-        )}
+        {searchActive && <SearchModal hide={this.hideSearch} />}
         <Education showSearch={this.showSearch} />
         <div className="hero is-black is-medium">
           <div className="hero-body">
