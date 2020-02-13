@@ -1,4 +1,5 @@
 import React from 'react';
+import { Element as ScrollElement } from 'react-scroll';
 
 import { university } from '../assets/data';
 import { ResponsiveContainer } from './ResponsiveContainer';
@@ -9,7 +10,7 @@ interface Props {
 }
 
 export const Education: React.FC<Props> = ({ showSearch }) => (
-  <section className="hero is-black">
+  <ScrollElement name="education" className="hero is-black">
     <div className="hero-body fancy">
       <ResponsiveContainer size="huge">
         <div className="columns is-vcentered is-variable is-5 is-mobile is-multiline">
@@ -46,5 +47,5 @@ export const Education: React.FC<Props> = ({ showSearch }) => (
         </div>
       </ResponsiveContainer>
     </div>
-  </section>
+  </ScrollElement>
 );

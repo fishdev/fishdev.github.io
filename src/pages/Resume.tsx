@@ -1,9 +1,6 @@
 import React from 'react';
-import { withRouter, RouteComponentProps, Link } from 'react-router-dom';
-import { scroller } from 'react-scroll';
 import { GlobalHotKeys } from 'react-hotkeys';
 
-import { scrollProps } from '../util';
 import { Block } from '../interfaces';
 import { ImportantToggle } from '../components/ImportantToggle';
 import { SearchModal } from '../components/SearchModal';
@@ -12,9 +9,6 @@ import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { blocks } from '../assets/data';
 import { BlockHeader } from '../components/BlockHeader';
 import { Section } from '../components/Section';
-import { SkillContainer } from '../components/SkillContainer';
-import { SkillGroup } from '../components/SkillGroup';
-import { languages, technologies } from '../assets/data';
 import { Skills } from '../components/Skills';
 
 interface State {
@@ -22,11 +16,7 @@ interface State {
   importantOnly: boolean;
 }
 
-@(withRouter as any)
-export class Resume extends React.PureComponent<
-  /* RouteComponentProps<{ section: string }> */ {},
-  State
-> {
+export class Resume extends React.PureComponent<{}, State> {
   state: Readonly<State> = {
     searchActive: false,
     importantOnly: false,
@@ -40,13 +30,6 @@ export class Resume extends React.PureComponent<
 
   filterBlocks = (blocks: Block[]): Block[] =>
     this.state.importantOnly ? blocks.filter(block => !block.unimportant) : blocks;
-
-  componentDidMount() {
-    // const { section } = this.props.match.params;
-    // if (section) {
-    //   scroller.scrollTo(section.toLowerCase(), scrollProps);
-    // }
-  }
 
   render() {
     const { searchActive, importantOnly } = this.state;
