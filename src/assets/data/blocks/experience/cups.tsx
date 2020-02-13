@@ -77,9 +77,5 @@ export const cups: Block = {
       original: 'https://ashwins.me/PrivacyTracker/img/portfolio/easy-interface.png',
       thumbnail: 'https://ashwins.me/PrivacyTracker/img/portfolio/easy-interface.png',
     },
-    {
-      original: 'https://ashwins.me/PrivacyTracker/img/portfolio/options-pane.png',
-      thumbnail: 'https://ashwins.me/PrivacyTracker/img/portfolio/options-pane.png',
-    },
   ],
 };

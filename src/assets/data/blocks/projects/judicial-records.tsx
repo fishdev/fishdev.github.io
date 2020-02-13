@@ -5,6 +5,7 @@ import { Block } from '../../../../interfaces';
 export const judicial_records: Block = {
   id: 'judicial-records',
   name: 'Case Case Study',
+  tagline: 'A machine learning analysis of judicial records',
   range: {
     start: {
       month: 7,

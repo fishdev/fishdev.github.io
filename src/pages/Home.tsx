@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { MetaTags } from '../components/MetaTags';
-import { ROLE, ORGANIZATION, more } from '../assets/data';
+import { ROLE, ORGANIZATION } from '../assets/data';
 import { Profile } from '../components/Profile';
 import { About } from './About';
 import { SocialButtons } from '../components/SocialButtons';

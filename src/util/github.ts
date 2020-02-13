@@ -42,8 +42,8 @@ export const extractRepoData = (repo: Octokit.ReposGetResponse): RepoInfo[] => {
       title: pluralize('open issue', repo.open_issues_count, true),
       data: repo.open_issues_count,
     });
-  const lastUpdated = moment(repo.updated_at).fromNow();
-  items.push({ icon: 'calendar', title: 'Last updated ' + lastUpdated, data: lastUpdated });
+  // const lastUpdated = moment(repo.updated_at).fromNow();
+  // items.push({ icon: 'calendar', title: 'Last updated ' + lastUpdated, data: lastUpdated });
 
   return items;
 };

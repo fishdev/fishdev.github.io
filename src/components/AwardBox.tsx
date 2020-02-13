@@ -23,7 +23,7 @@ export class AwardBox extends React.PureComponent<Props> {
               </span>
             </div>
             <div className="column">
-              <h6 className="title is-6 fancy">{children}</h6>
+              <h6 className="title is-6 fancy has-text-dark">{children}</h6>
             </div>
           </div>
         </div>
