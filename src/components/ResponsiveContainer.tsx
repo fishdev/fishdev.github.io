@@ -6,6 +6,12 @@ interface Props {
   size: 'medium' | 'large' | 'huge';
 }
 
+const SIZES = {
+  medium: 'is-8-tablet is-6-widescreen is-5-fullhd',
+  large: 'is-8-desktop is-6-fullhd',
+  huge: 'is-10-fullhd',
+};
+
 export class ResponsiveContainer extends React.PureComponent<Props> {
   static defaultProps: Partial<Props> = {
     centered: false,
@@ -14,14 +20,9 @@ export class ResponsiveContainer extends React.PureComponent<Props> {
   render() {
     const { centered, size, children } = this.props;
     return (
-      <div className={classNames('columns is-centered', { 'has-text-centered': centered })}>
-        <div
-          className={classNames('column is-paddingless', {
-            'is-6-tablet is-5-desktop is-4-widescreen is-3-fullhd': size === 'medium',
-            'is-8-desktop is-6-fullhd': size === 'large',
-            'is-10-desktop': size === 'huge',
-          })}>
-          {children}
+      <div className="container">
+        <div className={classNames('columns is-centered', { 'has-text-centered': centered })}>
+          <div className={classNames('column', SIZES[size])}>{children}</div>
         </div>
       </div>
     );

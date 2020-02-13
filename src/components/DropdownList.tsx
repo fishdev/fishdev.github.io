@@ -55,7 +55,7 @@ export class DropdownList extends React.PureComponent<Props, State> {
           )}
         </div>
         <div className="dropdown-menu" role="menu">
-          <div className="dropdown-content">
+          <div className="dropdown-content has-background-light">
             {staticItems}
             {staticItems && items && <hr className="dropdown-divider" />}
             {items && items.map(dropdown => <DropdownItem key={dropdown.name} {...dropdown} />)}

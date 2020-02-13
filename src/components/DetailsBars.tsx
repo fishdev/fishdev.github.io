@@ -19,7 +19,7 @@ export const DetailsBars: React.FC<Entity> = ({ type, data }) => {
     <div>
       <div className="columns is-mobile is-vcentered details-bar">
         <div className="column">
-          <Link to="/resume" className="button is-small">
+          <Link to="/" className="button is-small">
             <span className="icon">
               <i className="fas fa-arrow-left" />
             </span>

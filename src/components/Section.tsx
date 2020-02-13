@@ -5,8 +5,8 @@ interface Props {
 }
 
 export const Section: React.FC<Props> = ({ name, children }) => (
-  <div className="columns block-section">
-    <div className="column is-2 fancy section-label">
+  <div className="columns block-section is-variable is-4">
+    <div className="column is-narrow fancy section-label">
       <strong className="gradientbg">{name.toUpperCase()}</strong>
     </div>
     <div className="column">{children}</div>
