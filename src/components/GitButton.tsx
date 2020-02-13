@@ -37,7 +37,7 @@ export class GitButton extends React.PureComponent<Props, State> {
     if (hasError) return <span className="has-text-danger">Error fetching repo</span>;
     const items = extractRepoData(data!);
     return (
-      <div className="columns is-vcentered is-variable is-2">
+      <div className="columns is-vcentered is-variable is-2 is-mobile">
         <div className="column is-narrow">
           <p>
             <a href={'https://github.com/' + url}>
