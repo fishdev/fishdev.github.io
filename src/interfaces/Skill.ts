@@ -3,6 +3,6 @@ export interface Skill {
   name: string;
   icon?: string;
   url?: string;
-  years: number;
+  year: number;
   description?: React.ReactNode;
 }

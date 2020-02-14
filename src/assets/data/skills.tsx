@@ -7,7 +7,7 @@ export const languages: Skill[] = [
     id: 'js',
     name: 'Javascript',
     icon: 'fab fa-js',
-    years: 7,
+    year: 2012,
     description: (
       <p>
         Including <a href="https://nodejs.org/en/">Node.js</a> and{' '}
@@ -19,14 +19,14 @@ export const languages: Skill[] = [
     id: 'html',
     name: 'HTML',
     icon: 'fab fa-html5',
-    years: 7,
+    year: 2011,
     description: 'Responsive mobile UI design and templating with logic',
   },
   {
     id: 'css',
     name: 'CSS',
     icon: 'fab fa-css3',
-    years: 7,
+    year: 2012,
     description: (
       <p>
         Including <a href="https://sass-lang.com/">SASS</a> and{' '}
@@ -38,14 +38,14 @@ export const languages: Skill[] = [
     id: 'py',
     name: 'Python',
     icon: 'fab fa-python',
-    years: 7,
+    year: 2011,
     description: 'Web development and scripting',
   },
   {
     id: 'java',
     name: 'Java',
     icon: 'fab fa-java',
-    years: 5,
+    year: 2013,
     description: (
       <p>
         Including <a href="https://kotlinlang.org/">Kotlin</a>,{' '}
@@ -57,7 +57,7 @@ export const languages: Skill[] = [
   {
     id: 'c',
     name: 'C',
-    years: 3,
+    year: 2017,
   },
 ];
 
@@ -65,20 +65,20 @@ export const technologies: Skill[] = [
   {
     id: 'git',
     name: 'Git',
-    years: 6,
+    year: 2013,
     icon: 'fab fa-git-alt',
     description: 'Workflows such as feature branching, Git-flow, and forking',
   },
   {
     id: 'bash',
     name: 'Bash',
-    years: 8,
+    year: 2011,
     description: 'Including zsh and fish',
   },
   {
     id: 'linux',
     name: 'Linux',
-    years: 8,
+    year: 2011,
     icon: 'fab fa-linux',
     description: (
       <p>
@@ -91,21 +91,21 @@ export const technologies: Skill[] = [
     id: 'express',
     name: 'Express',
     url: 'https://expressjs.com',
-    years: 4,
+    year: 2015,
     description: <p>Building parallel, real-time web servers with multiple databases</p>,
   },
   {
     id: 'django',
     name: 'Django',
     url: 'https://www.djangoproject.com/',
-    years: 2,
+    year: 2018,
     description: <p>Including websockets (channels) and Django ORM</p>,
   },
   {
     id: 'react',
     name: 'React',
     url: 'https://reactjs.org/',
-    years: 4,
+    year: 2016,
     icon: 'fab fa-react',
     description: (
       <p>
@@ -117,39 +117,39 @@ export const technologies: Skill[] = [
     id: 'angular',
     name: 'Angular',
     url: 'https://angular.io/',
-    years: 2,
+    year: 2018,
     icon: 'fab fa-angular',
   },
   {
     id: 'bootstrap',
     name: 'Bootstrap',
     url: 'https://getbootstrap.com/',
-    years: 6,
+    year: 2013,
     icon: 'fab fa-bootstrap',
   },
   {
     id: 'mongo',
     name: 'MongoDB',
     url: 'https://www.mongodb.com/',
-    years: 4,
+    year: 2015,
   },
   {
     id: 'postgres',
     name: 'PostgreSQL',
     url: 'https://www.postgresql.org/',
-    years: 3,
+    year: 2017,
   },
   {
     id: 'redis',
     name: 'Redis',
     url: 'https://redis.io/',
-    years: 3,
+    year: 2016,
   },
   {
     id: 'jenkins',
     name: 'Jenkins',
     url: 'https://jenkins.io/',
-    years: 1,
+    year: 2019,
     icon: 'fab fa-jenkins',
     description: 'Declarative and scripted pipelines',
   },

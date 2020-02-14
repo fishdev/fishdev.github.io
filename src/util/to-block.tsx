@@ -10,8 +10,10 @@ export const courseToBlock = (course: Course): Block => ({
   description: <CourseDetails {...course} />,
 });
 
+const currentYear = new Date().getFullYear();
+
 export const skillToBlock = (
-  { id, name, icon, years, url, description }: Skill,
+  { id, name, icon, year, url, description }: Skill,
   longer = true
 ): Block => ({
   id,
@@ -27,7 +29,7 @@ export const skillToBlock = (
         </span>
       )}
       <span>
-        <strong>{years}</strong> {pluralize('year', years)}
+        <strong>{currentYear - year}</strong> {pluralize('year', currentYear - year)}
         {longer && ' experience'}
       </span>
     </span>
