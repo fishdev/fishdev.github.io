@@ -1,40 +1,35 @@
 import React from 'react';
-import { StickyContainer } from 'react-sticky';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import { ScrollToTop } from '../components/ScrollToTop';
-import { StickyNavbar } from '../components/StickyNavbar';
 import { ResponsiveContainer } from '../components/ResponsiveContainer';
 import { TabLink } from '../components/TabLink';
 import { favorites } from '../assets/data';
 import { Footer } from '../components/Footer';
+import { Navbar } from '../components/Navbar';
 
 export const Favorites: React.FC = () => (
   <div>
     <ScrollToTop />
-    <StickyContainer>
-      <section className="hero is-black">
-        <div className="hero-head">
-          <StickyNavbar />
-        </div>
-        <div className="hero-body">
-          <ResponsiveContainer centered size="medium">
-            <ScrollAnimation animateIn="fadeIn">
-              <span className="fancy">
-                <h3 className="title gradientbg">My favorite stuff</h3>
-                <h5 className="subtitle has-text-grey-light">
-                  <span>Things I really </span>
-                  <span className="icon">
-                    <i className="fas fa-heart" />
-                  </span>
-                </h5>
+    <section className="hero is-black">
+      <div className="hero-head">
+        <Navbar color="black" showMenu={false} />
+      </div>
+      <div className="hero-body">
+        <ResponsiveContainer size="huge">
+          <span className="fancy has-text-centered">
+            <h3 className="title gradientbg">My favorite stuff</h3>
+            <h5 className="subtitle has-text-grey-light">
+              <span>Things I really </span>
+              <span className="icon">
+                <i className="fas fa-heart" />
               </span>
-            </ScrollAnimation>
-          </ResponsiveContainer>
-        </div>
-        <div className="hero-foot">
-          <nav className="tabs is-boxed is-centered">
+            </h5>
+          </span>
+          <br />
+          <br />
+          <nav className="tabs is-toggle is-toggle-rounded is-centered">
             <div className="container">
               <ul>
                 {favorites.map((section, i) => (
@@ -45,10 +40,8 @@ export const Favorites: React.FC = () => (
               </ul>
             </div>
           </nav>
-        </div>
-      </section>
-      <section className="section">
-        <ScrollAnimation animateIn="bounceIn">
+          <br />
+          <br />
           <Switch>
             {favorites.map((section, i) => (
               <Route
@@ -65,9 +58,11 @@ export const Favorites: React.FC = () => (
             />
             }
           </Switch>
-        </ScrollAnimation>
-      </section>
-    </StickyContainer>
-    <Footer />
+        </ResponsiveContainer>
+      </div>
+      <div className="hero-foot">
+        <Footer />
+      </div>
+    </section>
   </div>
 );

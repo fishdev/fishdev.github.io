@@ -9,7 +9,7 @@ import { LoadingBox } from './LoadingBox';
 export const Podcasts: React.FC = () => (
   <div>
     <MetaTags name="Favorites - Podcasts" description="The podcasts I listen to the most" />
-    <ResponsiveContainer size="huge">
+    <ResponsiveContainer size="large">
       <div className="columns is-mobile is-multiline is-centered">
         {podcasts.map(podcast => (
           <a

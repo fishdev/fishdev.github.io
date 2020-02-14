@@ -5,10 +5,10 @@ import { scroller } from 'react-scroll';
 import { MetaTags } from '../components/MetaTags';
 import { ROLE, ORGANIZATION } from '../assets/data';
 import { Profile } from '../components/Profile';
-import { About } from './About';
+import { About } from '../components/About';
 import { SocialButtons } from '../components/SocialButtons';
 import { Footer } from '../components/Footer';
-import { Resume } from './Resume';
+import { Resume } from '../components/Resume';
 import { scrollProps } from '../util';
 
 @(withRouter as any)
