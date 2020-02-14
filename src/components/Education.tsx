@@ -18,7 +18,7 @@ export const Education: React.FC<Props> = ({ showSearch }) => (
             <p className="is-size-4">{university}</p>
           </div>
           <div className="column is-4-mobile is-narrow has-text-centered">
-            <Link to="/404" className="hoverable">
+            <Link to="/courses" className="hoverable">
               <span className="icon is-large ">
                 <i className="fas fa-graduation-cap fa-2x" />
               </span>

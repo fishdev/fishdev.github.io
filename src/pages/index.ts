@@ -1,6 +1,5 @@
 export * from './Home';
-export * from './About';
-export * from './Resume';
+export * from './Coursework';
 export * from './Details';
 export * from './Favorites';
 export * from './NotFound';

@@ -1,45 +1,76 @@
 import React from 'react';
+import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 import { coursework } from '../assets/data';
-import { CourseBullet } from './CourseBullet';
-import { teachingAsAcademics } from '../util';
+import { CourseBox } from './CourseBox';
 
 interface State {
-  expanded: boolean;
+  semester: string;
+  ta: boolean;
 }
 
 export class CourseList extends React.PureComponent<{}, State> {
   state: Readonly<State> = {
-    expanded: false,
+    semester: '',
+    ta: false,
   };
 
-  toggleExpanded = () => this.setState(({ expanded }) => ({ expanded: !expanded }));
+  toggleTA = () => this.setState(({ ta }) => ({ ta: !ta }));
+
+  setSemester = (event: React.FormEvent<HTMLSelectElement>) =>
+    this.setState({ semester: (event.target as HTMLSelectElement).value });
 
   render() {
-    const { expanded } = this.state;
+    const { semester, ta } = this.state;
+
+    const semesters = coursework
+      .map(course => course.semester)
+      .filter((v, i, a) => a.indexOf(v) === i);
+    const courses = coursework.filter(course => {
+      if (semester && course.semester !== semester) return false;
+      if (ta && !course.ta) return false;
+      return true;
+    });
+
     return (
-      <React.Fragment>
-        <ul className="course-list">
-          {coursework.slice(0, expanded ? coursework.length : 5).map(course => (
-            <CourseBullet key={course.id} {...course} showDetails={expanded} />
-          ))}
-          <li>
-            <button onClick={this.toggleExpanded} className="button is-small">
-              Show {expanded ? 'less' : 'more'}
+      <div>
+        <div className="columns is-mobile is-variable is-1">
+          <div className="column">
+            <Link to="/" className="button is-small is-outlined is-light">
+              <span className="icon">
+                <i className="fas fa-arrow-left" />
+              </span>
+              &nbsp;
+              <span>Back</span>
+            </Link>
+          </div>
+          <div className="column is-narrow">
+            <button
+              className={classNames('button is-small', ta ? 'is-success' : 'is-outlined is-light')}
+              onClick={this.toggleTA}>
+              TA
             </button>
-          </li>
-        </ul>
-        <p>
-          Of these, I have been a <strong>teaching assistant</strong> for:
-        </p>
-        <ul>
-          {teachingAsAcademics.map(academic => (
-            <li key={academic.id}>
-              {academic.id}: {academic.name} ({academic.semester})
-            </li>
+          </div>
+          <div className="column is-narrow">
+            <div className="select is-small is-dark">
+              <select onChange={this.setSemester}>
+                <option value="">All Terms</option>
+                {semesters.map(semester => (
+                  <option value={semester}>{semester}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className="columns is-multiline">
+          {courses.map(course => (
+            <div key={course.id} className="column is-half">
+              <CourseBox {...course} />
+            </div>
           ))}
-        </ul>
-      </React.Fragment>
+        </div>
+      </div>
     );
   }
 }

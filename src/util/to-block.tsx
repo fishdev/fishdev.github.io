@@ -3,6 +3,7 @@ import pluralize from 'pluralize';
 
 import { Course, Block, Skill } from '../interfaces';
 import { CourseSemester } from '../components/CourseSemester';
+import { UNIVERSITY } from '../assets/data';
 
 export const courseToBlock = ({
   id,
@@ -21,7 +22,7 @@ export const courseToBlock = ({
       <p>
         <span className="tag is-medium is-dark">{id}</span>
         &nbsp;
-        <span> at Carnegie Mellon University</span>
+        <span> at {UNIVERSITY}</span>
       </p>
       {ta && (
         <p>
