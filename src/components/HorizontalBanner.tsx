@@ -15,8 +15,11 @@ export class HorizontalBanner extends React.PureComponent<Banner> {
 
     const DetailColumn: React.FC = () => (
       <div className="column">
-        <h4 className="title is-4">{title}</h4>
-        {subtitle && <h5 className="subtitle">{subtitle}</h5>}
+        <span className="fancy">
+          <h4 className="title is-4 gradientbg">{title}</h4>
+          {subtitle && <h5 className="subtitle gradientbg">{subtitle}</h5>}
+        </span>
+        <br />
         <div className="content">{content}</div>
       </div>
     );
