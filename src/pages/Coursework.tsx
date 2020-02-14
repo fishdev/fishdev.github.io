@@ -20,12 +20,12 @@ export const Coursework: React.FC = () => (
         <ResponsiveContainer size="large">
           <div className="fancy">
             <h3 className="title gradientbg">Coursework</h3>
-            <h5 className="subtitle">
+            <h5 className="subtitle has-text-grey-light">
               <span className="icon">
                 <i className="fas fa-school" />
               </span>
               &nbsp;&nbsp;
-              <span>Studying at {UNIVERSITY}</span>
+              <span>At {UNIVERSITY}</span>
             </h5>
           </div>
           <br />
