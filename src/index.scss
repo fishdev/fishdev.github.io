@@ -197,6 +197,10 @@ a.tag:hover {
   margin-bottom: 0.5rem;
 }
 
+.course-details > p:not(:last-child) {
+  margin-bottom: 0;
+}
+
 // Sticky section labels
 .section-label-sticky {
   padding-top: 15px;

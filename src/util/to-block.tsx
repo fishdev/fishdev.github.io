@@ -2,37 +2,12 @@ import React from 'react';
 import pluralize from 'pluralize';
 
 import { Course, Block, Skill } from '../interfaces';
-import { CourseSemester } from '../components/CourseSemester';
-import { UNIVERSITY } from '../assets/data';
+import { CourseDetails } from '../components/CourseDetails';
 
-export const courseToBlock = ({
-  id,
-  name,
-  semester,
-  current,
-  ta,
-  description,
-  url,
-}: Course): Block => ({
-  id: id.toString(),
-  name,
-  extra: <CourseSemester isLarge={true} semester={semester} current={current} />,
-  description: (
-    <div>
-      <p>
-        <span className="tag is-medium is-dark">{id}</span>
-        &nbsp;
-        <span> at {UNIVERSITY}</span>
-      </p>
-      {ta && (
-        <p>
-          Served as a <strong>teaching assistant</strong>: {ta.join(', ')}
-        </p>
-      )}
-      {description && <p>{description}</p>}
-    </div>
-  ),
-  url,
+export const courseToBlock = (course: Course): Block => ({
+  id: course.id.toString(),
+  name: course.name,
+  description: <CourseDetails {...course} />,
 });
 
 export const skillToBlock = (
