@@ -1,6 +1,7 @@
 import React from 'react';
+import classNames from 'classnames';
 import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
-import { StickyContainer } from 'react-sticky';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 import { getEntity } from '../util';
 import { blocks } from '../assets/data';
@@ -56,9 +57,18 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
               <ResponsiveContainer size="huge">
                 <div className="columns">
                   <div className="column is-3 is-4-desktop fancy">
-                    <h3 className="title is-3 gradientbg">{name}</h3>
-                    {tagline && <h4 className="subtitle is-4 gradientbg">{tagline}</h4>}
-                    {extra && <h4 className="subtitle is-4 gradientbg">{extra}</h4>}
+                    <Sticky topOffset={500}>
+                      {({ style, isSticky }) => (
+                        <div
+                          style={style}
+                          className={classNames({ 'section-label-sticky': isSticky })}>
+                          <h3 className="title is-3 gradientbg">{name}</h3>
+                          {tagline && <h4 className="subtitle is-4 gradientbg">{tagline}</h4>}
+                          {extra && <h4 className="subtitle is-4 gradientbg">{extra}</h4>}
+                        </div>
+                      )}
+                    </Sticky>
+                    <br />
                     <DetailsBars {...entity} />
                   </div>
                   <div className="column">
