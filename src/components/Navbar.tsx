@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { Portrait } from './Portrait';
@@ -38,7 +38,7 @@ export class Navbar extends React.PureComponent<Props, State> {
         <div className="container">
           <div className={classNames('navbar-brand', { 'navbar-item-centered': !showMenu })}>
             <span className="navbar-item fancy">
-              <div className="columns is-variable is-2 is-mobile">
+              <Link to="/" className="columns is-variable is-2 is-mobile">
                 <div className="column is-narrow">
                   <Portrait size="24x24" />
                 </div>
@@ -47,7 +47,7 @@ export class Navbar extends React.PureComponent<Props, State> {
                     <b>{FULL_NAME}</b>
                   </div>
                 )}
-              </div>
+              </Link>
             </span>
             {showMenu && (
               <a
