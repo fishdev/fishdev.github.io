@@ -1,6 +1,5 @@
 import Octokit from '@octokit/rest';
 import pluralize from 'pluralize';
-import moment from 'moment';
 
 export const getRepo = (url: string) => {
   const octokit = new Octokit();

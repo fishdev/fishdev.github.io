@@ -78,6 +78,10 @@ html,
   color: lighten($link, 25%) !important;
 }
 
+.hero.is-black a:not(.button):not(.dropdown-item):not(.tag) {
+  color: inherit;
+}
+
 // Fancy backgrounds
 .city {
   background-image: linear-gradient(45deg, rgba(32, 63, 182, 0.7), rgba(190, 5, 117, 0.5)),
