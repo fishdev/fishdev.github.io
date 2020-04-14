@@ -11,7 +11,7 @@ interface Props extends Course {
 export const CourseDetails: React.FC<Props> = ({ colored, semester, url, ta, description }) => (
   <div className="course-details">
     <p>
-      {semester == currentSemester ? (
+      {semester === currentSemester ? (
         <span className="has-text-danger">Currently taking this course.</span>
       ) : (
         <span>
