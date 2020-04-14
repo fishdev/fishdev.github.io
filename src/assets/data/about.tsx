@@ -40,11 +40,7 @@ export const about: Array<Sentence | Image | {}> = [
   },
   {
     icon: 'fas fa-spa',
-    content: (
-      <span>
-        Juggling and <strong className="gradientbg">biking</strong> in my free time.
-      </span>
-    ),
+    content: <span>Juggling and biking in my free time.</span>,
   },
   {
     original: river,
@@ -52,20 +48,12 @@ export const about: Array<Sentence | Image | {}> = [
   },
   {
     icon: 'fas fa-camera',
-    content: (
-      <span>
-        I have a mild interest in <strong className="gradientbg">photography</strong>.
-      </span>
-    ),
+    content: <span>I have a mild interest in photography.</span>,
   },
   {},
   {
     icon: 'fas fa-headphones-alt',
-    content: (
-      <span>
-        Always listening to music and <strong className="gradientbg">podcasts</strong>.
-      </span>
-    ),
+    content: <span>Always listening to music and podcasts.</span>,
     extra: (
       <Link className="button is-small is-outlined is-light" to="/favorites">
         View my favorites
