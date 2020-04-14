@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Course } from '../../interfaces';
+import { Semester } from '../../interfaces/Semester';
 
 export const university: React.ReactNode = (
   <span>
@@ -13,19 +14,19 @@ export const university: React.ReactNode = (
   </span>
 );
 
+export const currentSemester: Semester = 'Spring 2020';
+
 export const coursework: Course[] = [
   {
     id: '15-213',
     name: 'Introduction to Computer Systems',
     semester: 'Spring 2020',
-    current: true,
     url: 'https://www.coursicle.com/cmu/courses/CS/15213/',
   },
   {
     id: '10-315',
     name: 'Introduction to Machine Learning',
     semester: 'Spring 2020',
-    current: true,
     url: 'https://www.coursicle.com/cmu/courses/MLG/10315/',
   },
   {

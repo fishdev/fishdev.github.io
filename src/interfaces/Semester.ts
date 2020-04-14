@@ -1,0 +1,1 @@
+export type Semester = string;
