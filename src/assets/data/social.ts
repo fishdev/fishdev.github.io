@@ -1,4 +1,4 @@
-import { ColorButton } from '../../interfaces';
+import { ColorButton } from '../../core';
 
 export const social: ColorButton[] = [
   {

@@ -6,11 +6,11 @@ import 'animate.css/animate.min.css';
 import { GlobalHotKeys } from 'react-hotkeys';
 
 import { WEBSITE_SOURCE, social } from './assets/data';
-import { SitemapModal } from './components/SitemapModal';
+import { SitemapModal } from './core/components/SitemapModal';
 import { Home, Coursework, Details, Favorites, NotFound } from './pages';
 
 const history = createBrowserHistory();
-history.listen(location => {
+history.listen((location) => {
   ReactGA.set({ page: location.pathname });
   ReactGA.pageview(location.pathname);
 });
@@ -36,7 +36,7 @@ export class App extends React.PureComponent<{}, State> {
   }
 
   render() {
-    const links = social.map(item => {
+    const links = social.map((item) => {
       const name = '/' + item.name!.toLowerCase();
       const redirect = ({ match }: RouteComponentProps<{ suffix: string }>): React.ReactNode => {
         let { url } = item;

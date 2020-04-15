@@ -1,4 +1,4 @@
-import { Podcast } from '../../../interfaces';
+import { Podcast } from '../../../favorites';
 
 export const podcasts: Podcast[] = [
   {

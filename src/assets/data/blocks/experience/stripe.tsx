@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { Block } from '../../../../interfaces';
+import { Block } from '../../../../resume';
 
 export const stripe: Block = {
   id: 'stripe',

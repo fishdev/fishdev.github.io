@@ -1,4 +1,4 @@
-import { Dropdown } from '../../interfaces';
+import { Dropdown } from '../../core';
 
 export const more: Dropdown[] = [
   {

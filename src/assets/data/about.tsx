@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Sentence } from '../../interfaces';
-import { Image } from '../../interfaces/Image';
+import { Sentence, Image } from '../../core';
 import cmu from '../cmu.jpeg';
 import skyline from '../skyline.jpeg';
 import path from '../path.jpeg';

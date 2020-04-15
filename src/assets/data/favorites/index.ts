@@ -1,6 +1,4 @@
-import { Playlists } from '../../../components/Playlists';
-import { Podcasts } from '../../../components/Podcasts';
-import { Code } from '../../../components/Code';
+import { Playlists, Podcasts, Code } from '../../../favorites/components/';
 
 export const favorites = [
   {

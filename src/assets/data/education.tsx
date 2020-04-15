@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Course } from '../../interfaces';
-import { Semester } from '../../interfaces/Semester';
+import { Course, Semester } from '../../resume';
 
 export const university: React.ReactNode = (
   <span>

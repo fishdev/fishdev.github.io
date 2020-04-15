@@ -105,6 +105,37 @@ html,
   );
 }
 
+// Fancy boxes
+.gradient-box {
+  background: linear-gradient(45deg, lighten($link, 25%), lighten($primary, 25%));
+  padding: 2px;
+}
+
+.gradient-box > .gradient-box-body {
+  background: $black;
+  border-radius: $radius;
+  padding: 25px;
+}
+
+.oval {
+  background: $black-ter;
+  border-radius: 100%;
+  padding: 50px 40px;
+  transition: all 200ms ease;
+  margin-bottom: 25px;
+}
+
+.oval:hover {
+  cursor: pointer;
+  background: lighten($link, 25%);
+  border-radius: 5rem;
+  @extend .has-shadow;
+}
+
+.oval:hover .subtitle {
+  color: $white-ter !important;
+}
+
 // Shadow for profile picture
 #profile {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
@@ -189,6 +220,10 @@ a.tag:hover {
   width: 120px;
 }
 
+.section-box-column {
+  width: 300px;
+}
+
 .block-header:not(:last-child) {
   padding-bottom: 1.6rem;
 }
@@ -207,7 +242,7 @@ a.tag:hover {
 
 // Sticky section labels
 .section-label-sticky {
-  padding-top: 15px;
+  margin-top: 15px;
 }
 
 // Mobile-specific stuff

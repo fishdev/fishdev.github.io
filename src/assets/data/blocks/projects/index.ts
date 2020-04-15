@@ -1,4 +1,4 @@
-import { Block } from '../../../../interfaces';
+import { Block } from '../../../../resume';
 
 import { assure } from './assure';
 import { cmulab } from './cmulab';

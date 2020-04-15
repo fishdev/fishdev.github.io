@@ -1,4 +1,4 @@
-import { Block } from '../../../../interfaces';
+import { Block } from '../../../../resume';
 
 import { diderot } from './diderot';
 import { broadcom } from './broadcom';

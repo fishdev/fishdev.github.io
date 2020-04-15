@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../interfaces';
+import { Block } from '../../../../resume';
 
 export const end_the_rain: Block = {
   id: 'end-the-rain',

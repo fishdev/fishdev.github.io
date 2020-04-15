@@ -6,7 +6,7 @@
  * so this is just how it has to be. Thanks, Spotify.
  */
 
-import { Playlist } from '../../../interfaces';
+import { Playlist } from '../../../favorites';
 
 export const playlists: Playlist[] = [
   {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Skill } from '../../interfaces';
+import { Skill } from '../../resume';
 
 export const languages: Skill[] = [
   {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../interfaces';
+import { Block } from '../../../../resume';
 
 export const assure: Block = {
   id: 'assure',

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Block } from '../../../../interfaces';
+import { Block } from '../../../../resume';
 
 export const cups: Block = {
   id: 'cups',
   name: 'Research Intern',
   extra: (
     <span>
-      <a href="http://cups.cs.cmu.edu">CUPS Lab</a>, Carnegie Mellon University
+      <a href="http://cups.cs.cmu.edu">CUPS Lab</a>
     </span>
   ),
   range: {

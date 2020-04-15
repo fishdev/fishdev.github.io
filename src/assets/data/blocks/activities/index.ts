@@ -1,4 +1,4 @@
-import { Block } from '../../../../interfaces';
+import { Block } from '../../../../resume';
 
 import { google_tech_challenge } from './google-tech-challenge';
 import { end_the_rain } from './end-the-rain';
