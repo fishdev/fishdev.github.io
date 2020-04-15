@@ -368,7 +368,7 @@ iframe.playlist-item {
   position: absolute;
   bottom: 40px;
   right: 16.5px;
-  opacity: 60%;
+  opacity: 0.6;
   font-size: 13px;
 }
 
@@ -384,13 +384,13 @@ iframe.playlist-item {
 .stamp-blue {
   transform: skew(2deg);
   background: $link;
-  opacity: 40%;
+  opacity: 0.4;
 }
 
 .stamp-purple {
   transform: skew(-10deg);
   background: $primary;
-  opacity: 20%;
+  opacity: 0.2;
 }
 
 .modal-image {
