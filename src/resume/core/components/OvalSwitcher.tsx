@@ -44,12 +44,9 @@ export class OvalSwitcher extends React.PureComponent<{}, State> {
           <div className="column">
             <div className="columns is-multiline is-vcentered is-centered is-variable is-8">
               {blocks[section].data.map((block, i) => (
-                <React.Fragment key={i}>
-                  <div className="column is-narrow">
-                    <OvalBlock {...block} />
-                  </div>
-                  {/* {(i + 1) % 3 === 0 && <div className="column is-narrow"></div>} */}
-                </React.Fragment>
+                <div className="column is-narrow" key={block.id}>
+                  <OvalBlock {...block} />
+                </div>
               ))}
             </div>
           </div>

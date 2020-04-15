@@ -125,11 +125,19 @@ html,
   margin-bottom: 25px;
 }
 
+.oval .title {
+  transition: all 200ms ease;
+}
+
 .oval:hover {
   cursor: pointer;
   background: lighten($link, 25%);
   border-radius: 5rem;
   @extend .has-shadow;
+}
+
+.oval:hover .title {
+  transform: scale(1.1);
 }
 
 .oval:hover .subtitle {
