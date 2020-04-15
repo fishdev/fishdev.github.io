@@ -1,9 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { blocks } from '../../../assets/data';
+import { blocks, languages, technologies } from '../../../assets/data';
 import { StickyContainer, Sticky } from 'react-sticky';
 import { OvalBlock } from './OvalBlock';
+import { Skills, SkillGroup } from '../../skills';
 
 interface State {
   section: number;
@@ -36,19 +37,29 @@ export class OvalSwitcher extends React.PureComponent<{}, State> {
                         </a>
                       </h3>
                     ))}
+                    <h3 className="title is-3 gradientbg">
+                      <a onClick={() => this.switchSection(blocks.length)}>
+                        {blocks.length === section && <span>&middot; </span>}
+                        SKILLS
+                      </a>
+                    </h3>
                   </div>
                 </div>
               )}
             </Sticky>
           </div>
           <div className="column">
-            <div className="columns is-multiline is-vcentered is-variable is-6">
-              {blocks[section].data.map((block, i) => (
-                <div className="column is-narrow" key={block.id}>
-                  <OvalBlock {...block} />
-                </div>
-              ))}
-            </div>
+            {section === blocks.length ? (
+              <SkillGroup skills={languages.concat(technologies)} />
+            ) : (
+              <div className="columns is-multiline is-vcentered is-variable is-6">
+                {blocks[section].data.map((block, i) => (
+                  <div className="column is-narrow" key={block.id}>
+                    <OvalBlock {...block} />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </StickyContainer>

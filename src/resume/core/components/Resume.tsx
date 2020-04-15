@@ -42,7 +42,9 @@ export class Resume extends React.PureComponent<{}, State> {
         {searchActive && <SearchModal hide={this.hideSearch} />}
         <Education showSearch={this.showSearch} />
         <ResumeCore />
-        <Skills />
+        <div className="is-hidden-desktop">
+          <Skills />
+        </div>
       </div>
     );
   }
