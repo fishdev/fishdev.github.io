@@ -29,12 +29,10 @@ export class Search extends React.PureComponent<{}, State> {
       switch (entity.type) {
         case 'coursework':
           return <BlockBox {...courseToBlock(entity.data as Course)} />;
-        case 'projects':
-        case 'experience':
-        case 'activities':
-          return <BlockBox {...(entity.data as Block)} hasMore={true} />;
         case 'skills':
           return <BlockBox {...skillToBlock(entity.data as Skill)} />;
+        default:
+          return <BlockBox {...(entity.data as Block)} hasMore={true} />;
       }
     });
     return results;
