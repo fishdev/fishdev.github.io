@@ -379,17 +379,18 @@ iframe.playlist-item {
   height: 30px;
   width: 30px;
   border-radius: 100%;
-  opacity: 50%;
 }
 
 .stamp-blue {
   transform: skew(2deg);
   background: $link;
+  opacity: 50%;
 }
 
 .stamp-purple {
   transform: skew(-10deg);
   background: $primary;
+  opacity: 30%;
 }
 
 .modal-image {
