@@ -9,6 +9,7 @@ export const SocialButtons: React.FC<any> = () => (
     {social.map(({ name, url, color, icon }) => (
       <a
         data-tooltip={name}
+        key={name}
         href={url}
         className={classNames('has-text-' + color, {
           'tooltip has-tooltip-top': name,

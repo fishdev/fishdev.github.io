@@ -8,23 +8,24 @@ export const toEntity = (type: EntityType) => (data: Course | Block | Skill): En
   data,
 });
 
-export const entities: Entity[] = blocks
-  .reduce((acc, { name, data }) => acc.concat(data.map(toEntity(name))), new Array<Entity>())
-  .concat(
-    coursework.map((course: Course) => ({
-      type: 'coursework',
-      data: course,
-      clickable: false,
-    })),
-    languages.concat(technologies).map(toEntity('skills'))
-  );
+const getEntities = (): Entity[] =>
+  blocks
+    .reduce((acc, { name, data }) => acc.concat(data.map(toEntity(name))), new Array<Entity>())
+    .concat(
+      coursework.map((course: Course) => ({
+        type: 'coursework',
+        data: course,
+        clickable: false,
+      })),
+      languages.concat(technologies).map(toEntity('skills'))
+    );
 
 export const getEntity = (id: string): Entity | undefined =>
-  entities.find((entity: Entity) => id === entity.data.id);
+  getEntities().find((entity: Entity) => id === entity.data.id);
 
 export const filterEntities = (query: string) => {
   query = query.toLowerCase().trim();
-  return entities.filter((entity: Entity) => {
+  return getEntities().filter((entity: Entity) => {
     if (entity.data.id.toString().includes(query)) return true;
     if (entity.data.name.toLowerCase().includes(query)) return true;
 

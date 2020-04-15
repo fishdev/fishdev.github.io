@@ -21,7 +21,7 @@ export const ResumeCore: React.FC = () => (
           {blocks.map(({ name, data }) => (
             <Section key={name} name={name}>
               {data.map((block) => (
-                <div className="block-header">
+                <div className="block-header" key={block.id}>
                   <BlockHeader hasMore {...block} />
                 </div>
               ))}
