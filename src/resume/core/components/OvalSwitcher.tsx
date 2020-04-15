@@ -42,7 +42,7 @@ export class OvalSwitcher extends React.PureComponent<{}, State> {
             </Sticky>
           </div>
           <div className="column">
-            <div className="columns is-multiline is-vcentered is-centered is-variable is-8">
+            <div className="columns is-multiline is-vcentered is-variable is-6">
               {blocks[section].data.map((block, i) => (
                 <div className="column is-narrow" key={block.id}>
                   <OvalBlock {...block} />
