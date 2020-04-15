@@ -5,7 +5,7 @@ import { Image } from '../interfaces';
 
 export const ImageHero: React.FC<Image> = ({ original, description }) => (
   <ScrollAnimation animateIn="fadeInUp" animateOnce>
-    <figure className="image image-hero-container">
+    <figure className="image image-container">
       <img className="image-hero" src={original} alt={description} />
       {description && (
         <p className="image-hero-text has-text-grey has-text-right is-hidden-mobile">

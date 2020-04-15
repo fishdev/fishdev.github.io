@@ -7,6 +7,7 @@ import { LoadingBox } from './LoadingBox';
 
 interface Props extends Image {
   caption?: 'tooltip' | 'visible' | 'hidden';
+  stamped?: boolean;
 }
 
 interface State {
@@ -20,12 +21,13 @@ export class ImageBox extends React.PureComponent<Props, State> {
 
   static defaultProps: Partial<Props> = {
     caption: 'hidden',
+    stamped: false,
   };
 
   toggleModal = () => this.setState(({ modalActive }) => ({ modalActive: !modalActive }));
 
   render() {
-    const { original, thumbnail, description, caption } = this.props;
+    const { original, thumbnail, description, caption, stamped } = this.props;
     const { modalActive } = this.state;
     return (
       <React.Fragment>
@@ -50,11 +52,14 @@ export class ImageBox extends React.PureComponent<Props, State> {
         <div className={classNames('modal', { 'is-active': modalActive })}>
           <div className="modal-background" onClick={this.toggleModal} />
           <div className="modal-content">
-            <Img
-              style={{ maxHeight: 'calc(100vh - 160px)' }}
-              src={original}
-              placeholder={<LoadingBox />}
-            />
+            <img className="modal-image" src={original} alt={description} />
+            {stamped && (
+              <React.Fragment>
+                <div className="image-stamp stamp-purple"></div>
+                <div className="image-stamp stamp-blue"></div>
+                <div className="image-stamp-text">AS</div>
+              </React.Fragment>
+            )}
             {description && <p className="has-text-grey has-text-centered">{description}</p>}
           </div>
           <button className="modal-close is-large" onClick={this.toggleModal} />

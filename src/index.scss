@@ -363,8 +363,43 @@ iframe.playlist-item {
   cursor: pointer;
 }
 
+// Image modal
+.image-stamp-text {
+  position: absolute;
+  bottom: 40px;
+  right: 16.5px;
+  opacity: 70%;
+  font-size: 13px;
+}
+
+.image-stamp {
+  position: absolute;
+  bottom: 35px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  opacity: 50%;
+}
+
+.stamp-blue {
+  transform: skew(2deg);
+  background: $link;
+}
+
+.stamp-purple {
+  transform: skew(-10deg);
+  background: $primary;
+}
+
+.modal-image {
+  max-height: calc(100vh - 160px);
+  @extend .image-container;
+}
+
 // Image hero
-.image-hero-container {
+
+.image-container {
   position: relative;
 }
 
