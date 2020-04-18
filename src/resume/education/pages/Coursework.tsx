@@ -15,7 +15,7 @@ export const Coursework: React.FC = () => (
       <div className="hero-body">
         <ResponsiveContainer size="large">
           <div className="fancy">
-            <h3 className="title">Coursework</h3>
+            <h3 className="title gradientbg">Coursework</h3>
             <h5 className="subtitle has-text-grey-light">
               <span className="icon">
                 <i className="fas fa-school" />
