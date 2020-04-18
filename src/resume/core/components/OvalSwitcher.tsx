@@ -30,7 +30,9 @@ export class OvalSwitcher extends React.PureComponent<{}, State> {
             <Sticky topOffset={-1} bottomOffset={15}>
               {({ isSticky, style }) => (
                 <div
-                  className={classNames('box gradient-box', { 'section-label-sticky': isSticky })}
+                  className={classNames('box gradient-box', {
+                    'section-switcher-sticky': isSticky,
+                  })}
                   style={style}>
                   <div className="gradient-box-body has-text-right">
                     {blocks.map(({ name }, i) => (
