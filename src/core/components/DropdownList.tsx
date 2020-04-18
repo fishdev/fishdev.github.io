@@ -47,7 +47,7 @@ export class DropdownList extends React.PureComponent<Props, State> {
           }
         )}>
         <div className="dropdown-trigger">
-          {React.Children.map(children, child =>
+          {React.Children.map(children, (child) =>
             React.cloneElement(child as React.ReactElement, {
               onClick: this.toggleActive,
               isActive,
@@ -55,10 +55,10 @@ export class DropdownList extends React.PureComponent<Props, State> {
           )}
         </div>
         <div className="dropdown-menu" role="menu">
-          <div className="dropdown-content has-background-light">
+          <div className="dropdown-content has-background-light animated faster bounceIn">
             {staticItems}
             {staticItems && items && <hr className="dropdown-divider" />}
-            {items && items.map(dropdown => <DropdownItem key={dropdown.name} {...dropdown} />)}
+            {items && items.map((dropdown) => <DropdownItem key={dropdown.name} {...dropdown} />)}
           </div>
         </div>
       </div>

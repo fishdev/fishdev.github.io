@@ -32,6 +32,11 @@ export class ShareButton extends React.PureComponent<Props, State> {
   render() {
     const { type, rounded, url, location } = this.props;
     const { copied } = this.state;
+    const icon = (
+      <span className={classNames('icon', { 'animated bounceIn': copied })}>
+        <i className={'fas fa-' + (copied ? 'clipboard-check' : 'link')} />
+      </span>
+    );
     return (
       <CopyToClipboard text={url || HOSTING_URL + location.pathname} onCopy={this.wasCopied}>
         {type === 'button' ? (
@@ -41,16 +46,12 @@ export class ShareButton extends React.PureComponent<Props, State> {
               { 'is-rounded': rounded },
               copied ? 'is-success' : 'is-white'
             )}>
-            <span className="icon">
-              <i className={'fas fa-' + (copied ? 'clipboard-check' : 'link')} />
-            </span>
+            {icon}
             <span>{copied ? 'Copied!' : 'Copy Link'}</span>
           </button>
         ) : (
           <a className="dropdown-item">
-            <span className="icon">
-              <i className={'fas fa-' + (copied ? 'clipboard-check' : 'link')} />
-            </span>
+            {icon}
             &nbsp; &nbsp;
             {copied ? 'Copied!' : 'Copy Link'}
           </a>

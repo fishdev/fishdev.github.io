@@ -7,17 +7,22 @@ import { OvalBlock } from './OvalBlock';
 
 interface State {
   section: number;
+  isAnimating: boolean;
 }
 
 export class OvalSwitcher extends React.PureComponent<{}, State> {
   state: Readonly<State> = {
     section: 0,
+    isAnimating: false,
   };
 
-  switchSection = (i: number) => this.setState({ section: i });
+  switchSection = (i: number) =>
+    this.setState({ isAnimating: true }, () =>
+      setTimeout(() => this.setState({ isAnimating: false, section: i }), 500)
+    );
 
   render() {
-    const { section } = this.state;
+    const { section, isAnimating } = this.state;
     return (
       <StickyContainer>
         <div className="columns is-variable is-6">
@@ -42,12 +47,18 @@ export class OvalSwitcher extends React.PureComponent<{}, State> {
             </Sticky>
           </div>
           <div className="column">
-            <div className="columns is-multiline is-vcentered is-variable is-6">
-              {blocks[section].data.map((block, i) => (
-                <div className="column is-narrow" key={block.id}>
-                  <OvalBlock {...block} />
-                </div>
-              ))}
+            <div
+              className={classNames(
+                'oval-container animated faster',
+                isAnimating ? 'zoomOut' : 'zoomIn'
+              )}>
+              <div className="columns is-multiline is-vcentered is-variable is-6">
+                {blocks[section].data.map((block, i) => (
+                  <div className="column is-narrow" key={block.id}>
+                    <OvalBlock {...block} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

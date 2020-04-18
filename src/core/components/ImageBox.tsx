@@ -51,7 +51,7 @@ export class ImageBox extends React.PureComponent<Props, State> {
         </div>
         <div className={classNames('modal', { 'is-active': modalActive })}>
           <div className="modal-background" onClick={this.toggleModal} />
-          <div className="modal-content">
+          <div className="modal-content animated faster zoomIn">
             <img className="modal-image" src={original} alt={description} />
             {stamped && (
               <React.Fragment>
