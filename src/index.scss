@@ -117,31 +117,88 @@ html,
   padding: 25px;
 }
 
-.oval {
-  background: $black-ter;
+.oval-bg {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  height: 100%;
+  width: 100%;
   border-radius: 100%;
-  padding: 50px 40px;
+  transition: all 200ms ease;
+  opacity: 0.1;
+}
+
+.oval-bg-skew-1 {
+  transform: skew(2deg);
+}
+
+.oval-bg-skew-2 {
+  transform: skew(-2deg);
+}
+
+.oval-bg-rotate-1 {
+  transform: rotate(-9deg);
+}
+
+.oval-bg-rotate-2 {
+  transform: rotate(9deg);
+}
+
+.oval-bg-grey-1 {
+  background: $grey;
+}
+
+.oval-bg-grey-2 {
+  background: $grey-lighter;
+}
+
+.oval-bg-grey-3 {
+  background: $grey-darker;
+}
+
+.oval-bg-1 {
+  background: $link;
+}
+
+.oval-bg-2 {
+  background: $primary;
+}
+
+.oval-bg-3 {
+  background: $info;
+}
+
+.oval-bg-4 {
+  background: $danger;
+}
+
+.oval-body {
+  padding: 30px 40px;
+}
+
+.oval {
+  position: relative;
+  background: none;
   transition: all 200ms ease;
   margin-bottom: 15px;
+}
+
+.oval:hover {
+  box-shadow: none !important;
 }
 
 .oval .title {
   transition: all 200ms ease;
 }
 
-.oval:hover {
+.oval-bg:hover {
   cursor: pointer;
   background: lighten($link, 25%);
-  border-radius: 5rem;
-  @extend .has-shadow;
+  opacity: 0.2;
 }
 
 .oval:hover .title {
-  transform: scale(1.1);
-}
-
-.oval:hover .subtitle {
-  color: $white-ter !important;
+  transform: scale(1.25);
 }
 
 // Shadow for profile picture
