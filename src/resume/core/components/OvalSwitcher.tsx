@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { blocks } from '../../../assets/data';
 import { StickyContainer, Sticky } from 'react-sticky';
 import { OvalBlock } from './OvalBlock';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 interface State {
   section: number;
@@ -49,11 +50,9 @@ export class OvalSwitcher extends React.PureComponent<{}, State> {
             </Sticky>
           </div>
           <div className="column">
-            <div
-              className={classNames(
-                'oval-container animated faster',
-                isAnimating ? 'zoomOut' : 'zoomIn'
-              )}>
+            <ScrollAnimation
+              className={classNames('oval-container', { zoomOut: isAnimating })}
+              animateIn="zoomIn">
               <div className="columns is-multiline is-vcentered is-variable is-6">
                 {blocks[section].data.map((block, i) => (
                   <div className="column is-narrow" key={block.id}>
@@ -61,7 +60,7 @@ export class OvalSwitcher extends React.PureComponent<{}, State> {
                   </div>
                 ))}
               </div>
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </StickyContainer>
