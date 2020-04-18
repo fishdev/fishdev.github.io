@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 import { Sentence, Image } from '../../core';
 import cmu from '../cmu.jpeg';
-import skyline from '../skyline.jpeg';
-import path from '../path.jpeg';
+import allegheny from '../allegheny.jpeg';
+import nyc from '../nyc.jpeg';
 import river from '../river.jpeg';
 
 export const about: Array<Sentence | Image | {}> = [
   {
     original: cmu,
-    description: 'CMU at night',
+    description: 'CMU on a snowy night',
   },
   {
     icon: 'fas fa-code',
@@ -22,8 +22,8 @@ export const about: Array<Sentence | Image | {}> = [
     ),
   },
   {
-    original: skyline,
-    description: 'Skyline from Three Rivers Heritage trail',
+    original: allegheny,
+    description: 'Allegheny Landing park',
   },
   {
     icon: 'fas fa-map-marker-alt',
@@ -34,8 +34,8 @@ export const about: Array<Sentence | Image | {}> = [
     ),
   },
   {
-    original: path,
-    description: 'Coopers Rock State Forest',
+    original: nyc,
+    description: 'Radio City Music Hall',
   },
   {
     icon: 'fas fa-spa',
