@@ -12,7 +12,7 @@ export const Podcasts: React.FC = () => (
         {podcasts.map((podcast) => (
           <a
             key={podcast.name}
-            className="column is-3-tablet is-6-mobile tooltip"
+            className="column is-3-tablet is-6-mobile tooltip hover-expand"
             href={podcast.url}
             data-tooltip={podcast.name}>
             <Img

@@ -17,7 +17,7 @@ export const Favorites: React.FC = () => (
             <h3 className="title gradientbg">My favorite stuff</h3>
             <h5 className="subtitle has-text-grey-light">
               <span>Things I really </span>
-              <span className="icon">
+              <span className="icon animated flash">
                 <i className="fas fa-heart" />
               </span>
             </h5>

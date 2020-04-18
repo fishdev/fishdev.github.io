@@ -561,3 +561,8 @@ iframe.playlist-item {
   display: flex;
   align-items: center;
 }
+
+// Grow on hover
+.hover-expand:hover {
+  transform: scale(1.1);
+}

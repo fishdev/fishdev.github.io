@@ -4,6 +4,7 @@ import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
 
 import { Banner } from '../interfaces';
 import { LoadingBox } from './LoadingBox';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export class HorizontalBanner extends React.PureComponent<Banner> {
   static defaultProps: Partial<Banner> = {
@@ -15,10 +16,10 @@ export class HorizontalBanner extends React.PureComponent<Banner> {
 
     const DetailColumn: React.FC = () => (
       <div className="column">
-        <span className="fancy">
+        <ScrollAnimation className="fancy" animateIn="pulse" animateOnce>
           <h4 className="title is-4 gradientbg">{title}</h4>
           {subtitle && <h5 className="subtitle gradientbg">{subtitle}</h5>}
-        </span>
+        </ScrollAnimation>
         <br />
         <div className="content">{content}</div>
       </div>
