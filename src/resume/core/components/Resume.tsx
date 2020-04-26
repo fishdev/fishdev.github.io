@@ -33,10 +33,9 @@ export class Resume extends React.PureComponent<{}, State> {
     return (
       <ScrollElement name="resume">
         <GlobalHotKeys
-          keyMap={{ SHOW_SEARCH: '/', HIDE_SEARCH: 'esc', TOGGLE_IMPORTANT: 'i' }}
+          keyMap={{ SHOW_SEARCH: '/', TOGGLE_IMPORTANT: 'i' }}
           handlers={{
             SHOW_SEARCH: this.showSearch,
-            HIDE_SEARCH: this.hideSearch,
             TOGGLE_IMPORTANT: this.toggleImportant,
           }}
         />

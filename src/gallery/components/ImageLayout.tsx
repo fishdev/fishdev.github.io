@@ -75,7 +75,6 @@ export class ImageLayout extends React.PureComponent<Props, State> {
           <ImageModal
             stamped
             data={this.flatPhotos[currentImage]}
-            active={modalActive}
             toggleModal={this.toggleModal}
             prevImage={currentImage > 0 ? this.prevImage : undefined}
             nextImage={currentImage < this.flatPhotos.length - 1 ? this.nextImage : undefined}

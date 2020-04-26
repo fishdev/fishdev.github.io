@@ -25,7 +25,10 @@ export class ImageBox extends React.PureComponent<Props, State> {
     caption: 'hidden',
   };
 
-  toggleModal = () => this.setState(({ modalActive }) => ({ modalActive: !modalActive }));
+  toggleModal = () => {
+    console.log('hello');
+    this.setState(({ modalActive }) => ({ modalActive: !modalActive }));
+  };
 
   render() {
     const { data, caption, showModalFn } = this.props;
@@ -50,8 +53,8 @@ export class ImageBox extends React.PureComponent<Props, State> {
             <p className="has-text-grey has-text-centered">{data.description}</p>
           )}
         </div>
-        {!showModalFn && (
-          <ImageModal {...this.props} active={modalActive} toggleModal={this.toggleModal} />
+        {!showModalFn && modalActive && (
+          <ImageModal {...this.props} toggleModal={this.toggleModal} />
         )}
       </React.Fragment>
     );
