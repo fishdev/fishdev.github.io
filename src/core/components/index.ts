@@ -21,3 +21,4 @@ export * from './AnchorButton';
 export * from './DropdownItem';
 export * from './SocialButtons';
 export * from './ImageModal';
+export * from './Modal';

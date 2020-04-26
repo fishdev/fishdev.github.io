@@ -74,6 +74,7 @@ export class ImageLayout extends React.PureComponent<Props, State> {
         {modalActive && (
           <ImageModal
             stamped
+            blurred
             unconstrained
             data={this.flatPhotos[currentImage]}
             toggleModal={this.toggleModal}

@@ -458,6 +458,10 @@ iframe.playlist-item {
 }
 
 // Image modal
+.blurred-background {
+  backdrop-filter: blur($radius-large);
+}
+
 .image-stamp-text {
   position: absolute;
   bottom: 20px;
