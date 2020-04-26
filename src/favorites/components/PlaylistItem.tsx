@@ -11,6 +11,7 @@ export const PlaylistItem: React.FC<Playlist> = ({ description, id }) => (
       height="380"
       frameBorder="0"
       allow="encrypted-media"
+      title={'Playlist: ' + id}
     />
     <p className="has-text-grey has-text-centered">{description}</p>
   </React.Fragment>

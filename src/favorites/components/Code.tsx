@@ -11,7 +11,7 @@ export const Code: React.FC = () => (
     />
     <ResponsiveContainer size="large">
       {codes.map((banner, i) => (
-        <React.Fragment>
+        <React.Fragment key={i}>
           <HorizontalBanner {...banner} />
           <br className="is-hidden-mobile" />
           {i < codes.length - 1 && <br />}
