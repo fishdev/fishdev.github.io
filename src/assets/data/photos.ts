@@ -2,29 +2,37 @@ import { ImageCollection } from '../../gallery';
 
 const titles = [
   'allegheny',
+  'arch',
   'brick',
   'butterfly',
   'cathy',
   'cmu',
   'convention',
   'dusk',
+  'empty',
   'flower',
   'grafitti',
   'hills',
   'houses',
   'industry',
   'lot',
+  'metal',
   'msg',
   'mural',
+  'mural2',
   'nyc',
   'pathway',
+  'petal',
+  'phipps',
+  'puddle',
   'river',
   'rivers',
-  'sunset',
   'street',
   'subway',
+  'sunset',
   'tracks',
   'village',
+  'wires',
 ];
 export const photoPaths = Object.fromEntries(
   titles.map((title) => [
@@ -179,6 +187,62 @@ export const photos: ImageCollection = [
       {
         ...photoPaths.village,
         description: 'A secluded neighborhood from the woods',
+      },
+    ],
+    wide: true,
+  },
+  {
+    type: 'singleton',
+    image: {
+      ...photoPaths.puddle,
+      description: 'Puddle on the Ohio',
+      tags: ['nature'],
+    },
+  },
+  {
+    type: 'multi',
+    images: [
+      {
+        ...photoPaths.arch,
+        description: 'Tunnel to nowhere',
+      },
+      {
+        ...photoPaths.empty,
+        description: 'Empty roads at rush hour',
+      },
+
+      {
+        ...photoPaths.phipps,
+        description: 'Phipps Conservatory 🌈',
+        tags: ['night'],
+      },
+      {
+        ...photoPaths.wires,
+        description: 'Towering telephone wires',
+      },
+    ],
+    wide: false,
+  },
+  {
+    type: 'multi',
+    images: [
+      {
+        ...photoPaths.metal,
+        description: 'Hot Metal Bridge',
+      },
+
+      {
+        ...photoPaths.mural2,
+        description: 'Vibrant mural in Downtown PGH',
+      },
+      {
+        ...photoPaths.petal,
+        description: 'Red petal in a dull scene',
+        tags: ['nature'],
+      },
+      {
+        ...photoPaths.grafitti,
+        description: 'The Color Park',
       },
     ],
     wide: true,
