@@ -49,7 +49,9 @@ export class ImageModal extends React.PureComponent<Props> {
                 <div className="level-item">
                   <div className="tags">
                     {data.tags.map((tag) => (
-                      <span className="tag is-small is-dark">{tag}</span>
+                      <span key={tag} className="tag is-small is-dark">
+                        {tag}
+                      </span>
                     ))}
                   </div>
                 </div>
