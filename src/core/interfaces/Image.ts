@@ -3,4 +3,5 @@ export interface Image {
   thumbnail?: string;
   description?: string;
   id?: number;
+  tags?: string[];
 }

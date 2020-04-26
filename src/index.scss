@@ -432,7 +432,7 @@ iframe.playlist-item {
 // Image modal
 .image-stamp-text {
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   right: 16.5px;
   opacity: 0.6;
   font-size: 13px;
@@ -441,7 +441,7 @@ iframe.playlist-item {
 
 .image-stamp {
   position: absolute;
-  bottom: 35px;
+  bottom: 15px;
   right: 10px;
   height: 30px;
   width: 30px;
@@ -465,8 +465,11 @@ iframe.playlist-item {
   @extend .image-container;
 }
 
-// Image hero
+.image-level {
+  margin-bottom: 0.5rem !important;
+}
 
+// Image hero
 .image-container {
   position: relative;
 }

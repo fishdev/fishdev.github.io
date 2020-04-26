@@ -45,6 +45,7 @@ export const photos: Array<SingletonImage | MultiGroup> = [
         thumbnail: cathy_thumb,
         description: 'Cathedral of Learning',
         id: 1,
+        tags: ['night'],
       },
       {
         original: dusk,
@@ -68,6 +69,7 @@ export const photos: Array<SingletonImage | MultiGroup> = [
       thumbnail: cmu_thumb,
       description: 'CMU on a snowy night',
       id: 4,
+      tags: ['night'],
     },
   },
   {
@@ -76,8 +78,9 @@ export const photos: Array<SingletonImage | MultiGroup> = [
       {
         original: msg,
         thumbnail: msg_thumb,
-        description: 'Madison Square Garden and the Empire State Building',
+        description: 'Madison Square Garden and Empire State Building',
         id: 5,
+        tags: ['night'],
       },
       {
         original: convention,
@@ -135,6 +138,7 @@ export const photos: Array<SingletonImage | MultiGroup> = [
         thumbnail: nyc_thumb,
         description: 'Radio City Music Hall',
         id: 13,
+        tags: ['night'],
       },
     ],
     wide: false,
