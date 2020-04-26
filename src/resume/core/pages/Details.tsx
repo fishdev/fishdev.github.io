@@ -62,7 +62,9 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
                       {({ style, isSticky }) => (
                         <div
                           style={style}
-                          className={classNames({ 'section-label-sticky': isSticky })}>
+                          className={classNames({
+                            'section-label-sticky details-header-sticky': isSticky,
+                          })}>
                           <h3 className="title is-3 gradientbg">{name}</h3>
                           {tagline && <h4 className="subtitle is-4 gradientbg">{tagline}</h4>}
                           {extra && <h4 className="subtitle is-4 gradientbg">{extra}</h4>}
