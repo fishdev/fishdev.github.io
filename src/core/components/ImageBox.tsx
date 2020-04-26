@@ -8,6 +8,7 @@ import { LoadingBox } from './LoadingBox';
 interface Props extends Image {
   caption?: 'tooltip' | 'visible' | 'hidden';
   stamped?: boolean;
+  constrained?: boolean;
 }
 
 interface State {
@@ -22,12 +23,13 @@ export class ImageBox extends React.PureComponent<Props, State> {
   static defaultProps: Partial<Props> = {
     caption: 'hidden',
     stamped: false,
+    constrained: false,
   };
 
   toggleModal = () => this.setState(({ modalActive }) => ({ modalActive: !modalActive }));
 
   render() {
-    const { original, thumbnail, description, caption, stamped } = this.props;
+    const { original, thumbnail, description, caption, stamped, constrained } = this.props;
     const { modalActive } = this.state;
     return (
       <React.Fragment>
@@ -51,7 +53,10 @@ export class ImageBox extends React.PureComponent<Props, State> {
         </div>
         <div className={classNames('modal', { 'is-active': modalActive })}>
           <div className="modal-background" onClick={this.toggleModal} />
-          <div className="modal-content animated faster zoomIn">
+          <div
+            className={classNames('modal-content animated faster zoomIn', {
+              'image-modal-content': !constrained,
+            })}>
             <img className="modal-image" src={original} alt={description} />
             {stamped && (
               <React.Fragment>

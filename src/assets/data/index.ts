@@ -7,6 +7,7 @@ export * from './education';
 export * from './blocks';
 export * from './skills';
 export * from './favorites';
+export * from './photos';
 
 export const NAMES = ['Ashwin', 'Srinivasan'];
 export const FULL_NAME = NAMES.join(' ');

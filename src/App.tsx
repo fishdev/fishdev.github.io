@@ -7,7 +7,7 @@ import { GlobalHotKeys } from 'react-hotkeys';
 
 import { WEBSITE_SOURCE, social } from './assets/data';
 import { SitemapModal } from './core/components/SitemapModal';
-import { Home, Coursework, Details, Favorites, NotFound } from './pages';
+import { Home, Coursework, Details, Favorites, NotFound, Gallery } from './pages';
 
 const history = createBrowserHistory();
 history.listen((location) => {
@@ -72,6 +72,7 @@ export class App extends React.PureComponent<{}, State> {
             <Route path="/" exact component={Home} />
             <Route path="/courses" exact component={Coursework} />
             <Route path="/resume/:section" exact component={Home} />
+            <Route path="/gallery" exact component={Gallery} />
             <Route path="/favorites" component={Favorites} />
             <Route path="/404" component={NotFound} />
             {links}

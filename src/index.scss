@@ -454,6 +454,10 @@ iframe.playlist-item {
   opacity: 0.2;
 }
 
+.image-modal-content {
+  width: 80vh;
+}
+
 .modal-image {
   max-height: calc(100vh - 160px);
   @extend .image-container;

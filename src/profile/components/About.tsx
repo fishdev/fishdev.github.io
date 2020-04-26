@@ -22,15 +22,21 @@ export const About: React.FC = () => (
           {about.map(
             (item, i) =>
               isImage(item) && (
-                <div key={i} className="column is-3-table is-6-mobile">
+                <div key={i} className="column is-3-tablet is-6-mobile">
                   <ImageBox {...item} stamped />
                 </div>
               )
           )}
         </div>
-        <div className="has-text-centered">
+        <div className="buttons is-centered">
+          <Link className="button is-outlined is-white " to="/gallery">
+            <span className="icon">
+              <i className="fas fa-images" />
+            </span>
+            <span>Gallery</span>
+          </Link>
           <Link className="button is-outlined is-white " to="/favorites">
-            <span>Check out my favorites</span>
+            <span>My favorites</span>
             <span className="icon">
               <i className="fas fa-arrow-right" />
             </span>
