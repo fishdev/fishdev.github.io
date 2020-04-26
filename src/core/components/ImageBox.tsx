@@ -57,7 +57,7 @@ export class ImageBox extends React.PureComponent<Props, State> {
             className={classNames('modal-content animated faster zoomIn', {
               'image-modal-content': !constrained,
             })}>
-            <img className="modal-image" src={original} alt={description} />
+            <Img className="modal-image" src={original} placeholder={<LoadingBox />} />
             {stamped && (
               <React.Fragment>
                 <div className="image-stamp stamp-purple"></div>

@@ -6,13 +6,13 @@ import { MultiGroup, SingletonImage } from '../interfaces';
 import { MiniGallery, GiantImage } from '../components';
 
 export const Gallery: React.FC = () => {
-  const images = photos.map((group) => {
+  const images = photos.map((group, i) => {
     switch (group.type) {
       case 'multi':
-        return <MiniGallery {...(group as MultiGroup)} />;
+        return <MiniGallery key={i} {...(group as MultiGroup)} />;
       case 'singleton':
       default:
-        return <GiantImage {...(group as SingletonImage)} />;
+        return <GiantImage key={i} {...(group as SingletonImage)} />;
     }
   });
   return (
