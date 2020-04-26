@@ -24,6 +24,10 @@ export class Gallery extends React.PureComponent<{}, State> {
     )
   );
 
+  componentDidMount() {
+    localStorage.setItem('galleryVisited', 'true');
+  }
+
   toggleFilterTag = (tag: string) =>
     this.setState(({ filterTags }) => {
       const matchIndex = filterTags.indexOf(tag);
