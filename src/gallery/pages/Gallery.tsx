@@ -93,6 +93,7 @@ export class Gallery extends React.PureComponent<{}, State> {
           </div>
         </section>
         <ImageModal
+          stamped
           data={this.flatPhotos[currentImage]}
           active={modalActive}
           toggleModal={this.toggleModal}
