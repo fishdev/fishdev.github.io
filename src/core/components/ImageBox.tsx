@@ -8,6 +8,7 @@ import { ImageModal } from './ImageModal';
 
 interface Props {
   caption?: 'tooltip' | 'visible' | 'hidden';
+  maxHeight?: 'large' | 'small' | 'none';
   showModalFn?(id: number): void;
   data: Image;
 }
@@ -23,6 +24,7 @@ export class ImageBox extends React.PureComponent<Props, State> {
 
   static defaultProps: Partial<Props> = {
     caption: 'hidden',
+    maxHeight: 'large',
   };
 
   toggleModal = () => {
@@ -31,7 +33,7 @@ export class ImageBox extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const { data, caption, showModalFn } = this.props;
+    const { data, caption, maxHeight, showModalFn } = this.props;
     const { modalActive } = this.state;
     return (
       <React.Fragment>
@@ -43,8 +45,10 @@ export class ImageBox extends React.PureComponent<Props, State> {
             })}
             data-tooltip={data.description}>
             <Img
-              style={{ maxHeight: 500, width: 'auto' }}
-              className="image-fullwidth rounded"
+              className={classNames('image-box rounded', {
+                'max-height-large': maxHeight === 'large',
+                'max-height-small': maxHeight === 'small',
+              })}
               src={data.thumbnail || data.original}
               placeholder={<LoadingBox />}
             />
