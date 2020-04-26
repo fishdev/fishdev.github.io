@@ -431,6 +431,7 @@ iframe.playlist-item {
   right: 16.5px;
   opacity: 0.6;
   font-size: 13px;
+  color: $white-ter;
 }
 
 .image-stamp {
@@ -452,10 +453,6 @@ iframe.playlist-item {
   transform: skew(-10deg);
   background: $primary;
   opacity: 0.2;
-}
-
-.image-modal-content {
-  width: 80vh;
 }
 
 .modal-image {

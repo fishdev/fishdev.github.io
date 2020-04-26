@@ -51,12 +51,7 @@ export class ImageBox extends React.PureComponent<Props, State> {
           )}
         </div>
         {!showModalFn && (
-          <ImageModal
-            {...this.props}
-            active={modalActive}
-            toggleModal={this.toggleModal}
-            constrained
-          />
+          <ImageModal {...this.props} active={modalActive} toggleModal={this.toggleModal} />
         )}
       </React.Fragment>
     );
