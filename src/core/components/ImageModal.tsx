@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { GlobalHotKeys } from 'react-hotkeys';
 import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
 
@@ -7,6 +8,7 @@ import { LoadingBox } from '../components';
 
 interface Props {
   stamped?: boolean;
+  unconstrained?: boolean;
   toggleModal(): void;
   prevImage?(): void;
   nextImage?(): void;
@@ -16,15 +18,19 @@ interface Props {
 export class ImageModal extends React.PureComponent<Props> {
   static defaultProps: Partial<Props> = {
     stamped: false,
+    unconstrained: false,
   };
 
   render() {
-    const { toggleModal, prevImage, nextImage, stamped, data } = this.props;
+    const { toggleModal, prevImage, nextImage, stamped, unconstrained, data } = this.props;
     return (
       <GlobalHotKeys keyMap={{ HIDE_MODAL: 'esc' }} handlers={{ HIDE_MODAL: toggleModal as any }}>
         <div className="modal is-active">
           <div className="modal-background" onClick={toggleModal} />
-          <div className="modal-content animated faster zoomIn">
+          <div
+            className={classNames('modal-content animated faster zoomIn', {
+              'unconstrained-modal-content': unconstrained,
+            })}>
             <div className="level image-level">
               <div className="level-left">
                 {prevImage && (

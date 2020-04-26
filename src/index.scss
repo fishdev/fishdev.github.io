@@ -478,6 +478,11 @@ iframe.playlist-item {
   margin-bottom: 0.5rem !important;
 }
 
+.unconstrained-modal-content {
+  width: auto;
+  max-width: 80vw;
+}
+
 // Image hero
 .image-container {
   position: relative;
