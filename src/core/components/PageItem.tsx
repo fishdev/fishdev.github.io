@@ -23,6 +23,9 @@ export const PageItem: React.FC<Props> = ({ type, name, path, onClick }) => {
     case 'favorites':
       icon = 'fas fa-asterisk';
       break;
+    case 'gallery':
+      icon = 'fas fa-images';
+      break;
   }
 
   return (
