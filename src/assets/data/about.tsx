@@ -2,19 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Sentence, Image } from '../../core';
-import cmu from '../cmu.jpeg';
-import allegheny from '../allegheny.jpeg';
-import nyc from '../nyc.jpeg';
-import river from '../river.jpeg';
-import cmu_thumb from '../cmu_thumb.jpeg';
-import allegheny_thumb from '../allegheny_thumb.jpeg';
-import nyc_thumb from '../nyc_thumb.jpeg';
-import river_thumb from '../river_thumb.jpeg';
+import { photoPaths } from './photos';
 
 export const about: Array<Sentence | Image | {}> = [
   {
-    original: cmu,
-    thumbnail: cmu_thumb,
+    ...photoPaths.cmu,
     description: 'CMU on a snowy night',
   },
   {
@@ -27,8 +19,7 @@ export const about: Array<Sentence | Image | {}> = [
     ),
   },
   {
-    original: allegheny,
-    thumbnail: allegheny_thumb,
+    ...photoPaths.allegheny,
     description: 'Allegheny Landing park',
   },
   {
@@ -40,8 +31,7 @@ export const about: Array<Sentence | Image | {}> = [
     ),
   },
   {
-    original: nyc,
-    thumbnail: nyc_thumb,
+    ...photoPaths.nyc,
     description: 'Radio City Music Hall',
   },
   {
@@ -49,8 +39,7 @@ export const about: Array<Sentence | Image | {}> = [
     content: <span>Juggling and biking in my free time.</span>,
   },
   {
-    original: river,
-    thumbnail: river_thumb,
+    ...photoPaths.river,
     description: 'PNC Park',
   },
   {
