@@ -66,7 +66,9 @@ export class Gallery extends React.PureComponent<{}, State> {
               </span>
               <div className="filter-tags tags is-pulled-right">
                 {filterTags.length > 0 && (
-                  <a className="tag is-black delete" onClick={this.clearFilterTags}></a>
+                  <a
+                    className="tag is-black delete animated faster fadeInRight"
+                    onClick={this.clearFilterTags}></a>
                 )}
                 {this.allTags.map((tag) => (
                   <a

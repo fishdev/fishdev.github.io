@@ -2,6 +2,7 @@ import React from 'react';
 
 import { SingletonImage } from '../interfaces';
 import { ImageBox } from '../../core';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 interface Props extends SingletonImage {
   showModalFn?(id: number): void;
@@ -9,6 +10,8 @@ interface Props extends SingletonImage {
 
 export const GiantImage: React.FC<Props> = ({ image, showModalFn }) => (
   <div className="column is-6">
-    <ImageBox data={image} showModalFn={showModalFn} />
+    <ScrollAnimation animateIn="fadeIn" delay={500}>
+      <ImageBox data={image} showModalFn={showModalFn} />
+    </ScrollAnimation>
   </div>
 );
