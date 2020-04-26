@@ -73,6 +73,7 @@ export class App extends React.PureComponent<{}, State> {
             <Route path="/courses" exact component={Coursework} />
             <Route path="/resume" exact component={Home} />
             <Route path="/gallery" exact component={Gallery} />
+            <Route path="/gallery/:tag" exact component={Gallery} />
             <Route path="/favorites" component={Favorites} />
             <Route path="/404" component={NotFound} />
             {links}

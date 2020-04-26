@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 import { Navbar, ScrollToTop, MetaTags, Footer } from '../../core';
 import { ImageLayout } from '../components';
@@ -11,7 +12,8 @@ interface State {
   filterTags: string[];
 }
 
-export class Gallery extends React.PureComponent<{}, State> {
+@(withRouter as any)
+export class Gallery extends React.PureComponent<RouteComponentProps<{ tag: string }>, State> {
   state: Readonly<State> = {
     filterTags: [],
   };
@@ -26,6 +28,9 @@ export class Gallery extends React.PureComponent<{}, State> {
 
   componentDidMount() {
     localStorage.setItem('galleryVisited', 'true');
+
+    const tag = this.props.match.params.tag;
+    if (tag && this.allTags.includes(tag)) this.toggleFilterTag(tag);
   }
 
   toggleFilterTag = (tag: string) =>
@@ -66,9 +71,9 @@ export class Gallery extends React.PureComponent<{}, State> {
               </span>
               <div className="filter-tags tags is-pulled-right">
                 {filterTags.length > 0 && (
-                  <a
+                  <button
                     className="tag is-black delete animated faster fadeInRight"
-                    onClick={this.clearFilterTags}></a>
+                    onClick={this.clearFilterTags}></button>
                 )}
                 {this.allTags.map((tag) => (
                   <a
