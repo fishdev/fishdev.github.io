@@ -27,7 +27,9 @@ export const About: React.FC = () => (
             <span className="icon">
               <i className="fas fa-images" />
             </span>
-            <span>Gallery</span>
+            <span>
+              Gallery <sup className="has-text-success">new</sup>
+            </span>
           </Link>
           <Link className="button is-outlined is-white " to="/favorites">
             <span>My favorites</span>
