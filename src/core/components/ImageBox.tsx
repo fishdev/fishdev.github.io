@@ -41,7 +41,7 @@ export class ImageBox extends React.PureComponent<Props, State> {
             })}
             data-tooltip={description}>
             <Img
-              style={{ maxHeight: 400, width: 'auto' }}
+              style={{ maxHeight: 500, width: 'auto' }}
               className="image-fullwidth rounded"
               src={thumbnail || original}
               placeholder={<LoadingBox />}
