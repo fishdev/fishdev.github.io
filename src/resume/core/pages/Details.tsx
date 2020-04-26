@@ -96,7 +96,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
                       {images &&
                         images.map((image, i) => (
                           <div key={i} className="column is-narrow has-text-centered">
-                            <ImageBox {...image} constrained />
+                            <ImageBox data={image} />
                           </div>
                         ))}
                     </div>

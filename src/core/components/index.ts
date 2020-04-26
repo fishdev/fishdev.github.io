@@ -20,3 +20,4 @@ export * from './TabLink';
 export * from './AnchorButton';
 export * from './DropdownItem';
 export * from './SocialButtons';
+export * from './ImageModal';
