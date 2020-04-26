@@ -53,6 +53,7 @@ export class OvalSwitcher extends React.PureComponent<{}, State> {
             <ScrollAnimation
               className={classNames('oval-container', { zoomOut: isAnimating })}
               animateIn="zoomIn"
+              animateOnce
               duration={0.5}>
               <div className="columns is-multiline is-vcentered is-variable is-6">
                 {blocks[section].data.map((block, i) => (
