@@ -31,7 +31,7 @@ export class ImageModal extends React.PureComponent<Props> {
             className={classNames('modal-content animated faster zoomIn', {
               'unconstrained-modal-content': unconstrained,
             })}>
-            <div className="level image-level">
+            <div className="level image-level is-mobile">
               <div className="level-left">
                 {prevImage && (
                   <div className="level-item">
