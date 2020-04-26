@@ -60,11 +60,7 @@ export class Gallery extends React.PureComponent<{}, State> {
                   <span> My visual diary</span>
                 </h5>
               </span>
-            </div>
-          </div>
-          <div className="hero-foot">
-            <div className="container">
-              <div className="tags are-medium is-right">
+              <div className="filter-tags tags is-pulled-right">
                 {filterTags.length > 0 && (
                   <a className="tag is-black delete" onClick={this.clearFilterTags}></a>
                 )}
@@ -81,6 +77,7 @@ export class Gallery extends React.PureComponent<{}, State> {
           </div>
         </section>
         <ImageLayout data={enumPhotos(filteredPhotos)} />
+        <br />
         <Footer />
       </div>
     );

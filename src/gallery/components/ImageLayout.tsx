@@ -64,8 +64,8 @@ export class ImageLayout extends React.PureComponent<Props, State> {
           PREV_IMG: this.prevImage,
           NEXT_IMG: this.nextImage,
         }}>
-        <section className="hero is-black">
-          <div className="hero-body">
+        <section className="hero is-black is-small">
+          <div className="hero-body gallery-container">
             <div className="container">
               <div className="columns is-multiline is-vcentered">{images}</div>
             </div>
