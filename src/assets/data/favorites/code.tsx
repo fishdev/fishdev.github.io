@@ -98,33 +98,33 @@ export const codes: Banner[] = [
           Like many, <a href="https://code.visualstudio.com/">Visual Studio Code</a> is my editor of
           choice. Along with the usual language packs, there are a couple other extensions that
           improve my workflow:
+          <ul>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils">
+                File Utils
+              </a>{' '}
+              – command palette items for file operations (honestly, this should be included)
+            </li>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">
+                TODO Tree
+              </a>{' '}
+              – comprehensive to-do comment manager, much like IntelliJ
+            </li>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks">
+                Bookmarks
+              </a>{' '}
+              – a powerful way to jump around files instead of relying on cursor history
+            </li>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop">
+                LaTeX Workshop
+              </a>{' '}
+              – turns VS Code into a full-fledged LaTeX editor with built-in PDF previews
+            </li>
+          </ul>
         </p>
-        <ul>
-          <li>
-            <a href="https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils">
-              File Utils
-            </a>{' '}
-            – command palette items for file operations (honestly, this should be included)
-          </li>
-          <li>
-            <a href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">
-              TODO Tree
-            </a>{' '}
-            – comprehensive to-do comment manager, much like IntelliJ
-          </li>
-          <li>
-            <a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks">
-              Bookmarks
-            </a>{' '}
-            – a powerful way to jump around files instead of relying on cursor history
-          </li>
-          <li>
-            <a href="https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop">
-              LaTeX Workshop
-            </a>{' '}
-            – turns VS Code into a full-fledged LaTeX editor with built-in PDF previews
-          </li>
-        </ul>
       </React.Fragment>
     ),
   },
