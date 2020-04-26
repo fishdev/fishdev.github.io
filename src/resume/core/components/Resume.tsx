@@ -1,5 +1,6 @@
 import React from 'react';
 import { GlobalHotKeys } from 'react-hotkeys';
+import { Element as ScrollElement } from 'react-scroll';
 
 import { Block } from '../interfaces';
 import { SearchModal } from './SearchModal';
@@ -30,7 +31,7 @@ export class Resume extends React.PureComponent<{}, State> {
   render() {
     const { searchActive } = this.state;
     return (
-      <div>
+      <ScrollElement name="resume">
         <GlobalHotKeys
           keyMap={{ SHOW_SEARCH: '/', HIDE_SEARCH: 'esc', TOGGLE_IMPORTANT: 'i' }}
           handlers={{
@@ -43,7 +44,7 @@ export class Resume extends React.PureComponent<{}, State> {
         <Education showSearch={this.showSearch} />
         <ResumeCore />
         <Skills />
-      </div>
+      </ScrollElement>
     );
   }
 }

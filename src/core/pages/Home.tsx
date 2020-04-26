@@ -9,13 +9,9 @@ import { Resume } from '../../resume';
 import { scrollProps } from '../util';
 
 @(withRouter as any)
-export class Home extends React.PureComponent<RouteComponentProps<{ section: string }>> {
+export class Home extends React.PureComponent<RouteComponentProps> {
   componentDidMount() {
-    const { section } = this.props.match.params;
-    if (section) {
-      console.log(section);
-      scroller.scrollTo(section.toLowerCase(), scrollProps);
-    }
+    if (this.props.match.path === '/resume') scroller.scrollTo('resume', scrollProps);
   }
 
   render() {
