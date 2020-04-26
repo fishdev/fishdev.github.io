@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { about } from '../../assets/data';
-import { ResponsiveContainer, Sentence, Image, ImageBox } from '../../core/';
+import { ResponsiveContainer, Sentence, Image } from '../../core/';
+import { MiniGallery } from '../../gallery';
 
 const isSentence = (obj: any): obj is Sentence => (obj as Sentence).icon !== undefined;
 
@@ -19,14 +20,7 @@ export const About: React.FC = () => (
         </p>
         <br />
         <div className="columns is-mobile is-multiline">
-          {about.map(
-            (item, i) =>
-              isImage(item) && (
-                <div key={i} className="column is-3-tablet is-6-mobile">
-                  <ImageBox {...item} stamped />
-                </div>
-              )
-          )}
+          <MiniGallery {...{ type: 'multi', images: about.filter(isImage), wide: true }} />
         </div>
         <div className="buttons is-centered">
           <Link className="button is-outlined is-white " to="/gallery">
