@@ -1,7 +1,7 @@
 import React from 'react';
 // import classNames from 'classnames';
 
-import { Sentence /*, Image*/ } from '../../core';
+import { Sentence /*, Image*/ } from '../../base';
 // import { SentenceHero } from './SentenceHero';
 // import { ImageHero } from './ImageHero';
 // import { ParticlesHero } from '../core/components/ParticlesHero';

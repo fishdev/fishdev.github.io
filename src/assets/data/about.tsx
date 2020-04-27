@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Sentence, Image } from '../../core';
+import { Sentence, Image } from '../../base';
 import { photoPaths } from './photos';
 
 export const about: Array<Sentence | Image | {}> = [

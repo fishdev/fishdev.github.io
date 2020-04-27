@@ -1,4 +1,4 @@
-import { Dropdown } from '../../core';
+import { Dropdown } from '../../base';
 
 export const more: Dropdown[] = [
   {

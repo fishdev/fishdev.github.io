@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { SingletonImage } from '../interfaces';
-import { ImageBox } from '../../core';
+import { ImageBox } from '../../base';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 interface Props extends SingletonImage {

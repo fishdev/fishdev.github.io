@@ -2,7 +2,7 @@ import React from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 
 import { blocks } from '../../../assets/data';
-import { scrollProps } from '../../../core';
+import { scrollProps } from '../../../base';
 
 export const ResumeTabs: React.FC = ({ children }) => (
   <div className="container">

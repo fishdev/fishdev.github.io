@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { blocks } from '../../../assets/data';
-import { ResponsiveContainer } from '../../../core';
+import { ResponsiveContainer } from '../../../base';
 import { Section } from './Section';
 import { BlockHeader } from './BlockHeader';
 import { OvalSwitcher } from './OvalSwitcher';

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ImageModal, Image } from '../../core';
+import { ImageModal, Image } from '../../base';
 import { MultiGroup, SingletonImage, ImageCollection } from '../interfaces';
 import { MiniGallery, GiantImage } from '.';
 import { flattenPhotos } from '../util';

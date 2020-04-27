@@ -1,5 +1,5 @@
 import { SingletonImage, MultiGroup, ImageCollection } from '../interfaces';
-import { Image } from '../../core';
+import { Image } from '../../base';
 
 export const enumPhotos = (photos: ImageCollection): ImageCollection => {
   let count = 0;

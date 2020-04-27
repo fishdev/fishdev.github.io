@@ -19,7 +19,7 @@ import {
   projects,
   activities,
 } from '../../assets/data';
-import { MetaTags, Footer, Navbar } from '../../core';
+import { MetaTags, Footer, Navbar } from '../../base';
 
 export const Printable: React.FC = () => (
   <div>

@@ -1,5 +1,5 @@
 import { ImageGroup } from './ImageGroup';
-import { Image } from '../../core';
+import { Image } from '../../base';
 
 export interface MultiGroup extends ImageGroup {
   images: Image[];

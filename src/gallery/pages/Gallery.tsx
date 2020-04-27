@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 
-import { Navbar, ScrollToTop, MetaTags, Footer } from '../../core';
+import { Navbar, ScrollToTop, MetaTags, Footer } from '../../base';
 import { ImageLayout } from '../components';
 import { photos } from '../../assets/data';
 import { flattenPhotos, filterPhotos, enumPhotos } from '../util';

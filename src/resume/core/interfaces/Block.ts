@@ -1,4 +1,4 @@
-import { Button, Image } from './../../../core';
+import { Button, Image } from '../../../base';
 import { MonthRange } from './MonthRange';
 import { BlockEvent } from './BlockEvent';
 

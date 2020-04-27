@@ -3,7 +3,7 @@ import { Element as ScrollElement } from 'react-scroll';
 
 import { languages, technologies } from '../../../assets/data';
 import { SkillGroup } from './SkillGroup';
-import { ResponsiveContainer } from '../../../core';
+import { ResponsiveContainer } from '../../../base';
 
 export const Skills: React.FC = () => (
   <ScrollElement name="skills" className="hero is-black is-small">

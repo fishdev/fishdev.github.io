@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { ScrollToTop, ResponsiveContainer, TabLink, Footer, Navbar } from '../../core/';
+import { ScrollToTop, ResponsiveContainer, TabLink, Footer, Navbar } from '../../base';
 import { favorites } from '../../assets/data';
 
 export const Favorites: React.FC = () => (

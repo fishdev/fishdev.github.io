@@ -8,7 +8,7 @@
 
 import React from 'react';
 
-import { MetaTags, AnchorButton } from '../../core';
+import { MetaTags, AnchorButton } from '../../base';
 import { playlists, spotifyId } from '../../assets/data';
 import { PlaylistItem } from '../components/PlaylistItem';
 

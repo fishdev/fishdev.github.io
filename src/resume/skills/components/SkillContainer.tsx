@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Skill } from '../interfaces';
-import { DropdownList } from '../../../core';
+import { DropdownList } from '../../../base';
 import { BlockBox, skillToBlock } from '../../core';
 import { SkillTag } from './SkillTag';
 

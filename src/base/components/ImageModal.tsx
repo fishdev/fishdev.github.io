@@ -4,7 +4,7 @@ import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
 import Fullscreen from 'react-full-screen';
 
 import { Image } from '../interfaces';
-import { LoadingBox } from '../components';
+import { LoadingBox } from '.';
 import { Modal } from './Modal';
 import { GlobalHotKeys } from 'react-hotkeys';
 

@@ -13,7 +13,7 @@ import {
   Footer,
   Navbar,
   ResponsiveContainer,
-} from '../../../core';
+} from '../../../base';
 import { AwardBox, DetailsBars } from '../components';
 
 interface UrlProps {

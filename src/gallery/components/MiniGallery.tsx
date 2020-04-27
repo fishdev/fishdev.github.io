@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 import { MultiGroup } from '../interfaces';
-import { ImageBox } from '../../core';
+import { ImageBox } from '../../base';
 
 interface Props extends MultiGroup {
   showModalFn?(id: number): void;

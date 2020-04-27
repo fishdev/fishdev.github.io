@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ScrollToTop, MetaTags, Navbar, ResponsiveContainer, Footer } from '../../../core';
+import { ScrollToTop, MetaTags, Navbar, ResponsiveContainer, Footer } from '../../../base';
 import { UNIVERSITY } from '../../../assets/data';
 import { CourseList } from '../components';
 

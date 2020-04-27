@@ -2,7 +2,7 @@ import React from 'react';
 import { Element as ScrollElement } from 'react-scroll';
 
 import { university } from '../../../assets/data';
-import { ResponsiveContainer } from '../../../core';
+import { ResponsiveContainer } from '../../../base';
 import { Link } from 'react-router-dom';
 
 interface Props {

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Entity, Block } from '../interfaces';
 import { RangeEventBar } from './RangeEventBar';
-import { ShareButton, AnchorButton } from '../../../core';
+import { ShareButton, AnchorButton } from '../../../base';
 import { GitButton } from './GitButton';
 
 export const DetailsBars: React.FC<Entity> = ({ type, data }) => {

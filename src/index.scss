@@ -610,10 +610,6 @@ iframe.playlist-item {
   background-color: $black;
 }
 
-.sticky-header-padding {
-  padding: 0.5rem 0;
-}
-
 // 100vh hero
 .hero-body-centered {
   display: flex;
@@ -626,52 +622,4 @@ iframe.playlist-item {
 }
 
 // Printable resume
-.print-page {
-  background: white;
-  height: 11in;
-  width: 8.5in;
-  padding: 0.5in;
-  padding-top: 0.4in;
-  letter-spacing: -0.1px;
-  margin: 0 auto;
-}
-
-.print-title {
-  border-bottom: 1px dotted $link;
-  padding-bottom: 4px;
-  margin-bottom: 8px !important;
-  @extend .has-text-link;
-}
-
-.print-title:not(:first-child) {
-  margin-top: 16px;
-}
-
-.print-line-indented {
-  margin-left: 10px;
-  text-indent: -10px;
-}
-
-.print-paragraph {
-  margin-bottom: 9px !important;
-  line-height: 19px;
-  font-size: 13.5px;
-}
-
-.print-paragraph ul {
-  margin-top: 2px;
-}
-
-.print-paragraph .tag {
-  margin-bottom: 5px;
-  margin-right: 5px !important;
-  padding: 0px 5px;
-  height: 20px;
-  font-size: inherit;
-}
-
-@media print {
-  .is-hidden-print {
-    display: none;
-  }
-}
+@import 'printable/styles';

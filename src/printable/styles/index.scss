@@ -1,0 +1,9 @@
+@import 'page';
+@import 'title';
+@import 'paragraph';
+
+@media print {
+  .is-hidden-print {
+    display: none;
+  }
+}

@@ -6,7 +6,7 @@ import 'animate.css/animate.min.css';
 import { GlobalHotKeys } from 'react-hotkeys';
 
 import { WEBSITE_SOURCE, social } from './assets/data';
-import { SitemapModal } from './core/components/SitemapModal';
+import { SitemapModal } from './base/components/SitemapModal';
 import { Home, Coursework, Details, Favorites, NotFound, Gallery, Printable } from './pages';
 
 const history = createBrowserHistory();

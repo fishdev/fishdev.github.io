@@ -1,7 +1,7 @@
 import React from 'react';
 import { LazyLoadImage as Img } from 'react-lazy-load-image-component';
 
-import { MetaTags, ResponsiveContainer, LoadingBox } from '../../core';
+import { MetaTags, ResponsiveContainer, LoadingBox } from '../../base';
 import { podcasts } from '../../assets/data';
 
 export const Podcasts: React.FC = () => (

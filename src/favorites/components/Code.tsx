@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MetaTags, ResponsiveContainer, HorizontalBanner } from '../../core';
+import { MetaTags, ResponsiveContainer, HorizontalBanner } from '../../base';
 import { codes } from '../../assets/data';
 
 export const Code: React.FC = () => (

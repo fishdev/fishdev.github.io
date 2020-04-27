@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Search } from './Search';
-import { Modal } from '../../../core';
+import { Modal } from '../../../base';
 
 interface Props {
   hide: () => void;
