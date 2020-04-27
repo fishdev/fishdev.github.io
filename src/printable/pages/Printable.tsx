@@ -65,7 +65,7 @@ export const Printable: React.FC = () => (
             <p className="content print-paragraph">
               <u>Relevant coursework:</u>
               <ul>
-                {coursework.slice(0, 6).map((course) => (
+                {coursework.slice(0, 5).map((course) => (
                   <li key={course.id}>
                     {course.id} {course.name}
                     {course.semester === currentSemester && (
@@ -98,12 +98,20 @@ export const Printable: React.FC = () => (
             <p className="print-paragraph">
               <strong>Languages:</strong>
               <br />
-              {languages.map((skill) => skill.name).join(', ')}
+              <span className="tags are-dark">
+                {languages.map((skill) => (
+                  <span className="tag">{skill.name}</span>
+                ))}
+              </span>
             </p>
             <p className="print-paragraph">
               <strong>Technologies:</strong>
               <br />
-              {technologies.map((skill) => skill.name).join(', ')}
+              <span className="tags are-dark">
+                {technologies.map((skill) => (
+                  <span className="tag">{skill.name}</span>
+                ))}
+              </span>
             </p>
             <h4 className="title is-4 print-title">
               <b>Volunteering</b>
