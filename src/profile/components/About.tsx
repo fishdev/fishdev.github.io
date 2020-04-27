@@ -15,7 +15,12 @@ export const About: React.FC = () => (
       <ResponsiveContainer size="large">
         <p className="is-size-4">
           {about.map(
-            (item, i) => isSentence(item) && <span key={i}>{item.content}&nbsp;&nbsp;</span>
+            (item, i) =>
+              isSentence(item) && (
+                <React.Fragment key={i}>
+                  <span>{item.content}</span>{' '}
+                </React.Fragment>
+              )
           )}
         </p>
         <br />

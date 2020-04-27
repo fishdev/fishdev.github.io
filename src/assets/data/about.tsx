@@ -26,7 +26,8 @@ export const about: Array<Sentence | Image | {}> = [
     icon: 'fas fa-map-marker-alt',
     content: (
       <span>
-        Born and raised in <strong className="gradientbg">Pittsburgh, PA</strong>.
+        Born and raised in <strong className="gradientbg">Pittsburgh,</strong>{' '}
+        <strong className="gradientbg">PA</strong>.
       </span>
     ),
   },
