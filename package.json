@@ -38,6 +38,7 @@
     "react-copy-to-clipboard": "^5.0.2",
     "react-div-100vh": "^0.3.4",
     "react-dom": "^16.11.0",
+    "react-full-screen": "^0.2.4",
     "react-ga": "^2.7.0",
     "react-helmet": "^5.2.1",
     "react-hotkeys": "^2.0.0",

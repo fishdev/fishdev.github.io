@@ -507,6 +507,17 @@ iframe.playlist-item {
   max-height: 95vh;
 }
 
+.fullscreen-modal-content {
+  width: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+  @extend .has-text-centered;
+}
+
+.fullscreen-modal-content .modal-image {
+  max-height: 100%;
+}
+
 // Image hero
 .image-container {
   position: relative;
