@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
 import { about } from '../../assets/data';
@@ -29,16 +30,14 @@ export const About: React.FC = () => (
           <MiniGallery {...{ type: 'multi', images: about.filter(isImage), wide: true }} />
         </div>
         <div className="buttons is-centered">
-          <Link className="button is-outlined is-white " to="/gallery">
+          <Link
+            className="button is-outlined is-white has-badge-rounded has-badge-link"
+            data-badge={!localStorage.getItem('galleryVisited') ? 'new' : null}
+            to="/gallery">
             <span className="icon">
               <i className="fas fa-images" />
             </span>
-            <span>
-              Gallery
-              {!localStorage.getItem('galleryVisited') && (
-                <sup className="has-text-success"> new</sup>
-              )}
-            </span>
+            <span>Gallery</span>
           </Link>
           <Link className="button is-outlined is-white " to="/favorites">
             <span>My favorites</span>
