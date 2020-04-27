@@ -44,4 +44,14 @@ export const diderot: Block = {
       url: 'https://diderot.one',
     },
   ],
+  resume: {
+    ord: 1,
+    extra: 'Diderot',
+    description: (
+      <span>
+        Working on learning management system at CMU to make education social and interactive.
+        Developing analytics component with <i>Python</i> + <i>Django</i>.
+      </span>
+    ),
+  },
 };

@@ -1,10 +1,11 @@
 import moment, { Moment } from 'moment';
 import pluralize from 'pluralize';
 
-import { MonthRange } from '../interfaces';
+import { MonthRange, Month } from '../interfaces';
 
 const LONG_FORMAT = 'MMMM YYYY';
 const SHORT_FORMAT = 'MMMM';
+const TINY_FORMAT = 'MMM';
 
 export const computeDuration = (start: Moment, end: Moment): string => {
   const duration = moment.duration(end.diff(start));
@@ -46,3 +47,14 @@ export const computeRange = ({ start, end }: MonthRange): PrettyRange => {
 
   return pretty;
 };
+
+export const monthToString = ({ month, year }: Month) =>
+  moment()
+    .month(month - 1)
+    .format(TINY_FORMAT) +
+  ' ' +
+  year;
+
+export const rangeToString = ({ start, end }: MonthRange): string =>
+  monthToString(start) +
+  (end ? ' – ' + (end === 'Present' ? end : monthToString(end as Month)) : '');

@@ -624,3 +624,38 @@ iframe.playlist-item {
 .hover-expand:hover {
   transform: scale(1.1);
 }
+
+// Printable resume
+.print-page {
+  background: white;
+  height: 11in;
+  width: 8.5in;
+  padding: 0.5in;
+  letter-spacing: -0.1px;
+}
+
+.print-title {
+  border-bottom: 1px dotted $link;
+  padding-bottom: 4px;
+  margin-bottom: 8px !important;
+  @extend .has-text-link;
+}
+
+.print-title:not(:first-child) {
+  margin-top: 16px;
+}
+
+.print-line-indented {
+  margin-left: 10px;
+  text-indent: -10px;
+}
+
+.print-paragraph {
+  margin-bottom: 9px !important;
+  line-height: 19px;
+  font-size: 13.5px;
+}
+
+.print-paragraph ul {
+  margin-top: 2px;
+}

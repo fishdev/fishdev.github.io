@@ -46,4 +46,14 @@ export const judicial_records: Block = {
       url: process.env.PUBLIC_URL + '/judicial-records.pptx',
     },
   ],
+  resume: {
+    ord: 3,
+    name: 'Machine Learning Analysis of Judical Records',
+    description: (
+      <span>
+        Used <i>SciKit-Learn</i> library of <i>Python</i> web scraper to collect 12 million case
+        records. Decision tree to predict future outcomes with 81.4% test accuracy.
+      </span>
+    ),
+  },
 };

@@ -24,4 +24,11 @@ export interface Block {
   info?: React.ReactNode;
   images?: Image[];
   unimportant?: boolean;
+  resume?: {
+    ord: number;
+    name?: string;
+    extra?: string;
+    description?: React.ReactNode;
+    award?: React.ReactNode;
+  };
 }

@@ -3,6 +3,7 @@ import portrait from '../ashwin.jpg';
 export * from './social';
 export * from './more';
 export * from './about';
+export * from './volunteering';
 export * from './education';
 export * from './blocks';
 export * from './skills';
@@ -17,7 +18,9 @@ export const ROLE = 'Student and developer';
 export const PORTRAIT_URL = portrait;
 export const LOCATION = 'Pittsburgh, PA';
 export const LOCATION_URL = 'https://www.visitpittsburgh.com';
-export const HOSTING_URL = 'https://fishdev.xyz';
+export const HOSTING_DOMAIN = 'fishdev.xyz';
+export const HOSTING_URL = 'https://' + HOSTING_DOMAIN;
 export const META_IMAGE_URL =
   'https://github.com/fishdev/fishdev.github.io/blob/master/as.png?raw=true';
 export const WEBSITE_SOURCE = 'https://github.com/fishdev/fishdev.github.io';
+export const EMAIL = 'ashwins@andrew.cmu.edu';

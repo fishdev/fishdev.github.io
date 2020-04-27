@@ -67,4 +67,13 @@ export const cmulab: Block = {
       description: 'Detailed configuration options',
     },
   ],
+  resume: {
+    ord: 1,
+    description: (
+      <span>
+        Adopted <i>Node.js</i> + <i>MongoDB</i> web service for teachers to score class activities.
+      </span>
+    ),
+    award: 'Adopted by 15-122 at CMU',
+  },
 };

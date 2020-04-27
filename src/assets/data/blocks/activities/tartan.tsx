@@ -40,4 +40,9 @@ export const tartan: Block = {
       </ul>
     </div>
   ),
+  resume: {
+    ord: 3,
+    description:
+      'Editor for SciTech section. Writing and editing articles, designing weekly paper.',
+  },
 };

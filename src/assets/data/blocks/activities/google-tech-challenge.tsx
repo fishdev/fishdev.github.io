@@ -39,4 +39,8 @@ export const google_tech_challenge: Block = {
   ),
   awards: ['1st place team overall'],
   unimportant: true,
+  resume: {
+    ord: 1,
+    award: '1st place team overall, including timed coding challenges and logic puzzles',
+  },
 };

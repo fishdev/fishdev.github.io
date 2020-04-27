@@ -74,4 +74,13 @@ export const awesomebot: Block = {
       description: 'Configuration options for chat room moderation',
     },
   ],
+  resume: {
+    ord: 3,
+    name: 'AwesomeBot',
+    description: (
+      <span>
+        Built multi-purpose <i>Node.js</i> bot for managing over 10,000 online communities.
+      </span>
+    ),
+  },
 };

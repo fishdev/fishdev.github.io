@@ -37,4 +37,9 @@ export const leap: Block = {
       </ul>
     </div>
   ),
+  resume: {
+    ord: 3,
+    extra: 'Leap@CMU',
+    description: 'Taught local high schoolers computer science in 7-week summer program.',
+  },
 };

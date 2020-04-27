@@ -66,4 +66,13 @@ export const imgcap: Block = {
       thumbnail: process.env.PUBLIC_URL + '/imgcap-2.png',
     },
   ],
+  resume: {
+    ord: 5,
+    description: (
+      <span>
+        On-the-fly computer vision system for blind users. Written in <i>Java</i> + <i>OpenCV</i>.
+      </span>
+    ),
+    award: '1st place, PA Junior Academy of Science | 2nd place, Pittsburgh Science Fair',
+  },
 };

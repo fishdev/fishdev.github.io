@@ -62,4 +62,15 @@ export const broadcom: Block = {
       url: 'https://www.ca.com/us/products/ca-netmaster-network-management-tcpip.html',
     },
   ],
+  resume: {
+    ord: 2,
+    description: (
+      <span>
+        Contributed to <i>Angular</i> frontend, <i>Kotlin</i> + <i>Spring</i> backend, and{' '}
+        <i>Node.js</i> scalable server testing harness for the Mainframe Team Center as part of an
+        agile team.
+      </span>
+    ),
+    extra: 'Broadcom',
+  },
 };

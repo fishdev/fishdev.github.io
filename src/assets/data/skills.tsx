@@ -55,6 +55,12 @@ export const languages: Skill[] = [
     ),
   },
   {
+    id: 'bash',
+    name: 'Bash',
+    year: 2011,
+    description: 'Including zsh and fish',
+  },
+  {
     id: 'c',
     name: 'C',
     year: 2017,
@@ -68,12 +74,6 @@ export const technologies: Skill[] = [
     year: 2013,
     icon: 'fab fa-git-alt',
     description: 'Workflows such as feature branching, Git-flow, and forking',
-  },
-  {
-    id: 'bash',
-    name: 'Bash',
-    year: 2011,
-    description: 'Including zsh and fish',
   },
   {
     id: 'linux',

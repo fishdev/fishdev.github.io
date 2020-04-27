@@ -2,14 +2,23 @@ import React from 'react';
 
 import { Course, Semester } from '../../resume';
 
+export const universityMajors: string = 'BS in Computer Science';
+
+export const universityMinors: string[] = ['human-computer interaction', 'software engineering'];
+
+export const universityGrad: string = 'May 2022';
+
+export const universityQPA: number = 3.59;
+
 export const university: React.ReactNode = (
   <span>
     Studying computer science at{' '}
     <a href="https://cs.cmu.edu">
       <strong>Carnegie Mellon</strong>
     </a>{' '}
-    with a minor in human-computer interaction. My cumulative QPA is{' '}
-    <strong className="gradientbg">3.59</strong>. Expected graduation in May 2022.
+    with a minor in {universityMinors[0]}. My cumulative QPA is{' '}
+    <strong className="gradientbg">{universityQPA}</strong>. Expected graduation in {universityGrad}
+    .
   </span>
 );
 
@@ -47,17 +56,17 @@ export const coursework: Course[] = [
     url: 'https://www.coursicle.com/cmu/courses/CS/15251/',
   },
   {
+    id: '19-101',
+    name: 'Introduction to Engineering and Public Policy',
+    semester: 'Spring 2019',
+    url: 'https://www.coursicle.com/cmu/courses/EPP/19101/',
+  },
+  {
     id: '15-150',
     name: 'Functional Programming',
     semester: 'Spring 2019',
     ta: ['Spring 2020'],
     url: 'https://www.coursicle.com/cmu/courses/CS/15150/',
-  },
-  {
-    id: '19-101',
-    name: 'Introduction to Engineering and Public Policy',
-    semester: 'Spring 2019',
-    url: 'https://www.coursicle.com/cmu/courses/EPP/19101/',
   },
   {
     id: '15-151',
@@ -80,9 +89,15 @@ export const coursework: Course[] = [
   },
 ];
 
+export const hs: string = 'Taylor Allderdice High School';
+
+export const hsGrad: string = 'May 2018';
+
+export const hsGPA: number = 4;
+
 export const gradeschool: React.ReactNode = (
   <span>
-    I attended <a href="https://discoverpps.org/allderdice">Taylor Allderdice High School</a>.
-    Graduated in May 2018 with a GPA of 4.0.
+    I attended <a href="https://discoverpps.org/allderdice">{hs}</a>. Graduated in {hsGrad}
+    with a GPA of {hsGPA}.
   </span>
 );

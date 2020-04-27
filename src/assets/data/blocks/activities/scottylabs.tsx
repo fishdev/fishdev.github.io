@@ -52,4 +52,13 @@ export const scottylabs: Block = {
     </div>
   ),
   unimportant: true,
+  resume: {
+    ord: 4,
+    description: (
+      <span>
+        Gave introductory React talk at Web Dev Weekend 2018. Overhauled <i>Python</i> +{' '}
+        <i>Flask</i> API to make printing accessible on-campus.
+      </span>
+    ),
+  },
 };

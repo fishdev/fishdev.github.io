@@ -78,4 +78,9 @@ export const cups: Block = {
       thumbnail: 'https://ashwins.me/PrivacyTracker/img/portfolio/easy-interface.png',
     },
   ],
+  resume: {
+    ord: 4,
+    extra: 'Carnegie Mellon University',
+    description: 'Designed and developed plugin to increase user awareness of online tracking.',
+  },
 };
