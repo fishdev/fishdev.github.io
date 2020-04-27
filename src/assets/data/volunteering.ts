@@ -1,6 +1,4 @@
-import { Sentence } from '../../profile';
-
-export const volunteering: Sentence[] = [
+export const volunteering = [
   {
     content: 'East Liberty Presbyterian Church',
     extra: 'Tackling food insecurity in low-income regions of Pittsburgh',

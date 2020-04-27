@@ -1,4 +1,5 @@
 import portrait from '../ashwin.jpg';
+import { universities } from './education';
 
 export * from './social';
 export * from './more';
@@ -12,8 +13,7 @@ export * from './photos';
 
 export const NAMES = ['Ashwin', 'Srinivasan'];
 export const FULL_NAME = NAMES.join(' ');
-export const UNIVERSITY = 'Carnegie Mellon University';
-export const ORGANIZATION = UNIVERSITY;
+export const ORGANIZATION = universities[0].name;
 export const ROLE = 'Student and developer';
 export const PORTRAIT_URL = portrait;
 export const LOCATION = 'Pittsburgh, PA';

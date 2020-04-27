@@ -2,7 +2,7 @@ import React from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import { Portrait, SocialButtons } from '../../base';
-import { FULL_NAME, UNIVERSITY } from '../../assets/data';
+import { FULL_NAME, universities } from '../../assets/data';
 
 interface Props {
   showPortrait: boolean;
@@ -38,7 +38,7 @@ export class Profile extends React.PureComponent<Props> {
               </span>
             )}
           </h3>
-          <h5 className="subtitle">{UNIVERSITY}</h5>
+          <h5 className="subtitle">{universities[0].name}</h5>
           {showButtons && <SocialButtons />}
           {children}
         </div>

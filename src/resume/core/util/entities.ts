@@ -1,4 +1,4 @@
-import { coursework, blocks, languages, technologies } from '../../../assets/data';
+import { universities, blocks, languages, technologies } from '../../../assets/data';
 import { Entity, EntityType, Block } from '../interfaces';
 import { Course } from '../../education';
 import { Skill } from '../../skills';
@@ -12,7 +12,7 @@ const getEntities = (): Entity[] =>
   blocks
     .reduce((acc, { name, data }) => acc.concat(data.map(toEntity(name))), new Array<Entity>())
     .concat(
-      coursework.map((course: Course) => ({
+      universities[0].coursework.map((course: Course) => ({
         type: 'coursework',
         data: course,
         clickable: false,

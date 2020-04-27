@@ -1,8 +1,9 @@
 import React from 'react';
 import { Element as ScrollElement } from 'react-scroll';
 
-import { university } from '../../../assets/data';
+import { universities } from '../../../assets/data';
 import { ResponsiveContainer } from '../../../base';
+import { monthToString } from '../../core';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -15,7 +16,15 @@ export const Education: React.FC<Props> = ({ showSearch }) => (
       <ResponsiveContainer size="huge">
         <div className="columns is-vcentered is-variable is-5 is-mobile is-multiline">
           <div className="column is-12-mobile">
-            <p className="is-size-4">{university}</p>
+            <p className="is-size-4">
+              Studying computer science at{' '}
+              <a href="https://cs.cmu.edu">
+                <strong>Carnegie Mellon</strong>
+              </a>{' '}
+              with a minor in {universities[0].minors.join(' and ')}. My cumulative QPA is{' '}
+              <strong className="gradientbg">{universities[0].grade}</strong>. Expected graduation
+              in {monthToString(universities[0].range.end)}.
+            </p>
           </div>
           <div className="column is-4-mobile is-narrow has-text-centered">
             <Link to="/courses" className="hoverable">

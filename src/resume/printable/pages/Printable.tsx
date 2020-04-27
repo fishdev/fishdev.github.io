@@ -2,16 +2,8 @@ import React from 'react';
 
 import { Header, BlockSection } from '../components';
 import {
-  UNIVERSITY,
-  universityMajors,
-  universityMinors,
-  coursework,
-  currentSemester,
-  hs,
-  hsGrad,
-  hsGPA,
-  universityGrad,
-  universityQPA,
+  universities,
+  schools,
   languages,
   technologies,
   volunteering,
@@ -20,6 +12,7 @@ import {
   activities,
 } from '../../../assets/data';
 import { MetaTags, Footer, Navbar } from '../../../base';
+import { monthToString } from '../../core';
 
 export const Printable: React.FC = () => (
   <div>
@@ -54,23 +47,25 @@ export const Printable: React.FC = () => (
               <b>Education</b>
             </h4>
             <p className="print-paragraph">
-              <strong>{UNIVERSITY}</strong>
+              <strong>{universities[0].name}</strong>
               <br />
-              {universityMajors}
+              {universities[0].majors.join(', ')}
               <br />
-              <span className="print-line-indented">Minors: {universityMinors.join(', ')}</span>
+              <span className="print-line-indented">
+                Minors: {universities[0].minors.join(', ')}
+              </span>
               <br />
-              {universityGrad}, QPA: {universityQPA.toFixed(2)}
+              {monthToString(universities[0].range.end)}, QPA: {universities[0].grade.toFixed(2)}
             </p>
             <p className="content print-paragraph">
               <u>Relevant coursework:</u>
             </p>
             <div className="content print-paragraph">
               <ul>
-                {coursework.slice(0, 5).map((course) => (
+                {universities[0].coursework.slice(0, 5).map((course) => (
                   <li key={course.id}>
                     {course.id} {course.name}
-                    {course.semester === currentSemester && (
+                    {course.semester === universities[0].currentSemester && (
                       <strong className="has-text-primary">*</strong>
                     )}
                   </li>
@@ -82,7 +77,7 @@ export const Printable: React.FC = () => (
             </p>
             <div className="content print-paragraph">
               <ul>
-                {coursework
+                {universities[0].coursework
                   .filter((course) => course.ta)
                   .map((course) => (
                     <li key={course.id}>
@@ -92,9 +87,9 @@ export const Printable: React.FC = () => (
               </ul>
             </div>
             <p className="print-paragraph">
-              <strong>{hs}</strong>
+              <strong>{schools[0].name}</strong>
               <br />
-              {hsGrad}, GPA: {hsGPA.toFixed(1)}
+              {monthToString(schools[0].range.end)}, GPA: {schools[0].grade.toFixed(1)}
             </p>
             <h4 className="title is-4 print-title">
               <b>Skills</b>

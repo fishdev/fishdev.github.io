@@ -48,10 +48,10 @@ export const computeRange = ({ start, end }: MonthRange): PrettyRange => {
   return pretty;
 };
 
-export const monthToString = ({ month, year }: Month) =>
+export const monthToString = ({ month, year }: Month, fullMonth: boolean = false) =>
   moment()
     .month(month - 1)
-    .format(TINY_FORMAT) +
+    .format(fullMonth ? SHORT_FORMAT : TINY_FORMAT) +
   ' ' +
   year;
 

@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { ScrollToTop, MetaTags, Navbar, ResponsiveContainer, Footer } from '../../../base';
-import { UNIVERSITY } from '../../../assets/data';
+import { universities } from '../../../assets/data';
 import { CourseList } from '../components';
 
 export const Coursework: React.FC = () => (
   <div>
     <ScrollToTop />
-    <MetaTags name="Coursework" description={"The classes I've taken at " + UNIVERSITY} />
+    <MetaTags name="Coursework" description={"The classes I've taken at " + universities[0].name} />
     <div className="hero is-black">
       <div className="hero-head">
         <Navbar color="black" showMenu={false} />
@@ -21,12 +21,12 @@ export const Coursework: React.FC = () => (
                 <i className="fas fa-school" />
               </span>
               &nbsp;&nbsp;
-              <span>At {UNIVERSITY}</span>
+              <span>At {universities[0].name}</span>
             </h5>
           </div>
           <br />
           <br />
-          <CourseList />
+          <CourseList coursework={universities[0].coursework} />
         </ResponsiveContainer>
       </div>
       <div className="hero-foot">

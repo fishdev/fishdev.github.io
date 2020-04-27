@@ -2,15 +2,19 @@ import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 
-import { coursework } from '../../../assets/data';
 import { CourseBox } from './CourseBox';
+import { Course } from '../interfaces';
+
+interface Props {
+  coursework: Course[];
+}
 
 interface State {
   semester: string;
   ta: boolean;
 }
 
-export class CourseList extends React.PureComponent<{}, State> {
+export class CourseList extends React.PureComponent<Props, State> {
   state: Readonly<State> = {
     semester: '',
     ta: false,
@@ -23,6 +27,7 @@ export class CourseList extends React.PureComponent<{}, State> {
 
   render() {
     const { semester, ta } = this.state;
+    const { coursework } = this.props;
 
     const semesters = coursework
       .map((course) => course.semester)

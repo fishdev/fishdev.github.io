@@ -1,8 +1,8 @@
-import { coursework } from '../../../assets/data';
+import { universities } from '../../../assets/data';
 import { Academic } from '../interfaces';
 
 export const teachingAsAcademics = (): Academic[] =>
-  coursework
+  universities[0].coursework
     .filter((course) => course.ta)
     .map((course) =>
       course.ta!.map((semester) => ({
