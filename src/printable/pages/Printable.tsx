@@ -23,7 +23,7 @@ import { MetaTags, Footer, Navbar } from '../../core';
 
 export const Printable: React.FC = () => (
   <div>
-    <MetaTags name="Resume - Printable" description="My resume in print-ready format" />
+    <MetaTags name="Resume - Printable" description="My resume in print-ready format" desktop />
     <section className="hero is-black is-small is-hidden-print">
       <div className="hero-head">
         <Navbar color="black" showMenu={false} />
