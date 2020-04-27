@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { about } from '../../assets/data';
-import { ResponsiveContainer, Sentence, Image } from '../../base';
+import { Sentence } from '../interfaces';
+import { ResponsiveContainer, Image } from '../../base';
 import { MiniGallery } from '../../gallery';
 
 const isSentence = (obj: any): obj is Sentence => (obj as Sentence).icon !== undefined;

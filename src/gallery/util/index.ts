@@ -1,3 +1,3 @@
-export * from './flatPhotos';
+export * from './flattenPhotos';
 export * from './filterPhotos';
 export * from './enumPhotos';

@@ -1,10 +1,11 @@
 import React from 'react';
+import { GlobalHotKeys } from 'react-hotkeys';
 
 import { ImageModal, Image } from '../../base';
 import { MultiGroup, SingletonImage, ImageCollection } from '../interfaces';
-import { MiniGallery, GiantImage } from '.';
+import { MiniGallery } from './MiniGallery';
+import { GiantImage } from './GiantImage';
 import { flattenPhotos } from '../util';
-import { GlobalHotKeys } from 'react-hotkeys';
 
 interface Props {
   data: ImageCollection;

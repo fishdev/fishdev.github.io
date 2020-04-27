@@ -1,9 +1,8 @@
 import React from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
 
-import { Portrait } from '../../base/components/Portrait';
+import { Portrait, SocialButtons } from '../../base';
 import { FULL_NAME, UNIVERSITY } from '../../assets/data';
-import { SocialButtons } from '../../base/components/SocialButtons';
 
 interface Props {
   showPortrait: boolean;

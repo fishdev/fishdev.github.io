@@ -1,8 +1,8 @@
 import React from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import { SingletonImage } from '../interfaces';
 import { ImageBox } from '../../base';
-import ScrollAnimation from 'react-animate-on-scroll';
 
 interface Props extends SingletonImage {
   showModalFn?(id: number): void;

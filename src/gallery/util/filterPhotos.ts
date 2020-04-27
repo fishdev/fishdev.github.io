@@ -1,4 +1,4 @@
-import { flattenPhotos } from './flatPhotos';
+import { flattenPhotos } from './flattenPhotos';
 import { ImageCollection } from '../interfaces';
 
 export const filterPhotos = (photos: ImageCollection, filterTags: string[]) => {

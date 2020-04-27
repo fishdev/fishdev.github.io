@@ -1,10 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
+import { StickyContainer, Sticky } from 'react-sticky';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import { blocks } from '../../../assets/data';
-import { StickyContainer, Sticky } from 'react-sticky';
 import { OvalBlock } from './OvalBlock';
-import ScrollAnimation from 'react-animate-on-scroll';
 
 interface State {
   section: number;

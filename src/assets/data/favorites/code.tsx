@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Banner } from '../../../base';
+import { Banner } from '../../../favorites';
 
 export const codes: Banner[] = [
   {

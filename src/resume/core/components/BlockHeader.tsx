@@ -1,8 +1,7 @@
 import React from 'react';
-
-import { Block } from '../interfaces';
-import { Range } from './Range';
 import { Link } from 'react-router-dom';
+
+import { Block, Range } from '..';
 
 interface Props extends Block {
   hasMore?: boolean;
