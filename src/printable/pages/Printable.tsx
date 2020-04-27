@@ -128,7 +128,7 @@ export const Printable: React.FC = () => (
             <h4 className="title is-4 print-title">
               <b>Activities</b>
             </h4>
-            <BlockSection blocks={activities} showRanges={false} />
+            <BlockSection blocks={activities} showRanges={true} />
           </div>
         </div>
       </div>
