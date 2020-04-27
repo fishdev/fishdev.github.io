@@ -14,7 +14,7 @@ export const BlockSection: React.FC<Props> = ({ blocks, showRanges }) => (
       .filter((block) => block.resume)
       .sort((a, b) => a.resume!.ord - b.resume!.ord)
       .map((block) => (
-        <ResumeItem {...block} showRange={showRanges} />
+        <ResumeItem key={block.id} {...block} showRange={showRanges} />
       ))}
   </div>
 );

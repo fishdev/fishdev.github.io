@@ -633,6 +633,7 @@ iframe.playlist-item {
   padding: 0.5in;
   padding-top: 0.4in;
   letter-spacing: -0.1px;
+  margin: 0 auto;
 }
 
 .print-title {
@@ -659,4 +660,10 @@ iframe.playlist-item {
 
 .print-paragraph ul {
   margin-top: 2px;
+}
+
+@media print {
+  .is-hidden-print {
+    display: none;
+  }
 }
