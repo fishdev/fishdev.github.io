@@ -1,0 +1,29 @@
+.blurred-background {
+  backdrop-filter: blur($radius-large);
+}
+
+.modal-image {
+  max-height: calc(100vh - 160px);
+  position: relative;
+}
+
+.image-level {
+  margin-bottom: 0.5rem !important;
+}
+
+.unconstrained-modal-content {
+  width: auto;
+  max-width: 80vw;
+  max-height: 95vh;
+}
+
+.fullscreen-modal-content {
+  width: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+  @extend .has-text-centered;
+}
+
+.fullscreen-modal-content .modal-image {
+  max-height: 100%;
+}

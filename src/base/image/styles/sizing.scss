@@ -1,0 +1,26 @@
+.image-box {
+  object-fit: cover;
+  @extend .image-fullwidth;
+}
+
+.max-height-large {
+  max-height: 500px;
+}
+
+.max-height-small {
+  max-height: 250px;
+}
+
+.image-fullwidth {
+  width: 100%;
+}
+
+.image-fullheight {
+  height: 100%;
+}
+
+@media screen and (max-width: $tablet) {
+  .max-height-large {
+    max-height: 350px;
+  }
+}

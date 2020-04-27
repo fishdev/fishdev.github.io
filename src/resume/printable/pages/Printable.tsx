@@ -64,6 +64,8 @@ export const Printable: React.FC = () => (
             </p>
             <p className="content print-paragraph">
               <u>Relevant coursework:</u>
+            </p>
+            <div className="content print-paragraph">
               <ul>
                 {coursework.slice(0, 5).map((course) => (
                   <li key={course.id}>
@@ -74,19 +76,21 @@ export const Printable: React.FC = () => (
                   </li>
                 ))}
               </ul>
-            </p>
+            </div>
             <p className="content print-paragraph">
               <u>Teaching:</u>
+            </p>
+            <div className="content print-paragraph">
               <ul>
                 {coursework
                   .filter((course) => course.ta)
                   .map((course) => (
-                    <li>
+                    <li key={course.id}>
                       {course.id} ({course.ta!.join(', ')})
                     </li>
                   ))}
               </ul>
-            </p>
+            </div>
             <p className="print-paragraph">
               <strong>{hs}</strong>
               <br />
@@ -100,7 +104,9 @@ export const Printable: React.FC = () => (
               <br />
               <span className="tags are-dark">
                 {languages.map((skill) => (
-                  <span className="tag">{skill.name}</span>
+                  <span className="tag" key={skill.id}>
+                    {skill.name}
+                  </span>
                 ))}
               </span>
             </p>
@@ -109,15 +115,17 @@ export const Printable: React.FC = () => (
               <br />
               <span className="tags are-dark">
                 {technologies.map((skill) => (
-                  <span className="tag">{skill.name}</span>
+                  <span className="tag" key={skill.id}>
+                    {skill.name}
+                  </span>
                 ))}
               </span>
             </p>
             <h4 className="title is-4 print-title">
               <b>Volunteering</b>
             </h4>
-            {volunteering.map((sentence) => (
-              <p className="print-paragraph">
+            {volunteering.map((sentence, i) => (
+              <p className="print-paragraph" key={i}>
                 <strong>{sentence.content}</strong>
                 <br />
                 {sentence.extra}

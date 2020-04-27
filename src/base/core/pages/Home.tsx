@@ -21,7 +21,7 @@ export class Home extends React.PureComponent<RouteComponentProps> {
       <div className="blackened">
         <MetaTags description={ROLE + ' at ' + ORGANIZATION} />
         <div id="main" className="hero is-black is-medium city fade-bottom has-text-centered fancy">
-          <div className="hero-body hero-body-centered">
+          <div className="hero-body">
             <div className="container">
               <Profile></Profile>
             </div>

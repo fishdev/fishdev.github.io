@@ -15,7 +15,7 @@ export class Portrait extends React.PureComponent<Props> {
     const { size } = this.props;
     return (
       <figure className={'image is-' + size}>
-        <img className="is-rounded" src={PORTRAIT_URL} id="profile" alt="Me" />
+        <img className="portrait is-rounded" src={PORTRAIT_URL} alt="Me" />
       </figure>
     );
   }

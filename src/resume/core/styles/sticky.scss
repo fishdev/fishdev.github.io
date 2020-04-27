@@ -1,0 +1,22 @@
+.section-label-sticky {
+  padding-top: 15px;
+}
+
+.section-switcher-sticky {
+  margin-top: 15px;
+}
+
+@media screen and (max-width: $tablet) {
+  .section-label-sticky {
+    padding-bottom: 15px;
+    background-color: $black;
+    width: 100% !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    z-index: 39;
+  }
+
+  .details-header-sticky {
+    left: 0px !important;
+    padding-left: 22.5px;
+  }
+}

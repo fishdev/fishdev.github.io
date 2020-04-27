@@ -1,0 +1,11 @@
+.details-bars {
+  margin-bottom: 2rem;
+}
+
+.details-bars > *:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.details-bar:not(:last-child) {
+  margin-bottom: 0;
+}

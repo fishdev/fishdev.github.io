@@ -1,10 +1,8 @@
 import React from 'react';
 
-import { filterEntities, courseToBlock, skillToBlock } from '../util';
-import { Entity, Block } from '../interfaces';
+import { filterEntities, courseToBlock, skillToBlock, Entity, Block, BlockBox } from '../../core';
 import { Course } from '../../education';
 import { Skill } from '../../skills';
-import { BlockBox } from './BlockBox';
 
 interface State {
   search: string;

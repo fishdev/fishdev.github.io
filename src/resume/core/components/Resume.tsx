@@ -3,7 +3,7 @@ import { GlobalHotKeys } from 'react-hotkeys';
 import { Element as ScrollElement } from 'react-scroll';
 
 import { Block } from '../interfaces';
-import { SearchModal } from './SearchModal';
+import { SearchModal } from '../../search';
 import { Education } from '../../education';
 import { ResumeCore } from './ResumeCore';
 import { Skills } from '../../skills';

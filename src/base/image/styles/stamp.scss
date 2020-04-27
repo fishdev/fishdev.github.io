@@ -1,0 +1,29 @@
+.image-stamp-text {
+  position: absolute;
+  bottom: 20px;
+  right: 16.5px;
+  opacity: 0.6;
+  font-size: 13px;
+  color: $white-ter;
+}
+
+.image-stamp {
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+}
+
+.stamp-blue {
+  transform: skew(2deg);
+  background: $link;
+  opacity: 0.4;
+}
+
+.stamp-purple {
+  transform: skew(-10deg);
+  background: $primary;
+  opacity: 0.2;
+}

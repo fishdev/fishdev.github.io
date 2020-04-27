@@ -1,0 +1,53 @@
+.block .title {
+  margin-bottom: 0.5rem;
+}
+
+.block .title a:hover {
+  color: $link;
+}
+
+.block .subtitle {
+  margin-top: 0.5rem !important;
+  @extend .has-text-grey;
+}
+
+.block .subtitle:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+.block .subtitle:last-child,
+.block .content:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.block .award:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+.block-description {
+  padding-top: 0.5rem;
+}
+
+.block-section:not(:last-child) {
+  padding-bottom: 3rem;
+}
+
+.block-header:not(:last-child) {
+  padding-bottom: 1.6rem;
+}
+
+.block .subtitle {
+  text-transform: none;
+}
+
+.block-link:hover {
+  cursor: pointer;
+}
+
+.block.box p a {
+  @extend %fancy-link;
+}
+
+.block.box p a:hover {
+  @extend %fancy-link-hover;
+}
