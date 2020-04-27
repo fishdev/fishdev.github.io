@@ -59,6 +59,7 @@ export const Printable: React.FC = () => (
               {universityMajors}
               <br />
               <span className="print-line-indented">Minors: {universityMinors.join(', ')}</span>
+              <br />
               {universityGrad}, QPA: {universityQPA.toFixed(2)}
             </p>
             <p className="content print-paragraph">
