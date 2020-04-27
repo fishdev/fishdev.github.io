@@ -1,4 +1,4 @@
-import { Sentence } from '../../base';
+import { Sentence } from '../../profile';
 
 export const volunteering: Sentence[] = [
   {
