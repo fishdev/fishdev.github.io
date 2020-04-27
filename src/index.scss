@@ -523,72 +523,6 @@ iframe.playlist-item {
   position: relative;
 }
 
-.image-hero {
-  width: 100% !important;
-  object-fit: cover;
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 5%,
-    rgba(0, 0, 0, 1) 15% 85%,
-    rgba(0, 0, 0, 0) 95%
-  );
-}
-
-.image-hero-text {
-  position: absolute;
-  bottom: 5%;
-  right: 1rem;
-  width: 250px;
-}
-
-// Sentence hero
-.sentence-hero {
-  padding: 5rem 0rem;
-}
-
-// Particles hero
-.particles-hero {
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 5%,
-    rgba(0, 0, 0, 1) 15% 85%,
-    rgba(0, 0, 0, 0) 95%
-  );
-}
-
-.particles-hero canvas {
-  background-color: rgba(255, 0, 0, 0.5);
-  animation: bgColor 15s infinite linear;
-  height: 25vh !important;
-}
-
-@keyframes bgColor {
-  12.5% {
-    background-color: rgba(255, 0, 0, 0.5);
-  }
-  25% {
-    background-color: rgba(255, 165, 0, 0.5);
-  }
-  37.5% {
-    background-color: rgba(255, 255, 0, 0.5);
-  }
-  50% {
-    background-color: rgba(127, 255, 0, 0.5);
-  }
-  62.5% {
-    background-color: rgba(0, 255, 255, 0.5);
-  }
-  75% {
-    background-color: rgba(0, 0, 255, 0.5);
-  }
-  87.5% {
-    background-color: rgba(153, 50, 204, 0.5);
-  }
-  100% {
-    background-color: rgba(255, 20, 147, 0.5);
-  }
-}
-
 // Fix links in tabs
 .tabs > a {
   @extend li;
@@ -601,13 +535,6 @@ iframe.playlist-item {
 
 .image-fullheight {
   height: 100%;
-}
-
-// Sticky header
-.sticky-header {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  z-index: 39;
-  background-color: $black;
 }
 
 // 100vh hero
