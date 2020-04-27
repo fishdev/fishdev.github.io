@@ -81,6 +81,10 @@ export const cups: Block = {
   resume: {
     ord: 4,
     extra: 'Carnegie Mellon University',
-    description: 'Designed and developed plugin to increase user awareness of online tracking.',
+    description: (
+      <span>
+        Designed and developed plugin to increase user awareness of <u>online tracking</u>.
+      </span>
+    ),
   },
 };

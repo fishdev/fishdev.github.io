@@ -54,7 +54,8 @@ export const flow: Block = {
     ord: 2,
     description: (
       <span>
-        Created <i>Node.js</i> + <i>Redis</i> backend to predict water usage with ML algorithm.
+        Created <i>Node.js</i> + <i>Redis</i> backend to <u>predict water usage</u> with ML
+        algorithm.
       </span>
     ),
     award: '2nd place for Riot Games sponsor prize at HackCMU 2018',

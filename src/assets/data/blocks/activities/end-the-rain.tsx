@@ -57,8 +57,8 @@ export const end_the_rain: Block = {
     ord: 2,
     description: (
       <span>
-        Technical and software lead. Coordinated with electrical and mechanical teams to build
-        umbrella dispenser network and <i>Node.js</i> + <i>MongoDB</i> backend system.
+        <u>Technical and software lead</u>. Coordinated with electrical and mechanical teams to
+        build umbrella dispenser network and <i>Node.js</i> + <i>MongoDB</i> backend system.
       </span>
     ),
   },

@@ -42,7 +42,10 @@ export const tartan: Block = {
   ),
   resume: {
     ord: 3,
-    description:
-      'Editor for SciTech section. Writing and editing articles, designing weekly paper.',
+    description: (
+      <span>
+        <u>Editor for SciTech</u> section. Writing and editing articles, designing weekly paper.
+      </span>
+    ),
   },
 };

@@ -49,8 +49,8 @@ export const diderot: Block = {
     extra: 'Diderot',
     description: (
       <span>
-        Working on learning management system at CMU to make education social and interactive.
-        Developing analytics component with <i>Python</i> + <i>Django</i>.
+        Working on <u>learning management</u> system at CMU to make education social and
+        interactive. Developing analytics component with <i>Python</i> + <i>Django</i>.
       </span>
     ),
   },

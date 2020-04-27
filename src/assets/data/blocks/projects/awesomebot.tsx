@@ -79,7 +79,7 @@ export const awesomebot: Block = {
     name: 'AwesomeBot',
     description: (
       <span>
-        Built multi-purpose <i>Node.js</i> bot for managing over 10,000 online communities.
+        Built multi-purpose <i>Node.js</i> bot for managing over <u>10,000 online communities</u>.
       </span>
     ),
   },
