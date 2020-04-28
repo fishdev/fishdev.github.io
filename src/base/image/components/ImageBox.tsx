@@ -10,7 +10,7 @@ interface Props {
   caption?: 'tooltip' | 'visible' | 'hidden';
   maxHeight?: 'large' | 'small' | 'none';
   showModalFn?(id: number): void;
-  data: Image;
+  image: Image;
 }
 
 interface State {
@@ -27,34 +27,31 @@ export class ImageBox extends React.PureComponent<Props, State> {
     maxHeight: 'large',
   };
 
-  toggleModal = () => {
-    console.log('hello');
-    this.setState(({ modalActive }) => ({ modalActive: !modalActive }));
-  };
+  toggleModal = () => this.setState(({ modalActive }) => ({ modalActive: !modalActive }));
 
   render() {
-    const { data, caption, maxHeight, showModalFn } = this.props;
+    const { image, caption, maxHeight, showModalFn } = this.props;
     const { modalActive } = this.state;
     return (
       <React.Fragment>
         <div className="has-text-centered">
           <div
-            onClick={showModalFn ? () => showModalFn(data.id || 0) : this.toggleModal}
+            onClick={showModalFn ? () => showModalFn(image.id || 0) : this.toggleModal}
             className={classNames('zoomable', {
-              tooltip: caption === 'tooltip' && data.description,
+              tooltip: caption === 'tooltip' && image.description,
             })}
-            data-tooltip={data.description}>
+            data-tooltip={image.description}>
             <Img
               className={classNames('image-box rounded', {
                 'max-height-large': maxHeight === 'large',
                 'max-height-small': maxHeight === 'small',
               })}
-              src={data.thumbnail || data.original}
+              src={image.thumbnail || image.original}
               placeholder={<LoadingBox />}
             />
           </div>
-          {data.description && caption === 'visible' && (
-            <p className="has-text-grey has-text-centered">{data.description}</p>
+          {image.description && caption === 'visible' && (
+            <p className="has-text-grey has-text-centered">{image.description}</p>
           )}
         </div>
         {!showModalFn && modalActive && (

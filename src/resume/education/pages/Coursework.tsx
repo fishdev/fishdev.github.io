@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ScrollToTop, MetaTags, Navbar, ResponsiveContainer, Footer } from '../../../base';
-import data from '../../../assets/data';
+import { getData } from '../../../data';
 import { CourseList } from '../components';
 import { arrToSentence } from '../../core';
 import { allUniversities } from '../util';
@@ -31,7 +31,7 @@ export const Coursework: React.FC = () => {
             </div>
             <br />
             <br />
-            <CourseList coursework={data.resume.education.coursework || []} />
+            <CourseList coursework={getData().resume.education.coursework || []} />
           </ResponsiveContainer>
         </div>
         <div className="hero-foot">

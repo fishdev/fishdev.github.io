@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, RouteComponentProps } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import ReactGA from 'react-ga';
-import 'animate.css/animate.min.css';
 import { GlobalHotKeys } from 'react-hotkeys';
+import 'animate.css/animate.min.css';
 
-import data from './assets/data';
-import { SitemapModal } from './base';
+import { getData, loadData } from './data';
+import { SitemapModal, LoadingBox } from './base';
 import { Home, Coursework, Details, Favorites, NotFound, Gallery, Printable } from './pages';
 
 const history = createBrowserHistory();
@@ -17,26 +17,45 @@ history.listen((location) => {
 
 interface State {
   sitemapActive: boolean;
+  isLoading: boolean;
 }
 
 export class App extends React.PureComponent<{}, State> {
   state: Readonly<State> = {
     sitemapActive: false,
+    isLoading: true,
   };
 
   showSitemap = () => this.setState({ sitemapActive: true });
   hideSitemap = () => this.setState({ sitemapActive: false });
 
-  componentDidMount() {
+  async componentDidMount() {
     ReactGA.pageview(window.location.pathname);
 
+    await loadData();
+    this.setState({ isLoading: false });
+
     console.log(
-      "Hi there! If you're curious about my website, check out the source at " + data.constants
+      "Hi there! If you're curious about my website, check out the source at " + getData().constants
     );
   }
 
   render() {
-    const links = data.links.social.map((item) => {
+    const { isLoading } = this.state;
+    if (isLoading)
+      return (
+        <div className="hero is-black is-large">
+          <div className="hero-body">
+            <div className="columns is-mobile is-centered">
+              <div className="column is-narrow">
+                <LoadingBox />
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+
+    const links = getData().links.social.map((item) => {
       const name = '/' + item.name!.toLowerCase();
       const redirect = ({ match }: RouteComponentProps<{ suffix: string }>): React.ReactNode => {
         let { url } = item;

@@ -1,8 +1,8 @@
-import data from '../../../assets/data';
+import { getData } from '../../../data';
 import { Academic } from '../interfaces';
 
 export const teachingAsAcademics = (): Academic[] =>
-  (data.resume.education.coursework || [])
+  (getData().resume.education.coursework || [])
     .filter((course) => course.ta)
     .map((course) =>
       course.ta!.map(

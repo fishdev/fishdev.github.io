@@ -8,7 +8,7 @@ import { GiantImage } from './GiantImage';
 import { flattenPhotos } from '../util';
 
 interface Props {
-  data: ImageCollection;
+  collection: ImageCollection;
 }
 
 interface State {
@@ -22,7 +22,7 @@ export class ImageLayout extends React.PureComponent<Props, State> {
     currentImage: 0,
   };
 
-  flatPhotos: Image[] = flattenPhotos(this.props.data);
+  flatPhotos: Image[] = flattenPhotos(this.props.collection);
 
   prevImage = () =>
     this.setState(({ currentImage }) => ({
@@ -38,12 +38,13 @@ export class ImageLayout extends React.PureComponent<Props, State> {
   toggleModal = () => this.setState(({ modalActive }) => ({ modalActive: !modalActive }));
 
   componentDidUpdate(prevProps: Props) {
-    if (prevProps.data !== this.props.data) this.flatPhotos = flattenPhotos(this.props.data);
+    if (prevProps.collection !== this.props.collection)
+      this.flatPhotos = flattenPhotos(this.props.collection);
   }
 
   render() {
-    const { data } = this.props;
-    const images = data.map((group, i) => {
+    const { collection } = this.props;
+    const images = collection.map((group, i) => {
       switch (group.type) {
         case 'multi':
           return <MiniGallery key={i} {...(group as MultiGroup)} showModalFn={this.showModal} />;
@@ -78,7 +79,7 @@ export class ImageLayout extends React.PureComponent<Props, State> {
             blurred
             unconstrained
             fullable
-            data={this.flatPhotos[currentImage]}
+            image={this.flatPhotos[currentImage]}
             toggleModal={this.toggleModal}
             prevImage={currentImage > 0 ? this.prevImage : undefined}
             nextImage={currentImage < this.flatPhotos.length - 1 ? this.nextImage : undefined}

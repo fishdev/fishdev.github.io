@@ -4,7 +4,7 @@ import { Header, BlockSection } from '../components';
 import { MetaTags, Footer, Navbar } from '../../../base';
 import { monthToString, arrToSentence, capitalize, capitalizeSentence } from '../../core';
 import { allUniversities, getCurrentSemester } from '../../education';
-import data from '../../../assets/data';
+import { getData } from '../../../data';
 
 export const Printable: React.FC = () => {
   const unis = allUniversities();
@@ -52,21 +52,23 @@ export const Printable: React.FC = () => {
                   {monthToString(uni.range.end!)}, {uni.scale}: {uni.grade.toFixed(2)}
                 </p>
               ))}
-              {data.resume.education.coursework && (
+              {getData().resume.education.coursework && (
                 <React.Fragment>
                   <p className="content print-paragraph">
                     <u>Relevant coursework:</u>
                   </p>
                   <div className="content print-paragraph">
                     <ul>
-                      {data.resume.education.coursework!.slice(0, 5).map((course) => (
-                        <li key={course.id}>
-                          {course.id} {course.name}
-                          {course.semester === getCurrentSemester(course.institution) && (
-                            <strong className="has-text-primary">*</strong>
-                          )}
-                        </li>
-                      ))}
+                      {getData()
+                        .resume.education.coursework!.slice(0, 5)
+                        .map((course) => (
+                          <li key={course.id}>
+                            {course.id} {course.name}
+                            {course.semester === getCurrentSemester(course.institution) && (
+                              <strong className="has-text-primary">*</strong>
+                            )}
+                          </li>
+                        ))}
                     </ul>
                   </div>
                   <p className="content print-paragraph">
@@ -74,8 +76,8 @@ export const Printable: React.FC = () => {
                   </p>
                   <div className="content print-paragraph">
                     <ul>
-                      {data.resume.education.coursework
-                        .filter((course) => course.ta)
+                      {getData()
+                        .resume.education.coursework!.filter((course) => course.ta)
                         .map((course) => (
                           <li key={course.id}>
                             {course.id} ({course.ta!.join(', ')})
@@ -85,8 +87,8 @@ export const Printable: React.FC = () => {
                   </div>
                 </React.Fragment>
               )}
-              {data.resume.education.schools &&
-                Object.values(data.resume.education.schools!).map((school, i) => (
+              {getData().resume.education.schools &&
+                Object.values(getData().resume.education.schools!).map((school, i) => (
                   <p key={i} className="print-paragraph">
                     <strong>{school.name}</strong>
                     <br />
@@ -96,7 +98,7 @@ export const Printable: React.FC = () => {
               <h4 className="title is-4 print-title">
                 <b>Skills</b>
               </h4>
-              {data.resume.skills.map(({ name, data }) => (
+              {getData().resume.skills.map(({ name, data }) => (
                 <p key={name} className="print-paragraph">
                   <strong>{capitalize(name)}:</strong>
                   <br />
@@ -109,12 +111,12 @@ export const Printable: React.FC = () => {
                   </span>
                 </p>
               ))}
-              {data.resume.volunteering && (
+              {getData().resume.volunteering && (
                 <React.Fragment>
                   <h4 className="title is-4 print-title">
                     <b>Volunteering</b>
                   </h4>
-                  {data.resume.volunteering!.map((sentence, i) => (
+                  {getData().resume.volunteering!.map((sentence, i) => (
                     <p className="print-paragraph" key={i}>
                       <strong>{sentence.content}</strong>
                       <br />
@@ -125,7 +127,7 @@ export const Printable: React.FC = () => {
               )}
             </div>
             <div className="column is-8">
-              {data.resume.blocks.map(({ name, data }) => (
+              {getData().resume.blocks.map(({ name, data }) => (
                 <React.Fragment key={name}>
                   <h4 className="title is-4 print-title">
                     <b>{capitalize(name)}</b>

@@ -4,11 +4,9 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 import { Navbar, ScrollToTop, MetaTags, Footer } from '../../base';
 import { ImageLayout } from '../components';
-import data from '../../assets/data';
+import { getData } from '../../data';
 import { flattenPhotos, filterPhotos, enumPhotos } from '../util';
 import { MultiGroup } from '../interfaces';
-
-const photos = data.photos ? data.photos.gallery : [];
 
 interface State {
   filterTags: string[];
@@ -20,9 +18,11 @@ export class Gallery extends React.PureComponent<RouteComponentProps<{ tag: stri
     filterTags: [],
   };
 
+  photos = getData().photos ? getData().photos!.gallery : [];
+
   allTags: string[] = Array.from(
     new Set(
-      flattenPhotos(photos)
+      flattenPhotos(this.photos)
         .map((image) => (image.tags || []).map((tag) => tag.toLowerCase()))
         .flat()
     )
@@ -49,8 +49,14 @@ export class Gallery extends React.PureComponent<RouteComponentProps<{ tag: stri
     const { filterTags } = this.state;
     const filteredPhotos =
       filterTags.length > 0
-        ? [{ type: 'multi', images: filterPhotos(photos, filterTags), wide: true } as MultiGroup]
-        : photos;
+        ? [
+            {
+              type: 'multi',
+              images: filterPhotos(this.photos, filterTags),
+              wide: true,
+            } as MultiGroup,
+          ]
+        : this.photos;
 
     return (
       <div>
@@ -89,7 +95,7 @@ export class Gallery extends React.PureComponent<RouteComponentProps<{ tag: stri
             </div>
           </div>
         </section>
-        <ImageLayout data={enumPhotos(filteredPhotos)} />
+        <ImageLayout collection={enumPhotos(filteredPhotos)} />
         <br />
         <Footer />
       </div>

@@ -115,6 +115,12 @@ a.tag:hover {
   transform: scale(1.1);
 }
 
+// 100vh hero
+.hero-body-centered {
+  display: flex;
+  align-items: center;
+}
+
 // Domain-specific styles
 @import 'base/core/styles';
 @import 'base/dropdown/styles';

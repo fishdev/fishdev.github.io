@@ -1,8 +1,8 @@
-import { ColorButton, Dropdown, Image } from './base';
-import { Sentence } from './profile';
-import { University, Institution, EntityType, Block, Skill, Course } from './resume';
-import { Playlist, Podcast, Banner } from './favorites';
-import { ImageCollection } from './gallery';
+import { ColorButton, Dropdown, Image } from '../../base';
+import { Sentence } from '../../profile';
+import { University, Institution, EntityType, Block, Skill, Course } from '../../resume';
+import { Playlist, Podcast, Banner } from '../../favorites';
+import { ImageCollection } from '../../gallery';
 
 export interface Data {
   constants: {

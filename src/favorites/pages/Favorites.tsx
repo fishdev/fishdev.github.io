@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import { ScrollToTop, ResponsiveContainer, TabLink, Footer, Navbar } from '../../base';
-import data from '../../assets/data';
+import { getData } from '../../data';
 import { Playlists, Podcasts, ContentStack } from '../components';
 import { capitalize } from '../../resume';
 
@@ -29,9 +29,11 @@ export const Favorites: React.FC = () => (
           <nav className="tabs is-toggle is-toggle-rounded is-centered">
             <div className="container">
               <ul>
-                {data.favorites.music && <TabLink to="/favorites/music">Music</TabLink>}
-                {data.favorites.podcasts && <TabLink to="/favorites/podcasts">Podcasts</TabLink>}
-                {Object.keys(data.favorites.content).map((name) => (
+                {getData().favorites.music && <TabLink to="/favorites/music">Music</TabLink>}
+                {getData().favorites.podcasts && (
+                  <TabLink to="/favorites/podcasts">Podcasts</TabLink>
+                )}
+                {Object.keys(getData().favorites.content).map((name) => (
                   <TabLink key={name} to={'/favorites/' + name}>
                     {capitalize(name)}
                   </TabLink>
@@ -42,8 +44,10 @@ export const Favorites: React.FC = () => (
           <br />
           <br />
           <Switch>
-            {data.favorites.music && <Route path="/favorites/music" exact component={Playlists} />}
-            {data.favorites.podcasts && (
+            {getData().favorites.music && (
+              <Route path="/favorites/music" exact component={Playlists} />
+            )}
+            {getData().favorites.podcasts && (
               <Route path="/favorites/podcasts" exact component={Podcasts} />
             )}
             <Route path="/favorites/:name" exact component={ContentStack} />
@@ -54,7 +58,9 @@ export const Favorites: React.FC = () => (
                 <Redirect
                   to={
                     '/favorites/' +
-                    (data.favorites.music ? 'music' : Object.keys(data.favorites.content)[0])
+                    (getData().favorites.music
+                      ? 'music'
+                      : Object.keys(getData().favorites.content)[0])
                   }
                 />
               )}

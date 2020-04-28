@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { StickyContainer, Sticky } from 'react-sticky';
 import ScrollAnimation from 'react-animate-on-scroll';
 
-import data from '../../../assets/data';
+import { getData } from '../../../data';
 import { OvalBlock } from './OvalBlock';
 
 interface State {
@@ -36,7 +36,7 @@ export class OvalSwitcher extends React.PureComponent<{}, State> {
                   })}
                   style={style}>
                   <div className="gradient-box-body has-text-right">
-                    {data.resume.blocks.map(({ name }, i) => (
+                    {getData().resume.blocks.map(({ name }, i) => (
                       <h3 className="title is-3 gradientbg" key={name}>
                         <a onClick={() => this.switchSection(i)}>
                           {i === section && <span>&middot; </span>}
@@ -56,7 +56,7 @@ export class OvalSwitcher extends React.PureComponent<{}, State> {
               animateOnce
               duration={0.5}>
               <div className="columns is-multiline is-vcentered is-variable is-6">
-                {data.resume.blocks[section].data.map((block, i) => (
+                {getData().resume.blocks[section].data.map((block, i) => (
                   <div className="column is-narrow" key={block.id}>
                     <OvalBlock {...block} />
                   </div>

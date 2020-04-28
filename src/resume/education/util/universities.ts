@@ -1,15 +1,15 @@
-import data from '../../../assets/data';
+import { getData } from '../../../data';
 
 export const getCurrentSemester = (uniId: string) =>
-  data.resume.education.universities[uniId].currentSemester;
+  getData().resume.education.universities[uniId].currentSemester;
 
 export const currentUniversity = () =>
-  data.resume.education.universities[data.resume.education.currentUniversity];
+  getData().resume.education.universities[getData().resume.education.currentUniversity];
 
 export const otherUniversities = () => {
-  const uniIds = Object.keys(data.resume.education.universities);
-  uniIds.splice(uniIds.indexOf(data.resume.education.currentUniversity), 1);
-  return uniIds.map((id) => data.resume.education.universities[id]);
+  const uniIds = Object.keys(getData().resume.education.universities);
+  uniIds.splice(uniIds.indexOf(getData().resume.education.currentUniversity), 1);
+  return uniIds.map((id) => getData().resume.education.universities[id]);
 };
 
-export const allUniversities = () => Object.values(data.resume.education.universities);
+export const allUniversities = () => Object.values(getData().resume.education.universities);

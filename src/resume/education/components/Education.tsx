@@ -1,7 +1,7 @@
 import React from 'react';
 import { Element as ScrollElement } from 'react-scroll';
 
-import data from '../../../assets/data';
+import { getData } from '../../../data';
 import { ResponsiveContainer } from '../../../base';
 import { monthToString, monthIsFuture, arrToSentence } from '../../core';
 import { Link } from 'react-router-dom';
@@ -35,7 +35,7 @@ export const Education: React.FC<Props> = ({ showSearch }) => {
                 )}
               </p>
             </div>
-            {data.resume.education.coursework && (
+            {getData().resume.education.coursework && (
               <div className="column is-4-mobile is-narrow has-text-centered">
                 <Link to="/courses" className="hoverable">
                   <span className="icon is-large ">

@@ -11,7 +11,7 @@ interface Props extends SingletonImage {
 export const GiantImage: React.FC<Props> = ({ image, showModalFn }) => (
   <div className="column is-6">
     <ScrollAnimation animateIn="fadeIn" delay={500}>
-      <ImageBox data={image} showModalFn={showModalFn} />
+      <ImageBox image={image} showModalFn={showModalFn} />
     </ScrollAnimation>
   </div>
 );

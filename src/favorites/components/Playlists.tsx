@@ -9,14 +9,14 @@
 import React from 'react';
 
 import { MetaTags, AnchorButton } from '../../base';
-import data from '../../assets/data';
+import { getData } from '../../data';
 import { PlaylistItem } from '../components/PlaylistItem';
 
 export const Playlists: React.FC = () => (
   <div>
     <MetaTags name="Favorites - Playlists" description="My personal Spotify playlists" />
     <div className="columns is-multiline is-centered">
-      {(data.favorites.music || []).map((playlist) => (
+      {(getData().favorites.music || []).map((playlist) => (
         <div key={playlist.id} className="column is-6-tablet is-3-widescreen">
           <PlaylistItem key={playlist.id} {...playlist} />
         </div>
@@ -31,7 +31,7 @@ export const Playlists: React.FC = () => (
         outlined
         icon="fab fa-spotify"
         name="My Spotify profile"
-        url={'https://open.spotify.com/user/' + data.links.spotifyId}
+        url={'https://open.spotify.com/user/' + getData().links.spotifyId}
       />
     </div>
   </div>

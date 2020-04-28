@@ -1,4 +1,4 @@
-import data from '../../../assets/data';
+import { getData } from '../../../data';
 import { Entity, EntityType, Block } from '../interfaces';
 import { Course } from '../../education';
 import { Skill } from '../../skills';
@@ -9,12 +9,12 @@ export const toEntity = (type: EntityType) => (data: Course | Block | Skill): En
 });
 
 const getEntities = (): Entity[] => {
-  const blockEntities = data.resume.blocks.reduce(
+  const blockEntities = getData().resume.blocks.reduce(
     (acc, { name, data }) => acc.concat(data.map(toEntity(name))),
     new Array<Entity>()
   );
-  const courseEntities = (data.resume.education.coursework || []).map(toEntity('coursework'));
-  const skillEntities = data.resume.skills.reduce(
+  const courseEntities = (getData().resume.education.coursework || []).map(toEntity('coursework'));
+  const skillEntities = getData().resume.skills.reduce(
     (acc, { data }) => acc.concat(data.map(toEntity('skills'))),
     new Array<Entity>()
   );

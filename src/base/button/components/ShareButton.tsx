@@ -3,7 +3,7 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import classNames from 'classnames';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
-import data from '../../../assets/data';
+import { getData } from '../../../data';
 
 interface Props extends RouteComponentProps {
   type?: 'button' | 'dropdown';
@@ -39,7 +39,7 @@ export class ShareButton extends React.PureComponent<Props, State> {
     );
     return (
       <CopyToClipboard
-        text={url || data.constants.hostingUrl + location.pathname}
+        text={url || getData().constants.hostingUrl + location.pathname}
         onCopy={this.wasCopied}>
         {type === 'button' ? (
           <button

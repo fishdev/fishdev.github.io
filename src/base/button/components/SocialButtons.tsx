@@ -2,11 +2,11 @@ import React from 'react';
 import classNames from 'classnames';
 
 import { LevelGroup } from '.';
-import data from '../../../assets/data';
+import { getData } from '../../../data';
 
 export const SocialButtons: React.FC<any> = () => (
   <LevelGroup>
-    {data.links.social.map(({ name, url, color, icon }) => (
+    {getData().links.social.map(({ name, url, color, icon }) => (
       <a
         data-tooltip={name}
         key={name}

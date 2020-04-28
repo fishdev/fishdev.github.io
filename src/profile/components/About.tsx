@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import data from '../../assets/data';
+import { getData } from '../../data';
 import { Sentence } from '../interfaces';
 import { ResponsiveContainer, Image } from '../../base';
 import { MiniGallery } from '../../gallery';
@@ -15,7 +15,7 @@ export const About: React.FC = () => (
     <div className="hero-body fancy">
       <ResponsiveContainer size="large">
         <p className="is-size-4">
-          {data.about.map(
+          {getData().about.map(
             (item, i) =>
               isSentence(item) && (
                 <React.Fragment key={i}>
@@ -26,10 +26,12 @@ export const About: React.FC = () => (
         </p>
         <br />
         <div className="columns is-mobile is-multiline">
-          <MiniGallery {...{ type: 'multi', images: data.about.filter(isImage), wide: true }} />
+          <MiniGallery
+            {...{ type: 'multi', images: getData().about.filter(isImage), wide: true }}
+          />
         </div>
         <div className="buttons is-centered">
-          {data.photos && (
+          {getData().photos && (
             <Link
               className="button is-outlined is-white has-badge-rounded has-badge-link"
               data-badge={!localStorage.getItem('galleryVisited') ? 'new' : null}

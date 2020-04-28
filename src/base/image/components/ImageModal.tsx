@@ -15,7 +15,7 @@ interface Props {
   toggleModal(): void;
   prevImage?(): void;
   nextImage?(): void;
-  data: Image;
+  image: Image;
 }
 
 interface State {
@@ -46,7 +46,7 @@ export class ImageModal extends React.PureComponent<Props, State> {
       blurred,
       unconstrained,
       fullable,
-      data,
+      image,
     } = this.props;
     const { isFull } = this.state;
     return (
@@ -67,19 +67,19 @@ export class ImageModal extends React.PureComponent<Props, State> {
                   </a>
                 </div>
               )}
-              {data.description && (
+              {image.description && (
                 <div className="level-item">
                   <p className="has-text-centered">
-                    <span className="has-text-grey-light">{data.description}</span>
+                    <span className="has-text-grey-light">{image.description}</span>
                   </p>
                 </div>
               )}
             </div>
             <div className="level-right">
-              {data.tags && (
+              {image.tags && (
                 <div className="level-item">
                   <div className="tags">
-                    {data.tags.map((tag) => (
+                    {image.tags.map((tag) => (
                       <span key={tag} className="tag is-small is-dark">
                         {tag}
                       </span>
@@ -110,9 +110,9 @@ export class ImageModal extends React.PureComponent<Props, State> {
           <Fullscreen enabled={isFull} onChange={this.setFull}>
             <Img
               className="modal-image"
-              src={data.original}
+              src={image.original}
               placeholder={<LoadingBox />}
-              onDoubleClick={() => window.open(data.original)}
+              onDoubleClick={() => window.open(image.original)}
             />
             {stamped && (
               <div className="animated delay-1s fadeIn">

@@ -4,7 +4,7 @@ import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
 import { StickyContainer, Sticky } from 'react-sticky';
 
 import { getEntity, capitalize } from '../../core/util';
-import data from '../../../assets/data';
+import { getData } from '../../../data';
 import { Block } from '../../core/interfaces';
 import {
   MetaTags,
@@ -25,7 +25,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
   render() {
     const { id } = this.props.match.params;
 
-    const blockNames: string[] = data.resume.blocks.map((block) => block.name);
+    const blockNames: string[] = getData().resume.blocks.map((block) => block.name);
     if (blockNames.concat(['education', 'skills']).includes(id))
       return <Redirect to={'/resume/' + id} />;
 
@@ -98,7 +98,7 @@ export class Details extends React.PureComponent<RouteComponentProps<UrlProps>> 
                       {images &&
                         images.map((image, i) => (
                           <div key={i} className="column is-narrow has-text-centered">
-                            <ImageBox data={image} />
+                            <ImageBox image={image} />
                           </div>
                         ))}
                     </div>

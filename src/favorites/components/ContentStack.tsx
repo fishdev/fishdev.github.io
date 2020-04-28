@@ -3,7 +3,7 @@ import { RouteComponentProps, withRouter, Redirect } from 'react-router-dom';
 
 import { MetaTags, ResponsiveContainer } from '../../base';
 import { HorizontalBanner } from './HorizontalBanner';
-import data from '../../assets/data';
+import { getData } from '../../data';
 
 interface UrlProps {
   name: string;
@@ -14,8 +14,8 @@ export class ContentStack extends React.PureComponent<RouteComponentProps<UrlPro
   render() {
     const { name } = this.props.match.params;
 
-    if (!data.favorites.content[name]) return <Redirect to="/404" />;
-    const banners = data.favorites.content[name];
+    if (!getData().favorites.content[name]) return <Redirect to="/404" />;
+    const banners = getData().favorites.content[name];
 
     return (
       <div>

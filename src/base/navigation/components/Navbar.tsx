@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import { Portrait } from '../../core';
 import { SocialButtons } from '../../button';
-import data from '../../../assets/data';
+import { getData } from '../../../data';
 
 interface Props {
   showMenu?: boolean;
@@ -44,7 +44,7 @@ export class Navbar extends React.PureComponent<Props, State> {
                 </div>
                 {showName && (
                   <div className="column">
-                    <b>{data.constants.fullName}</b>
+                    <b>{getData().constants.fullName}</b>
                   </div>
                 )}
               </Link>

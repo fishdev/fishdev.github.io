@@ -35,7 +35,8 @@ export const broadcom = {
         </li>
         <li>
           Contributed to <a href="https://kotlinlang.org/">Kotlin</a> +{' '}
-          <a href="https://spring.io/">Spring</a> backend to handle authentication and process data.
+          <a href="https://spring.io/">Spring</a> backend to handle authentication and process
+          getData().
         </li>
         <li>
           Worked on scalable testing harness in Node.js +{' '}

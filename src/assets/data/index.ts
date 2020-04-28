@@ -1,4 +1,3 @@
-import { Data } from '../../Data';
 import portrait from '../ashwin.jpg';
 import { social } from './social';
 import { about } from './about';
@@ -76,4 +75,4 @@ export default {
     paths: photoPaths,
     gallery,
   },
-} as Data;
+};
