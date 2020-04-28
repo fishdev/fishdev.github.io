@@ -8,7 +8,6 @@ import { getData } from '../../../data';
 
 export const Printable: React.FC = () => {
   const unis = allUniversities();
-  console.log(unis);
   return (
     <div>
       <MetaTags name="Resume - Printable" description="My resume in print-ready format" desktop />
