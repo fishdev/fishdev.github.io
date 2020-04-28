@@ -46,9 +46,7 @@ export const Favorites: React.FC = () => (
             {data.favorites.podcasts && (
               <Route path="/favorites/podcasts" exact component={Podcasts} />
             )}
-            {Object.keys(data.favorites.content).map((name) => (
-              <Route key={name} path={'/favorites/' + name} exact component={ContentStack} />
-            ))}
+            <Route path="/favorites/:name" exact component={ContentStack} />
             <Route
               path="/favorites"
               exact
@@ -61,7 +59,6 @@ export const Favorites: React.FC = () => (
                 />
               )}
             />
-            }
           </Switch>
         </ResponsiveContainer>
       </div>

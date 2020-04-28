@@ -66,7 +66,7 @@ export default {
     ],
   },
   favorites: {
-    playlists,
+    music: playlists,
     podcasts,
     content: {
       code: codes,
