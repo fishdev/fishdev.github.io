@@ -6,9 +6,7 @@
  * so this is just how it has to be. Thanks, Spotify.
  */
 
-import { Playlist } from '../../../favorites';
-
-export const playlists: Playlist[] = [
+export const playlists = [
   {
     id: '6ESlFMmtKnNoGN5Z7O6djp',
     description: 'Perfect for every suburban kitchen countertop.',
@@ -26,5 +24,3 @@ export const playlists: Playlist[] = [
     description: 'Inject the electricity into my veins, please.',
   },
 ];
-
-export const spotifyId = 'g5ojwey9iyo08skvmjnx3dih3';

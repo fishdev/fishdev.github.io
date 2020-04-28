@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const scottylabs: Block = {
+export const scottylabs = {
   id: 'scottylabs',
   name: 'ScottyLabs',
   range: {

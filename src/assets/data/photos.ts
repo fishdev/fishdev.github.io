@@ -44,7 +44,7 @@ export const photoPaths = Object.fromEntries(
   ])
 );
 
-export const photos: ImageCollection = [
+export const gallery: ImageCollection = [
   {
     type: 'multi',
     images: [

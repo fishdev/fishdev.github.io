@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const diderot: Block = {
+export const diderot = {
   id: 'diderot',
   name: 'Research Assistant',
   extra: 'Carnegie Mellon University',
@@ -11,7 +9,7 @@ export const diderot: Block = {
       month: 9,
       year: 2019,
     },
-    end: 'Present',
+    end: null,
   },
   description: (
     <p>

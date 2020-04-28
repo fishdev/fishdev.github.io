@@ -5,7 +5,7 @@ import ReactGA from 'react-ga';
 import 'animate.css/animate.min.css';
 import { GlobalHotKeys } from 'react-hotkeys';
 
-import { WEBSITE_SOURCE, social } from './assets/data';
+import data from './assets/data';
 import { SitemapModal } from './base';
 import { Home, Coursework, Details, Favorites, NotFound, Gallery, Printable } from './pages';
 
@@ -31,12 +31,12 @@ export class App extends React.PureComponent<{}, State> {
     ReactGA.pageview(window.location.pathname);
 
     console.log(
-      "Hi there! If you're curious about my website, check out the source at " + WEBSITE_SOURCE
+      "Hi there! If you're curious about my website, check out the source at " + data.constants
     );
   }
 
   render() {
-    const links = social.map((item) => {
+    const links = data.links.social.map((item) => {
       const name = '/' + item.name!.toLowerCase();
       const redirect = ({ match }: RouteComponentProps<{ suffix: string }>): React.ReactNode => {
         let { url } = item;

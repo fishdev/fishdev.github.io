@@ -1,4 +1,4 @@
-import { universities, blocks, languages, technologies } from '../../../assets/data';
+import data from '../../../assets/data';
 import { Entity, EntityType, Block } from '../interfaces';
 import { Course } from '../../education';
 import { Skill } from '../../skills';
@@ -8,17 +8,18 @@ export const toEntity = (type: EntityType) => (data: Course | Block | Skill): En
   data,
 });
 
-const getEntities = (): Entity[] =>
-  blocks
-    .reduce((acc, { name, data }) => acc.concat(data.map(toEntity(name))), new Array<Entity>())
-    .concat(
-      universities[0].coursework.map((course: Course) => ({
-        type: 'coursework',
-        data: course,
-        clickable: false,
-      })),
-      languages.concat(technologies).map(toEntity('skills'))
-    );
+const getEntities = (): Entity[] => {
+  const blockEntities = data.resume.blocks.reduce(
+    (acc, { name, data }) => acc.concat(data.map(toEntity(name))),
+    new Array<Entity>()
+  );
+  const courseEntities = (data.resume.education.coursework || []).map(toEntity('coursework'));
+  const skillEntities = data.resume.skills.reduce(
+    (acc, { data }) => acc.concat(data.map(toEntity('skills'))),
+    new Array<Entity>()
+  );
+  return blockEntities.concat(courseEntities).concat(skillEntities);
+};
 
 export const getEntity = (id: string): Entity | undefined =>
   getEntities().find((entity: Entity) => id === entity.data.id);

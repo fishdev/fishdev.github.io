@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const end_the_rain: Block = {
+export const end_the_rain = {
   id: 'end-the-rain',
   name: 'Plaid Umbrella Project',
   extra: 'Technical & Software Lead',

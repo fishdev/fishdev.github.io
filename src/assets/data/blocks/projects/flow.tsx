@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const flow: Block = {
+export const flow = {
   id: 'flow',
   name: 'Flow',
   tagline: 'Real-time water consumption tracker',

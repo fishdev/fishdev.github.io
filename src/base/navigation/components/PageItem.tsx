@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { capitalize } from '../../../resume';
 
 interface Props {
   type: string;
@@ -38,11 +39,11 @@ export const PageItem: React.FC<Props> = ({ type, name, path, onClick }) => {
             </span>
           </div>
           <div className="column fancy">
-            {type.charAt(0).toUpperCase() + type.slice(1)}
+            {capitalize(type)}
             {name && (
               <React.Fragment>
                 <span className="has-text-grey"> / </span>
-                {name.charAt(0).toUpperCase() + name.slice(1)}
+                {capitalize(name)}
               </React.Fragment>
             )}
           </div>

@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const assure: Block = {
+export const assure = {
   id: 'assure',
   name: 'Assure',
   tagline: 'Connecting needs',

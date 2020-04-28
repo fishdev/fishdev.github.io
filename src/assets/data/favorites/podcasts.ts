@@ -1,6 +1,4 @@
-import { Podcast } from '../../../favorites';
-
-export const podcasts: Podcast[] = [
+export const podcasts = [
   {
     name: 'Reply All',
     image:

@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const broadcom: Block = {
+export const broadcom = {
   id: 'broadcom',
   name: 'Software Engineering Intern',
   extra: 'Broadcom Corporation',

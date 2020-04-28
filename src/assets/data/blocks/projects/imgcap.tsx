@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const imgcap: Block = {
+export const imgcap = {
   id: 'imgcap',
   name: 'ImgCap',
   tagline: 'Automated image captioning',

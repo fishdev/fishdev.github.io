@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { blocks } from '../../../assets/data';
+import data from '../../../assets/data';
 import { ResponsiveContainer } from '../../../base';
 import { Section } from './Section';
 import { BlockHeader } from './BlockHeader';
@@ -18,7 +18,7 @@ export const ResumeCore: React.FC = () => (
     <div className="hero is-black is-medium is-hidden-desktop">
       <div className="hero-body">
         <ResponsiveContainer size="medium">
-          {blocks.map(({ name, data }) => (
+          {data.resume.blocks.map(({ name, data }) => (
             <Section key={name} name={name}>
               {data.map((block) => (
                 <div className="block-header" key={block.id}>

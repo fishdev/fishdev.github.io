@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PORTRAIT_URL } from '../../../assets/data';
+import data from '../../../assets/data';
 
 interface Props {
   size: string;
@@ -15,7 +15,7 @@ export class Portrait extends React.PureComponent<Props> {
     const { size } = this.props;
     return (
       <figure className={'image is-' + size}>
-        <img className="portrait is-rounded" src={PORTRAIT_URL} alt="Me" />
+        <img className="portrait is-rounded" src={data.constants.portraitUrl} alt="Me" />
       </figure>
     );
   }

@@ -5,7 +5,7 @@ import { scroller } from 'react-scroll';
 import { MetaTags } from '../components';
 import { Footer } from '../../footer';
 import { SocialButtons } from '../../button';
-import { ROLE, ORGANIZATION } from '../../../assets/data';
+import data from '../../../assets/data';
 import { Profile, About } from '../../../profile';
 import { Resume } from '../../../resume';
 import { scrollProps } from '../util';
@@ -19,7 +19,7 @@ export class Home extends React.PureComponent<RouteComponentProps> {
   render() {
     return (
       <div className="blackened">
-        <MetaTags description={ROLE + ' at ' + ORGANIZATION} />
+        <MetaTags description={data.constants.role + ' at ' + data.constants.organization} />
         <div id="main" className="hero is-black is-medium city fade-bottom has-text-centered fancy">
           <div className="hero-body">
             <div className="container">

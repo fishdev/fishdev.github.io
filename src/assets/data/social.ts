@@ -1,6 +1,4 @@
-import { ColorButton } from '../../base';
-
-export const social: ColorButton[] = [
+export const social = [
   {
     color: 'white',
     url: 'https://github.com/fishdev/',

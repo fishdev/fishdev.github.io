@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const leap: Block = {
+export const leap = {
   id: 'leap',
   name: 'Teaching Assistant',
   extra: <a href="https://www.cs.cmu.edu/~leap/">Leap@CMU</a>,

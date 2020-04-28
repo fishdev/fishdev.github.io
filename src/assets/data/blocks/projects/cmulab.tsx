@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const cmulab: Block = {
+export const cmulab = {
   id: 'cmulab',
   name: 'CMULab',
   tagline: 'Secure check-in and scoring',
@@ -11,7 +9,7 @@ export const cmulab: Block = {
       month: 1,
       year: 2019,
     },
-    end: 'Present',
+    end: null,
   },
   github: 'QuantumStack/CMULab',
   url: 'https://cmulab.quantumstack.xyz',

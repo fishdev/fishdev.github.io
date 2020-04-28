@@ -4,9 +4,11 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 import { Navbar, ScrollToTop, MetaTags, Footer } from '../../base';
 import { ImageLayout } from '../components';
-import { photos } from '../../assets/data';
+import data from '../../assets/data';
 import { flattenPhotos, filterPhotos, enumPhotos } from '../util';
 import { MultiGroup } from '../interfaces';
+
+const photos = data.photos ? data.photos.gallery : [];
 
 interface State {
   filterTags: string[];

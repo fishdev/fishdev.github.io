@@ -2,7 +2,9 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import { ScrollToTop, ResponsiveContainer, TabLink, Footer, Navbar } from '../../base';
-import { favorites } from '../../assets/data';
+import data from '../../assets/data';
+import { Playlists, Podcasts, ContentStack } from '../components';
+import { capitalize } from '../../resume';
 
 export const Favorites: React.FC = () => (
   <div>
@@ -27,9 +29,11 @@ export const Favorites: React.FC = () => (
           <nav className="tabs is-toggle is-toggle-rounded is-centered">
             <div className="container">
               <ul>
-                {favorites.map((section, i) => (
-                  <TabLink key={section.name} to={'/favorites/' + section.name}>
-                    {section.name.charAt(0).toUpperCase() + section.name.slice(1)}
+                {data.favorites.music && <TabLink to="/favorites/music">Music</TabLink>}
+                {data.favorites.podcasts && <TabLink to="/favorites/podcasts">Podcasts</TabLink>}
+                {Object.keys(data.favorites.content).map((name) => (
+                  <TabLink key={name} to={'/favorites/' + name}>
+                    {capitalize(name)}
                   </TabLink>
                 ))}
               </ul>
@@ -38,18 +42,24 @@ export const Favorites: React.FC = () => (
           <br />
           <br />
           <Switch>
-            {favorites.map((section, i) => (
-              <Route
-                key={section.name}
-                path={'/favorites/' + section.name}
-                exact
-                component={section.component}
-              />
+            {data.favorites.music && <Route path="/favorites/music" exact component={Playlists} />}
+            {data.favorites.podcasts && (
+              <Route path="/favorites/podcasts" exact component={Podcasts} />
+            )}
+            {Object.keys(data.favorites.content).map((name) => (
+              <Route key={name} path={'/favorites/' + name} exact component={ContentStack} />
             ))}
             <Route
               path="/favorites"
               exact
-              render={() => <Redirect to={'/favorites/' + favorites[0].name} />}
+              render={() => (
+                <Redirect
+                  to={
+                    '/favorites/' +
+                    (data.favorites.music ? 'music' : Object.keys(data.favorites.content)[0])
+                  }
+                />
+              )}
             />
             }
           </Switch>

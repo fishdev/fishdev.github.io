@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const awesomebot: Block = {
+export const awesomebot = {
   id: 'awesomebot',
   name: 'AwesomeBot',
   tagline: 'The best Discord bot!',

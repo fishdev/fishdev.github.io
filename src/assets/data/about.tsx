@@ -1,11 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import { Image } from '../../base';
-import { Sentence } from './../../profile';
 import { photoPaths } from './photos';
 
-export const about: Array<Sentence | Image | {}> = [
+export const about = [
   {
     ...photoPaths.cmu,
     description: 'CMU on a snowy night',
@@ -52,10 +49,5 @@ export const about: Array<Sentence | Image | {}> = [
   {
     icon: 'fas fa-headphones-alt',
     content: <span>Always listening to music and podcasts.</span>,
-    extra: (
-      <Link className="button is-small is-outlined is-light" to="/favorites">
-        View my favorites
-      </Link>
-    ),
   },
 ];

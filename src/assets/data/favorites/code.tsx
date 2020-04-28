@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Banner } from '../../../favorites';
-
-export const codes: Banner[] = [
+export const codes = [
   {
     title: 'TypeScript',
     subtitle: 'JS without the insanity',

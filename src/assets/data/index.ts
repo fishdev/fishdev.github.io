@@ -1,26 +1,79 @@
+import { Data } from '../../Data';
 import portrait from '../ashwin.jpg';
-import { universities } from './education';
+import { social } from './social';
+import { about } from './about';
+import { volunteering } from './volunteering';
+import { universities, schools, coursework } from './education';
+import { languages, technologies } from './skills';
+import { playlists, podcasts, codes } from './favorites';
+import { photoPaths, gallery } from './photos';
+import { projects, experience, activities } from './blocks';
 
-export * from './social';
-export * from './more';
-export * from './about';
-export * from './volunteering';
-export * from './education';
-export * from './blocks';
-export * from './skills';
-export * from './favorites';
-export * from './photos';
+const NAMES = ['Ashwin', 'Srinivasan'];
+const HOSTING_DOMAIN = 'fishdev.xyz';
 
-export const NAMES = ['Ashwin', 'Srinivasan'];
-export const FULL_NAME = NAMES.join(' ');
-export const ORGANIZATION = universities[0].name;
-export const ROLE = 'Student and developer';
-export const PORTRAIT_URL = portrait;
-export const LOCATION = 'Pittsburgh, PA';
-export const LOCATION_URL = 'https://www.visitpittsburgh.com';
-export const HOSTING_DOMAIN = 'fishdev.xyz';
-export const HOSTING_URL = 'https://' + HOSTING_DOMAIN;
-export const META_IMAGE_URL =
-  'https://github.com/fishdev/fishdev.github.io/blob/master/as.png?raw=true';
-export const WEBSITE_SOURCE = 'https://github.com/fishdev/fishdev.github.io';
-export const EMAIL = 'ashwins@andrew.cmu.edu';
+export default {
+  constants: {
+    names: NAMES,
+    fullName: NAMES.join(' '),
+    organization: universities.cmu.name,
+    role: 'Student and developer',
+    portraitUrl: portrait,
+    location: 'Pittsburgh, PA',
+    locationUrl: 'https://www.visitpittsburgh.com',
+    hostingDomain: HOSTING_DOMAIN,
+    hostingUrl: 'https://' + HOSTING_DOMAIN,
+    metaImageUrl: 'https://github.com/fishdev/fishdev.github.io/blob/master/as.png?raw=true',
+    websiteSrc: 'https://github.com/fishdev/fishdev.github.io',
+    email: 'ashwins@andrew.cmu.edu',
+  },
+  links: {
+    social,
+    spotifyId: 'g5ojwey9iyo08skvmjnx3dih3',
+  },
+  about,
+  resume: {
+    volunteering,
+    education: {
+      universities,
+      currentUniversity: 'cmu',
+      schools,
+      coursework,
+    },
+    blocks: [
+      {
+        name: 'projects',
+        data: projects,
+      },
+      {
+        name: 'experience',
+        data: experience,
+      },
+      {
+        name: 'activities',
+        data: activities,
+      },
+    ],
+    skills: [
+      {
+        name: 'languages',
+        data: languages,
+      },
+      {
+        name: 'technologies',
+        data: technologies,
+      },
+    ],
+  },
+  favorites: {
+    playlists,
+    podcasts,
+    content: {
+      code: codes,
+    },
+  },
+  photos: {
+    paths: photoPaths,
+    gallery,
+  },
+} as Data;

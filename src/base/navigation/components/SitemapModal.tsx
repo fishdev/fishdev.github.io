@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { PageItem } from './PageItem';
-import { blocks, favorites } from '../../../assets/data';
+import data from '../../../assets/data';
 import { Modal } from '../../core';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const SitemapModal: React.FC<Props> = ({ hide }) => {
-  const resume = ['education'].concat(blocks.map((block) => block.name));
+  const resume = ['education'].concat(data.resume.blocks.map((block) => block.name));
   resume.push('skills');
 
   return (
@@ -21,7 +21,18 @@ export const SitemapModal: React.FC<Props> = ({ hide }) => {
             <PageItem type="home" path="/" onClick={hide} />
             <PageItem type="gallery" path="/gallery" onClick={hide} />
             <PageItem type="resume" path="/resume" onClick={hide} />
-            {favorites.map(({ name }) => (
+            {data.favorites.music && (
+              <PageItem type="favorites" name="music" path="/favorites/music" onClick={hide} />
+            )}
+            {data.favorites.podcasts && (
+              <PageItem
+                type="favorites"
+                name="podcasts"
+                path="/favorites/podcasts"
+                onClick={hide}
+              />
+            )}
+            {Object.keys(data.favorites.content).map((name) => (
               <PageItem
                 key={name}
                 type="favorites"

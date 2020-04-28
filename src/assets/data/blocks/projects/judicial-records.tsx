@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const judicial_records: Block = {
+export const judicial_records = {
   id: 'judicial-records',
   name: 'Case Case Study',
   tagline: 'A machine learning analysis of judicial records',

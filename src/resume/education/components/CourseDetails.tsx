@@ -2,16 +2,23 @@ import React from 'react';
 import classNames from 'classnames';
 
 import { Course } from '../interfaces';
-import { universities } from '../../../assets/data';
+import { getCurrentSemester } from '../util';
 
 interface Props extends Course {
   colored?: boolean;
 }
 
-export const CourseDetails: React.FC<Props> = ({ colored, semester, url, ta, description }) => (
+export const CourseDetails: React.FC<Props> = ({
+  colored,
+  institution,
+  semester,
+  url,
+  ta,
+  description,
+}) => (
   <div className="course-details">
     <p>
-      {semester === universities[0].currentSemester ? (
+      {semester === getCurrentSemester(institution) ? (
         <span className="has-text-danger">Currently taking this course.</span>
       ) : (
         <span>

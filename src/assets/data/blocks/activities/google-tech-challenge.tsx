@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const google_tech_challenge: Block = {
+export const google_tech_challenge = {
   id: 'google-tech-challenge',
   name: 'Google Tech Challenge',
   range: {

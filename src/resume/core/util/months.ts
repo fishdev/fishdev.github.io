@@ -30,8 +30,8 @@ export const computeRange = ({ start, end }: MonthRange): PrettyRange => {
   };
 
   if (end) {
-    if (end === 'Present') {
-      pretty.end = end;
+    if (end === null) {
+      pretty.end = 'Present';
       pretty.duration = computeDuration(startDate, moment());
     } else {
       const endDate = moment()
@@ -48,6 +48,13 @@ export const computeRange = ({ start, end }: MonthRange): PrettyRange => {
   return pretty;
 };
 
+export const monthIsFuture = ({ month, year }: Month) =>
+  moment().diff(
+    moment()
+      .month(month - 1)
+      .year(year)
+  ) < 0;
+
 export const monthToString = ({ month, year }: Month, fullMonth: boolean = false) =>
   moment()
     .month(month - 1)
@@ -57,4 +64,4 @@ export const monthToString = ({ month, year }: Month, fullMonth: boolean = false
 
 export const rangeToString = ({ start, end }: MonthRange): string =>
   monthToString(start) +
-  (end ? ' – ' + (end === 'Present' ? end : monthToString(end as Month)) : '');
+  (end ? ' – ' + (end === null ? 'Present' : monthToString(end as Month)) : '');

@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { Block } from '../../../../resume';
-
-export const tartan: Block = {
+export const tartan = {
   id: 'tartan',
   name: 'The Tartan',
   extra: 'Science & Technology Editor',
@@ -11,7 +9,7 @@ export const tartan: Block = {
       month: 9,
       year: 2018,
     },
-    end: 'Present',
+    end: null,
   },
   buttons: [
     {

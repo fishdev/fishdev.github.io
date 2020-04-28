@@ -1,6 +1,4 @@
-import { Block } from '../../../../resume';
-
-export const stripe: Block = {
+export const stripe = {
   id: 'stripe',
   name: 'Software Engineering Intern',
   extra: 'Stripe',
