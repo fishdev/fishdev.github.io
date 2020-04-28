@@ -36,7 +36,10 @@ export class App extends React.PureComponent<{}, State> {
     this.setState({ isLoading: false });
 
     console.log(
-      "Hi there! If you're curious about my website, check out the source at " + getData().constants
+      "%cHi there! If you're curious about my website, check out the source at\n" +
+        getData().constants.websiteSrc +
+        ' :)',
+      'font-family: monospace; font-size: 24px'
     );
   }
 
