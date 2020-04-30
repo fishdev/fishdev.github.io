@@ -1,13 +1,6 @@
 @import 'node_modules/bulmaswatch/flatly/_variables';
 
-// Colors
-$primary: rgb(190, 5, 117);
-$link: rgb(32, 63, 182);
-$ig-blue: $link;
-$info: #61afef;
-$warning: #d19a66;
-$success: #89ca78;
-$family-sans-serif: 'Nunito';
+@import 'vars';
 
 // Other Bulma imports
 @import 'bulma';
@@ -42,9 +35,6 @@ html,
   margin-top: 3px;
   @extend .gradient;
 }
-
-// Nunito
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 // Bolder title fonts
 .fancy .title {
