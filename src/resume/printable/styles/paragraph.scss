@@ -8,6 +8,11 @@
   margin-bottom: 9px !important;
   line-height: 19px;
   font-size: 10.1pt;
+  color: darken($body-color, 10%);
+}
+
+.print-paragraph strong {
+  color: darken($body-color, 10%);
 }
 
 .print-paragraph ul {
@@ -20,4 +25,5 @@
   padding: 0px 5px;
   height: 20px;
   font-size: inherit;
+  color: darken($body-color, 10%);
 }
