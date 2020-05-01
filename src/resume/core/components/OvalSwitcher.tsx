@@ -55,7 +55,7 @@ export class OvalSwitcher extends React.PureComponent<{}, State> {
               animateIn="zoomIn"
               animateOnce
               duration={0.5}>
-              <div className="columns is-multiline is-vcentered is-variable is-6">
+              <div className="columns is-multiline is-vcentered is-variable is-5">
                 {getData().resume.blocks[section].data.map((block, i) => (
                   <div className="column is-narrow" key={block.id}>
                     <OvalBlock {...block} />
