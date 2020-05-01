@@ -43,14 +43,17 @@ export default {
       {
         name: 'projects',
         data: projects,
+        ord: 2,
       },
       {
         name: 'experience',
         data: experience,
+        ord: 1,
       },
       {
         name: 'activities',
         data: activities,
+        ord: 3,
       },
     ],
     skills: [

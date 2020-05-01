@@ -37,8 +37,15 @@ export interface Data {
         [id: string]: Institution;
       };
     };
-    blocks: Array<{ name: EntityType; data: Block[] }>;
-    skills: Array<{ name: string; data: Skill[] }>;
+    blocks: Array<{
+      name: EntityType;
+      data: Block[];
+      ord: number;
+    }>;
+    skills: Array<{
+      name: string;
+      data: Skill[];
+    }>;
   };
   favorites: {
     music?: Playlist[];

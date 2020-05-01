@@ -126,14 +126,16 @@ export const Printable: React.FC = () => {
               )}
             </div>
             <div className="column is-8">
-              {getData().resume.blocks.map(({ name, data }) => (
-                <React.Fragment key={name}>
-                  <h4 className="title is-4 print-title">
-                    <b>{capitalize(name)}</b>
-                  </h4>
-                  <BlockSection blocks={data} showRanges={name !== 'projects'} />
-                </React.Fragment>
-              ))}
+              {getData()
+                .resume.blocks.sort((a, b) => a.ord - b.ord)
+                .map(({ name, data }) => (
+                  <React.Fragment key={name}>
+                    <h4 className="title is-4 print-title">
+                      <b>{capitalize(name)}</b>
+                    </h4>
+                    <BlockSection blocks={data} showRanges={name !== 'projects'} />
+                  </React.Fragment>
+                ))}
             </div>
           </div>
         </div>
