@@ -6,6 +6,7 @@ const titles = [
   'brick',
   'butterfly',
   'cathy',
+  'clock',
   'cmu',
   'convention',
   'dusk',
@@ -14,6 +15,8 @@ const titles = [
   'grafitti',
   'hills',
   'houses',
+  'houses2',
+  'incline',
   'industry',
   'lot',
   'metal',
@@ -186,7 +189,7 @@ export const gallery: ImageCollection = [
       },
       {
         ...photoPaths.village,
-        description: 'A secluded neighborhood from the woods',
+        description: 'A pastel neighborhood from the woods',
       },
     ],
     wide: true,
@@ -246,5 +249,26 @@ export const gallery: ImageCollection = [
       },
     ],
     wide: true,
+  },
+  {
+    type: 'singleton',
+    image: {
+      ...photoPaths.clock,
+      description: "An angry sky reflected on a clock's face",
+    },
+  },
+  {
+    type: 'multi',
+    images: [
+      {
+        ...photoPaths.incline,
+        description: 'Duquesne Incline',
+      },
+      {
+        ...photoPaths.houses2,
+        description: 'Houses nestled under a bridge',
+      },
+    ],
+    wide: false,
   },
 ];
