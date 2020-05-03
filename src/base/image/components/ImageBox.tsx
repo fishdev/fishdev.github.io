@@ -37,12 +37,12 @@ export class ImageBox extends React.PureComponent<Props, State> {
         <div className="has-text-centered">
           <div
             onClick={showModalFn ? () => showModalFn(image.id || 0) : this.toggleModal}
-            className={classNames('zoomable', {
+            className={classNames({
               tooltip: caption === 'tooltip' && image.description,
             })}
             data-tooltip={image.description}>
             <Img
-              className={classNames('image-box rounded', {
+              className={classNames('image-box rounded zoomable', {
                 'max-height-large': maxHeight === 'large',
                 'max-height-small': maxHeight === 'small',
               })}
