@@ -18,6 +18,7 @@ const titles = [
   'houses2',
   'incline',
   'industry',
+  'lake',
   'lot',
   'metal',
   'msg',
@@ -267,6 +268,10 @@ export const gallery: ImageCollection = [
       {
         ...photoPaths.houses2,
         description: 'Houses nestled under a bridge',
+      },
+      {
+        ...photoPaths.lake,
+        description: 'Panther Hollow Lake under a sheet of ice',
       },
     ],
     wide: false,
