@@ -1,8 +1,6 @@
-import { Semester } from './Semester';
-
 export interface Academic {
   id: string | number;
   name: string;
-  semester: Semester;
+  semester: string;
   institution: string;
 }

@@ -5,7 +5,7 @@ import { getData } from '../../../data';
 import { ResponsiveContainer } from '../../../base';
 import { monthToString, monthIsFuture, arrToSentence } from '../../core';
 import { Link } from 'react-router-dom';
-import { currentUniversity, otherUniversities } from '../util';
+import { currentUniversity, otherUniversities, computeOverallGrade } from '../util';
 
 interface Props {
   showSearch(): void;
@@ -27,7 +27,7 @@ export const Education: React.FC<Props> = ({ showSearch }) => {
                 </a>
                 {uni.minors.length > 0 && <span> with a minor in {arrToSentence(uni.minors)}</span>}
                 . My cumulative {uni.scale} is{' '}
-                <strong className="gradientbg">{uni.grade.toFixed(2)}</strong>.
+                <strong className="gradientbg">{computeOverallGrade(uni).toFixed(2)}</strong>.
                 {monthIsFuture(uni.range.end!) ? ' Expected graduation ' : ' Graduated '}
                 in {monthToString(uni.range.end!)}.
                 {otherUnis.length > 0 && (

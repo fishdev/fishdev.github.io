@@ -16,7 +16,20 @@ export const universities = {
     degree: 'BS',
     majors: ['computer science'],
     minors: ['human-computer interaction', 'software engineering'],
-    grade: 3.59,
+    semesters: {
+      'Fall 2018': {
+        grade: 3.56,
+        weight: 45,
+      },
+      'Spring 2019': {
+        grade: 3.44,
+        weight: 43,
+      },
+      'Fall 2019': {
+        grade: 3.76,
+        weight: 51,
+      },
+    },
     scale: 'QPA',
   },
 };
@@ -110,7 +123,12 @@ export const schools = {
         year: 2018,
       },
     },
-    grade: 4.0,
+    semesters: {
+      All: {
+        grade: 4.0,
+        weight: 1,
+      },
+    },
     scale: 'GPA',
   },
 };

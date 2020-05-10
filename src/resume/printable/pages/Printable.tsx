@@ -3,7 +3,7 @@ import React from 'react';
 import { Header, BlockSection } from '../components';
 import { MetaTags, Footer, Navbar } from '../../../base';
 import { monthToString, arrToSentence, capitalize, capitalizeSentence } from '../../core';
-import { allUniversities, getCurrentSemester } from '../../education';
+import { allUniversities, getCurrentSemester, computeOverallGrade } from '../../education';
 import { getData } from '../../../data';
 
 export const Printable: React.FC = () => {
@@ -48,7 +48,8 @@ export const Printable: React.FC = () => {
                   <br />
                   <span className="print-line-indented">Minors: {uni.minors.join(', ')}</span>
                   <br />
-                  {monthToString(uni.range.end!)}, {uni.scale}: {uni.grade.toFixed(2)}
+                  {monthToString(uni.range.end!)}, {uni.scale}:{' '}
+                  {computeOverallGrade(uni).toFixed(2)}
                 </p>
               ))}
               {getData().resume.education.coursework && (
@@ -91,7 +92,8 @@ export const Printable: React.FC = () => {
                   <p key={i} className="print-paragraph">
                     <strong>{school.name}</strong>
                     <br />
-                    {monthToString(school.range.end!)}, {school.scale}: {school.grade.toFixed(1)}
+                    {monthToString(school.range.end!)}, {school.scale}:{' '}
+                    {computeOverallGrade(school).toFixed(1)}
                   </p>
                 ))}
               <h4 className="title is-4 print-title">
