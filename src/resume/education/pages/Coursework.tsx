@@ -70,7 +70,7 @@ export class Coursework extends React.PureComponent<{}, State> {
               <br />
               <br />
               <CourseList university={uniId} coursework={uni.coursework || []}>
-                <Link to="/" className="button is-small is-outlined is-light">
+                <Link to="/" className="button is-small is-outlined is-light is-hidden-mobile">
                   <span className="icon">
                     <i className="fas fa-arrow-left" />
                   </span>

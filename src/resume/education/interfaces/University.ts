@@ -6,4 +6,5 @@ export interface University extends Institution {
   majors: string[];
   coursework: Course[];
   degree: string;
+  units: string;
 }

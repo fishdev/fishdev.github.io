@@ -31,9 +31,6 @@ export class CourseList extends React.PureComponent<Props, State> {
     const { semester, ta } = this.state;
     const { children, coursework, university } = this.props;
 
-    const semesters = coursework
-      .map((course) => course.semester)
-      .filter((v, i, a) => a.indexOf(v) === i);
     const courses = coursework.filter((course) => {
       if (semester && course.semester !== semester) return false;
       if (!semester && course.hidden) return false;
@@ -42,19 +39,25 @@ export class CourseList extends React.PureComponent<Props, State> {
     });
 
     const uni = getData().resume.education.universities[university];
-    const grade = semester
-      ? uni.semesters[semester].grade
-      : computeOverallGrade(Object.values(uni.semesters));
+    const sem = uni.semesters[semester];
+    const grade = semester ? sem.grade : computeOverallGrade(Object.values(uni.semesters));
 
     return (
       <div>
         <div className="columns is-mobile is-variable is-1 is-vcentered">
           <div className="column is-narrow">{children}</div>
           <div className="column">
-            <p>
-              &nbsp;
-              {uni.scale}: <strong className="has-text-white">{grade.toFixed(2)}</strong>
-            </p>
+            {grade && (
+              <p>
+                &nbsp;
+                {uni.scale}: <strong className="has-text-white">{grade.toFixed(2)}</strong>
+                {sem && (
+                  <span>
+                    , {sem.weight} {uni.units}
+                  </span>
+                )}
+              </p>
+            )}
           </div>
           <div className="column is-narrow">
             <button
@@ -67,7 +70,7 @@ export class CourseList extends React.PureComponent<Props, State> {
             <div className="select is-small is-dark">
               <select onChange={this.setSemester}>
                 <option value="">All Terms</option>
-                {semesters.map((semester) => (
+                {Object.keys(uni.semesters).map((semester) => (
                   <option value={semester}>{semester}</option>
                 ))}
               </select>

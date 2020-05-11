@@ -1,4 +1,4 @@
 export interface Semester {
-  grade: number;
+  grade?: number;
   weight: number;
 }
