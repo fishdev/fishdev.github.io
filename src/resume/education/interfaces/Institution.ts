@@ -1,4 +1,5 @@
 import { MonthRange } from '../../core';
+import { Semester } from './Semester';
 
 export interface Institution {
   name: string;
@@ -6,10 +7,7 @@ export interface Institution {
   range: MonthRange;
   currentSemester?: string;
   semesters: {
-    [id: string]: {
-      grade: number;
-      weight: number;
-    };
+    [id: string]: Semester;
   };
   scale: string;
 }

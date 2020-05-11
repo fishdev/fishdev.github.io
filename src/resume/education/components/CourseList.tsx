@@ -1,12 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
 
 import { CourseBox } from './CourseBox';
 import { Course } from '../interfaces';
+import { computeOverallGrade } from '../util';
+import { getData } from '../../../data';
 
 interface Props {
   coursework: Course[];
+  university: string;
 }
 
 interface State {
@@ -27,28 +29,32 @@ export class CourseList extends React.PureComponent<Props, State> {
 
   render() {
     const { semester, ta } = this.state;
-    const { coursework } = this.props;
+    const { children, coursework, university } = this.props;
 
     const semesters = coursework
       .map((course) => course.semester)
       .filter((v, i, a) => a.indexOf(v) === i);
     const courses = coursework.filter((course) => {
       if (semester && course.semester !== semester) return false;
+      if (!semester && course.hidden) return false;
       if (ta && !course.ta) return false;
       return true;
     });
 
+    const uni = getData().resume.education.universities[university];
+    const grade = semester
+      ? uni.semesters[semester].grade
+      : computeOverallGrade(Object.values(uni.semesters));
+
     return (
       <div>
-        <div className="columns is-mobile is-variable is-1">
+        <div className="columns is-mobile is-variable is-1 is-vcentered">
+          <div className="column is-narrow">{children}</div>
           <div className="column">
-            <Link to="/" className="button is-small is-outlined is-light">
-              <span className="icon">
-                <i className="fas fa-arrow-left" />
-              </span>
+            <p>
               &nbsp;
-              <span>Back</span>
-            </Link>
+              {uni.scale}: <strong className="has-text-white">{grade.toFixed(2)}</strong>
+            </p>
           </div>
           <div className="column is-narrow">
             <button

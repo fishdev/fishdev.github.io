@@ -1,40 +1,4 @@
-export const universities = {
-  cmu: {
-    name: 'Carnegie Mellon University',
-    url: 'https://cs.cmu.edu',
-    range: {
-      start: {
-        month: 8,
-        year: 2018,
-      },
-      end: {
-        month: 5,
-        year: 2022,
-      },
-    },
-    currentSemester: 'Spring 2020',
-    degree: 'BS',
-    majors: ['computer science'],
-    minors: ['human-computer interaction', 'software engineering'],
-    semesters: {
-      'Fall 2018': {
-        grade: 3.56,
-        weight: 45,
-      },
-      'Spring 2019': {
-        grade: 3.44,
-        weight: 43,
-      },
-      'Fall 2019': {
-        grade: 3.76,
-        weight: 51,
-      },
-    },
-    scale: 'QPA',
-  },
-};
-
-export const coursework = [
+const coursework = [
   {
     id: '15-213',
     name: 'Introduction to Computer Systems',
@@ -108,6 +72,47 @@ export const coursework = [
     institution: 'cmu',
   },
 ];
+
+export const universities = {
+  cmu: {
+    name: 'Carnegie Mellon University',
+    url: 'https://cs.cmu.edu',
+    range: {
+      start: {
+        month: 8,
+        year: 2018,
+      },
+      end: {
+        month: 5,
+        year: 2022,
+      },
+    },
+    currentSemester: 'Spring 2020',
+    degree: 'BS',
+    majors: ['computer science'],
+    minors: ['human-computer interaction', 'software engineering'],
+    coursework,
+    semesters: {
+      'Fall 2018': {
+        grade: 3.56,
+        weight: 45,
+      },
+      'Spring 2019': {
+        grade: 3.44,
+        weight: 43,
+      },
+      'Fall 2019': {
+        grade: 3.76,
+        weight: 51,
+      },
+      'Spring 2020': {
+        grade: 4,
+        weight: 51,
+      },
+    },
+    scale: 'QPA',
+  },
+};
 
 export const schools = {
   dice: {

@@ -1,11 +1,10 @@
 import React from 'react';
 import { Element as ScrollElement } from 'react-scroll';
 
-import { getData } from '../../../data';
 import { ResponsiveContainer } from '../../../base';
 import { monthToString, monthIsFuture, arrToSentence } from '../../core';
 import { Link } from 'react-router-dom';
-import { currentUniversity, otherUniversities, computeOverallGrade } from '../util';
+import { currentUniversity, otherUniversities, computeOverallGrade, allCourses } from '../util';
 
 interface Props {
   showSearch(): void;
@@ -27,15 +26,17 @@ export const Education: React.FC<Props> = ({ showSearch }) => {
                 </a>
                 {uni.minors.length > 0 && <span> with a minor in {arrToSentence(uni.minors)}</span>}
                 . My cumulative {uni.scale} is{' '}
-                <strong className="gradientbg">{computeOverallGrade(uni).toFixed(2)}</strong>.
-                {monthIsFuture(uni.range.end!) ? ' Expected graduation ' : ' Graduated '}
+                <strong className="gradientbg">
+                  {computeOverallGrade(Object.values(uni.semesters)).toFixed(2)}
+                </strong>
+                .{monthIsFuture(uni.range.end!) ? ' Expected graduation ' : ' Graduated '}
                 in {monthToString(uni.range.end!)}.
                 {otherUnis.length > 0 && (
                   <span> Also attended {arrToSentence(otherUnis.map(({ name }) => name))}.</span>
                 )}
               </p>
             </div>
-            {getData().resume.education.coursework && (
+            {allCourses().length > 0 && (
               <div className="column is-4-mobile is-narrow has-text-centered">
                 <Link to="/courses" className="hoverable">
                   <span className="icon is-large ">

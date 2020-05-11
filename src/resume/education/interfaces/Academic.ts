@@ -3,4 +3,5 @@ export interface Academic {
   name: string;
   semester: string;
   institution: string;
+  hidden?: boolean;
 }

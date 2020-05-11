@@ -28,7 +28,6 @@ export interface Data {
   resume: {
     volunteering?: Sentence[];
     education: {
-      coursework?: Course[];
       currentUniversity: string;
       universities: {
         [id: string]: University;

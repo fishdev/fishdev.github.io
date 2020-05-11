@@ -41,34 +41,30 @@ export const Printable: React.FC = () => {
                 <b>Education</b>
               </h4>
               {unis.map((uni, i) => (
-                <p key={i} className="print-paragraph">
-                  <strong>{uni.name}</strong>
-                  <br />
-                  {uni.degree} in {arrToSentence(uni.majors.map(capitalizeSentence))}
-                  <br />
-                  <span className="print-line-indented">Minors: {uni.minors.join(', ')}</span>
-                  <br />
-                  {monthToString(uni.range.end!)}, {uni.scale}:{' '}
-                  {computeOverallGrade(uni).toFixed(2)}
-                </p>
-              ))}
-              {getData().resume.education.coursework && (
                 <React.Fragment>
+                  <p key={i} className="print-paragraph">
+                    <strong>{uni.name}</strong>
+                    <br />
+                    {uni.degree} in {arrToSentence(uni.majors.map(capitalizeSentence))}
+                    <br />
+                    <span className="print-line-indented">Minors: {uni.minors.join(', ')}</span>
+                    <br />
+                    {monthToString(uni.range.end!)}, {uni.scale}:{' '}
+                    {computeOverallGrade(Object.values(uni.semesters)).toFixed(2)}
+                  </p>
                   <p className="content print-paragraph">
                     <u>Relevant coursework:</u>
                   </p>
                   <div className="content print-paragraph">
                     <ul>
-                      {getData()
-                        .resume.education.coursework!.slice(0, 5)
-                        .map((course) => (
-                          <li key={course.id}>
-                            {course.id} {course.name}
-                            {course.semester === getCurrentSemester(course.institution) && (
-                              <strong className="has-text-primary">*</strong>
-                            )}
-                          </li>
-                        ))}
+                      {uni.coursework.slice(0, 5).map((course) => (
+                        <li key={course.id}>
+                          {course.id} {course.name}
+                          {course.semester === getCurrentSemester(course.institution) && (
+                            <strong className="has-text-primary">*</strong>
+                          )}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                   <p className="content print-paragraph">
@@ -76,8 +72,8 @@ export const Printable: React.FC = () => {
                   </p>
                   <div className="content print-paragraph">
                     <ul>
-                      {getData()
-                        .resume.education.coursework!.filter((course) => course.ta)
+                      {uni.coursework
+                        .filter((course) => course.ta)
                         .map((course) => (
                           <li key={course.id}>
                             {course.id} ({course.ta!.join(', ')})
@@ -86,14 +82,14 @@ export const Printable: React.FC = () => {
                     </ul>
                   </div>
                 </React.Fragment>
-              )}
+              ))}
               {getData().resume.education.schools &&
                 Object.values(getData().resume.education.schools!).map((school, i) => (
                   <p key={i} className="print-paragraph">
                     <strong>{school.name}</strong>
                     <br />
                     {monthToString(school.range.end!)}, {school.scale}:{' '}
-                    {computeOverallGrade(school).toFixed(1)}
+                    {computeOverallGrade(Object.values(school.semesters)).toFixed(1)}
                   </p>
                 ))}
               <h4 className="title is-4 print-title">

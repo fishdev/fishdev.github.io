@@ -1,6 +1,6 @@
 import { getData } from '../../../data';
 import { Entity, EntityType, Block } from '../interfaces';
-import { Course } from '../../education';
+import { Course, allCourses } from '../../education';
 import { Skill } from '../../skills';
 
 export const toEntity = (type: EntityType) => (data: Course | Block | Skill): Entity => ({
@@ -13,7 +13,7 @@ const getEntities = (): Entity[] => {
     (acc, { name, data }) => acc.concat(data.map(toEntity(name))),
     new Array<Entity>()
   );
-  const courseEntities = (getData().resume.education.coursework || []).map(toEntity('coursework'));
+  const courseEntities = allCourses().map(toEntity('coursework'));
   const skillEntities = getData().resume.skills.reduce(
     (acc, { data }) => acc.concat(data.map(toEntity('skills'))),
     new Array<Entity>()

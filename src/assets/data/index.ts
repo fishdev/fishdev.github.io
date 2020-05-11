@@ -2,7 +2,7 @@ import portrait from '../ashwin.jpg';
 import { social } from './social';
 import { about } from './about';
 import { volunteering } from './volunteering';
-import { universities, schools, coursework } from './education';
+import { universities, schools } from './education';
 import { languages, technologies } from './skills';
 import { playlists, podcasts, codes } from './favorites';
 import { photoPaths, gallery } from './photos';
@@ -37,7 +37,6 @@ export default {
       universities,
       currentUniversity: 'cmu',
       schools,
-      coursework,
     },
     blocks: [
       {
