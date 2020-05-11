@@ -183,7 +183,7 @@ export const universities = {
       },
     },
     scale: 'QPA',
-    units: 'units',
+    units: 'unit',
   },
 };
 

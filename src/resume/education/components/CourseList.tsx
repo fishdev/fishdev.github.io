@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import pluralize from 'pluralize';
 
 import { CourseBox } from './CourseBox';
 import { Course } from '../interfaces';
@@ -53,7 +54,7 @@ export class CourseList extends React.PureComponent<Props, State> {
                 {uni.scale}: <strong className="has-text-white">{grade.toFixed(2)}</strong>
                 {sem && (
                   <span>
-                    , {sem.weight} {uni.units}
+                    , {sem.weight} {pluralize(uni.units, sem.weight)}
                   </span>
                 )}
               </p>
