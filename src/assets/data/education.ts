@@ -159,7 +159,7 @@ export const universities = {
         year: 2022,
       },
     },
-    currentSemester: 'Spring 2020',
+    currentSemester: 'Fall 2020',
     degree: 'BS',
     majors: ['computer science'],
     minors: ['human-computer interaction', 'software engineering'],
@@ -178,7 +178,7 @@ export const universities = {
         weight: 51,
       },
       'Spring 2020': {
-        grade: 4,
+        grade: 3.76,
         weight: 51,
       },
     },

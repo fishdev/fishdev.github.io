@@ -42,6 +42,9 @@ export class CourseList extends React.PureComponent<Props, State> {
     const uni = getData().resume.education.universities[university];
     const sem = uni.semesters[semester];
     const grade = semester ? sem.grade : computeOverallGrade(Object.values(uni.semesters));
+    const weight = semester
+      ? sem.weight
+      : Object.values(uni.semesters).reduce((acc, { weight }) => acc + weight, 0);
 
     return (
       <div>
@@ -51,12 +54,8 @@ export class CourseList extends React.PureComponent<Props, State> {
             {grade && (
               <p>
                 &nbsp;
-                {uni.scale}: <strong className="has-text-white">{grade.toFixed(2)}</strong>
-                {sem && (
-                  <span>
-                    , {sem.weight} {pluralize(uni.units, sem.weight)}
-                  </span>
-                )}
+                {uni.scale}: <strong className="has-text-white">{grade.toFixed(2)}</strong>,{' '}
+                {weight} {pluralize(uni.units, weight)}
               </p>
             )}
           </div>
