@@ -71,7 +71,10 @@ export class CourseList extends React.PureComponent<Props, State> {
               <select onChange={this.setSemester}>
                 <option value="">All Terms</option>
                 {Object.keys(uni.semesters).map((semester) => (
-                  <option value={semester}>{semester}</option>
+                  <option value={semester}>
+                    {semester}
+                    {semester === uni.currentSemester && '*'}
+                  </option>
                 ))}
               </select>
             </div>
