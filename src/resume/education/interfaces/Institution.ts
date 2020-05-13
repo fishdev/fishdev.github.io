@@ -10,4 +10,5 @@ export interface Institution {
     [id: string]: Semester;
   };
   scale: string;
+  maxGrade: number;
 }

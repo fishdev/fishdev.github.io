@@ -93,6 +93,7 @@ export class App extends React.PureComponent<{}, State> {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/courses" exact component={Coursework} />
+            <Route path="/courses/:semester" exact component={Coursework} />
             <Route path="/resume" exact component={Home} />
             <Route path="/resume/printable" exact component={Printable} />
             <Route path="/gallery" exact component={Gallery} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
 
 import { ScrollToTop, MetaTags, Navbar, ResponsiveContainer, Footer } from '../../../base';
 import { CourseList } from '../components';
@@ -9,7 +9,11 @@ interface State {
   universityIdx: number;
 }
 
-export class Coursework extends React.PureComponent<{}, State> {
+@(withRouter as any)
+export class Coursework extends React.PureComponent<
+  RouteComponentProps<{ semester: string }>,
+  State
+> {
   state: Readonly<State> = {
     universityIdx: 0,
   };
@@ -18,6 +22,8 @@ export class Coursework extends React.PureComponent<{}, State> {
   prevUni = () => this.setState(({ universityIdx }) => ({ universityIdx: universityIdx - 1 }));
 
   render() {
+    const { semester } = this.props.match.params;
+    console.log(semester);
     const { universityIdx } = this.state;
 
     const uniId = Object.keys(getData().resume.education.universities)[universityIdx];
@@ -69,7 +75,10 @@ export class Coursework extends React.PureComponent<{}, State> {
               </div>
               <br />
               <br />
-              <CourseList university={uniId} coursework={uni.coursework || []}>
+              <CourseList
+                university={uniId}
+                coursework={uni.coursework || []}
+                semester={decodeURIComponent(semester || '')}>
                 <Link to="/" className="button is-small is-outlined is-light is-hidden-mobile">
                   <span className="icon">
                     <i className="fas fa-arrow-left" />

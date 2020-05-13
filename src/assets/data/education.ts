@@ -183,6 +183,7 @@ export const universities = {
       },
     },
     scale: 'QPA',
+    maxGrade: 4,
     units: 'unit',
   },
 };
@@ -208,5 +209,6 @@ export const schools = {
       },
     },
     scale: 'GPA',
+    maxGrade: 4,
   },
 };

@@ -6,31 +6,28 @@ import { CourseBox } from './CourseBox';
 import { Course } from '../interfaces';
 import { computeOverallGrade } from '../util';
 import { getData } from '../../../data';
+import { DropdownList } from '../../../base';
 
 interface Props {
   coursework: Course[];
   university: string;
+  semester?: string;
 }
 
 interface State {
-  semester: string;
   ta: boolean;
 }
 
 export class CourseList extends React.PureComponent<Props, State> {
   state: Readonly<State> = {
-    semester: '',
     ta: false,
   };
 
   toggleTA = () => this.setState(({ ta }) => ({ ta: !ta }));
 
-  setSemester = (event: React.FormEvent<HTMLSelectElement>) =>
-    this.setState({ semester: (event.target as HTMLSelectElement).value });
-
   render() {
-    const { semester, ta } = this.state;
-    const { children, coursework, university } = this.props;
+    const { ta } = this.state;
+    const { children, semester, coursework, university } = this.props;
 
     const courses = coursework.filter((course) => {
       if (semester && course.semester !== semester) return false;
@@ -40,10 +37,11 @@ export class CourseList extends React.PureComponent<Props, State> {
     });
 
     const uni = getData().resume.education.universities[university];
-    const sem = uni.semesters[semester];
-    const grade = semester ? sem.grade : computeOverallGrade(Object.values(uni.semesters));
+    const grade = semester
+      ? uni.semesters[semester].grade
+      : computeOverallGrade(Object.values(uni.semesters));
     const weight = semester
-      ? sem.weight
+      ? uni.semesters[semester].weight
       : Object.values(uni.semesters).reduce((acc, { weight }) => acc + weight, 0);
 
     return (
@@ -67,17 +65,30 @@ export class CourseList extends React.PureComponent<Props, State> {
             </button>
           </div>
           <div className="column is-narrow">
-            <div className="select is-small is-dark">
-              <select onChange={this.setSemester}>
-                <option value="">All Terms</option>
-                {Object.keys(uni.semesters).map((semester) => (
-                  <option value={semester}>
-                    {semester}
-                    {semester === uni.currentSemester && '*'}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <DropdownList
+              items={[
+                {
+                  icon: 'fas fa-chalkboard',
+                  url: '/courses',
+                  name: 'All Terms',
+                  active: !semester,
+                },
+              ].concat(
+                Object.keys(uni.semesters).map((sem) => ({
+                  icon: 'fas fa-book-open',
+                  url: '/courses/' + encodeURIComponent(sem),
+                  name: sem + (sem === uni.currentSemester ? '*' : ''),
+                  active: sem === semester,
+                }))
+              )}>
+              <a className={classNames('button is-small is-light', { 'is-outlined': !semester })}>
+                {semester || (
+                  <span className="icon">
+                    <i className="fas fa-bars" />
+                  </span>
+                )}
+              </a>
+            </DropdownList>
           </div>
         </div>
         <div className="columns is-multiline">
