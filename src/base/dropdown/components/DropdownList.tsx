@@ -11,6 +11,7 @@ interface Props {
   hoverable?: boolean;
   alignment?: 'is-left' | 'is-right';
   dropup?: boolean;
+  animated?: boolean;
 }
 
 interface State {
@@ -27,13 +28,14 @@ export class DropdownList extends React.PureComponent<Props, State> {
     hoverable: false,
     alignment: 'is-right',
     dropup: false,
+    animated: false,
   };
 
   toggleActive = () => this.setState(({ isActive }) => ({ isActive: !isActive }));
   handleClickOutside = () => this.setState({ isActive: false });
 
   render() {
-    const { hoverable, dropup, alignment, staticItems, items, children } = this.props;
+    const { hoverable, dropup, alignment, animated, staticItems, items, children } = this.props;
     const { isActive } = this.state;
     return (
       <div
@@ -55,7 +57,10 @@ export class DropdownList extends React.PureComponent<Props, State> {
           )}
         </div>
         <div className="dropdown-menu" role="menu">
-          <div className="dropdown-content has-background-light animated faster bounceIn">
+          <div
+            className={classNames('dropdown-content has-background-light', {
+              'animated faster bounceIn': animated,
+            })}>
             {staticItems}
             {staticItems && items && <hr className="dropdown-divider" />}
             {items &&

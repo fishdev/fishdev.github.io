@@ -9,6 +9,7 @@ export const SkillContainer: React.FC<Skill> = (props) => {
   return (
     <DropdownList
       dropup
+      animated
       alignment="is-left"
       staticItems={
         <div className="dropdown-item">
