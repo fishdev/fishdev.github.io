@@ -7,6 +7,7 @@ import { Course } from '../interfaces';
 import { computeOverallGrade } from '../util';
 import { getData } from '../../../data';
 import { DropdownList } from '../../../base';
+import { SemesterSwitcher } from './SemesterSwitcher';
 
 interface Props {
   coursework: Course[];
@@ -70,30 +71,11 @@ export class CourseList extends React.PureComponent<Props, State> {
               </button>
             </div>
             <div className="level-item">
-              <DropdownList
-                items={[
-                  {
-                    icon: 'fas fa-chalkboard',
-                    url: '/courses',
-                    name: 'All Terms',
-                    active: !semester,
-                  },
-                ].concat(
-                  Object.keys(uni.semesters).map((sem) => ({
-                    icon: 'fas fa-book-open',
-                    url: '/courses/' + encodeURIComponent(sem),
-                    name: sem + (sem === uni.currentSemester ? '*' : ''),
-                    active: sem === semester,
-                  }))
-                )}>
-                <a className={classNames('button is-small is-light', { 'is-outlined': !semester })}>
-                  {semester || (
-                    <span className="icon">
-                      <i className="fas fa-bars" />
-                    </span>
-                  )}
-                </a>
-              </DropdownList>
+              <SemesterSwitcher
+                semesters={Object.keys(uni.semesters)}
+                currentSemester={uni.currentSemester}
+                selected={semester}
+              />
             </div>
           </div>
         </div>

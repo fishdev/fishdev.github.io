@@ -58,7 +58,10 @@ export class DropdownList extends React.PureComponent<Props, State> {
           <div className="dropdown-content has-background-light animated faster bounceIn">
             {staticItems}
             {staticItems && items && <hr className="dropdown-divider" />}
-            {items && items.map((dropdown) => <DropdownItem key={dropdown.name} {...dropdown} />)}
+            {items &&
+              items.map((dropdown) => (
+                <DropdownItem key={dropdown.name} {...dropdown} onClick={this.toggleActive} />
+              ))}
           </div>
         </div>
       </div>

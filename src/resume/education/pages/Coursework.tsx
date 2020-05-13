@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
+import { Link, withRouter, RouteComponentProps, Redirect } from 'react-router-dom';
 
 import { ScrollToTop, MetaTags, Navbar, ResponsiveContainer, Footer } from '../../../base';
 import { CourseList } from '../components';
@@ -23,13 +23,14 @@ export class Coursework extends React.PureComponent<
 
   render() {
     const { semester } = this.props.match.params;
-    console.log(semester);
     const { universityIdx } = this.state;
 
     const uniId = Object.keys(getData().resume.education.universities)[universityIdx];
     const unis = Object.values(getData().resume.education.universities);
     const numUnis = unis.length;
     const uni = unis[universityIdx];
+
+    if (semester && !uni.semesters[semester]) return <Redirect to="/404" />;
 
     return (
       <div>

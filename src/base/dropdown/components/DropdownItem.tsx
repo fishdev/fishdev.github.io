@@ -4,16 +4,21 @@ import classNames from 'classnames';
 import { Dropdown } from '../interfaces';
 import { Link } from 'react-router-dom';
 
-export class DropdownItem extends React.PureComponent<Dropdown> {
-  static defaultProps: Partial<Dropdown> = {
+interface Props extends Dropdown {
+  onClick(): void;
+}
+
+export class DropdownItem extends React.PureComponent<Props> {
+  static defaultProps: Partial<Props> = {
     internal: false,
   };
 
   render() {
-    const { internal, url, icon, name, description, active } = this.props;
+    const { onClick, internal, url, icon, name, description, active } = this.props;
     const DropdownElement = internal ? Link : 'a';
     return (
       <DropdownElement
+        onClick={onClick}
         href={url}
         to={url}
         className={classNames('dropdown-item', { 'is-active': active })}>
