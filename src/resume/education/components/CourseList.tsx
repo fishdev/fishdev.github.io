@@ -46,49 +46,56 @@ export class CourseList extends React.PureComponent<Props, State> {
 
     return (
       <div>
-        <div className="columns is-mobile is-variable is-1 is-vcentered">
-          <div className="column is-narrow">{children}</div>
-          <div className="column">
-            {grade && (
-              <p>
-                &nbsp;
-                {uni.scale}: <strong className="has-text-white">{grade.toFixed(2)}</strong>,{' '}
-                {weight} {pluralize(uni.units, weight)}
-              </p>
-            )}
+        <div className="level is-mobile">
+          <div className="level-left">
+            <div className="level-item">{children}</div>
+            <div className="level-item">
+              {grade && (
+                <p>
+                  &nbsp;
+                  {uni.scale}: <strong className="has-text-white">{grade.toFixed(2)}</strong>,{' '}
+                  {weight} {pluralize(uni.units, weight)}
+                </p>
+              )}
+            </div>
           </div>
-          <div className="column is-narrow">
-            <button
-              className={classNames('button is-small', ta ? 'is-success' : 'is-outlined is-light')}
-              onClick={this.toggleTA}>
-              TA
-            </button>
-          </div>
-          <div className="column is-narrow">
-            <DropdownList
-              items={[
-                {
-                  icon: 'fas fa-chalkboard',
-                  url: '/courses',
-                  name: 'All Terms',
-                  active: !semester,
-                },
-              ].concat(
-                Object.keys(uni.semesters).map((sem) => ({
-                  icon: 'fas fa-book-open',
-                  url: '/courses/' + encodeURIComponent(sem),
-                  name: sem + (sem === uni.currentSemester ? '*' : ''),
-                  active: sem === semester,
-                }))
-              )}>
-              <a className={classNames('button is-small is-light', { 'is-outlined': !semester })}>
-                {semester || (
-                  <span className="icon">
-                    <i className="fas fa-bars" />
-                  </span>
+          <div className="level-right">
+            <div className="level-item">
+              <button
+                className={classNames(
+                  'button is-small',
+                  ta ? 'is-success' : 'is-outlined is-light'
                 )}
-              </a>
-            </DropdownList>
+                onClick={this.toggleTA}>
+                TA
+              </button>
+            </div>
+            <div className="level-item">
+              <DropdownList
+                items={[
+                  {
+                    icon: 'fas fa-chalkboard',
+                    url: '/courses',
+                    name: 'All Terms',
+                    active: !semester,
+                  },
+                ].concat(
+                  Object.keys(uni.semesters).map((sem) => ({
+                    icon: 'fas fa-book-open',
+                    url: '/courses/' + encodeURIComponent(sem),
+                    name: sem + (sem === uni.currentSemester ? '*' : ''),
+                    active: sem === semester,
+                  }))
+                )}>
+                <a className={classNames('button is-small is-light', { 'is-outlined': !semester })}>
+                  {semester || (
+                    <span className="icon">
+                      <i className="fas fa-bars" />
+                    </span>
+                  )}
+                </a>
+              </DropdownList>
+            </div>
           </div>
         </div>
         <div className="columns is-multiline">
