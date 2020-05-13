@@ -52,7 +52,6 @@ export class CourseList extends React.PureComponent<Props, State> {
             <div className="level-item">
               {grade && (
                 <p>
-                  &nbsp;
                   {uni.scale}: <strong className="has-text-white">{grade.toFixed(2)}</strong>,{' '}
                   {weight} {pluralize(uni.units, weight)}
                 </p>

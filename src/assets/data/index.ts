@@ -1,6 +1,7 @@
 import portrait from '../ashwin.jpg';
 import { social } from './social';
 import { about } from './about';
+import { more } from './more';
 import { volunteering } from './volunteering';
 import { universities, schools } from './education';
 import { languages, technologies } from './skills';
@@ -29,6 +30,7 @@ export default {
   links: {
     social,
     spotifyId: 'g5ojwey9iyo08skvmjnx3dih3',
+    more,
   },
   about,
   resume: {

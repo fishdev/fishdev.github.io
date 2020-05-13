@@ -1,3 +1,14 @@
-.footer-content a:hover {
+.footer-content .footer-sections p a:hover {
   color: $white !important;
+}
+
+@media screen and (max-width: $tablet) {
+  .footer-sections > .column {
+    padding-top: 0rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .footer-sections {
+    padding-bottom: 1rem;
+  }
 }
