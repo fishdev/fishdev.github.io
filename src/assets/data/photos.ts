@@ -5,6 +5,7 @@ const titles = [
   'arch',
   'brick',
   'bridge',
+  'bridge2',
   'butterfly',
   'cathy',
   'clock',
@@ -35,6 +36,7 @@ const titles = [
   'river',
   'rivers',
   'street',
+  'street2',
   'subway',
   'sunset',
   'tracks',
@@ -284,17 +286,25 @@ export const gallery: ImageCollection = [
     wide: false,
   },
   {
-    type: 'singleton',
-    image: {
-      ...photoPaths.bridge,
-      description: "Bridge to Washington's Landing",
-    },
-  },
-  {
-    type: 'singleton',
-    image: {
-      ...photoPaths.electric,
-      description: 'Power tower',
-    },
+    type: 'multi',
+    images: [
+      {
+        ...photoPaths.electric,
+        description: 'Power tower',
+      },
+      {
+        ...photoPaths.bridge2,
+        description: 'An empty bridge',
+      },
+      {
+        ...photoPaths.street2,
+        description: 'Tree tunnel',
+      },
+      {
+        ...photoPaths.bridge,
+        description: "Bridge to Washington's Landing",
+      },
+    ],
+    wide: true,
   },
 ];
