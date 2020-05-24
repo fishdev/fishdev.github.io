@@ -293,12 +293,12 @@ export const gallery: ImageCollection = [
         description: 'Power tower',
       },
       {
-        ...photoPaths.bridge2,
-        description: 'An empty bridge',
-      },
-      {
         ...photoPaths.street2,
         description: 'Tree tunnel',
+      },
+      {
+        ...photoPaths.bridge2,
+        description: 'An empty bridge',
       },
       {
         ...photoPaths.bridge,
