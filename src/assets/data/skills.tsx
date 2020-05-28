@@ -65,6 +65,11 @@ export const languages: Skill[] = [
     name: 'C',
     year: 2017,
   },
+  {
+    id: 'ruby',
+    name: 'Ruby',
+    year: 2019,
+  },
 ];
 
 export const technologies: Skill[] = [
