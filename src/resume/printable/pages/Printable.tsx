@@ -125,7 +125,8 @@ export const Printable: React.FC = () => {
             </div>
             <div className="column is-8">
               {getData()
-                .resume.blocks.sort((a, b) => a.ord - b.ord)
+                .resume.blocks.concat()
+                .sort((a, b) => a.ord - b.ord)
                 .map(({ name, data }) => (
                   <React.Fragment key={name}>
                     <h4 className="title is-4 print-title">
