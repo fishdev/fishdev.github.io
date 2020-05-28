@@ -5,7 +5,7 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { Navbar, ScrollToTop, MetaTags, Footer } from '../../base';
 import { ImageLayout } from '../components';
 import { getData } from '../../data';
-import { flattenPhotos, filterPhotos, enumPhotos } from '../util';
+import { flattenPhotos, filterPhotos, enumPhotos, getGallerySize } from '../util';
 import { MultiGroup } from '../interfaces';
 
 interface State {
@@ -29,7 +29,7 @@ export class Gallery extends React.PureComponent<RouteComponentProps<{ tag: stri
   );
 
   componentDidMount() {
-    localStorage.setItem('galleryVisited', 'true');
+    localStorage.setItem('gallery_count', getGallerySize().toString());
 
     const tag = this.props.match.params.tag;
     if (tag && this.allTags.includes(tag)) this.toggleFilterTag(tag);
