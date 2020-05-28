@@ -68,6 +68,7 @@ export const languages: Skill[] = [
   {
     id: 'ruby',
     name: 'Ruby',
+    icon: 'fas fa-gem',
     year: 2019,
   },
 ];
