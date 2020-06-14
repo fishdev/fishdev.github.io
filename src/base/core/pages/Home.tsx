@@ -22,7 +22,13 @@ export class Home extends React.PureComponent<RouteComponentProps> {
         <MetaTags
           description={getData().constants.role + ' at ' + getData().constants.organization}
         />
-        <div id="main" className="hero is-black is-medium city fade-bottom has-text-centered fancy">
+        <div id="main" className="hero is-black is-medium has-text-centered fancy">
+          <div className="hero-head">
+            <div className="container title is-5">
+              <br />
+              <a href="https://blacklivesmatters.carrd.co">Black Lives Matter.</a>
+            </div>
+          </div>
           <div className="hero-body">
             <div className="container">
               <Profile></Profile>
