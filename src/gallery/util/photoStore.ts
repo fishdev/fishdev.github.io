@@ -1,6 +1,6 @@
 import { getData } from '../../data';
 
-export const userGalleryState = (): Array<String | undefined> => {
+const userGalleryState = (): Array<String | undefined> => {
   const store = localStorage.getItem('gallery_seen');
   if (!store) return [];
   return JSON.parse(store);
@@ -17,3 +17,6 @@ export const userHasSeenGallery = () => {
   const current = currentGalleryState();
   return state.every((_, i) => state[i] === current[i]);
 };
+
+export const writeGalleryView = () =>
+  localStorage.setItem('gallery_seen', JSON.stringify(currentGalleryState()));

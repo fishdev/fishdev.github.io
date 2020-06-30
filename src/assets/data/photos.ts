@@ -1,4 +1,4 @@
-import { ImageCollection } from '../../gallery';
+import { ImageView } from '../../gallery';
 
 const titles = [
   'allegheny',
@@ -54,258 +54,272 @@ export const photoPaths = Object.fromEntries(
   ])
 );
 
-export const gallery: ImageCollection = [
+export const gallery: Array<ImageView> = [
   {
-    type: 'multi',
-    images: [
-      {
-        ...photoPaths.allegheny,
-        description: 'Allegheny Landing park',
-      },
-
-      {
-        ...photoPaths.cathy,
-        description: 'Cathedral of Learning',
-        tags: ['night'],
-      },
-      {
-        ...photoPaths.dusk,
-        description: 'Skyline at dusk',
-        tags: ['skyline'],
-      },
-      {
-        ...photoPaths.flower,
-        description: 'A tulip in downtown',
-        tags: ['nature'],
-      },
-    ],
-    wide: false,
+    image: {
+      ...photoPaths.allegheny,
+      description: 'Allegheny Landing park',
+    },
   },
   {
-    type: 'singleton',
+    image: {
+      ...photoPaths.cathy,
+      description: 'Cathedral of Learning',
+      tags: ['night'],
+    },
+  },
+  {
+    image: {
+      ...photoPaths.dusk,
+      description: 'Skyline at dusk',
+      tags: ['skyline'],
+    },
+  },
+  {
+    image: {
+      ...photoPaths.flower,
+      description: 'A tulip in downtown',
+      tags: ['nature'],
+    },
+  },
+  {
     image: {
       ...photoPaths.cmu,
       description: 'CMU on a snowy night',
       tags: ['night'],
     },
-  },
-  {
-    type: 'multi',
-    images: [
-      {
-        ...photoPaths.msg,
-        description: 'Madison Square Garden and Empire State Building',
-        tags: ['night'],
-      },
-      {
-        ...photoPaths.convention,
-        description: 'David L. Lawrence Convention Center',
-        tags: ['skyline'],
-      },
-      {
-        ...photoPaths.industry,
-        description: 'Concrete mixer',
-      },
-      {
-        ...photoPaths.river,
-        description: 'PNC Park',
-      },
-    ],
     wide: true,
   },
   {
-    type: 'singleton',
+    image: {
+      ...photoPaths.msg,
+      description: 'Madison Square Garden and Empire State Building',
+      tags: ['night'],
+    },
+  },
+  {
+    image: {
+      ...photoPaths.convention,
+      description: 'David L. Lawrence Convention Center',
+      tags: ['skyline'],
+    },
+  },
+  {
+    image: {
+      ...photoPaths.industry,
+      description: 'Concrete mixer',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.river,
+      description: 'PNC Park',
+    },
+  },
+  {
     image: {
       ...photoPaths.rivers,
       description: 'Skyline from North Shore park',
       tags: ['skyline'],
     },
+    wide: true,
   },
   {
-    type: 'multi',
-    images: [
-      {
-        ...photoPaths.subway,
-        description: 'A subway car approaches...',
-      },
-      {
-        ...photoPaths.tracks,
-        description: 'Railway tracks from above',
-      },
-      {
-        ...photoPaths.hills,
-        description: 'Coopers Rock, West Virginia',
-        tags: ['nature'],
-      },
-      {
-        ...photoPaths.nyc,
-        description: 'Radio City Music Hall',
-        tags: ['night'],
-      },
-    ],
-    wide: false,
+    image: {
+      ...photoPaths.subway,
+      description: 'A subway car approaches...',
+    },
   },
   {
-    type: 'multi',
-    images: [
-      {
-        ...photoPaths.street,
-        description: 'Streetlights in the rain',
-        tags: ['night'],
-      },
-
-      {
-        ...photoPaths.brick,
-        description: 'Wilting flower in the sunlight',
-        tags: ['nature'],
-      },
-      {
-        ...photoPaths.houses,
-        description: 'Row of island houses',
-      },
-      {
-        ...photoPaths.lot,
-        description: 'Ominous parking lot',
-        tags: ['night'],
-      },
-    ],
-    wide: false,
+    image: {
+      ...photoPaths.tracks,
+      description: 'Railway tracks from above',
+    },
   },
   {
-    type: 'singleton',
+    image: {
+      ...photoPaths.hills,
+      description: 'Coopers Rock, West Virginia',
+      tags: ['nature'],
+    },
+  },
+  {
+    image: {
+      ...photoPaths.nyc,
+      description: 'Radio City Music Hall',
+      tags: ['night'],
+    },
+  },
+  {
+    image: {
+      ...photoPaths.street,
+      description: 'Streetlights in the rain',
+      tags: ['night'],
+    },
+  },
+  {
+    image: {
+      ...photoPaths.brick,
+      description: 'Wilting flower in the sunlight',
+      tags: ['nature'],
+    },
+  },
+  {
+    image: {
+      ...photoPaths.houses,
+      description: 'Row of island houses',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.lot,
+      description: 'Ominous parking lot',
+      tags: ['night'],
+    },
+  },
+  {
     image: {
       ...photoPaths.sunset,
       description: 'Sunset in Erie, PA',
     },
-  },
-  {
-    type: 'multi',
-    images: [
-      {
-        ...photoPaths.pathway,
-        description: 'Dark pathway to the river',
-      },
-      {
-        ...photoPaths.mural,
-        description: 'Faded mural in the Strip District',
-      },
-      {
-        ...photoPaths.butterfly,
-        description: 'Butterfly in the wilderness',
-        tags: ['nature'],
-      },
-      {
-        ...photoPaths.village,
-        description: 'A pastel neighborhood from the woods',
-      },
-    ],
     wide: true,
   },
   {
-    type: 'singleton',
+    image: {
+      ...photoPaths.pathway,
+      description: 'Dark pathway to the river',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.mural,
+      description: 'Faded mural in the Strip District',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.butterfly,
+      description: 'Butterfly in the wilderness',
+      tags: ['nature'],
+    },
+  },
+  {
+    image: {
+      ...photoPaths.village,
+      description: 'A pastel neighborhood from the woods',
+    },
+  },
+  {
     image: {
       ...photoPaths.puddle,
       description: 'Puddle on the Ohio',
       tags: ['nature'],
     },
-  },
-  {
-    type: 'multi',
-    images: [
-      {
-        ...photoPaths.arch,
-        description: 'Tunnel to nowhere',
-      },
-      {
-        ...photoPaths.empty,
-        description: 'Empty roads at rush hour',
-      },
-
-      {
-        ...photoPaths.phipps,
-        description: 'Phipps Conservatory 🌈',
-        tags: ['night'],
-      },
-      {
-        ...photoPaths.wires,
-        description: 'Towering telephone wires',
-      },
-    ],
-    wide: false,
-  },
-  {
-    type: 'multi',
-    images: [
-      {
-        ...photoPaths.metal,
-        description: 'Hot Metal Bridge',
-      },
-
-      {
-        ...photoPaths.mural2,
-        description: 'Vibrant mural in Downtown PGH',
-      },
-      {
-        ...photoPaths.petal,
-        description: 'Red petal in a dull scene',
-        tags: ['nature'],
-      },
-      {
-        ...photoPaths.grafitti,
-        description: 'The Color Park',
-      },
-    ],
     wide: true,
   },
   {
-    type: 'singleton',
+    image: {
+      ...photoPaths.arch,
+      description: 'Tunnel to nowhere',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.empty,
+      description: 'Empty roads at rush hour',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.phipps,
+      description: 'Phipps Conservatory 🌈',
+      tags: ['night'],
+    },
+  },
+  {
+    image: {
+      ...photoPaths.wires,
+      description: 'Towering telephone wires',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.metal,
+      description: 'Hot Metal Bridge',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.mural2,
+      description: 'Vibrant mural in Downtown PGH',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.petal,
+      description: 'Red petal in a dull scene',
+      tags: ['nature'],
+    },
+  },
+  {
+    image: {
+      ...photoPaths.grafitti,
+      description: 'The Color Park',
+    },
+  },
+  {
     image: {
       ...photoPaths.clock,
       description: "An angry sky reflected on a clock's face",
     },
-  },
-  {
-    type: 'multi',
-    images: [
-      {
-        ...photoPaths.incline,
-        description: 'Duquesne Incline',
-      },
-      {
-        ...photoPaths.houses2,
-        description: 'Houses nestled under a bridge',
-      },
-      {
-        ...photoPaths.lake,
-        description: 'Panther Hollow Lake under a sheet of ice',
-      },
-      {
-        ...photoPaths.hotel,
-        description: 'Wyndham Grand hotel',
-      },
-    ],
-    wide: false,
-  },
-  {
-    type: 'multi',
-    images: [
-      {
-        ...photoPaths.electric,
-        description: 'Power tower',
-      },
-      {
-        ...photoPaths.street2,
-        description: 'Tree tunnel',
-      },
-      {
-        ...photoPaths.bridge2,
-        description: 'An empty bridge',
-      },
-      {
-        ...photoPaths.bridge,
-        description: "Bridge to Washington's Landing",
-      },
-    ],
     wide: true,
+  },
+  {
+    image: {
+      ...photoPaths.incline,
+      description: 'Duquesne Incline',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.houses2,
+      description: 'Houses nestled under a bridge',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.lake,
+      description: 'Panther Hollow Lake under a sheet of ice',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.hotel,
+      description: 'Wyndham Grand hotel',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.electric,
+      description: 'Power tower',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.street2,
+      description: 'Tree tunnel',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.bridge2,
+      description: 'An empty bridge',
+    },
+  },
+  {
+    image: {
+      ...photoPaths.bridge,
+      description: "Bridge to Washington's Landing",
+    },
   },
 ];
