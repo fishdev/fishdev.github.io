@@ -28,11 +28,14 @@ export const About: React.FC = () => {
           <br />
           <div className="columns is-mobile is-multiline">
             <MiniGallery
-              {...{ type: 'multi', images: getData().about.filter(isImage), wide: true }}
+              wide
+              collection={getData()
+                .about.filter(isImage)
+                .map((image) => ({ image }))}
             />
           </div>
           <div className="buttons is-centered">
-            {getData().photos && (
+            {getData().gallery && (
               <Link
                 className="button is-outlined is-white has-badge-rounded has-badge-link"
                 data-badge={!userHasSeenGallery() ? 'new' : null}

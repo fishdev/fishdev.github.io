@@ -1,21 +1,27 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { MultiGroup } from '../interfaces';
+import { ImageView } from '../interfaces';
 import { ImageBox } from '../../base';
 
-interface Props extends MultiGroup {
+interface Props {
+  collection: Array<ImageView>;
+  size: 'small' | 'medium' | 'large';
   showModalFn?(id: number): void;
 }
 
-export const MiniGallery: React.FC<Props> = ({ images, wide, showModalFn }) => (
-  <div className={classNames('column', wide ? 'is-12' : 'is-6')}>
-    <div className="columns is-mobile is-multiline is-vcentered">
-      {images.map((item, i) => (
-        <div key={i} className={classNames('column', wide ? 'is-3-tablet is-6-mobile' : 'is-6')}>
-          <ImageBox image={item} showModalFn={showModalFn} maxHeight={'small'} />
-        </div>
-      ))}
-    </div>
+const SIZES = {
+  small: 'is-12-tablet is-6-mobile',
+  medium: 'is-6',
+  large: 'is-3-tablet is-6-mobile',
+};
+
+export const MiniGallery: React.FC<Props> = ({ collection, size, showModalFn }) => (
+  <div className="columns is-mobile is-multiline is-vcentered">
+    {collection.map((imageView, i) => (
+      <div key={i} className={classNames('column', SIZES[size])}>
+        <ImageBox image={imageView.image} showModalFn={showModalFn} maxHeight={'small'} />
+      </div>
+    ))}
   </div>
 );

@@ -2,13 +2,13 @@ import React from 'react';
 import { GlobalHotKeys } from 'react-hotkeys';
 
 import { ImageModal, Image } from '../../base';
-import { MultiGroup, SingletonImage, ImageCollection } from '../interfaces';
+import { ImageView } from '../interfaces';
 import { MiniGallery } from './MiniGallery';
 import { GiantImage } from './GiantImage';
 import { flattenPhotos } from '../util';
 
 interface Props {
-  collection: ImageCollection;
+  collection: Array<ImageView>;
 }
 
 interface State {
@@ -44,7 +44,18 @@ export class ImageLayout extends React.PureComponent<Props, State> {
 
   render() {
     const { collection } = this.props;
-    const images = collection.map((group, i) => {
+
+    const images = [];
+    for (let i = 0; i < collection.length; i++) {
+      const mini = [];
+      const giant;
+      while (!collection[i].wide) {
+        mini.push(collection[i]);
+      }
+      images.push(<MiniGallery key={i} collection={mini})
+    }
+
+    /* collection.map((group, i) => {
       switch (group.type) {
         case 'multi':
           return <MiniGallery key={i} {...(group as MultiGroup)} showModalFn={this.showModal} />;
@@ -52,7 +63,7 @@ export class ImageLayout extends React.PureComponent<Props, State> {
         default:
           return <GiantImage key={i} {...(group as SingletonImage)} showModalFn={this.showModal} />;
       }
-    });
+    }); */
 
     const { modalActive, currentImage } = this.state;
 

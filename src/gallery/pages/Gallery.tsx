@@ -5,8 +5,7 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { Navbar, ScrollToTop, MetaTags, Footer } from '../../base';
 import { ImageLayout } from '../components';
 import { getData } from '../../data';
-import { flattenPhotos, filterPhotos, enumPhotos, getGallerySize } from '../util';
-import { MultiGroup } from '../interfaces';
+import { filterPhotos, enumPhotos, writeGalleryView } from '../util';
 
 interface State {
   filterTags: string[];
@@ -18,18 +17,18 @@ export class Gallery extends React.PureComponent<RouteComponentProps<{ tag: stri
     filterTags: [],
   };
 
-  photos = getData().photos ? getData().photos!.gallery : [];
+  photos = getData().gallery || [];
 
   allTags: string[] = Array.from(
     new Set(
-      flattenPhotos(this.photos)
-        .map((image) => (image.tags || []).map((tag) => tag.toLowerCase()))
+      this.photos
+        .map((imageView) => (imageView.image.tags || []).map((tag) => tag.toLowerCase()))
         .flat()
     )
   );
 
   componentDidMount() {
-    localStorage.setItem('gallery_count', getGallerySize().toString());
+    writeGalleryView();
 
     const tag = this.props.match.params.tag;
     if (tag && this.allTags.includes(tag)) this.toggleFilterTag(tag);
@@ -47,16 +46,7 @@ export class Gallery extends React.PureComponent<RouteComponentProps<{ tag: stri
 
   render() {
     const { filterTags } = this.state;
-    const filteredPhotos =
-      filterTags.length > 0
-        ? [
-            {
-              type: 'multi',
-              images: filterPhotos(this.photos, filterTags),
-              wide: true,
-            } as MultiGroup,
-          ]
-        : this.photos;
+    const filteredPhotos = filterPhotos(this.photos, filterTags);
 
     return (
       <div>
