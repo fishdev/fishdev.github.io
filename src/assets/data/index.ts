@@ -75,8 +75,5 @@ export default {
       code: codes,
     },
   },
-  photos: {
-    paths: photoPaths,
-    gallery,
-  },
+  gallery,
 };
