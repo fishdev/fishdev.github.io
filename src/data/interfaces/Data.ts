@@ -1,8 +1,8 @@
 import { ColorButton, Dropdown, Image } from '../../base';
 import { Sentence } from '../../profile';
-import { University, Institution, EntityType, Block, Skill, Course } from '../../resume';
+import { University, Institution, EntityType, Block, Skill } from '../../resume';
 import { Playlist, Podcast, Banner } from '../../favorites';
-import { ImageCollection } from '../../gallery';
+import { ImageView } from '../../gallery';
 
 export interface Data {
   constants: {
@@ -53,10 +53,5 @@ export interface Data {
       [name: string]: Banner[];
     };
   };
-  photos?: {
-    paths: {
-      [name: string]: Image;
-    };
-    gallery: ImageCollection;
-  };
+  gallery?: Array<ImageView>;
 }

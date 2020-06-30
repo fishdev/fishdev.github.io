@@ -1,3 +1,1 @@
-export * from './SingletonImage';
-export * from './MultiGroup';
-export * from './ImageCollection';
+export * from './ImageView';

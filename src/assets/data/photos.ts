@@ -47,6 +47,7 @@ export const photoPaths = Object.fromEntries(
   titles.map((title) => [
     title,
     {
+      title,
       original: process.env.PUBLIC_URL + '/gallery/' + title + '.jpeg',
       thumbnail: process.env.PUBLIC_URL + '/gallery/' + title + '_thumb.jpeg',
     },
