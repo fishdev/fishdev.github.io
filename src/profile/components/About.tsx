@@ -26,14 +26,12 @@ export const About: React.FC = () => {
             )}
           </p>
           <br />
-          <div className="columns is-mobile is-multiline">
-            <MiniGallery
-              wide
-              collection={getData()
-                .about.filter(isImage)
-                .map((image) => ({ image }))}
-            />
-          </div>
+          <MiniGallery
+            size="large"
+            collection={getData()
+              .about.filter(isImage)
+              .map((image) => ({ image }))}
+          />
           <div className="buttons is-centered">
             {getData().gallery && (
               <Link

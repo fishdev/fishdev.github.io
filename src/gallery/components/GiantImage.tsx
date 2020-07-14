@@ -10,9 +10,7 @@ interface Props {
 }
 
 export const GiantImage: React.FC<Props> = ({ imageView, showModalFn }) => (
-  <div className="column is-6">
-    <ScrollAnimation animateIn="fadeIn" delay={500}>
-      <ImageBox image={imageView.image} showModalFn={showModalFn} />
-    </ScrollAnimation>
-  </div>
+  <ScrollAnimation animateIn="fadeIn" delay={500}>
+    <ImageBox image={imageView.image} showModalFn={showModalFn} />
+  </ScrollAnimation>
 );
