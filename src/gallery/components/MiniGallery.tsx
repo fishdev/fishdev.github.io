@@ -11,9 +11,9 @@ interface Props {
 }
 
 const SIZES = {
-  small: 'is-12-tablet is-6-mobile',
+  small: 'is-12 is-6-mobile',
   medium: 'is-6',
-  large: 'is-3-tablet is-6-mobile',
+  large: 'is-3 is-6-mobile',
 };
 
 export const MiniGallery: React.FC<Props> = ({ collection, size, showModalFn }) => (
