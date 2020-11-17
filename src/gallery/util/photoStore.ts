@@ -1,15 +1,22 @@
 import { getData } from '../../data';
 
+const GALLERY_LOCALSTORAGE_KEY = 'gallery_seen';
+
 const userGalleryState = (): Array<String | undefined> => {
-  const store = localStorage.getItem('gallery_seen');
+  const store = localStorage.getItem(GALLERY_LOCALSTORAGE_KEY);
   if (!store) return [];
   return JSON.parse(store);
 };
 
+let currentGalleryStateMemo: string[] | null = null;
+
 export const currentGalleryState = () => {
-  const gallery = getData().gallery!;
-  if (!gallery) return [];
-  return gallery.map((imageView) => imageView.image.title);
+  if (!currentGalleryStateMemo) {
+    const gallery = getData().gallery!;
+    if (!gallery) return [];
+    currentGalleryStateMemo = gallery.map((imageView) => imageView.image.title!);
+  }
+  return currentGalleryStateMemo!;
 };
 
 export const userHasSeenGallery = () => {
@@ -19,4 +26,6 @@ export const userHasSeenGallery = () => {
 };
 
 export const writeGalleryView = () =>
-  localStorage.setItem('gallery_seen', JSON.stringify(currentGalleryState()));
+  localStorage.setItem(GALLERY_LOCALSTORAGE_KEY, JSON.stringify(currentGalleryState()));
+
+export const userHasSeenPhoto = (title: string) => currentGalleryState().includes(title);

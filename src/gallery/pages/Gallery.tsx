@@ -5,7 +5,7 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { Navbar, ScrollToTop, MetaTags, Footer } from '../../base';
 import { ImageLayout } from '../components';
 import { getData } from '../../data';
-import { filterPhotos, enumPhotos, writeGalleryView } from '../util';
+import { filterPhotos, enumPhotos, writeGalleryView, userHasSeenPhoto } from '../util';
 
 interface State {
   filterTags: string[];
@@ -28,10 +28,12 @@ export class Gallery extends React.PureComponent<RouteComponentProps<{ tag: stri
   );
 
   componentDidMount() {
-    writeGalleryView();
-
     const tag = this.props.match.params.tag;
     if (tag && this.allTags.includes(tag)) this.toggleFilterTag(tag);
+  }
+
+  componentWillUnmount() {
+    writeGalleryView();
   }
 
   toggleFilterTag = (tag: string) =>
@@ -46,7 +48,9 @@ export class Gallery extends React.PureComponent<RouteComponentProps<{ tag: stri
 
   render() {
     const { filterTags } = this.state;
-    const filteredPhotos = filterPhotos(this.photos, filterTags);
+    const filteredPhotos = filterPhotos(this.photos, filterTags).sort(
+      (a, b) => +userHasSeenPhoto(a.image.title!) - +userHasSeenPhoto(b.image.title!)
+    );
 
     return (
       <div>

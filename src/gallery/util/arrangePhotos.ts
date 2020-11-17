@@ -39,6 +39,5 @@ export const arrangePhotos = (collection: ImageView[]): ImageView[][][] => {
     }
     images.push(row);
   }
-  console.log(images);
   return images;
 };
