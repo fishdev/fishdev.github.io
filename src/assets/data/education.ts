@@ -1,5 +1,26 @@
 const coursework = [
   {
+    id: '15-411',
+    name: 'Compiler Design',
+    semester: 'Fall 2020',
+    url: 'https://www.coursicle.com/cmu/courses/CS/15411/',
+    institution: 'cmu',
+  },
+  {
+    id: '15-317',
+    name: 'Constructive Logic',
+    semester: 'Fall 2020',
+    url: 'https://www.coursicle.com/cmu/courses/CS/15317/',
+    institution: 'cmu',
+  },
+  {
+    id: '05-391',
+    name: 'Designing Human-Centered Software',
+    semester: 'Fall 2020',
+    url: 'https://www.coursicle.com/cmu/courses/HCI/05391/',
+    institution: 'cmu',
+  },
+  {
     id: '15-213',
     name: 'Introduction to Computer Systems',
     semester: 'Spring 2020',
@@ -42,6 +63,22 @@ const coursework = [
     institution: 'cmu',
   },
   {
+    id: '80-226',
+    name: 'Revolutions in Science',
+    semester: 'Fall 2020',
+    url: 'https://www.coursicle.com/cmu/courses/PHI/80226/',
+    institution: 'cmu',
+    hidden: true,
+  },
+  {
+    id: '17-200',
+    name: 'Ethics and Policy Issues in Computing',
+    semester: 'Fall 2020',
+    url: 'https://www.coursicle.com/cmu/courses/ISR/17200/',
+    institution: 'cmu',
+    hidden: true,
+  },
+  {
     id: '19-101',
     name: 'Introduction to Engineering and Public Policy',
     semester: 'Spring 2019',
@@ -52,7 +89,7 @@ const coursework = [
     id: '15-150',
     name: 'Functional Programming',
     semester: 'Spring 2019',
-    ta: ['Spring 2020'],
+    ta: ['Spring 2020', 'Fall 2020'],
     url: 'https://www.coursicle.com/cmu/courses/CS/15150/',
     institution: 'cmu',
   },
@@ -180,6 +217,10 @@ export const universities = {
       'Spring 2020': {
         grade: 3.76,
         weight: 51,
+      },
+      'Fall 2020': {
+        grade: 0,
+        weight: 54,
       },
     },
     scale: 'QPA',

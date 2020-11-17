@@ -57,7 +57,7 @@ export const Printable: React.FC = () => {
                   </p>
                   <div className="content print-paragraph">
                     <ul>
-                      {uni.coursework.slice(0, 5).map((course) => (
+                      {uni.coursework.slice(0, 6).map((course) => (
                         <li key={course.id}>
                           {course.id} {course.name}
                           {course.semester === getCurrentSemester(course.institution) && (
