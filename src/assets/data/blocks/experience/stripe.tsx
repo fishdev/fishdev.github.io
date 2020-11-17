@@ -29,8 +29,8 @@ export const stripe = {
       </p>
       <ul>
         <li>
-          Developed flexible system to make Stripe support articles and docs search engine available
-          in multiple languages, resulting in potential annual savings of up to $1M.
+          Developed a flexible system to make Stripe support articles and docs search engine
+          available in multiple languages, resulting in potential annual savings of up to $1M.
         </li>
         <li>
           Revamped translation validation mechanism to automate quality assurance checks on
