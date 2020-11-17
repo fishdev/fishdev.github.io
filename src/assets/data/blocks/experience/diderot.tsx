@@ -9,12 +9,15 @@ export const diderot = {
       month: 9,
       year: 2019,
     },
-    end: null,
+    end: {
+      month: 4,
+      year: 2020,
+    },
   },
   description: (
     <p>
-      Working on learning management system at CMU to make educational content interactive and
-      accessible. Developing analytics component with Python + Django.
+      Worked on learning management system at CMU to make educational content interactive and
+      accessible. Developed analytics component with Python + Django.
     </p>
   ),
   info: (
@@ -26,10 +29,10 @@ export const diderot = {
         Carnegie Mellon University.
       </p>
       <p>
-        As a research assistant, I am developing an analytics component that gives instructors
-        insight into student engagement with the platform as well as participation in online
-        discussions. I am creating data visualizations that help instructors understand how to
-        better connect with students. The software is written in Python using{' '}
+        As a research assistant, I developed an analytics component that gives instructors insight
+        into student engagement with the platform as well as participation in online discussions. I
+        created data visualizations that help instructors understand how to better connect with
+        students. The software was written in Python using{' '}
         <a href="https://www.djangoproject.com">Django</a> with{' '}
         <a href="https://jquery.com">jQuery</a> on the frontend.
       </p>
@@ -47,8 +50,8 @@ export const diderot = {
     extra: 'Diderot',
     description: (
       <span>
-        Working on <u>learning management</u> system at CMU to make education social and
-        interactive. Developing analytics component with <i>Python</i> + <i>Django</i>.
+        Worked on <u>learning management</u> system at CMU to make education social and interactive.
+        Developed analytics component with <i>Python</i> + <i>Django</i>.
       </span>
     ),
   },
