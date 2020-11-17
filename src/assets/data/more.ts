@@ -5,6 +5,11 @@ export const more = [
     name: 'My Twitter follows',
   },
   {
+    url: 'https://blacklivesmatters.carrd.co',
+    icon: 'fas fa-fist-raised',
+    name: 'Black Lives Matter'
+  },
+  {
     url: 'https://quantumstack.xyz',
     icon: 'fas fa-cubes',
     name: 'QuantumStack',
