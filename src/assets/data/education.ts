@@ -76,7 +76,6 @@ const coursework = [
     semester: 'Fall 2020',
     url: 'https://www.coursicle.com/cmu/courses/ISR/17200/',
     institution: 'cmu',
-    hidden: true,
   },
   {
     id: '19-101',
