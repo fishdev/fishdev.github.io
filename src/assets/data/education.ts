@@ -219,7 +219,6 @@ export const universities = {
         weight: 51,
       },
       'Fall 2020': {
-        grade: 0,
         weight: 54,
       },
     },
