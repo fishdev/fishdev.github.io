@@ -12,7 +12,7 @@ export const about = [
     content: (
       <span>
         I'm a <strong className="gradientbg">full-stack developer</strong> with interests in
-        operating systems and computer vision.
+        computer systems and usable design.
       </span>
     ),
   },
