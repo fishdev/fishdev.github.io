@@ -17,6 +17,11 @@ export const tartan = {
       icon: 'fas fa-newspaper',
       name: 'Online edition',
     },
+    {
+      url: 'https://thetartan.substack.com',
+      icon: 'fas fa-rss',
+      name: 'Newsletter',
+    },
   ],
   description: <p>Writing and editing articles, designing weekly paper layout.</p>,
   info: (
