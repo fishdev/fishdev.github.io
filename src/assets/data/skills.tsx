@@ -71,6 +71,19 @@ export const languages: Skill[] = [
     icon: 'fas fa-gem',
     year: 2019,
   },
+  {
+    id: 'ocaml',
+    name: 'OCaml',
+    icon: 'fas fa-horse',
+    year: 2019,
+    description: (
+      <p>
+        Including Jane Street's <a href="https://opensource.janestreet.com/core/">Core</a> library,{' '}
+        <a href="https://dune.build">Dune</a> build system, and{' '}
+        <a href="http://gallium.inria.fr/~fpottier/menhir/">Menhir</a> parser generator.
+      </p>
+    ),
+  },
 ];
 
 export const technologies: Skill[] = [

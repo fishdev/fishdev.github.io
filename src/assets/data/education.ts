@@ -5,6 +5,7 @@ const coursework = [
     semester: 'Fall 2020',
     url: 'https://www.coursicle.com/cmu/courses/CS/15411/',
     institution: 'cmu',
+    description: 'Built a compiler for a C-like language to x86-64 assembly, written in OCaml.',
   },
   {
     id: '15-317',
