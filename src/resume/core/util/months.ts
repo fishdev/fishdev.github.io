@@ -29,7 +29,7 @@ export const computeRange = ({ start, end }: MonthRange): PrettyRange => {
     start: startDate.format(LONG_FORMAT),
   };
 
-  if (end) {
+  if (end !== undefined) {
     if (end === null) {
       pretty.end = 'Present';
       pretty.duration = computeDuration(startDate, moment());
@@ -64,4 +64,4 @@ export const monthToString = ({ month, year }: Month, fullMonth: boolean = false
 
 export const rangeToString = ({ start, end }: MonthRange): string =>
   monthToString(start) +
-  (end ? ' – ' + (end === null ? 'Present' : monthToString(end as Month)) : '');
+  (end !== undefined ? ' – ' + (end === null ? 'Present' : monthToString(end as Month)) : '');
