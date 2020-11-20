@@ -199,7 +199,7 @@ export const universities = {
     currentSemester: 'Fall 2020',
     degree: 'BS',
     majors: ['computer science'],
-    minors: ['human-computer interaction', 'software engineering'],
+    minors: ['human-computer interaction', 'philosophy'],
     coursework,
     semesters: {
       'Fall 2018': {
