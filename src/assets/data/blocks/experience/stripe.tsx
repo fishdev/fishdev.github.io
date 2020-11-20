@@ -55,7 +55,7 @@ export const stripe = {
     description: (
       <span>
         Developed <i>Ruby</i> infrastructure to internationalize support articles and{' '}
-        <i>Elasticsearch</i> engine. Helped automate localization workflow across Stripe.
+        <i>Elasticsearch</i> engine. Helped automate <u>localization workflow</u> across Stripe.
       </span>
     ),
     extra: 'Stripe',
