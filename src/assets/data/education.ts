@@ -220,6 +220,7 @@ export const universities = {
       },
       'Fall 2020': {
         weight: 54,
+        grade: 3.83,
       },
     },
     scale: 'QPA',
