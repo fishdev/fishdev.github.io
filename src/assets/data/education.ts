@@ -5,14 +5,8 @@ const coursework = [
     semester: 'Fall 2020',
     url: 'https://www.coursicle.com/cmu/courses/CS/15411/',
     institution: 'cmu',
-    description: 'Built a compiler for a C-like language to x86-64 assembly, written in OCaml.',
-  },
-  {
-    id: '15-317',
-    name: 'Constructive Logic',
-    semester: 'Fall 2020',
-    url: 'https://www.coursicle.com/cmu/courses/CS/15317/',
-    institution: 'cmu',
+    description:
+      'Built an optimizing compiler for a C-like language to x86-64 assembly, written in OCaml.',
   },
   {
     id: '05-391',
@@ -64,6 +58,13 @@ const coursework = [
     institution: 'cmu',
   },
   {
+    id: '15-317',
+    name: 'Constructive Logic',
+    semester: 'Fall 2020',
+    url: 'https://www.coursicle.com/cmu/courses/CS/15317/',
+    institution: 'cmu',
+  },
+  {
     id: '80-226',
     name: 'Revolutions in Science',
     semester: 'Fall 2020',
@@ -89,7 +90,7 @@ const coursework = [
     id: '15-150',
     name: 'Functional Programming',
     semester: 'Spring 2019',
-    ta: ['Spring 2020', 'Fall 2020'],
+    ta: ['Spring 2020', 'Fall 2020', 'Spring 2021'],
     url: 'https://www.coursicle.com/cmu/courses/CS/15150/',
     institution: 'cmu',
   },
@@ -196,7 +197,7 @@ export const universities = {
         year: 2022,
       },
     },
-    currentSemester: 'Fall 2020',
+    currentSemester: 'Spring 2021',
     degree: 'BS',
     majors: ['computer science'],
     minors: ['human-computer interaction', 'philosophy'],
