@@ -8,19 +8,19 @@
 
 export const playlists = [
   {
-    id: '6ESlFMmtKnNoGN5Z7O6djp',
+    id: '38oWZplFPkJgB0g',
     description: 'Perfect for every suburban kitchen countertop.',
   },
   {
-    id: '6dF4GvLTdLRjrBSmgkwTpN',
+    id: 'DdAN8AdCaJvlX8l',
     description: 'Known to induce RLS (Repetitive Listening Syndrome).',
   },
   {
-    id: '69eA3ES5hqtou8qfbwWQg4',
+    id: '11zBJyYI8DdZ1yZ',
     description: "Life lesson #42: don't question why you like things.",
   },
   {
-    id: '32s41MoT3UXiA8AG1QbjTA',
+    id: 'd2b05ZWCM0VBX9B',
     description: 'Inject the electricity into my veins, please.',
   },
 ];

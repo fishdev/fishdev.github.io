@@ -26,12 +26,12 @@ export const Playlists: React.FC = () => (
     <div className="has-text-centered">
       <AnchorButton
         size="medium"
-        color="success"
+        color="primary"
         rounded={false}
         outlined
-        icon="fab fa-spotify"
-        name="My Spotify profile"
-        url={'https://open.spotify.com/user/' + getData().links.spotifyId}
+        icon="fab fa-apple"
+        name="My Music profile"
+        url={'https://music.apple.com/profile/' + getData().links.musicId}
       />
     </div>
   </div>

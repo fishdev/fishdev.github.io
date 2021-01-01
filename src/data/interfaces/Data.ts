@@ -21,7 +21,7 @@ export interface Data {
   };
   links: {
     social: ColorButton[];
-    spotifyId?: string;
+    musicId?: string;
     more?: Dropdown[];
   };
   about: Array<Sentence | Image | {}>;

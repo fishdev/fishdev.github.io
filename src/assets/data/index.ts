@@ -29,7 +29,7 @@ export default {
   },
   links: {
     social,
-    spotifyId: 'g5ojwey9iyo08skvmjnx3dih3',
+    musicId: 'ashwins5',
     more,
   },
   about,

@@ -8,5 +8,5 @@
 
 export interface Playlist {
   id: string;
-  description: React.ReactNode;
+  description: string;
 }
