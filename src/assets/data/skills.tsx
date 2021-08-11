@@ -172,4 +172,10 @@ export const technologies: Skill[] = [
     icon: 'fab fa-jenkins',
     description: 'Declarative and scripted pipelines',
   },
+  {
+    id: 'kafka',
+    name: 'Kafka',
+    url: 'https://kafka.apache.org',
+    year: 2021,
+  },
 ];

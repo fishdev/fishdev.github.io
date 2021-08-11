@@ -1,8 +1,16 @@
 const coursework = [
   {
+    id: '15-451',
+    name: 'Algorithm Design and Analysis',
+    semester: 'Spring 2021',
+    url: 'https://www.coursicle.com/cmu/courses/CS/15451/',
+    institution: 'cmu',
+  },
+  {
     id: '15-411',
     name: 'Compiler Design',
     semester: 'Fall 2020',
+    ta: ['Fall 2021'],
     url: 'https://www.coursicle.com/cmu/courses/CS/15411/',
     institution: 'cmu',
     description:
@@ -16,10 +24,10 @@ const coursework = [
     institution: 'cmu',
   },
   {
-    id: '15-213',
-    name: 'Introduction to Computer Systems',
-    semester: 'Spring 2020',
-    url: 'https://www.coursicle.com/cmu/courses/CS/15213/',
+    id: '15-440',
+    name: 'Distributed Systems',
+    semester: 'Spring 2021',
+    url: 'https://www.coursicle.com/cmu/courses/CS/15440/',
     institution: 'cmu',
   },
   {
@@ -37,10 +45,24 @@ const coursework = [
     institution: 'cmu',
   },
   {
+    id: '15-213',
+    name: 'Introduction to Computer Systems',
+    semester: 'Spring 2020',
+    url: 'https://www.coursicle.com/cmu/courses/CS/15213/',
+    institution: 'cmu',
+  },
+  {
     id: '17-214',
     name: 'Principles of Software Construction',
     semester: 'Fall 2019',
     url: 'https://www.coursicle.com/cmu/courses/SE/17214/',
+    institution: 'cmu',
+  },
+  {
+    id: '05-392',
+    name: 'Interaction Design Overview',
+    semester: 'Spring 2021',
+    url: 'https://www.coursicle.com/cmu/courses/HCI/05392/',
     institution: 'cmu',
   },
   {
@@ -65,12 +87,18 @@ const coursework = [
     institution: 'cmu',
   },
   {
+    id: '80-251',
+    name: 'Modern Philosophy',
+    semester: 'Spring 2021',
+    url: 'https://www.coursicle.com/cmu/courses/PHI/80251/',
+    institution: 'cmu',
+  },
+  {
     id: '80-226',
     name: 'Revolutions in Science',
     semester: 'Fall 2020',
     url: 'https://www.coursicle.com/cmu/courses/PHI/80226/',
     institution: 'cmu',
-    hidden: true,
   },
   {
     id: '17-200',
@@ -139,6 +167,13 @@ const coursework = [
     semester: 'Fall 2019',
     url: 'https://www.coursicle.com/cmu/courses/STA/36218/',
     institution: 'cmu',
+  },
+  {
+    id: '80-150',
+    name: 'Nature of Reason',
+    semester: 'Spring 2021',
+    url: 'https://www.coursicle.com/cmu/courses/PHI/80150/',
+    institution: 'cmu',
     hidden: true,
   },
   {
@@ -197,7 +232,7 @@ export const universities = {
         year: 2022,
       },
     },
-    currentSemester: 'Spring 2021',
+    currentSemester: 'Fall 2021',
     degree: 'BS',
     majors: ['computer science'],
     minors: ['human-computer interaction', 'philosophy'],
@@ -222,6 +257,10 @@ export const universities = {
       'Fall 2020': {
         weight: 54,
         grade: 3.83,
+      },
+      'Spring 2021': {
+        grade: 3.76,
+        weight: 51,
       },
     },
     scale: 'QPA',

@@ -9,7 +9,10 @@ export const tartan = {
       month: 9,
       year: 2018,
     },
-    end: null,
+    end: {
+      month: 9,
+      year: 2020,
+    },
   },
   buttons: [
     {
