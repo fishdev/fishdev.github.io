@@ -262,6 +262,10 @@ export const universities = {
         grade: 3.76,
         weight: 51,
       },
+      'Fall 2021': {
+        grade: 3.77,
+        weight: 42,
+      },
     },
     scale: 'QPA',
     maxGrade: 4,
