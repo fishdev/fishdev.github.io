@@ -26,7 +26,7 @@
     "bulma-tooltip": "^2.0.2",
     "bulmaswatch": "^0.7.5",
     "classnames": "^2.2.6",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mousetrap": "^1.6.3",
     "node-sass": "^4.13.0",
     "pluralize": "^8.0.0",
