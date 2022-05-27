@@ -28,7 +28,7 @@
     "classnames": "^2.2.6",
     "moment": "^2.29.3",
     "mousetrap": "^1.6.3",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "pluralize": "^8.0.0",
     "react": "^16.11.0",
     "react-animate-on-scroll": "^2.1.5",
