@@ -28,7 +28,6 @@
     "classnames": "^2.2.6",
     "moment": "^2.29.3",
     "mousetrap": "^1.6.3",
-    "node-sass": "^4.13.0",
     "pluralize": "^8.0.0",
     "react": "^16.11.0",
     "react-animate-on-scroll": "^2.1.5",
@@ -45,6 +44,7 @@
     "react-scripts": "^3.3.0",
     "react-scroll": "^1.7.14",
     "react-sticky": "^6.0.3",
+    "sass": "^1.52.1",
     "typescript": "3.5.3"
   },
   "scripts": {
