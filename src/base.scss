@@ -1,0 +1,14 @@
+@import 'vars';
+
+// Hacked Flatly theme
+$radius-small: 3px;
+$radius: 0.4em;
+$radius-large: 8px;
+$bulmaswatch-import-font: false;
+$border-width: 2px;
+@import 'bulma';
+@import 'node_modules/bulmaswatch/flatly/_overrides';
+
+// Other Bulma imports
+@import '~bulma-tooltip';
+@import 'node_modules/bulma-badge/dist/css/bulma-badge';

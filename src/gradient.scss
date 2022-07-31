@@ -1,0 +1,58 @@
+@function gradient($light) {
+  @return linear-gradient(45deg, lighten($link, $light), lighten($primary, $light));
+}
+
+@mixin gradient-background($light) {
+  background: gradient($light);
+}
+
+.gradient {
+  @include gradient-background(0%);
+}
+
+@mixin gradient-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+}
+
+// Gradient text
+.gradientbg {
+  @include gradient-background(10%);
+  @include gradient-text;
+}
+
+.hero.is-black .gradientbg .hero.is-dark .gradientbg {
+  @include gradient-background(25%);
+  @include gradient-text;
+}
+
+.gradientbg i {
+  @extend .gradientbg;
+}
+
+// Gradient block {
+.colorbar {
+  height: 5px;
+  width: 258px;
+  margin: auto;
+  margin-top: 3px;
+  @extend .gradient;
+}
+
+.button.is-gradient.is-outlined {
+  border-image: gradient(10%);
+  border-width: 2px;
+  border-style: sold;
+  background: transparent;
+}
+
+.button.is-gradient.is-outlined > * {
+  @extend .gradientbg;
+}
+
+.hero.is-black .button.is-gradient.is-outlined,
+.hero.is-dark .button.is-gradient.is-outlined {
+  border-image: gradient(25%);
+}

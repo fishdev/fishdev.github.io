@@ -7,7 +7,7 @@ import 'animate.css/animate.min.css';
 
 import { getData, loadData } from './data';
 import { SitemapModal, LoadingBox } from './base';
-import { Home, Coursework, Details, Favorites, NotFound, Gallery, Printable } from './pages';
+import { Home, Details, Favorites, NotFound, Gallery, Printable } from './pages';
 
 const history = createBrowserHistory();
 history.listen((location) => {
@@ -92,8 +92,7 @@ export class App extends React.PureComponent<{}, State> {
           {sitemapActive && <SitemapModal hide={this.hideSitemap} />}
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/courses" exact component={Coursework} />
-            <Route path="/courses/:semester" exact component={Coursework} />
+            <Route path="/after-hours" exact component={Home} />
             <Route path="/resume" exact component={Home} />
             <Route path="/resume/printable" exact component={Printable} />
             <Route path="/gallery" exact component={Gallery} />

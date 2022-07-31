@@ -24,7 +24,7 @@ export class BlockBox extends React.PureComponent<Props> {
       <Route
         render={({ history }) => (
           <div
-            className={classNames({ box: isBox }, 'block', { 'block-link': hasMore })}
+            className={classNames({ box: isBox }, 'block', 'resume-block', { 'block-link': hasMore })}
             onClick={() => hasMore && history.push('/' + id)}>
             <BlockHeader {...this.props} />
             {description && <div className="content block-description">{description}</div>}

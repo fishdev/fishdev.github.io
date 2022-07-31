@@ -5,7 +5,7 @@ import { CourseDetails } from './CourseDetails';
 import { CourseTag } from './CourseTag';
 
 export const CourseBox: React.FC<Course> = (course) => (
-  <div className="notification is-dark">
+  <div className="notification is-warning has-shadow">
     <div className="columns is-mobile is-variable is-2 is-vcentered course-title">
       <div className="column is-narrow">
         <CourseTag animated text={course.id.toString()} />

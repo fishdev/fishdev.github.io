@@ -1,0 +1,36 @@
+@import '../../../index';
+
+.resume-block-hoverable {
+  transition: all 200ms ease;
+  width: fit-content;
+  border-radius: $radius-small;
+  position: relative;
+}
+
+.resume-block-hoverable a {
+  color: findDarkColor($gold);
+}
+
+.resume-block-hoverable .resume-block-expanded {
+  display: none;
+}
+
+.resume-block-hoverable:hover {
+  background-color: findLightColor($gold);
+  border-radius: $radius-large;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.resume-block-hoverable:hover .resume-block-name {
+  @extend .has-text-weight-medium;
+  @extend .gradientbg;
+}
+
+.resume-block-hoverable:hover .resume-block-name:hover {
+  color: findDarkColor($gold);
+}
+
+.resume-block-hoverable:hover .resume-block-expanded {
+  display: block;
+}

@@ -1,10 +1,10 @@
 .gradient-box {
   background: linear-gradient(45deg, lighten($link, 25%), lighten($primary, 25%));
-  padding: 2px;
+  padding: 2px !important;
 }
 
 .gradient-box > .gradient-box-body {
-  background: $black;
+  background: $gold;
   border-radius: $radius;
   padding: 25px;
 }

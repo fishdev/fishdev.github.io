@@ -10,12 +10,12 @@ export const SkillContainer: React.FC<Skill> = (props) => {
     <DropdownList
       dropup
       animated
-      alignment="is-left"
-      staticItems={
+      alignment="left"
+      staticItems={[
         <div className="dropdown-item">
           <BlockBox {...skillToBlock(props, false)} isBox={false} />
-        </div>
-      }>
+        </div>,
+      ]}>
       <SkillTag {...props} />
     </DropdownList>
   );

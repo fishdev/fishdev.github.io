@@ -7,13 +7,12 @@ export const more = [
   {
     url: 'https://blacklivesmatters.carrd.co',
     icon: 'fas fa-fist-raised',
-    name: 'Black Lives Matter'
+    name: 'Black Lives Matter',
   },
   {
     url: 'https://quantumstack.xyz',
     icon: 'fas fa-cubes',
     name: 'QuantumStack',
-    description: 'My collaborative projects',
   },
   {
     url: 'https://github.com/fishdev/fishdev.github.io/tree/dev',

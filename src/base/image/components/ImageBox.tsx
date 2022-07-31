@@ -6,11 +6,15 @@ import { Image } from '../interfaces';
 import { LoadingBox } from './LoadingBox';
 import { ImageModal } from './ImageModal';
 
+import '../styles/sizing.scss';
+import '../styles/shading.scss';
+
 interface Props {
   caption?: 'tooltip' | 'visible' | 'hidden';
   maxHeight?: 'large' | 'small' | 'none';
   showModalFn?(id: number): void;
   image: Image;
+  shaded?: boolean;
 }
 
 interface State {
@@ -30,19 +34,20 @@ export class ImageBox extends React.PureComponent<Props, State> {
   toggleModal = () => this.setState(({ modalActive }) => ({ modalActive: !modalActive }));
 
   render() {
-    const { image, caption, maxHeight, showModalFn } = this.props;
+    const { image, caption, maxHeight, showModalFn, shaded } = this.props;
     const { modalActive } = this.state;
     return (
       <React.Fragment>
         <div className="has-text-centered">
           <div
             onClick={showModalFn ? () => showModalFn(image.id || 0) : this.toggleModal}
-            className={classNames({
+            className={classNames('image zoomable', {
               tooltip: caption === 'tooltip' && image.description,
+              'shaded-image': shaded,
             })}
             data-tooltip={image.description}>
             <Img
-              className={classNames('image-box rounded zoomable', {
+              className={classNames('image-box rounded', {
                 'max-height-large': maxHeight === 'large',
                 'max-height-small': maxHeight === 'small',
               })}

@@ -6,3 +6,4 @@ export * from './Range';
 export * from './AwardItem';
 export * from './BlockBox';
 export * from './BlockHeader';
+export * from './HoverBlockDisplay';

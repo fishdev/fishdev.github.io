@@ -1,39 +1,8 @@
-@import 'node_modules/bulmaswatch/flatly/_variables';
+@import 'base';
 
-@import 'vars';
-
-// Other Bulma imports
-@import 'bulma';
-@import '~bulma-tooltip';
-@import 'node_modules/bulma-badge/dist/css/bulma-badge';
-@import 'node_modules/bulmaswatch/flatly/_overrides';
-
-// Black background everywhere
-html,
-.blackened {
-  @extend .has-background-black;
-}
-
-// Gradient
-.gradient {
-  background: linear-gradient(45deg, $link, $primary);
-}
-
-// Gradient text
-.gradientbg {
-  background: linear-gradient(45deg, lighten($link, 25%), lighten($primary, 25%));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-// Gradient block {
-.colorbar {
-  height: 5px;
-  width: 258px;
-  margin: auto;
-  margin-top: 3px;
-  @extend .gradient;
+// Narrower container
+.container.is-max-tablet {
+  max-width: $tablet - $container-offset !important;
 }
 
 // Bolder title fonts
@@ -44,7 +13,7 @@ html,
 // Black background links
 %fancy-link {
   color: inherit;
-  background-image: linear-gradient(to bottom, transparentize($grey, 0.5) 50%, transparent 50%);
+  background-image: linear-gradient(to bottom, rgba($black, 15%) 50%, transparent 50%);
   background-position: 0 1.02em;
   background-repeat: repeat-x;
   background-size: 2px 6px;
@@ -52,22 +21,45 @@ html,
 }
 
 %fancy-link-hover {
+  color: $link !important;
+}
+
+%fancy-link-light-hover {
   color: lighten($link, 25%) !important;
 }
 
-.hero.is-black p a,
+.fancify-links p a,
 .underlink {
   @extend %fancy-link;
 }
 
-.hero.is-black p a:hover,
+.fancify-links p a:hover,
+.fancify-links p a:hover strong,
 .underlink:hover,
 .hoverable:hover {
   @extend %fancy-link-hover;
 }
 
+.fancify-links.fancify-links-light p a:hover,
+.fancify-links.fancify-links-light p a:hover strong {
+  @extend %fancy-link-light-hover;
+}
+
 .hero.is-black a:not(.button):not(.dropdown-item):not(.tag) {
   color: inherit;
+}
+
+// Add some gold color helpers
+.has-text-gold,
+.has-text-gold strong,
+.has-text-gold.subtitle,
+.has-text-gold .box {
+  color: findDarkColor($gold);
+}
+
+.hero.is-gold {
+  background-color: $gold;
+  @extend .has-text-gold;
 }
 
 // Light blue link hover color
@@ -92,7 +84,7 @@ a.tag:hover {
 
 // Box shadow
 .has-shadow {
-  box-shadow: 0 0.5rem 1rem rgba(50, 50, 50, 0.25);
+  box-shadow: 0 0.5rem 1rem rgba($black, 0.25) !important;
 }
 
 // Fix links in tabs
@@ -111,11 +103,32 @@ a.tag:hover {
   align-items: center;
 }
 
+// Horizontal scroller
+.horizontal-scroller {
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $radius-small;
+    @extend .gradient;
+
+    &:hover {
+      background: $link;
+    }
+
+    &:active {
+      background: $primary;
+    }
+  }
+}
+
+@import 'gradient';
+
 // Domain-specific styles
-@import 'base/core/styles';
-@import 'base/dropdown/styles';
 @import 'base/footer/styles';
-@import 'base/image/styles';
 @import 'base/navigation/styles';
 @import 'favorites/styles';
 @import 'gallery/styles';

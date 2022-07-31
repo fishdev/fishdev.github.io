@@ -16,10 +16,10 @@ export default {
   constants: {
     names: NAMES,
     fullName: NAMES.join(' '),
-    organization: universities.cmu.name,
-    role: 'Student and developer',
+    organization: 'Stripe',
+    role: 'Software Engineer',
     portraitUrl: portrait,
-    location: 'Pittsburgh, PA',
+    location: 'New York City',
     locationUrl: 'https://www.visitpittsburgh.com',
     hostingDomain: HOSTING_DOMAIN,
     hostingUrl: 'https://' + HOSTING_DOMAIN,
@@ -37,7 +37,7 @@ export default {
     volunteering,
     education: {
       universities,
-      currentUniversity: 'cmu',
+      focusedUniversity: 'cmu',
       schools,
     },
     blocks: [

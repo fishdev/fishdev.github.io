@@ -16,20 +16,18 @@ export const CourseDetails: React.FC<Props> = ({
   ta,
   description,
 }) => (
-  <div className="course-details">
+  <div className="course-details fancify-links fancify-links-light">
     <p>
       {semester === getCurrentSemester(institution) ? (
         <span className="has-text-danger">Currently taking this course.</span>
       ) : (
-        <span>
-          Taken in <span className={classNames({ 'has-text-warning': colored })}>{semester}</span>.
-        </span>
+        <span>Taken in {semester}.</span>
       )}
       {url && (
         <React.Fragment>
           &nbsp;&nbsp;
           <a href={url}>
-            <span>Description</span>
+            <span>What's this course about?</span>
             &nbsp;
             <span className="icon is-small">
               <i className="fas fa-arrow-right" />

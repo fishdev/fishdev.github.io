@@ -1,0 +1,45 @@
+@import '../../base';
+
+$paper-width: 500px;
+$paper-height: 250px;
+
+.business-card-container {
+  max-width: $paper-width;
+}
+
+.business-card {
+  border-radius: 2px !important;
+  border: none !important;
+  height: $paper-height;
+}
+
+.patterned {
+  background-image: url('./../../assets/pattern.svg') !important;
+  background-size: cover;
+  background-position: center center;
+}
+
+.business-card hr {
+  background-color: findDarkColor($gold);
+  height: 1px;
+  margin: 0.5rem 0;
+}
+
+.business-card .box {
+  border-radius: 0;
+  background-color: findLightColor($gold);
+  padding: 1rem;
+}
+
+.business-card a {
+  color: findDarkColor($gold);
+}
+
+.business-card a:hover {
+  color: $gold;
+}
+
+.height-placeholder {
+  height: $paper-height;
+  padding: 0;
+}

@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import classNames from 'classnames';
 import onClickOutside from 'react-onclickoutside';
 
-import { Dropdown } from '../interfaces';
-import { DropdownItem } from './DropdownItem';
+import '../styles/dropdown.scss';
 
 interface Props {
-  staticItems?: React.ReactElement;
-  items?: Dropdown[];
+  staticItems?: React.ReactElement[];
+  items?: React.ReactElement[];
   hoverable?: boolean;
-  alignment?: 'is-left' | 'is-right';
+  alignment?: 'left' | 'right';
   dropup?: boolean;
   animated?: boolean;
 }
@@ -26,7 +25,7 @@ export class DropdownList extends React.PureComponent<Props, State> {
 
   static defaultProps: Partial<Props> = {
     hoverable: false,
-    alignment: 'is-right',
+    alignment: 'right',
     dropup: false,
     animated: false,
   };
@@ -43,7 +42,7 @@ export class DropdownList extends React.PureComponent<Props, State> {
           'dropdown',
           { 'is-hoverable': hoverable },
           { 'is-up': dropup },
-          alignment,
+          `is-${alignment}`,
           {
             'is-active': isActive,
           }
@@ -61,12 +60,23 @@ export class DropdownList extends React.PureComponent<Props, State> {
             className={classNames('dropdown-content has-background-light', {
               'animated faster bounceIn': animated,
             })}>
-            {staticItems}
-            {staticItems && items && <hr className="dropdown-divider" />}
+            {staticItems && (
+              <Fragment>
+                {staticItems}
+                {items && <hr className="dropdown-divider" />}
+              </Fragment>
+            )}
             {items &&
-              items.map((dropdown) => (
-                <DropdownItem key={dropdown.name} {...dropdown} onClick={this.toggleActive} />
-              ))}
+              items.map((item) =>
+                React.cloneElement(item, {
+                  onClick: (e: React.MouseEvent<HTMLElement>) => {
+                    this.toggleActive();
+                    if (item.props.onClick) {
+                      item.props.onClick(e);
+                    }
+                  },
+                })
+              )}
           </div>
         </div>
       </div>

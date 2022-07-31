@@ -1,3 +1,5 @@
+@import '../../../base';
+
 .blurred-background {
   backdrop-filter: blur($radius-large);
 }
@@ -26,4 +28,8 @@
 
 .fullscreen-modal-content .modal-image {
   max-height: 100%;
+}
+
+.zoomable:hover {
+  cursor: zoom-in;
 }

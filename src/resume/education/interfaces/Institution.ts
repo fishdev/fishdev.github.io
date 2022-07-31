@@ -3,7 +3,9 @@ import { Semester } from './Semester';
 
 export interface Institution {
   name: string;
+  type: 'hs' | 'undergrad';
   url: string;
+  photoUrl?: string;
   range: MonthRange;
   currentSemester?: string;
   semesters: {

@@ -1,4 +1,4 @@
-import { ColorButton, Dropdown, Image } from '../../base';
+import { Button, ColorButton, Image } from '../../base';
 import { Sentence } from '../../profile';
 import { University, Institution, EntityType, Block, Skill } from '../../resume';
 import { Playlist, Podcast, Banner } from '../../favorites';
@@ -22,13 +22,13 @@ export interface Data {
   links: {
     social: ColorButton[];
     musicId?: string;
-    more?: Dropdown[];
+    more?: Button[];
   };
   about: Array<Sentence | Image | {}>;
   resume: {
     volunteering?: Sentence[];
     education: {
-      currentUniversity: string;
+      focusedUniversity: string;
       universities: {
         [id: string]: University;
       };

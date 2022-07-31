@@ -1,26 +1,26 @@
-.block .title {
+.block.resume-block .title {
   margin-bottom: 0.5rem;
 }
 
-.block .title a:hover {
+.block.resume-block .title a:hover {
   color: $link;
 }
 
-.block .subtitle {
+.block.resume-block .subtitle {
   margin-top: 0.5rem !important;
   @extend .has-text-grey;
 }
 
-.block .subtitle:not(:last-child) {
+.block.resume-block .subtitle:not(:last-child) {
   margin-bottom: 0.25rem;
 }
 
-.block .subtitle:last-child,
-.block .content:not(:last-child) {
+.block.resume-block .subtitle:last-child,
+.block.resume-block .content:not(:last-child) {
   margin-bottom: 1rem;
 }
 
-.block .award:not(:last-child) {
+.block.resume-block .award:not(:last-child) {
   margin-bottom: 0.25rem;
 }
 
@@ -33,10 +33,10 @@
 }
 
 .block-header:not(:last-child) {
-  padding-bottom: 1.6rem;
+  margin-bottom: 1.6rem;
 }
 
-.block .subtitle {
+.block.resume-block .subtitle {
   text-transform: none;
 }
 
@@ -44,10 +44,10 @@
   cursor: pointer;
 }
 
-.block.box p a {
+.block.resume-block.box p a {
   @extend %fancy-link;
 }
 
-.block.box p a:hover {
+.block.resume-block.box p a:hover {
   @extend %fancy-link-hover;
 }

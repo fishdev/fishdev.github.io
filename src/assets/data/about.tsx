@@ -11,8 +11,8 @@ export const about = [
     icon: 'fas fa-code',
     content: (
       <span>
-        I'm a <strong className="gradientbg">full-stack developer</strong> with interests in
-        computer systems and usable design.
+        I'm a <strong>full-stack developer</strong> with interests in computer systems and usable
+        design.
       </span>
     ),
   },
@@ -24,8 +24,7 @@ export const about = [
     icon: 'fas fa-map-marker-alt',
     content: (
       <span>
-        Born and raised in <strong className="gradientbg">Pittsburgh,</strong>{' '}
-        <strong className="gradientbg">PA</strong>.
+        Born and raised in <strong>Pittsburgh, PA</strong>.
       </span>
     ),
   },

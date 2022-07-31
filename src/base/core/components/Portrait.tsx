@@ -2,6 +2,8 @@ import React from 'react';
 
 import { getData } from '../../../data';
 
+import '../styles/portrait.scss';
+
 interface Props {
   size: string;
 }

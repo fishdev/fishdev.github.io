@@ -7,42 +7,41 @@ import { SearchModal } from '../../search';
 import { Education } from '../../education';
 import { ResumeCore } from './ResumeCore';
 import { Skills } from '../../skills';
+import { ModeSwitcher, ResponsiveContainer } from '../../../base';
 
 interface State {
-  searchActive: boolean;
   importantOnly: boolean;
 }
 
 export class Resume extends React.PureComponent<{}, State> {
   state: Readonly<State> = {
-    searchActive: false,
     importantOnly: false,
   };
 
-  showSearch = () => this.setState({ searchActive: true });
-  hideSearch = () => this.setState({ searchActive: false });
-
-  toggleImportant = () =>
-    this.setState(({ importantOnly }) => ({ importantOnly: !importantOnly }), this.hideSearch);
+  toggleImportant = () => this.setState(({ importantOnly }) => ({ importantOnly: !importantOnly }));
 
   filterBlocks = (blocks: Block[]): Block[] =>
     this.state.importantOnly ? blocks.filter((block) => !block.unimportant) : blocks;
 
   render() {
-    const { searchActive } = this.state;
     return (
       <ScrollElement name="resume">
         <GlobalHotKeys
-          keyMap={{ SHOW_SEARCH: '/', TOGGLE_IMPORTANT: 'i' }}
+          keyMap={{ TOGGLE_IMPORTANT: 'i' }}
           handlers={{
-            SHOW_SEARCH: this.showSearch,
             TOGGLE_IMPORTANT: this.toggleImportant,
           }}
         />
-        {searchActive && <SearchModal hide={this.hideSearch} />}
-        <Education showSearch={this.showSearch} />
-        <ResumeCore />
-        <Skills />
+        <div className="block is-large">
+          <div className="container is-max-tablet">
+            <ResumeCore />
+          </div>
+        </div>
+        <div className="block is-large">
+          <div className="container is-max-tablet">
+            <Education />
+          </div>
+        </div>
       </ScrollElement>
     );
   }

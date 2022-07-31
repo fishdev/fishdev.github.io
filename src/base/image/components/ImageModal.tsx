@@ -7,6 +7,9 @@ import { Image } from '../interfaces';
 import { LoadingBox } from './LoadingBox';
 import { Modal } from '../../core';
 
+import '../styles/modal.scss';
+import '../styles/stamp.scss';
+
 interface Props {
   stamped?: boolean;
   blurred?: boolean;
@@ -38,16 +41,8 @@ export class ImageModal extends React.PureComponent<Props, State> {
   setFull = (isFull: boolean) => this.setState({ isFull });
 
   render() {
-    const {
-      toggleModal,
-      prevImage,
-      nextImage,
-      stamped,
-      blurred,
-      unconstrained,
-      fullable,
-      image,
-    } = this.props;
+    const { toggleModal, prevImage, nextImage, stamped, blurred, unconstrained, fullable, image } =
+      this.props;
     const { isFull } = this.state;
     return (
       <Modal blurred={blurred} hide={toggleModal}>

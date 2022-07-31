@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import classNames from 'classnames';
 
 import { getData } from '../../../data';
@@ -53,7 +53,18 @@ export class FooterContent extends React.PureComponent<Props> {
           </div>
           {getData().links.more && (
             <div className="column is-narrow">
-              <DropdownList dropup items={getData().links.more}>
+              <DropdownList
+                dropup
+                items={getData().links.more?.map((item) => (
+                  <a href={item.url}>
+                    <span className="icon-text">
+                      <span className="icon">
+                        <i className={item.icon} />
+                      </span>
+                      <span>{item.name}</span>
+                    </span>
+                  </a>
+                ))}>
                 <a className="has-text-grey-light">
                   <span className="icon">
                     <i className="fas fa-ellipsis-h" />

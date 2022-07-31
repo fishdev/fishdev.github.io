@@ -221,7 +221,9 @@ const coursework = [
 export const universities = {
   cmu: {
     name: 'Carnegie Mellon University',
+    type: 'undergrad',
     url: 'https://cs.cmu.edu',
+    photoUrl: process.env.PUBLIC_URL + '/cmu.jpg',
     range: {
       start: {
         month: 8,
@@ -266,6 +268,10 @@ export const universities = {
         grade: 3.77,
         weight: 42,
       },
+      'Spring 2022': {
+        grade: 3.69,
+        weight: 42,
+      },
     },
     scale: 'QPA',
     maxGrade: 4,
@@ -276,6 +282,7 @@ export const universities = {
 export const schools = {
   dice: {
     name: 'Taylor Allderdice High School',
+    type: 'hs',
     url: 'https://discoverpps.org/allderdice',
     range: {
       start: {

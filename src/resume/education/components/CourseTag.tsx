@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const CourseTag: React.FC<Props> = ({ animated, text }) => (
-  <span className="tag is-medium is-black">
+  <span className="tag is-medium is-light">
     <strong className={classNames('gradientbg', { 'animated faster flash': animated })}>
       {text}
     </strong>
